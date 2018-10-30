@@ -1,18 +1,37 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <bob-header></bob-header>
+    <bob-banner></bob-banner>
+    <bob-service></bob-service>
+    <bob-aboutus></bob-aboutus>
+    <bob-data></bob-data>
+    <bob-footer></bob-footer>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import bobHeader from '@/components/bobHeader.vue'
+import bobBanner from '@/components/bobBanner.vue'
+import bobService from '@/components/bobService.vue'
+import bobAboutus from '@/components/bobAboutus.vue'
+import bobData from '@/components/bobData.vue'
+import bobFooter from '@/components/bobFooter.vue'
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    bobHeader,
+    bobBanner,
+    bobService,
+    bobAboutus,
+    bobData,
+    bobFooter
   }
 }
 </script>
+<style lang="less" scoped>
+// @import "../less/mixin.less";
+.home {
+  position: relative;
+}
+</style>

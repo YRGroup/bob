@@ -1,0 +1,155 @@
+@import "./variable.less";
+@import "./mixin.less";
+
+// 全局样式
+/* header */
+body {
+  font-family: "Microsoft YaHei,Arial, Helvetica, sans-serif";
+  background: #fff;
+  font-size: @font-size-m;
+  color: @color-text;
+}
+
+body * {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  transition: color .2s;
+
+  &:hover {
+    color: @color-theme;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+@font-face {
+  font-family: 'iconfont';
+  /* project id 669551 */
+  src: url('//at.alicdn.com/t/font_669551_yp031mtq41.eot');
+  src: url('//at.alicdn.com/t/font_669551_yp031mtq41.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_669551_yp031mtq41.woff') format('woff'), url('//at.alicdn.com/t/font_669551_yp031mtq41.ttf') format('truetype'), url('//at.alicdn.com/t/font_669551_yp031mtq41.svg#iconfont') format('svg');
+}
+
+// @font-face {
+//   font-family: 'kangxi';
+//   src: url("../fonts/TypeLand222.ttf");
+// }
+
+// .font-kangxi {
+//   font-family: 'kangxi';
+//   font-size: 18px;
+// }
+
+.iconfont {
+  font-family: "iconfont";
+  font-style: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-between;
+
+}
+
+.flex-column {
+  .flex();
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix {
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.border-right {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: -5px;
+    content: '';
+    width: 2px;
+    background: #fff;
+    height: 14px;
+  }
+}
+
+.font-impact {
+  font-family: "impact";
+}
+
+.section-title {
+  font-size: 34px;
+  text-align: center;
+  font-weight: 600;
+
+  .en {
+    color: @color-text-l;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #888;
+  }
+}
