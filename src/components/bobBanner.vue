@@ -46,19 +46,19 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
-import { VueTyper } from "vue-typer";
-import { keyWords } from "@/assets/keywords";
-console.log(keyWords);
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import { VueTyper } from 'vue-typer'
+import { keyWords } from '@/assets/keywords'
+// console.log(keyWords);
 export default {
-  name: "home",
+  name: 'home',
   components: {
     swiper,
     swiperSlide,
     VueTyper
   },
-  data() {
+  data () {
     return {
       swiperOption: {
         // autoplay: true,
@@ -67,37 +67,37 @@ export default {
         loop: true,
         speed: 1000,
         navigation: {
-          nextEl: ".next-btn",
-          prevEl: ".prev-btn"
+          nextEl: '.next-btn',
+          prevEl: '.prev-btn'
         }
       },
-      keyLink: ""
-    };
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
+      keyLink: ''
     }
   },
-  created() {
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  created () {
     // this.initSwiper();
-    this.wordList = this.getStringList(keyWords);
+    this.wordList = this.getStringList(keyWords)
   },
   methods: {
-    getStringList(strings) {
-      let arr = [];
+    getStringList (strings) {
+      let arr = []
       strings.forEach(element => {
-        arr.push(element.keyword);
-      });
-      return arr;
+        arr.push(element.keyword)
+      })
+      return arr
     },
-    onTyped(ev) {
-      let index =this.wordList.indexOf(ev)
+    onTyped (ev) {
+      let index = this.wordList.indexOf(ev)
       this.keyLink = `/service/${keyWords[index]['type']}`
       // wordList.indexOf(ev)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";

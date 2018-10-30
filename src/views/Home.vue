@@ -33,5 +33,6 @@ export default {
 // @import "../less/mixin.less";
 .home {
   position: relative;
+  background: #fff;
 }
 </style>
