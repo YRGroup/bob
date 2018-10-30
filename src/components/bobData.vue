@@ -1,7 +1,7 @@
 <template>
   <section class="section4 container " id="section4">
     <el-row class="content row">
-      <el-col :md="6" :sm="12" class="item">
+      <el-col :md="8" :sm="12" class="item">
         <div class="icon-wrapper">
           <div class="bg"></div>
           <p class="text"><span>10</span><span class="sub"> 年</span></p>
@@ -9,7 +9,7 @@
         <p class="p1">行业经验</p>
         <p class="p2">Industry experience</p>
       </el-col>
-      <el-col :md="6" :sm="12" class="item">
+      <el-col :md="8" :sm="12" class="item">
         <div class="icon-wrapper">
           <div class="bg"></div>
           <p class="text"><span>88</span><span class="sub"> 家</span></p>
@@ -17,7 +17,7 @@
         <p class="p1">客户选择</p>
         <p class="p2">Customer choice</p>
       </el-col>
-      <el-col :md="6" :sm="12" class="item">
+      <el-col :md="8" :sm="12" class="item">
         <div class="icon-wrapper">
           <div class="bg"></div>
           <p class="text"><span>180</span><span class="sub"> 项</span></p>
@@ -25,14 +25,14 @@
         <p class="p1">服务标准</p>
         <p class="p2">service standard</p>
       </el-col>
-      <el-col :md="6" :sm="12" class="item">
+      <!-- <el-col :md="6" :sm="12" class="item">
         <div class="icon-wrapper">
           <div class="bg"></div>
           <p class="text"><span>100</span><span class="sub"> %</span></p>
         </div>
         <p class="p1">客户满意度</p>
         <p class="p2">customer satisfaction</p>
-      </el-col>
+      </el-col> -->
     </el-row>
   </section>
 </template>
@@ -70,6 +70,7 @@ export default {
 @import "../less/common.less";
 
 #section4 {
+  margin-bottom: 50px;
 
   // background-image: url('../images/section4_bg.jpg');
   // background-attachment: fixed;
@@ -78,6 +79,7 @@ export default {
   .content {
     margin: 0 auto;
     flex-wrap: wrap;
+    max-width: 1200px;
 
     .icon-wrapper {
       position: relative;
@@ -93,6 +95,8 @@ export default {
         background: url('../images/icon-2.png') no-repeat center center;
         transition: all  ease-in-out  .5s;
         // transform: rotateZ(180deg);
+        animation: rotate infinite linear 3s;
+        
       }
 
       .text {
