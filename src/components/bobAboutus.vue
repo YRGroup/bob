@@ -42,7 +42,8 @@ export default {
         },
         pagination: {
           el: '#section2-pagination',
-          clickable: true
+          clickable: true,
+          type: 'fraction'
         }
       }
     }
@@ -89,6 +90,7 @@ export default {
       p {
         text-align: left;
         opacity: 0.7;
+        position: relative;
         &::before {
           content: "";
           position: absolute;
