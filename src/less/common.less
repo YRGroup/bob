@@ -153,3 +153,27 @@ a {
     color: #888;
   }
 }
+.nav-btn {
+  display: inline-block;
+  background-image: url("../images/navBtn.png");
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  transition: all 0.5s;
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  &:hover {
+    background-image: url("../images/navBtn1.png");
+    animation: nav-btn 1.8s linear infinite;
+  }
+}
+@keyframes nav-btn {
+  50% {
+    transform: rotateZ(180deg) scale(1.3);
+  }
+
+  100% {
+    transform: rotateZ(360deg) scale(1);
+  }
+}

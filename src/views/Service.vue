@@ -1,7 +1,34 @@
 <template>
-  <div class="service" :style="{backgroundImage:'url('+img+')'}">
-    <bob-header :id="id" :homeHeader="false"></bob-header>
-
+  <div class="service">
+    <div class="banner" :style="{backgroundImage:'url('+img+')'}">
+      <!-- <bob-header :id="id" :homeHeader="false"></bob-header> -->
+      <div class="service-navs">  
+        <div >
+          <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>.
+          <router-link :class="['item', {'active':id=='b'}]" to="/service/b">论</router-link>
+          <router-link :class="['item', {'active':id=='c'}]" to="/service/c">论</router-link>
+          <router-link :class="['item', {'active':id=='d'}]" to="/service/d">论</router-link>
+          <router-link :class="['item', {'active':id=='e'}]" to="/service/e">论</router-link>
+          <router-link :class="['item', {'active':id=='f'}]" to="/service/f">论</router-link>
+        </div>
+        <span class="nav-btn" @click="toogleText"></span>
+      </div>
+      <div class="more" >MORE</div>
+    </div>
+    <transition name="text">
+      <div class="text" v-show="showText">
+        <span class="nav-btn" @click="toogleText"></span>
+        <div>
+          <p>11111111111111</p>
+          <p>11111111111111</p>
+          <p>11111111111111</p>
+          <p>11111111111111</p>
+          <p>11111111111111</p>
+          <p>11111111111111</p>
+          <p>11111111111111</p>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
@@ -21,37 +48,120 @@ export default {
         require("@/images/A.png"),
         require("@/images/A.png")
       ],
-      id: 0
+      id: "",
+      showText: false
     };
   },
   computed: {
     img() {
-      return this.images[this.id - 1];
+      let arr = ["a", "b", "c", "d", "e", "f"];
+      let index = arr.indexOf(this.id);
+      return this.images[index];
     }
   },
   created() {
     console.log(this.$route);
-    this.id = Number(this.$route.params.id);
+    this.id = this.$route.params.id;
 
     if (!this.id) {
       this.$router.push("/");
     }
   },
+  methods: {
+    toogleText() {
+      this.showText = !this.showText;
+    }
+  },
   beforeRouteUpdate(to, from, next) {
     console.log(to);
-    this.id = Number(to.params.id);
+    this.id = to.params.id;
     next();
   }
 };
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
+@import "../less/common.less";
 .service {
-  .background-cover();
   height: 100vh;
-  overflow: hidden;
+  position: relative;
+  .service-navs {
+    .flex();
+    margin-top: 20px;
+    justify-content: space-around;
+    .item {
+      font-size: 20px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      opacity: 0.8;
+      color: #fff;
+      margin-left: 20px;
+      margin-right: 20px;
+      &.active {
+        opacity: 1;
+        transform: scale(1.2);
+        animation: nav 0.3s ease-in-out;
+      }
+      @keyframes nav {
+        0% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  .nav-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+  }
+  .text {
+    position: absolute;
+    background: @color-theme;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    color: #fff;
+    .flex-column();
+    justify-content: space-around;
+  }
+  .banner {
+    .background-cover();
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    .more {
+      cursor: pointer;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      margin-left: -85px;
+      line-height: 40px;
+      font-size: 16px;
+      padding: 0 60px;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      color: #fff;
+      transition: all .3s;
+      &:hover {
+        border: 1px solid @color-theme;
+        color: @color-theme;
+        background: #fff;
+      }
+    }
+  }
 }
-.banner {
-  width: 100%;
+.text-enter-active,
+.text-leave-active {
+  transition: all 0.5s;
+}
+.text-enter,
+.text-leave-to {
+  opacity: 0;
 }
 </style>

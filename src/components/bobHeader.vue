@@ -6,12 +6,12 @@
         <img class="logo2" src="../images/logoS.png" alt="logo">
       </a>
       <div class="service-navs" v-else>
-        <router-link :class="['item', {'active':id==1}]" to="/service/1">论</router-link>.
-        <router-link :class="['item', {'active':id==2}]" to="/service/2">论</router-link>
-        <router-link :class="['item', {'active':id==3}]" to="/service/3">论</router-link>
-        <router-link :class="['item', {'active':id==4}]" to="/service/4">论</router-link>
-        <router-link :class="['item', {'active':id==5}]" to="/service/5">论</router-link>
-        <router-link :class="['item', {'active':id==6}]" to="/service/6">论</router-link>
+        <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>.
+        <router-link :class="['item', {'active':id=='b'}]" to="/service/b">论</router-link>
+        <router-link :class="['item', {'active':id=='c'}]" to="/service/c">论</router-link>
+        <router-link :class="['item', {'active':id=='d'}]" to="/service/d">论</router-link>
+        <router-link :class="['item', {'active':id=='e'}]" to="/service/e">论</router-link>
+        <router-link :class="['item', {'active':id=='f'}]" to="/service/f">论</router-link>
       </div>
       <span class="nav-btn" @click="toogleSideNav"></span>
     </header>
@@ -22,7 +22,7 @@
     <ul class="side-nav">
       <li>
         <div class="wrapper">
-          <router-link class="item" to="/Service/1">
+          <router-link class="item" to="/service/a">
             <span class="en"><span>A</span>nalytics</span>
             <span class="cn">论</span>
           </router-link>
@@ -30,7 +30,7 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link class="item" to="/Service/1">
+          <router-link class="item" to="/service/b">
             <span class="en"><span>B</span>randing</span>
             <span class="cn">划</span>
           </router-link>
@@ -39,7 +39,7 @@
       </li>
       <li>
         <div class="wrapper">
-        <router-link class="item" to="/Service/1">
+        <router-link class="item" to="/service/c">
           <span class="en"><span>C</span>ampaign</span>
           <span class="cn">搞</span>
         </router-link>
@@ -47,7 +47,7 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link class="item" to="/Service/1">
+          <router-link class="item" to="/service/d">
           <span class="en"><span>D</span>igital & web</span>
           <span class="cn">码</span>
           </router-link>
@@ -56,7 +56,7 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link class="item" to="/Service/1">
+          <router-link class="item" to="/service/e">
           <span class="en"><span>E</span>ditorial</span>
           <span class="cn">纪</span>
           </router-link>
@@ -65,7 +65,7 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link class="item" to="/Service/1">
+          <router-link class="item" to="/service/f">
             <span class="en"><span>F</span>abrication</span>
             <span class="cn">造</span>
           </router-link>
@@ -79,7 +79,7 @@
 
 <script>
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String,
     homeHeader: {
@@ -87,22 +87,22 @@ export default {
       type: Boolean
     },
     id: {
-      default: 0,
-      type: Number
+      default: '',
+      type: String
     }
   },
-  data() {
+  data () {
     return {
       show: false
-    };
+    }
   },
   methods: {
-    toogleSideNav() {
-      this.show = !this.show;
-      console.log(1);
+    toogleSideNav () {
+      this.show = !this.show
+      console.log(1)
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -138,30 +138,6 @@ export default {
     padding: 20px 10px;
   }
 }
-.nav-btn {
-  display: inline-block;
-  background-image: url("../images/navBtn.png");
-  background-size: 100% 100%;
-  width: 25px;
-  height: 25px;
-  transition: all 0.5s;
-  cursor: pointer;
-  position: absolute;
-  right: 40px;
-  &:hover {
-    background-image: url("../images/navBtn1.png");
-    animation: nav-btn 1.8s linear infinite;
-  }
-}
-@keyframes nav-btn {
-  50% {
-    transform: rotateZ(180deg) scale(1.3);
-  }
-
-  100% {
-    transform: rotateZ(360deg) scale(1);
-  }
-}
 
 .logo {
   display: inline-block;
@@ -187,35 +163,7 @@ export default {
     }
   }
 }
-.service-navs {
-  .flex();
-  .item {
-    font-size: 20px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    opacity: 0.8;
-    color: #fff;
-    margin-left: 20px;
-    margin-right: 20px;
-    &.active {
-      opacity: 1;
-      transform: scale(1.2);
-      // width: 50px;
-      // height: 50px;
-      // line-height: 50px;
-      animation: nav .3s ease-in-out;
-    }
-    @keyframes nav {
-      0% {
-        transform: scale(1);
-      }
-    }
-  }
-}
+
 // 导航
 #nav-section {
   .flex-column();

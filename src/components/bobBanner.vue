@@ -9,14 +9,14 @@
           <div class="text">
             <p class="p3">We Energize Your Own</p>
             <div class="flex keyword ">
-              <a class="key-link strings" href="">
-                <vue-typer text="bob" ></vue-typer>
-              </a>
-              <span class="curse">|</span>
+              <router-link class="key-link strings" :to="keyLink">
+                <vue-typer @typed='onTyped' :text="wordList" ></vue-typer>
+              </router-link>
+              <!-- <span class="curse">|</span> -->
             </div>
           </div>
           <div class="cn keyword-cn">
-            <vue-typer text="bob"></vue-typer>
+            <!-- <vue-typer text="bob"></vue-typer> -->
           </div>
         </swiper-slide>
         <swiper-slide class="flex">
@@ -49,7 +49,8 @@
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 import { VueTyper } from "vue-typer";
-
+import { keyWords } from "@/assets/keywords";
+console.log(keyWords);
 export default {
   name: "home",
   components: {
@@ -69,7 +70,8 @@ export default {
           nextEl: ".next-btn",
           prevEl: ".prev-btn"
         }
-      }
+      },
+      keyLink: ""
     };
   },
   computed: {
@@ -79,15 +81,46 @@ export default {
   },
   created() {
     // this.initSwiper();
+    this.wordList = this.getStringList(keyWords);
   },
-  methods: {}
+  methods: {
+    getStringList(strings) {
+      let arr = [];
+      strings.forEach(element => {
+        arr.push(element.keyword);
+      });
+      return arr;
+    },
+    onTyped(ev) {
+      let index =this.wordList.indexOf(ev)
+      this.keyLink = `/service/${keyWords[index]['type']}`
+      // wordList.indexOf(ev)
+    }
+  }
 };
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
+.vue-typer {
+  /* Styles for the vue-typer container
+     e.g. font-family, font-size  */
 
-.vue-typer .custom.char.typed {
-  color: @color-theme;
+  .custom.char {
+    /* Styles for each character
+       e.g. color, background-color */
+
+    &.typed {
+      color: #fff;
+      /* Styles specific to typed characters
+         i.e. characters to the left of the caret */
+    }
+    &.selected {
+      color: #fff;
+    }
+    &.erased {
+      color: #fff;
+    }
+  }
 }
 .flex {
   display: -webkit-box;
