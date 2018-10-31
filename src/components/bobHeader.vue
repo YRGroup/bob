@@ -1,10 +1,10 @@
 <template>
   <div class="header-wrapper absolute-header">
     <header :class="['header',{serviceHeader:!homeHeader}]">
-      <a href="" class="logo"  v-if="homeHeader">
+      <router-link to="/" class="logo"  v-if="homeHeader">
         <img class="logo1" src="../images/logo.png" alt="logo">
         <img class="logo2" src="../images/logoS.png" alt="logo">
-      </a>
+      </router-link>
       <div class="service-navs" v-else>
         <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>.
         <router-link :class="['item', {'active':id=='b'}]" to="/service/b">论</router-link>

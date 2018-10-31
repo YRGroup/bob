@@ -3,6 +3,13 @@
     <div class="banner" :style="{backgroundImage:'url('+img+')'}">
       <!-- <bob-header :id="id" :homeHeader="false"></bob-header> -->
       <div class="service-navs">
+        <span class="logo">
+           <router-link  to="/">
+          <img class="logo1" src="../images/logo.png" alt="logo">
+          <img class="logo2" src="../images/logoS.png" alt="logo">
+        </router-link>
+        </span>
+       
         <div >
           <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>
           <router-link :class="['item', {'active':id=='b'}]" to="/service/b">划</router-link>
@@ -50,71 +57,95 @@
   </div>
 </template>
 <script>
-import bobHeader from '@/components/bobHeader.vue'
-import { info } from '@/assets/info'
+import bobHeader from "@/components/bobHeader.vue";
+import { info } from "@/assets/info";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bobHeader
   },
-  data () {
+  data() {
     return {
       images: [
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png')
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png")
       ],
-      id: '',
+      id: "",
       showText: false,
       showService: false,
       cn: true
       // poetry:'',
       // items:''
-    }
+    };
   },
   computed: {
-    img () {
-      let arr = ['a', 'b', 'c', 'd', 'e', 'f']
-      let index = arr.indexOf(this.id)
-      return this.images[index]
+    img() {
+      let arr = ["a", "b", "c", "d", "e", "f"];
+      let index = arr.indexOf(this.id);
+      return this.images[index];
     },
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
 @import "../less/common.less";
+.logo {
+  display: inline-block;
+  height: 40px;
+
+  img {
+    height: 100%;
+  }
+
+  .logo2 {
+    display: none;
+  }
+
+  @media (max-width: 760px) {
+    height: 30px;
+
+    .logo1 {
+      display: none;
+    }
+
+    .logo2 {
+      display: block;
+    }
+  }
+}
 .service {
   // height: 100vh;
   position: relative;
