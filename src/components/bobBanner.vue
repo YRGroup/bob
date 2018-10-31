@@ -12,7 +12,7 @@
               <router-link class="key-link strings" :to="keyLink">
                 <vue-typer @typed='onTyped' :text="wordList" ></vue-typer>
               </router-link>
-              <!-- <span class="curse">|</span> -->
+              <span class="curse">|</span>
             </div>
           </div>
           <div class="cn keyword-cn">
