@@ -108,7 +108,7 @@ export default {
   .content {
     margin: 0 auto;
     padding-top: 40px;
-    padding-bottom: 40px;
+    // padding-bottom: 40px;
     color: #9d9d9d;
     line-height: 30px;
     .item {

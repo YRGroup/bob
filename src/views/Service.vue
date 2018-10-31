@@ -5,11 +5,11 @@
       <div class="service-navs">  
         <div >
           <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>.
-          <router-link :class="['item', {'active':id=='b'}]" to="/service/b">论</router-link>
-          <router-link :class="['item', {'active':id=='c'}]" to="/service/c">论</router-link>
-          <router-link :class="['item', {'active':id=='d'}]" to="/service/d">论</router-link>
-          <router-link :class="['item', {'active':id=='e'}]" to="/service/e">论</router-link>
-          <router-link :class="['item', {'active':id=='f'}]" to="/service/f">论</router-link>
+          <router-link :class="['item', {'active':id=='b'}]" to="/service/b">划</router-link>
+          <router-link :class="['item', {'active':id=='c'}]" to="/service/c">搞</router-link>
+          <router-link :class="['item', {'active':id=='d'}]" to="/service/d">码</router-link>
+          <router-link :class="['item', {'active':id=='e'}]" to="/service/e">纪</router-link>
+          <router-link :class="['item', {'active':id=='f'}]" to="/service/f">造</router-link>
         </div>
         <span class="nav-btn" @click="toogleText"></span>
       </div>
@@ -90,14 +90,14 @@ export default {
     margin-top: 20px;
     justify-content: space-around;
     .item {
-      font-size: 20px;
+      font-size: 18px;
       display: inline-block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
       border-radius: 50%;
       border: 2px solid #fff;
-      opacity: 0.8;
+      opacity: 0.7;
       color: #fff;
       margin-left: 20px;
       margin-right: 20px;
