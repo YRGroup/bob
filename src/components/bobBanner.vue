@@ -10,7 +10,7 @@
             <p class="p3">We Energize Your Own</p>
             <div class="flex keyword ">
               <router-link class="key-link strings" :to="keyLink">
-                <vue-typer @typed='onTyped' :text="wordList" ></vue-typer>
+                <vue-typer @typed='onTyped' :text="wordList"></vue-typer>
               </router-link>
               <span class="curse">|</span>
             </div>
@@ -101,26 +101,11 @@ export default {
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
-.vue-typer {
-  /* Styles for the vue-typer container
-     e.g. font-family, font-size  */
-
-  .custom.char {
-    /* Styles for each character
-       e.g. color, background-color */
-
-    &.typed {
-      color: #fff;
-      /* Styles specific to typed characters
-         i.e. characters to the left of the caret */
-    }
-    &.selected {
-      color: #fff;
-    }
-    &.erased {
-      color: #fff;
-    }
-  }
+.vue-typer .custom.char.typed {
+  color: #fff;
+}
+.vue-typer .custom.caret {
+  display: none;
 }
 .flex {
   display: -webkit-box;
@@ -387,5 +372,13 @@ export default {
       font-size: 14px;
     }
   }
+}
+@keyframes curse {
+  100% {
+    opacity: 0;
+  }
+}
+.vue-typer .custom.caret {
+  display: none!important;
 }
 </style>

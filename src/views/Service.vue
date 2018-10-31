@@ -124,14 +124,14 @@ export default {
     margin-top: 20px;
     justify-content: space-around;
     .item {
-      font-size: 20px;
+      font-size: 18px;
       display: inline-block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
       border-radius: 50%;
       border: 2px solid #fff;
-      opacity: 0.8;
+      opacity: 0.7;
       color: #fff;
       margin-left: 20px;
       margin-right: 20px;
