@@ -11,43 +11,30 @@
           <router-link :class="['item', {'active':id=='e'}]" to="/service/e">纪</router-link>
           <router-link :class="['item', {'active':id=='f'}]" to="/service/f">造</router-link>
         </div>
-        <span class="nav-btn" @click="toogleText"></span>
+        <!-- <span class="nav-btn" @click="toogleText"></span> -->
       </div>
-      <div class="more" @click="toogleService">服务项目</div>
+      <div class="more" @click="toogleText">B我们</div>
     </div>
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
         <span class="nav-btn" @click="toogleText"></span>
-        
+
         <transition name="poetry">
-          <div class="cn" v-show="cn">
-            <p>美丽的梦和美丽的诗一样</p>
-            <p>都是可遇而不可求的</p>
-            <p>常常在最没能料到的时刻里出现</p>
-            <p>我喜欢那样的梦</p>
-            <p>在梦里，一切都可以重新开始</p>
-            <p>一切都可以慢慢解释</p>
-            <p>心里甚至还能感觉到</p>
-            <p>所有被浪费的时光</p>
+          <div class="cn" v-show="cn" v-html="poetry">
           </div>
         </transition>
         <transition name="poetry">
-          <div class="en" v-show="!cn">
-            <p>Adolescence was brimming with </p>
-            <p>transitions, secretions and hopelessness. </p>
-            <p>My slow rite into adulthood is brimming with</p>
-            <p>transitions, secretions and hopefulness.</p>
-            <p>Nothing has really changed, yet everything is changing. </p>
-            <p>I’m changing.</p>
-            <p>Adolescence was brimming with </p>
-            <p>transitions, secretions and hopelessness. </p>
+          <div class="en" v-show="!cn" v-html="items">
+
           </div>
         </transition>
-        
-        <div class="changlang"><span @click="cn=true">zh</span> / <span @click="cn=false">en</span></div>
+        <div class="changlang">
+          <span @click="cn=true" :class="[{'active':cn}]">B一下</span>
+          <span> / </span>
+          <span @click="cn=false" :class="[{'active':!cn}]">再B一下</span></div>
       </div>
     </transition>
-    <transition name="opacity">
+    <!-- <transition name="opacity">
       <div class="text-wrapper" v-show="showService">
         <span class="nav-btn" @click="toogleService"></span>
         <div>
@@ -57,64 +44,73 @@
           <p>22222222222222222222222</p>
           <p>22222222222222222222222</p>
         </div>
-      </div>
-    </transition>
+      </div> -->
+    <!-- </transition> -->
     <div class="container" ref="container"></div>
   </div>
 </template>
 <script>
-import bobHeader from "@/components/bobHeader.vue";
+import bobHeader from '@/components/bobHeader.vue'
+import { info } from '@/assets/info'
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 export default {
-  name: "service",
+  name: 'service',
   components: {
     bobHeader
   },
-  data() {
+  data () {
     return {
       images: [
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png")
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png')
       ],
-      id: "",
+      id: '',
       showText: false,
       showService: false,
       cn: true
-    };
-  },
-  computed: {
-    img() {
-      let arr = ["a", "b", "c", "d", "e", "f"];
-      let index = arr.indexOf(this.id);
-      return this.images[index];
+      // poetry:'',
+      // items:''
     }
   },
-  created() {
-    this.id = this.$route.params.id;
+  computed: {
+    img () {
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f']
+      let index = arr.indexOf(this.id)
+      return this.images[index]
+    },
+    poetry () {
+      return info[this.id]['poetry']
+    },
+    items () {
+      return info[this.id]['items']
+    }
+  },
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
   },
   methods: {
-    toogleText() {
-      this.showText = !this.showText;
+    toogleText () {
+      this.showText = !this.showText
     },
-    toogleService() {
-      this.showService = !this.showService;
+    toogleService () {
+      this.showService = !this.showService
     }
   },
-  beforeRouteUpdate(to, from, next) {
-    this.id = to.params.id;
-    next();
+  beforeRouteUpdate (to, from, next) {
+    this.id = to.params.id
+    next()
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
@@ -180,6 +176,10 @@ export default {
       right: 0;
       bottom: 100px;
       cursor: pointer;
+      .active {
+        transition: all 0.5s;
+        font-size: 30px;
+      }
     }
   }
   .banner {
@@ -230,7 +230,7 @@ export default {
 .poetry-leave-active {
   transition: all 0.5s;
 }
-.poetry-enter{
+.poetry-enter {
   opacity: 0;
   transform: translateX(150px);
 }

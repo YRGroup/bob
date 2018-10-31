@@ -22,7 +22,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  // background: @color-theme;
+  background: @color-theme;
 }
 #nav {
   padding: 30px;

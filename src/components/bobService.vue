@@ -99,22 +99,22 @@
 </template>
 
 <script>
-  export default {
-    name: "bobHeader",
-    props: {
-      msg: String
-    },
-    data() {
-      return {
-        show: false
-      };
-    },
-    methods: {
-      toogleSideNav() {
-        this.show = !this.show;
-      }
+export default {
+  name: 'bobHeader',
+  props: {
+    msg: String
+  },
+  data () {
+    return {
+      show: false
     }
-  };
+  },
+  methods: {
+    toogleSideNav () {
+      this.show = !this.show
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

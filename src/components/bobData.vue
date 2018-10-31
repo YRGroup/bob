@@ -96,7 +96,7 @@ export default {
         transition: all  ease-in-out  .5s;
         // transform: rotateZ(180deg);
         animation: rotate infinite linear 3s;
-        
+
       }
 
       .text {
