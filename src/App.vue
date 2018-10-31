@@ -41,5 +41,6 @@
 .page-enter,
 .page-leave-to {
   opacity: 0;
+  // transform: translateX(100%)
 }
 </style>
