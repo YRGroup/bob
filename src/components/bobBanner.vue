@@ -10,13 +10,16 @@
             <p class="p3">We Energize Your Own</p>
             <div class="flex keyword ">
               <router-link class="key-link strings" :to="keyLink">
-                <vue-typer @typed='onTyped' :text="wordList"></vue-typer>
+                <vue-typer
+                  erase-style='backspace'
+                  :eraseDelay="10"
+                  @typed='onTyped' :text="wordList"></vue-typer>
               </router-link>
               <span class="curse">|</span>
             </div>
           </div>
           <div class="cn keyword-cn">
-            <!-- <vue-typer text="bob"></vue-typer> -->
+            赋能你的<span>{{keyword}}</span>
           </div>
         </swiper-slide>
         <swiper-slide class="flex">
@@ -40,6 +43,9 @@
           </div>
         </div><!--右箭头-->
       </swiper>
+       <div class="scroll-icon">
+      <img  src="../images/icon-1.png" alt="">
+    </div>
     </div>
   </div>
 </template>
@@ -64,14 +70,15 @@ export default {
         // autoplay: true,
         simulateTouch: false, // 禁止鼠标模拟
         // effect: 'fade',
-        loop: true,
+        // loop: true,
         speed: 1000,
         navigation: {
           nextEl: '.next-btn',
           prevEl: '.prev-btn'
         }
       },
-      keyLink: ''
+      keyLink: '',
+      keyword: ''
     }
   },
   computed: {
@@ -94,7 +101,7 @@ export default {
     onTyped (ev) {
       let index = this.wordList.indexOf(ev)
       this.keyLink = `/service/${keyWords[index]['type']}`
-      // wordList.indexOf(ev)
+      this.keyword = keyWords[index]['cn']
     }
   }
 }
@@ -131,17 +138,15 @@ export default {
 }
 .index-banner {
   position: relative;
-
+  height: 100vh;
   .banner-bg {
-    // .bg_modal();
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-
-    &::before {
+    &::after {
       content: "";
       background: url("../images/cover.png") repeat;
       position: absolute;
@@ -149,13 +154,11 @@ export default {
       bottom: 0;
       left: 0;
       right: 0;
-      z-index: 2;
     }
 
     video {
       margin: auto;
       position: absolute;
-      z-index: 0;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -168,19 +171,16 @@ export default {
     bottom: 40px;
     left: 50%;
     margin-left: -20px;
-    z-index: 90;
     animation: scrollIcon 3s ease infinite;
   }
 }
 #banner {
-  z-index: 2;
   overflow: hidden;
   position: relative;
-  height: 100vh;
-
-  // background: #333;
+  height: 100%;
   .keyword {
     justify-content: center;
+    height: 100px;
   }
 
   .cn {
@@ -194,11 +194,13 @@ export default {
     font-size: 80px;
     color: @color-theme;
     display: inline-block;
-    // line-height: 95px;
+    cursor: pointer;
+    span {
+      cursor: pointer;
+    }
     font-weight: bold;
     // text-transform: uppercase;
     margin-top: 20px;
-
     .animated {
       animation-duration: 0s;
     }
@@ -207,8 +209,7 @@ export default {
   .keyword-cn {
     color: #fff;
     font-size: 14px;
-
-    a {
+    span {
       color: @color-theme;
     }
   }
@@ -378,7 +379,19 @@ export default {
     opacity: 0;
   }
 }
-.vue-typer .custom.caret {
-  display: none!important;
+@keyframes scrollIcon {
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
+
+@keyframes curse {
+  100% {
+    opacity: 0;
+  }
+}
+// .vue-typer .custom.caret {
+//   display: none !important;
+// }
 </style>

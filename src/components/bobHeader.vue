@@ -99,7 +99,6 @@ export default {
   methods: {
     toogleSideNav () {
       this.show = !this.show
-      console.log(1)
     }
   }
 }
