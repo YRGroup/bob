@@ -1,16 +1,15 @@
 <template>
   <div class="service">
-    <div class="banner" :style="{backgroundImage:'url('+img+')'}">
-      <!-- <bob-header :id="id" :homeHeader="false"></bob-header> -->
+    <div class="banner" >
+      <div>
+        <component :is="banner"></component>
+      </div>
       <div class="service-navs">
-        <span class="logo">
-           <router-link  to="/">
-          <img class="logo1" src="../images/logo.png" alt="logo">
-          <img class="logo2" src="../images/logoS.png" alt="logo">
-        </router-link>
-        </span>
-       
-        <div >
+        <router-link to="/" class="logo">
+            <img class="logo1" src="../images/logo.png" alt="logo">
+            <img class="logo2" src="../images/logoS.png" alt="logo">
+          </router-link>
+        <div>
           <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>
           <router-link :class="['item', {'active':id=='b'}]" to="/service/b">划</router-link>
           <router-link :class="['item', {'active':id=='c'}]" to="/service/c">搞</router-link>
@@ -41,31 +40,23 @@
           <span @click="cn=false" :class="[{'active':!cn}]">再B一下</span></div>
       </div>
     </transition>
-    <!-- <transition name="opacity">
-      <div class="text-wrapper" v-show="showService">
-        <span class="nav-btn" @click="toogleService"></span>
-        <div>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-        </div>
-      </div> -->
-    <!-- </transition> -->
     <div class="container" ref="container"></div>
   </div>
 </template>
 <script>
 import bobHeader from "@/components/bobHeader.vue";
 import { info } from "@/assets/info";
+
+import { bannera } from "@/components/bannera.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
+
 export default {
   name: "service",
   components: {
-    bobHeader
+    bobHeader,
+    bannera
   },
   data() {
     return {
@@ -80,7 +71,8 @@ export default {
       id: "",
       showText: false,
       showService: false,
-      cn: true
+      cn: true,
+      components:['']
       // poetry:'',
       // items:''
     };
@@ -96,6 +88,9 @@ export default {
     },
     items() {
       return info[this.id]["items"];
+    },
+    banner() {
+      return bannera
     }
   },
   created() {
@@ -125,7 +120,9 @@ export default {
 .logo {
   display: inline-block;
   height: 40px;
-
+  position: absolute;
+  left: 20px;
+  top: 20px;
   img {
     height: 100%;
   }
@@ -241,6 +238,7 @@ export default {
   @media (max-width: 768px) {
     .service-navs {
       justify-content: flex-start;
+      margin-top: 60px;
       .item {
         display: block;
         margin-top: 20px;
