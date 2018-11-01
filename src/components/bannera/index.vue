@@ -1,8 +1,8 @@
 <template>
   <div class="banner-image">
     <!-- <img class="bg" src="./1.png" alt=""> -->
-    <img class="animate-item item1" src="./2.png" alt="">
-    <img class="animate-item item2" src="./3.png" alt="">
+    <img class="animate-item item1" src="./1.png" alt="">
+    <img class="animate-item item2" src="./2.png" alt="">
   </div>
 </template>
 <script>
@@ -37,7 +37,7 @@ export default {
   }
 
   @base: -500px;
-  @offset: 30px;
+  @offset: 150px;
 
   .animate-item {
     display: inline-block;
@@ -47,8 +47,8 @@ export default {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    top: 50%;
     left: @base;
+    top: 50%;
   }
   .item1 {
     animation-name: item1;
