@@ -30,55 +30,45 @@ export default {
     transform: translate(-50%, -50%);
   }
 
-  @base: 0;
-  @offset: 10px;
-  @offset2: 10px;
-  @scale: 1.2;
-  @animate1: -@base - @offset;
-  @animate2: -@base + @offset2;
+  @base: -500px;
+  @offset: 30px;
 
   .animate-item {
     display: inline-block;
     position: absolute;
     height: 100%;
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    top: @base;
+    animation-direction: alternate;
+    top: 50%;
     left: @base;
-    transform: translate(-@base, -@base) scale(@scale);
-    // transform-origin: 50% 15%;
   }
-
   .item1 {
     animation-name: item1;
-    // z-index: 2;
+    transform: translate(-@base - @offset, -50%);
+    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
   .item2 {
     animation-name: item2;
+    transform: translate(-@base + @offset, -50%);
+    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
 
   @keyframes item1 {
     0% {
-      transform: translate(-@base, -@base) scale(@scale);
-    }
-    50% {
-      transform: translate(-@offset, @offset) scale(@scale);
+      transform: translate(-@base - @offset, -50%);
     }
     100% {
-      transform: translate(-@base, -@base) scale(@scale);
+      transform: translate(-@base, -50%);
     }
   }
   @keyframes item2 {
     0% {
-      transform: translate(-@base, -@base) scale(@scale);
-    }
-    50% {
-      transform: translate(-@offset2, -@offset2) scale(@scale);
+      transform: translate(-@base + @offset, -50%);
     }
     100% {
-      // transform: translateX(0);
-      transform: translate(-@base, -@base) scale(@scale);
+      transform: translate(-@base, -50%);
     }
   }
 }

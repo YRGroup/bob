@@ -7,14 +7,14 @@
 </template>
 <script>
 export default {
-  name: 'bannera',
-  data () {
-    return {}
+  name: "bannera",
+  data() {
+    return {};
   },
   created() {
     console.log("a");
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -35,56 +35,45 @@ export default {
     width: 100%;
     transform: translate(-50%, -50%);
   }
+
+  @base: -500px;
+  @offset: 30px;
+
   .animate-item {
     display: inline-block;
     position: absolute;
     height: 100%;
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  }
-
-  @base: -500px;
-  @offset: 20px;
-  @offset2: 10px;
-
-  @animate1: -@base - @offset;
-  @animate2: -@base + @offset2;
-
-  .item1 {
-    animation-name: item1;
+    animation-direction: alternate;
     top: 50%;
     left: @base;
-    transform: translate(-@base, -50%);
+  }
+  .item1 {
+    animation-name: item1;
+    transform: translate(-@base - @offset, -50%);
+    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
   .item2 {
     animation-name: item2;
-    top: 50%;
-    left: @base;
-    transform: translate(-@base, -50%);
+    transform: translate(-@base + @offset, -50%);
+    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
 
   @keyframes item1 {
     0% {
-      transform: translate(-@base, -50%);
-    }
-    50% {
-      transform: translate(@animate1, -50%);
+      transform: translate(-@base - @offset, -50%);
     }
     100% {
-      // transform: translateX(0);
       transform: translate(-@base, -50%);
     }
   }
   @keyframes item2 {
     0% {
-      transform: translate(-@base, -50%);
-    }
-    50% {
-      transform: translate(@animate2, -50%);
+      transform: translate(-@base + @offset, -50%);
     }
     100% {
-      // transform: translateX(0);
       transform: translate(-@base, -50%);
     }
   }
