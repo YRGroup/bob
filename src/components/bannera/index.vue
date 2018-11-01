@@ -10,6 +10,9 @@ export default {
   name: 'bannera',
   data () {
     return {}
+  },
+  created() {
+    console.log("a");
   }
 }
 </script>

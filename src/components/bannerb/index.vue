@@ -1,7 +1,7 @@
 <template>
   <div class="banner-image">
-    <img class="animate-item item1" src="./2.png" alt="">
-    <img class="animate-item item2" src="./3.png" alt="">
+    <img class="animate-item item1" src="./1.png" alt="">
+    <img class="animate-item item2" src="./2.png" alt="">
   </div>
 </template>
 <script>
@@ -9,13 +9,16 @@ export default {
   name: "bannerb",
   data() {
     return {};
+  },
+  created() {
+    console.log("b");
   }
 };
 </script>
 
 <style lang="less" scoped>
 .banner-image {
-  background: #d9b232;
+  background: #cd4a44;
   width: 100%;
   height: 100%;
   .bg {
@@ -33,6 +36,7 @@ export default {
     animation-duration: 10s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    transform-origin: 50% 25%;
   }
 
   @base: -500px;
@@ -43,16 +47,18 @@ export default {
   @animate2: -@base + @offset2;
 
   .item1 {
-    animation-name: item1;
+    // animation-name: item1;
     top: 50%;
     left: @base;
-    transform: translate(-@base, -50%);
+    // height: 120%;
+    transform: translate(-@base, -50%) scale(1.52);
+    // transform-origin: 50% 25%;
   }
   .item2 {
-    animation-name: item2;
+    // animation-name: item2;
     top: 50%;
     left: @base;
-    transform: translate(-@base, -50%);
+    transform: translate(-@base, -50%) scale(1.52);
   }
 
   @keyframes item1 {
