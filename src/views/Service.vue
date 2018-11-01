@@ -44,10 +44,9 @@
   </div>
 </template>
 <script>
-import bobHeader from "@/components/bobHeader.vue";
 import { info } from "@/assets/info";
-
-import { bannera } from "@/components/bannera.vue";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
@@ -55,8 +54,8 @@ import { bannera } from "@/components/bannera.vue";
 export default {
   name: "service",
   components: {
-    bobHeader,
-    bannera
+    bannera,
+    bannerb
   },
   data() {
     return {
@@ -71,10 +70,7 @@ export default {
       id: "",
       showText: false,
       showService: false,
-      cn: true,
-      components:['']
-      // poetry:'',
-      // items:''
+      cn: true
     };
   },
   computed: {
@@ -90,7 +86,7 @@ export default {
       return info[this.id]["items"];
     },
     banner() {
-      return bannera
+      return "banner" + this.id;
     }
   },
   created() {
