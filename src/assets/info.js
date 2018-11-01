@@ -2,12 +2,12 @@ const info = {
   'a': {
     poetry: `<h3>Analytics</h3><p>美丽的梦和美丽的诗一样,都是可遇而不可求的</p>
     <p>Thealchemistsintheirsearchforgold</p>
-<p>discoveredmanyotherthingsofgreatervalue.</p>
-<p>Hewhowouldsearchforpearlsmustdivebelow.</p>
-<p>Wheretofindperalsisdependentupon</p>
-<p>askingtherightquestions</p>
-<p>Thepriceoftrying</p>
-<p>islessthanthecostofidling.</p>`,
+    <p>discoveredmanyotherthingsofgreatervalue.</p>
+    <p>Hewhowouldsearchforpearlsmustdivebelow.</p>
+    <p>Wheretofindperalsisdependentupon</p>
+    <p>askingtherightquestions</p>
+    <p>Thepriceoftrying</p>
+    <p>islessthanthecostofidling.</p>`,
     items: `<p>品牌研究</p>
     <p>品牌定位</p>
     <p>品牌核心价值</p>
