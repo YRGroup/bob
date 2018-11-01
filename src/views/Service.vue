@@ -1,7 +1,9 @@
 <template>
   <div class="service">
     <div class="banner" >
-      <component :is="banner"></component>
+      <div class="com-wrapper">
+        <component :is="banner"></component>
+      </div>
       <div class="service-navs">
         <router-link to="/" class="logo">
             <img class="logo1" src="../images/logo.png" alt="logo">
@@ -42,71 +44,71 @@
   </div>
 </template>
 <script>
-import { info } from "@/assets/info";
-import bannera from "@/components/bannera/index.vue";
-import bannerb from "@/components/bannerb/index.vue";
+import { info } from '@/assets/info'
+import bannera from '@/components/bannera/index.vue'
+import bannerb from '@/components/bannerb/index.vue'
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: "service",
+  name: 'service',
   components: {
     bannera,
     bannerb
   },
-  data() {
+  data () {
     return {
       images: [
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png"),
-        require("@/images/A.png")
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png'),
+        require('@/images/A.png')
       ],
-      id: "",
+      id: '',
       showText: false,
       showService: false,
       cn: true
-    };
-  },
-  computed: {
-    img() {
-      let arr = ["a", "b", "c", "d", "e", "f"];
-      let index = arr.indexOf(this.id);
-      return this.images[index];
-    },
-    poetry() {
-      return info[this.id]["poetry"];
-    },
-    items() {
-      return info[this.id]["items"];
-    },
-    banner() {
-      return "banner" + this.id;
     }
   },
-  created() {
-    this.id = this.$route.params.id;
+  computed: {
+    img () {
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f']
+      let index = arr.indexOf(this.id)
+      return this.images[index]
+    },
+    poetry () {
+      return info[this.id]['poetry']
+    },
+    items () {
+      return info[this.id]['items']
+    },
+    banner () {
+      return 'banner' + this.id
+    }
+  },
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
   },
   methods: {
-    toogleText() {
-      this.showText = !this.showText;
+    toogleText () {
+      this.showText = !this.showText
     },
-    toogleService() {
-      this.showService = !this.showService;
+    toogleService () {
+      this.showService = !this.showService
     }
   },
-  beforeRouteUpdate(to, from, next) {
-    this.id = to.params.id;
-    next();
+  beforeRouteUpdate (to, from, next) {
+    this.id = to.params.id
+    next()
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
@@ -116,11 +118,6 @@ export default {
   height: 40px;
   position: absolute;
   left: 20px;
-  top: 20px;
-  img {
-    height: 100%;
-  }
-
   .logo2 {
     display: none;
   }
@@ -141,9 +138,14 @@ export default {
   // height: 100vh;
   position: relative;
   overflow: hidden;
+  .com-wrapper {
+    height: 100%;
+  }
   .service-navs {
     .flex();
-    margin-top: 20px;
+    position: absolute;
+    top: 20px;
+    width: 100%;
     justify-content: space-around;
     .item {
       font-size: 18px;

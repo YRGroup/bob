@@ -7,13 +7,12 @@
 </template>
 <script>
 export default {
-  name: "bannera",
-  data() {
-    return {};
+  name: 'bannera',
+  data () {
+    return {}
   }
-};
+}
 </script>
-
 
 <style lang="less" scoped>
 .banner-image {
@@ -88,4 +87,3 @@ export default {
   }
 }
 </style>
-
