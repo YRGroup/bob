@@ -1,16 +1,17 @@
 <template>
   <div class="service">
-    <div class="banner" :style="{backgroundImage:'url('+img+')'}">
-      <!-- <bob-header :id="id" :homeHeader="false"></bob-header> -->
+    <div class="banner" >
+      <div class="banner-image">
+        <img class="bg" src="../images/dong/lunBg.png" alt="">
+        <img class="animate-item item1" src="../images/dong/lun-1.png" alt="">
+        <img class="animate-item item2" src="../images/dong/lun-2.png" alt="">
+      </div>
       <div class="service-navs">
-        <span class="logo">
-           <router-link  to="/">
-          <img class="logo1" src="../images/logo.png" alt="logo">
-          <img class="logo2" src="../images/logoS.png" alt="logo">
-        </router-link>
-        </span>
-       
-        <div >
+        <router-link to="/" class="logo">
+            <img class="logo1" src="../images/logo.png" alt="logo">
+            <img class="logo2" src="../images/logoS.png" alt="logo">
+          </router-link>
+        <div>
           <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>
           <router-link :class="['item', {'active':id=='b'}]" to="/service/b">划</router-link>
           <router-link :class="['item', {'active':id=='c'}]" to="/service/c">搞</router-link>
@@ -41,18 +42,6 @@
           <span @click="cn=false" :class="[{'active':!cn}]">再B一下</span></div>
       </div>
     </transition>
-    <!-- <transition name="opacity">
-      <div class="text-wrapper" v-show="showService">
-        <span class="nav-btn" @click="toogleService"></span>
-        <div>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-          <p>22222222222222222222222</p>
-        </div>
-      </div> -->
-    <!-- </transition> -->
     <div class="container" ref="container"></div>
   </div>
 </template>
@@ -125,7 +114,9 @@ export default {
 .logo {
   display: inline-block;
   height: 40px;
-
+  position: absolute;
+  left: 20px;
+  top: 20px;
   img {
     height: 100%;
   }
@@ -241,6 +232,7 @@ export default {
   @media (max-width: 768px) {
     .service-navs {
       justify-content: flex-start;
+      margin-top: 60px;
       .item {
         display: block;
         margin-top: 20px;
@@ -268,5 +260,36 @@ export default {
 .poetry-leave-to {
   opacity: 0;
   transform: translateX(-150px);
+}
+.banner-image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  img {
+    position: absolute;
+    height: 100vh;
+    left: 50%;
+    top: 50%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+  }
+  // .bg {
+  //   height: 100%;
+  // }
+  // .animate-item {
+  //   position: absolute;
+  //   height: 100%;
+  // }
+  // .item1 {
+  //   top: 0;
+  //   left: 70px;
+  // }
+  // .item2 {
+  //   top: 0;
+  //   left: 360px;
+  // }
 }
 </style>
