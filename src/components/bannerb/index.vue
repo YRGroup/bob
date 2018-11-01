@@ -18,7 +18,7 @@ export default {
 
 <style lang="less" scoped>
 .banner-image {
-  background: #cd4a44;
+  background: #61a1bc;
   width: 100%;
   height: 100%;
   .bg {
@@ -29,6 +29,14 @@ export default {
     width: 100%;
     transform: translate(-50%, -50%);
   }
+
+  @base: 0;
+  @offset: 10px;
+  @offset2: 10px;
+  @scale: 1.2;
+  @animate1: -@base - @offset;
+  @animate2: -@base + @offset2;
+
   .animate-item {
     display: inline-block;
     position: absolute;
@@ -36,52 +44,41 @@ export default {
     animation-duration: 10s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    transform-origin: 50% 25%;
+    top: @base;
+    left: @base;
+    transform: translate(-@base, -@base) scale(@scale);
+    // transform-origin: 50% 15%;
   }
-
-  @base: -500px;
-  @offset: 20px;
-  @offset2: 10px;
-
-  @animate1: -@base - @offset;
-  @animate2: -@base + @offset2;
 
   .item1 {
-    // animation-name: item1;
-    top: 50%;
-    left: @base;
-    // height: 120%;
-    transform: translate(-@base, -50%) scale(1.52);
-    // transform-origin: 50% 25%;
+    animation-name: item1;
+    // z-index: 2;
   }
   .item2 {
-    // animation-name: item2;
-    top: 50%;
-    left: @base;
-    transform: translate(-@base, -50%) scale(1.52);
+    animation-name: item2;
   }
 
   @keyframes item1 {
     0% {
-      transform: translate(-@base, -50%);
+      transform: translate(-@base, -@base) scale(@scale);
     }
     50% {
-      transform: translate(@animate1, -50%);
+      transform: translate(-@offset, @offset) scale(@scale);
     }
     100% {
-      transform: translate(-@base, -50%);
+      transform: translate(-@base, -@base) scale(@scale);
     }
   }
   @keyframes item2 {
     0% {
-      transform: translate(-@base, -50%);
+      transform: translate(-@base, -@base) scale(@scale);
     }
     50% {
-      transform: translate(@animate2, -50%);
+      transform: translate(-@offset2, -@offset2) scale(@scale);
     }
     100% {
       // transform: translateX(0);
-      transform: translate(-@base, -50%);
+      transform: translate(-@base, -@base) scale(@scale);
     }
   }
 }

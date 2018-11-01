@@ -143,6 +143,7 @@ export default {
     height: 100%;
   }
   .service-navs {
+    z-index: 10;
     .flex();
     position: absolute;
     top: 20px;
