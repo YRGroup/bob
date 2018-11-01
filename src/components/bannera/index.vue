@@ -1,8 +1,8 @@
 <template>
   <div class="banner-image">
     <!-- <img class="bg" src="../images/dong/lunBg.png" alt=""> -->
-    <img class="animate-item item1" src="./lun-1.png" alt="">
-    <img class="animate-item item2" src="./lun-2.png" alt="">
+    <img class="animate-item item1" src="./2.png" alt="">
+    <img class="animate-item item2" src="./3.png" alt="">
   </div>
 </template>
 <script>
@@ -33,44 +33,48 @@ export default {
     animation-iteration-count: infinite;
   }
 
-  @base: 50%;
-  @base2: @base - 870px;
+  @base: -500px;
+  @offset: 20px;
+  @offset2: 10px;
 
-  @offset: 20%;
-  @base-left: @base - @offset;
-  @base2-left: @base2 + @offset;
-  //  @base2: @base+ 50px;
+  @animate1: -@base - @offset;
+  @animate2: -@base + @offset2;
+
   .item1 {
-    // animation-name: item1;
+    animation-name: item1;
     top: 50%;
-    left: -800px;
-    transform: translate(800px, -50%);
+    left: @base;
+    transform: translate(-@base, -50%);
   }
   .item2 {
-    // animation-name: item2;
+    animation-name: item2;
     top: 50%;
-    left: -500px;
-    transform: translate(500px, -50%);
+    left: @base;
+    transform: translate(-@base, -50%);
   }
 
   @keyframes item1 {
     0% {
+      transform: translate(-@base, -50%);
     }
     50% {
-      transform: translateX(-10px);
+      transform: translate(@animate1, -50%);
     }
     100% {
-      transform: translateX(0);
+      // transform: translateX(0);
+      transform: translate(-@base, -50%);
     }
   }
   @keyframes item2 {
     0% {
+      transform: translate(-@base, -50%);
     }
     50% {
-      transform: translateX(20px);
+      transform: translate(@animate2, -50%);
     }
     100% {
-      transform: translateX(0);
+      // transform: translateX(0);
+      transform: translate(-@base, -50%);
     }
   }
 }
