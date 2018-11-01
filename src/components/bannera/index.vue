@@ -1,6 +1,6 @@
 <template>
   <div class="banner-image">
-    <!-- <img class="bg" src="../images/dong/lunBg.png" alt=""> -->
+    <!-- <img class="bg" src="./1.png" alt=""> -->
     <img class="animate-item item1" src="./2.png" alt="">
     <img class="animate-item item2" src="./3.png" alt="">
   </div>
@@ -17,13 +17,22 @@ export default {
 
 <style lang="less" scoped>
 .banner-image {
-  position: absolute;
+  // position: absolute;
   background: #d9b232;
   width: 100%;
   height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // top: 50%;
+  // left: 50%;
+
+  // transform: translate(-50%, -50%);
+  .bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
   .animate-item {
     display: inline-block;
     position: absolute;

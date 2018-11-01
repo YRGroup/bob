@@ -1,9 +1,7 @@
 <template>
   <div class="service">
     <div class="banner" >
-      <div>
-        <component :is="banner"></component>
-      </div>
+      <component :is="banner"></component>
       <div class="service-navs">
         <router-link to="/" class="logo">
             <img class="logo1" src="../images/logo.png" alt="logo">
