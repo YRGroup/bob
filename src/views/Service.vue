@@ -1,10 +1,8 @@
 <template>
   <div class="service">
     <div class="banner" >
-      <div class="banner-image">
-        <img class="bg" src="../images/dong/lunBg.png" alt="">
-        <img class="animate-item item1" src="../images/dong/lun-1.png" alt="">
-        <img class="animate-item item2" src="../images/dong/lun-2.png" alt="">
+      <div>
+        <component :is="banner"></component>
       </div>
       <div class="service-navs">
         <router-link to="/" class="logo">
@@ -48,13 +46,17 @@
 <script>
 import bobHeader from "@/components/bobHeader.vue";
 import { info } from "@/assets/info";
+
+import { bannera } from "@/components/bannera.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
+
 export default {
   name: "service",
   components: {
-    bobHeader
+    bobHeader,
+    bannera
   },
   data() {
     return {
@@ -69,7 +71,8 @@ export default {
       id: "",
       showText: false,
       showService: false,
-      cn: true
+      cn: true,
+      components:['']
       // poetry:'',
       // items:''
     };
@@ -85,6 +88,9 @@ export default {
     },
     items() {
       return info[this.id]["items"];
+    },
+    banner() {
+      return bannera
     }
   },
   created() {
@@ -260,36 +266,5 @@ export default {
 .poetry-leave-to {
   opacity: 0;
   transform: translateX(-150px);
-}
-.banner-image {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-
-  img {
-    position: absolute;
-    height: 100vh;
-    left: 50%;
-    top: 50%;
-    margin: auto;
-    transform: translate(-50%, -50%);
-  }
-  // .bg {
-  //   height: 100%;
-  // }
-  // .animate-item {
-  //   position: absolute;
-  //   height: 100%;
-  // }
-  // .item1 {
-  //   top: 0;
-  //   left: 70px;
-  // }
-  // .item2 {
-  //   top: 0;
-  //   left: 360px;
-  // }
 }
 </style>
