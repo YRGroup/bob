@@ -125,7 +125,7 @@ export default {
 @import "../less/common.less";
 .logo {
   display: inline-block;
-  height: 40px;
+  height: 25px;
   position: absolute;
   left: 20px;
   top: 20px;
