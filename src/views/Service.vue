@@ -210,6 +210,10 @@ export default {
       position: absolute;
       width: 100%;
     }
+    .en{
+        font-size: 28px;
+        line-height: 52px;
+    }
     .changlang {
       position: absolute;
       left: 0;
@@ -235,16 +239,35 @@ export default {
       margin-left: -85px;
       line-height: 40px;
       font-size: 16px;
-      padding: 0 60px;
-      border-radius: 20px;
+      padding: 0 80px;
+      border-radius: 50px;
       border: 1px solid #fff;
       color: #fff;
       transition: all 0.3s;
       z-index: 10;
+      overflow: hidden;
+      &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        background-color: #fff;
+        transform-origin: 50%;
+        transition-property: transform;
+        transition-duration: .3s;
+        transition-timing-function: ease-out;
+      }
       &:hover {
-        border: 1px solid @color-theme;
+        // border: 1px solid @color-theme;
         color: @color-theme;
-        background: #fff;
+        // background: #fff;
+        &::before{
+          transform: scaleX(1)
+        }
       }
     }
   }

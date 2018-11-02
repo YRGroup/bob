@@ -81,8 +81,7 @@ const info = {
   },
   'e': {
     poetry: `<h2>Editorial</h2>
-    <h3>纪录一下自己，给关心你的。
-    纪录一下他人，给你关心的。</h3>
+    <h3>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</h3>
     <p>If you don't give the market the story to talk about, </p>
 
     <p>They will define your brand's story for you.</p>
@@ -94,7 +93,7 @@ const info = {
     <p>because those who mind don't matter </p>
     
     <p>and those who matter don't mind.</p>`,
-    items:  `<p>企业宣传片</p>
+    items: `<p>企业宣传片</p>
     <p>年度影视服务</p>
     <p>年度图片服务</p>`
   },
