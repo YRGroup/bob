@@ -12,7 +12,7 @@ export default {
     return {}
   },
   created () {
-    console.log('a')
+    
   }
 }
 </script>
@@ -48,7 +48,6 @@ export default {
     animation-timing-function: @bezier;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    animation-delay: 10s;
     left: @base;
     top: 50%;
   }
@@ -65,6 +64,9 @@ export default {
     0% {
       transform: translate(-@base - @offset, -50%);
     }
+    90% {
+      transform: translate(-@base, -50%);
+    }
     100% {
       transform: translate(-@base, -50%);
     }
@@ -72,6 +74,9 @@ export default {
   @keyframes item2 {
     0% {
       transform: translate(-@base + @offset, -50%);
+    }
+    90% {
+      transform: translate(-@base, -50%);
     }
     100% {
       transform: translate(-@base, -50%);

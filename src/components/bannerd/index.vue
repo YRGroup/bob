@@ -11,7 +11,7 @@ export default {
     return {}
   },
   created () {
-    console.log('c')
+    
   }
 }
 </script>

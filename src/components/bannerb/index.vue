@@ -11,7 +11,7 @@ export default {
     return {}
   },
   created () {
-    console.log('b')
+   
   }
 }
 </script>
@@ -59,6 +59,9 @@ export default {
     0% {
       transform: translate(@base, -50%) scale(0.9);
     }
+    90% {
+      transform: translate(@base, -50%) scale(1);
+    }
     100% {
       transform: translate(@base, -50%) scale(1);
     }
@@ -66,6 +69,9 @@ export default {
   @keyframes item2 {
     0% {
       transform: translate(@base, -50%) scale(1.1);
+    }
+    90% {
+      transform: translate(@base, -50%) scale(1);
     }
     100% {
       transform: translate(@base, -50%) scale(1);

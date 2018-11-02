@@ -5,14 +5,14 @@
         <img class="logo1" src="../images/logo.png" alt="logo">
         <img class="logo2" src="../images/logoS.png" alt="logo">
       </router-link>
-      <div class="service-navs" v-else>
+      <!-- <div class="service-navs" v-else>
         <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>.
         <router-link :class="['item', {'active':id=='b'}]" to="/service/b">论</router-link>
         <router-link :class="['item', {'active':id=='c'}]" to="/service/c">论</router-link>
         <router-link :class="['item', {'active':id=='d'}]" to="/service/d">论</router-link>
         <router-link :class="['item', {'active':id=='e'}]" to="/service/e">论</router-link>
         <router-link :class="['item', {'active':id=='f'}]" to="/service/f">论</router-link>
-      </div>
+      </div> -->
       <span class="nav-btn" @click="toogleSideNav"></span>
     </header>
 <transition name="sideNav">
@@ -21,55 +21,64 @@
     </span>
     <ul class="side-nav">
       <li>
-        <div class="wrapper">
-          <router-link class="item" to="/service/a">
-            <span class="en"><span>A</span>nalytics</span>
-            <span class="cn">论</span>
-          </router-link>
-        </div>
+        <transition name="navitem" >
+          <div class="wrapper" v-show="show">
+            <router-link class="item" to="/service/a">
+              <span class="en"><span>A</span>nalytics</span>
+              <span class="cn">论</span>
+            </router-link>
+          </div>
+        </transition>
       </li>
       <li>
-        <div class="wrapper">
-          <router-link class="item" to="/service/b">
-            <span class="en"><span>B</span>randing</span>
-            <span class="cn">划</span>
-          </router-link>
-        </div>
-
+        <transition name="navitem" >
+          <div class="wrapper" v-show="show">
+            <router-link class="item" to="/service/b">
+              <span class="en"><span>B</span>randing</span>
+              <span class="cn">划</span>
+            </router-link>
+          </div>
+        </transition>
       </li>
       <li>
-        <div class="wrapper">
-        <router-link class="item" to="/service/c">
-          <span class="en"><span>C</span>ampaign</span>
-          <span class="cn">搞</span>
-        </router-link>
-        </div>
+        <transition name="navitem" >
+          <div class="wrapper" v-show="show">
+            <router-link class="item" to="/service/c">
+              <span class="en"><span>C</span>ampaign</span>
+              <span class="cn">搞</span>
+            </router-link>
+          </div>
+        </transition>
       </li>
       <li>
-        <div class="wrapper">
-          <router-link class="item" to="/service/d">
-          <span class="en"><span>D</span>igital & web</span>
-          <span class="cn">码</span>
-          </router-link>
-        </div>
-
+        <transition name="navitem" >
+          <div class="wrapper" v-show="show">
+            <router-link class="item" to="/service/d">
+            <span class="en"><span>D</span>igital & web</span>
+            <span class="cn">码</span>
+            </router-link>
+          </div>
+        </transition>
       </li>
       <li>
-        <div class="wrapper">
-          <router-link class="item" to="/service/e">
-          <span class="en"><span>E</span>ditorial</span>
-          <span class="cn">纪</span>
-          </router-link>
-        </div>
-
+        <transition name="navitem" >
+          <div class="wrapper" v-show="show">
+            <router-link class="item" to="/service/e">
+            <span class="en"><span>E</span>ditorial</span>
+            <span class="cn">纪</span>
+            </router-link>
+          </div>
+        </transition>
       </li>
       <li>
-        <div class="wrapper">
-          <router-link class="item" to="/service/f">
-            <span class="en"><span>F</span>abrication</span>
-            <span class="cn">造</span>
-          </router-link>
-        </div>
+        <transition name="navitem" >
+          <div class="wrapper" v-show="show">
+            <router-link class="item" to="/service/f">
+              <span class="en"><span>F</span>abrication</span>
+              <span class="cn">造</span>
+            </router-link>
+          </div>
+        </transition>
       </li>
     </ul>
   </div>
@@ -93,7 +102,7 @@ export default {
   },
   data () {
     return {
-      show: false
+      show: true
     }
   },
   methods: {
@@ -291,15 +300,33 @@ export default {
     transform: translateX(100%);
   }
 }
+
 .sideNav-enter-active,
 .sideNav-leave-active {
   transition: all 0.5s;
   // transform: translateX(0);
 }
+.sideNav-leave-active {
+  transition-delay: 0.5s;
+}
 .sideNav-enter,
 .sideNav-leave-to {
   transform: translateX(100%);
 }
+
+.navitem-enter-active,
+.navitem-leave-active {
+  transition: all 0.5s;
+}
+.navitem-enter-active {
+  transition-delay: 0.5s;
+}
+.navitem-enter,
+.navitem-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
 @keyframes navitem-in {
   0% {
     opacity: 0;

@@ -6,14 +6,12 @@
 </template>
 <script>
 export default {
-  name: 'bannerc',
-  data () {
-    return {}
+  name: "bannerc",
+  data() {
+    return {};
   },
-  created () {
-    console.log('c')
-  }
-}
+  created() {}
+};
 </script>
 
 <style lang="less" scoped>
@@ -58,6 +56,9 @@ export default {
     0% {
       transform: translate(@base - @offset, -50%);
     }
+    90% {
+      transform: translate(@base, -50%);
+    }
     100% {
       transform: translate(@base, -50%);
     }
@@ -65,6 +66,9 @@ export default {
   @keyframes item2 {
     0% {
       transform: translate(@base + @offset, -50%);
+    }
+    90% {
+      transform: translate(@base, -50%);
     }
     100% {
       transform: translate(@base, -50%);
