@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../../less/variable.less";
 .banner-image {
   background: #8dc21f;
   width: 100%;
@@ -38,7 +39,7 @@ export default {
     position: absolute;
     height: 100%;
     animation-duration: 5s;
-    animation-timing-function: linear;
+    animation-timing-function: @bezier;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     right: @base;
@@ -46,12 +47,10 @@ export default {
   }
   .item1 {
     animation-name: item1;
-    transform: translate(@base - @offset, -50%);
     z-index: 2;
   }
   .item2 {
     animation-name: item2;
-    transform: translate(@base + @offset, -50%);
   }
 
   @keyframes item1 {

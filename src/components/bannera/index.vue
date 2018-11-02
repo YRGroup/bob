@@ -48,6 +48,7 @@ export default {
     animation-timing-function: @bezier;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-delay: 10s;
     left: @base;
     top: 50%;
   }
