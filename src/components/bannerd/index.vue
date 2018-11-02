@@ -6,14 +6,14 @@
 </template>
 <script>
 export default {
-  name: "bannerd",
-  data() {
-    return {};
+  name: 'bannerd',
+  data () {
+    return {}
   },
-  created() {
-    console.log("c");
+  created () {
+    console.log('c')
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
@@ -47,13 +47,11 @@ export default {
   .item1 {
     animation-name: item1;
     transform: translate(@base - @offset, -50%);
-    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
     z-index: 2;
   }
   .item2 {
     animation-name: item2;
     transform: translate(@base + @offset, -50%);
-    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
 
   @keyframes item1 {

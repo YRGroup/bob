@@ -6,14 +6,14 @@
 </template>
 <script>
 export default {
-  name: "bannere",
-  data() {
-    return {};
+  name: 'bannere',
+  data () {
+    return {}
   },
-  created() {
-    console.log("b");
+  created () {
+    console.log('b')
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
@@ -43,16 +43,15 @@ export default {
     animation-direction: alternate;
     right: @base;
     top: 50%;
+    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
   .item1 {
     animation-name: item1;
     transform: translate(@base, -50%) scale(0.9);
-    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15) ;
   }
   .item2 {
     animation-name: item2;
     transform: translate(@base, -50%) scale(1.1);
-    animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
 
   @keyframes item1 {

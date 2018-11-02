@@ -7,14 +7,14 @@
 </template>
 <script>
 export default {
-  name: "bannerf",
-  data() {
-    return {};
+  name: 'bannerf',
+  data () {
+    return {}
   },
-  created() {
-    console.log("a");
+  created () {
+    console.log('a')
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
@@ -37,7 +37,7 @@ export default {
   }
 
   @base: -500px;
-  @offset: 150px;
+  @offset: 100px;
 
   .animate-item {
     display: inline-block;
@@ -48,33 +48,33 @@ export default {
     animation-iteration-count: infinite;
     animation-direction: alternate;
     left: @base;
-    top: 50%;
+    top: @base;
   }
   .item1 {
     animation-name: item1;
-    transform: translate(-@base - @offset, -50%);
+    transform: translate(-@base + @offset, -@base - @offset);
     animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
   .item2 {
     animation-name: item2;
-    transform: translate(-@base + @offset, -50%);
+    transform: translate(-@base - @offset, -@base + @offset);
     animation-timing-function: cubic-bezier(0.99, 0.74, 0.24, 1.15);
   }
 
   @keyframes item1 {
     0% {
-      transform: translate(-@base - @offset, -50%);
+      transform: translate(-@base + @offset, -@base - @offset);
     }
     100% {
-      transform: translate(-@base, -50%);
+      transform: translate(-@base, -@base);
     }
   }
   @keyframes item2 {
     0% {
-      transform: translate(-@base + @offset, -50%);
+      transform: translate(-@base - @offset, -@base + @offset);
     }
     100% {
-      transform: translate(-@base, -50%);
+      transform: translate(-@base, -@base);
     }
   }
 }
