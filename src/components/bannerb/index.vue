@@ -6,14 +6,14 @@
 </template>
 <script>
 export default {
-  name: "bannerb",
-  data() {
-    return {};
+  name: 'bannerb',
+  data () {
+    return {}
   },
-  created() {
-    console.log("b");
+  created () {
+    console.log('b')
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

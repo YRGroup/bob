@@ -8,14 +8,13 @@
   animation-duration: .3s;
   animation-fill-mode: both;
 }
-.bg_modal::before {
+.bg_modal::after {
   content: '';
   background: rgba(0, 0, 0, 0.75);
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
-  z-index: 2;
 }
 /* header */
 body {
@@ -169,4 +168,12 @@ a:focus {
   100% {
     transform: rotateZ(360deg) scale(1);
   }
+}
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
