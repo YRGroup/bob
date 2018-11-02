@@ -7,17 +7,18 @@
 </template>
 <script>
 export default {
-  name: 'bannera',
-  data () {
-    return {}
+  name: "bannera",
+  data() {
+    return {};
   },
-  created () {
-    console.log('a')
+  created() {
+    console.log("a");
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
+@import "../../less/variable.less";
 .banner-image {
   // position: absolute;
   background: #d9b232;
@@ -44,7 +45,7 @@ export default {
     position: absolute;
     height: 100%;
     animation-duration: 5s;
-    animation-timing-function: cubic-bezier(0.72, 0.61, 0.82, 0.51);
+    animation-timing-function: @bezier;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     left: @base;

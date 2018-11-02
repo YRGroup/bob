@@ -129,7 +129,7 @@ export default {
   position: absolute;
   left: 20px;
   top: 20px;
-  z-index: 10;
+  z-index: 11;
   img {
     height: 100%;
   }
