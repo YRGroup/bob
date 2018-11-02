@@ -1,6 +1,7 @@
 const info = {
   'a': {
     poetry: `<h2>Analytics</h2>
+    <h3>不讨论的代价比瞎讨论的代价还要大。</h3>
     <p>The alchemists in their search for gold</p>
     <p>discovered many other things of greater value.</p>
     <p>He who would search for pearls must dive below.</p>
@@ -18,6 +19,7 @@ const info = {
   },
   'b': {
     poetry: `<h2>Branding</h2>
+    <h3>划掉多余的，美化剩下的。</h3>
     <p>A creative man is motivated by the desire to achieve, </p>
     <p>not by the desire to beat others.</p>
     <p>In order to make every detail perfect, </p>
@@ -28,101 +30,91 @@ const info = {
     <p>Therefore, </p>
     <p>Your brand is what other people say about you,</p>
     <p>when you’re not in the room.</p>`,
-    items: `<p>品牌研究</p>
-    <p>品牌定位</p>
-    <p>品牌核心价值</p>
-    <p>品牌愿景</p>
-    <p>品牌使命</p>
-    <p>品牌主张</p>
-    <p>品牌命名</p>`
+    items: `<p>logo标志设计</p>
+    <p>VI应用部分设计</p>
+    <p>宣传册设计</p>
+    <p>PPT模板</p>`
   },
   'c': {
     poetry: `<h2>Campaign</h2>
-
+    <h3>如果你外婆不明白你在搞什么，你就没有在搞事情。</h3>
     <p>Any powerful idea is </p>
-
     <p>absolutely fascinating </p>
-
     <p>and absolutely useless </p>
-
     <p>until you choose to use it.</p>
-
     <p>No value is created by insights </p>
-
     <p>if they are not acted upon. </p>
-
     <p>You do not really achieve anything </p>
-
     <p>unless you can explain it to your grandmother. </p>`,
-    items: `<p>aitem美丽的梦和美丽的诗一样,都是可遇而不可求的</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>
-    <p>My slow rite into adulthood is brimming with</p>
-    <p>transitions, secretions and hopefulness.</p>
-    <p>Nothing has really changed, yet everything is changing. </p>
-    <p>I’m changing.</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>`
+    items: `<p>传播调研</p>
+    <p>传播策略</p>
+    <p>传播战役方案</p>
+    <p>媒体管理服务</p>
+    <p>线下事件活动服务</p>
+    <p>线上事件营销活动</p>`
   },
   'd': {
-    poetry: `<p>Digits & web</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>
-    <p>My slow rite into adulthood is brimming with</p>
-    <p>transitions, secretions and hopefulness.</p>
-    <p>Nothing has really changed, yet everything is changing. </p>
-    <p>I’m changing.</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>`,
-    items: `<p>aitem美丽的梦和美丽的诗一样,都是可遇而不可求的</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>
-    <p>My slow rite into adulthood is brimming with</p>
-    <p>transitions, secretions and hopefulness.</p>
-    <p>Nothing has really changed, yet everything is changing. </p>
-    <p>I’m changing.</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>`
+    poetry: `<h2>Digits & web</h2>
+    <h3>互联网最起码的作用是让你难以回首没有它的日子。</h3>
+    <p>Internet gives you an exceptionally effective way to </p>
+
+    <p>broadcast who you are </p>
+
+    <p>To your target market quickly and efficiently.</p>
+
+    <p>You should use internet </p>
+
+    <p>as a drunken man uses lamp posts </p>
+
+    <p>for support rather than for illumination.</p>
+
+    <p>Once you know something</p>
+
+    <p>you find it hard to imagine </p>
+
+    <p>what it was like not to know it.</p>`,
+    items: `<p>网站页面设计</p>
+
+    <p>后台制作</p>
+
+    <p>小程序开发</p>`
   },
   'e': {
-    poetry: `<p>Editorial</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>
-    <p>My slow rite into adulthood is brimming with</p>
-    <p>transitions, secretions and hopefulness.</p>
-    <p>Nothing has really changed, yet everything is changing. </p>
-    <p>I’m changing.</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>`,
-    items: `<p>aitem美丽的梦和美丽的诗一样,都是可遇而不可求的</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>
-    <p>My slow rite into adulthood is brimming with</p>
-    <p>transitions, secretions and hopefulness.</p>
-    <p>Nothing has really changed, yet everything is changing. </p>
-    <p>I’m changing.</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>`
+    poetry: `<h2>Editorial</h2>
+    <h3>纪录一下自己，给关心你的。
+    纪录一下他人，给你关心的。</h3>
+    <p>If you don't give the market the story to talk about, </p>
+
+    <p>They will define your brand's story for you.</p>
+    
+    <p>In a world where you can be anything, be yourself. </p>
+    
+    <p>Be who you are and say what you feel, </p>
+    
+    <p>because those who mind don't matter </p>
+    
+    <p>and those who matter don't mind.</p>`,
+    items:  `<p>企业宣传片</p>
+    <p>年度影视服务</p>
+    <p>年度图片服务</p>`
   },
   'f': {
-    poetry: `<p>Fabrication</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>
-    <p>My slow rite into adulthood is brimming with</p>
-    <p>transitions, secretions and hopefulness.</p>
-    <p>Nothing has really changed, yet everything is changing. </p>
-    <p>I’m changing.</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>`,
-    items: `<p>aitem美丽的梦和美丽的诗一样,都是可遇而不可求的</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>
-    <p>My slow rite into adulthood is brimming with</p>
-    <p>transitions, secretions and hopefulness.</p>
-    <p>Nothing has really changed, yet everything is changing. </p>
-    <p>I’m changing.</p>
-    <p>Adolescence was brimming with </p>
-    <p>transitions, secretions and hopelessness. </p>`
+    poetry: `<h2>Fabrication</h2>
+    <h3>如果品牌是首诗歌，造出的产品就是诗朗诵。</h3>
+    <p>A brand is a voice and a product is a souvenir.</p>
+
+    <p>Your premium brand </p>
+    
+    <p>had better be delivering something special, </p>
+    
+    <p>or it’s not going to get the business.</p>
+    
+    <p>When people use your brand name as a verb, </p>
+    
+    <p>that is remarkably good or bad.</p>`,
+    items: `<p>画册印制</p>
+    <p>服装定制</p>
+    <p>周边产品定制</p>`
   }
 }
 export {
