@@ -7,19 +7,19 @@
         </transition>
       </div>
       <div class="partic" id="partic">
-        <vue-particles
+        <vue-particles style="height:100%;"
         color="#fff"
-        :particleOpacity="0.7"
-        :particlesNumber="20"
+        :particleOpacity="0.4"
+        :particlesNumber="4"
         shapeType="circle"
-        :particleSize="6"
+        :particleSize="50"
         linesColor="#fff"
         :linesWidth="1"
-        :lineLinked="true"
+        :lineLinked="false"
         :lineOpacity="0.4"
         :linesDistance="150"
         :moveSpeed="1"
-        :hoverEffect="true"
+        :hoverEffect="false"
         hoverMode="grab"
         :clickEffect="false"
         clickMode="push">
@@ -47,11 +47,11 @@
         <span class="nav-btn" @click="toogleText"></span>
 
         <transition name="poetry">
-          <div class="cn" v-show="cn" v-html="poetry">
+          <div class="left-con" v-show="cn" v-html="poetry">
           </div>
         </transition>
         <transition name="poetry">
-          <div class="en" v-show="!cn" v-html="items">
+          <div class="right-con" v-show="!cn" v-html="items">
 
           </div>
         </transition>
@@ -125,9 +125,7 @@ export default {
       this.$router.push("/");
     }
   },
-  mounted() {
-    
-  },
+  mounted() {},
   methods: {
     toogleText() {
       this.showText = !this.showText;
@@ -142,7 +140,7 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
+<style lang="less" >
 @import "../less/mixin.less";
 @import "../less/common.less";
 .logo {
@@ -233,22 +231,27 @@ export default {
     color: #fff;
     .flex-column();
     justify-content: space-around;
-    .en,
-    .cn {
+
+    .left-con {
       line-height: 35px;
+      font-size: 18px;
       position: relative;
       position: absolute;
       width: 100%;
+      h2 {
+        margin-bottom: 30px;
+      }
     }
-    .en{
-        font-size: 28px;
-        line-height: 52px;
+    .right-con {
+      font-size: 28px;
+      line-height: 52px;
     }
+    
     .changlang {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 100px;
+      bottom: 50px;
       cursor: pointer;
       .active {
         transition: all 0.5s;
@@ -276,7 +279,7 @@ export default {
       transition: all 0.3s;
       z-index: 10;
       overflow: hidden;
-      &::before{
+      &::before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -288,15 +291,15 @@ export default {
         background-color: #fff;
         transform-origin: 50%;
         transition-property: transform;
-        transition-duration: .3s;
+        transition-duration: 0.3s;
         transition-timing-function: ease-out;
       }
       &:hover {
         // border: 1px solid @color-theme;
         color: @color-theme;
         // background: #fff;
-        &::before{
-          transform: scaleX(1)
+        &::before {
+          transform: scaleX(1);
         }
       }
     }
