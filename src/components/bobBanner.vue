@@ -52,19 +52,19 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
-import { VueTyper } from 'vue-typer'
-import { keyWords } from '@/assets/keywords'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import "swiper/dist/css/swiper.css";
+import { VueTyper } from "vue-typer";
+import { keyWords } from "@/assets/keywords";
 // console.log(keyWords);
 export default {
-  name: 'home',
+  name: "home",
   components: {
     swiper,
     swiperSlide,
     VueTyper
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         // autoplay: true,
@@ -73,38 +73,38 @@ export default {
         // loop: true,
         speed: 1000,
         navigation: {
-          nextEl: '.next-btn',
-          prevEl: '.prev-btn'
+          nextEl: ".next-btn",
+          prevEl: ".prev-btn"
         }
       },
-      keyLink: '',
-      keyword: ''
-    }
+      keyLink: "",
+      keyword: ""
+    };
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     }
   },
-  created () {
+  created() {
     // this.initSwiper();
-    this.wordList = this.getStringList(keyWords)
+    this.wordList = this.getStringList(keyWords);
   },
   methods: {
-    getStringList (strings) {
-      let arr = []
+    getStringList(strings) {
+      let arr = [];
       strings.forEach(element => {
-        arr.push(element.keyword)
-      })
-      return arr
+        arr.push(element.keyword);
+      });
+      return arr;
     },
-    onTyped (ev) {
-      let index = this.wordList.indexOf(ev)
-      this.keyLink = `/service/${keyWords[index]['type']}`
-      this.keyword = keyWords[index]['cn']
+    onTyped(ev) {
+      let index = this.wordList.indexOf(ev);
+      this.keyLink = `/service/${keyWords[index]["type"]}`;
+      this.keyword = keyWords[index]["cn"];
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
@@ -168,7 +168,7 @@ export default {
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 40px;
+    bottom: 25px;
     left: 50%;
     margin-left: -20px;
     animation: scrollIcon 3s ease infinite;

@@ -155,7 +155,7 @@ a:focus {
   transition: all 0.5s;
   cursor: pointer;
   position: absolute;
-  right: 40px;
+  right: 20px;
 }
 .nav-btn:hover {
   background-image: url("../images/navBtn1.png");
