@@ -64,6 +64,9 @@ export default {
     0% {
       transform: translate(-@base + @offset, -@base - @offset);
     }
+    90% {
+      transform: translate(-@base, -@base);
+    }
     100% {
       transform: translate(-@base, -@base);
     }
@@ -71,6 +74,9 @@ export default {
   @keyframes item2 {
     0% {
       transform: translate(-@base - @offset, -@base + @offset);
+    }
+    90% {
+      transform: translate(-@base, -@base);
     }
     100% {
       transform: translate(-@base, -@base);
