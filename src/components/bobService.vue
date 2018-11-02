@@ -5,7 +5,6 @@
     </h5>
     <div class="container-fluid wrapper">
       <el-row class="cards">
-
         <el-col :lg="4" :sm="12" :xs="24" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
