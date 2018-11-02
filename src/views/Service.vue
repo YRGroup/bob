@@ -46,19 +46,19 @@
   </div>
 </template>
 <script>
-import { info } from '@/assets/info'
-import bannera from '@/components/bannera/index.vue'
-import bannerb from '@/components/bannerb/index.vue'
-import bannerc from '@/components/bannerc/index.vue'
-import bannerd from '@/components/bannerd/index.vue'
-import bannere from '@/components/bannere/index.vue'
-import bannerf from '@/components/bannerf/index.vue'
+import { info } from "@/assets/info";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
+import bannerc from "@/components/bannerc/index.vue";
+import bannerd from "@/components/bannerd/index.vue";
+import bannere from "@/components/bannere/index.vue";
+import bannerf from "@/components/bannerf/index.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bannera,
     bannerb,
@@ -67,75 +67,78 @@ export default {
     bannere,
     bannerf
   },
-  data () {
+  data() {
     return {
       images: [
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png'),
-        require('@/images/A.png')
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png"),
+        require("@/images/A.png")
       ],
-      id: '',
+      id: "",
       showText: false,
       showService: false,
       cn: true
-    }
+    };
   },
   computed: {
-    img () {
-      let arr = ['a', 'b', 'c', 'd', 'e', 'f']
-      let index = arr.indexOf(this.id)
-      return this.images[index]
+    img() {
+      let arr = ["a", "b", "c", "d", "e", "f"];
+      let index = arr.indexOf(this.id);
+      return this.images[index];
     },
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     },
-    banner () {
-      return 'banner' + this.id
+    banner() {
+      return "banner" + this.id;
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
 @import "../less/common.less";
 .logo {
   display: inline-block;
-  height: 25px;
+  height: 40px;
   position: absolute;
   left: 20px;
   top: 20px;
   z-index: 10;
+  img {
+    height: 100%;
+  }
   .logo2 {
     display: none;
   }
 
   @media (max-width: 760px) {
-    height: 30px;
+    height: 25px;
 
     .logo1 {
       display: none;
