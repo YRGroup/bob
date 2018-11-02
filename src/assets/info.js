@@ -27,7 +27,7 @@ const info = {
     <p>your thinking, your character, your values.</p>
     <p>Therefore, </p>
     <p>Your brand is what other people say about you,</p>
-    <p>when you’re not in the room.</p>`
+    <p>when you’re not in the room.</p>`,
     items: `<p>品牌研究</p>
     <p>品牌定位</p>
     <p>品牌核心价值</p>

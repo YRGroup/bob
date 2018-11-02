@@ -7,14 +7,14 @@
 </template>
 <script>
 export default {
-  name: "bannera",
-  data() {
-    return {};
+  name: 'bannera',
+  data () {
+    return {}
   },
-  created() {
-    console.log("a");
+  created () {
+    console.log('a')
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
