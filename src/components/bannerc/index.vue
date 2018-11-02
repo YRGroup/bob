@@ -6,12 +6,12 @@
 </template>
 <script>
 export default {
-  name: "bannerc",
-  data() {
-    return {};
+  name: 'bannerc',
+  data () {
+    return {}
   },
-  created() {}
-};
+  created () {}
+}
 </script>
 
 <style lang="less" scoped>

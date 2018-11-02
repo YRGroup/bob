@@ -13,12 +13,16 @@
       <el-col :xs="24" :sm="8" class="item col-xs-12 col-sm-4">
         <p class="foot-title"> SERVICE</p>
         <div>
-          <p>Analytics</p>
-          <p>Branding</p>
-          <p>Campaign</p>
-          <p>Digital web</p>
-          <p>Editorial</p>
-          <p>Fabrication</p>
+          <p>
+            <router-link to="/service/a">Analytics</router-link>
+          </p>
+          <p>
+            <router-link to="/service/b">Branding</router-link>
+          </p>
+          <p><router-link to="/service/c">Campaign</router-link></p>
+          <p><router-link to="/service/d">Digital & web</router-link></p>
+          <p> <router-link to="/service/e">Editorial</router-link></p>
+          <p><router-link to="/service/f">Fabrication</router-link></p>
         </div>
       </el-col>
       <el-col :xs="24" :sm="8" class="item col-xs-12 col-sm-4">

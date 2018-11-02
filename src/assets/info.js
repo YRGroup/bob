@@ -1,7 +1,7 @@
 const info = {
   'a': {
     poetry: `<h2>Analytics</h2>
-    <h3>不讨论的代价比瞎讨论的代价还要大。</h3>
+    <p>不讨论的代价比瞎讨论的代价还要大。</p>
     <p>The alchemists in their search for gold</p>
     <p>discovered many other things of greater value.</p>
     <p>He who would search for pearls must dive below.</p>
@@ -19,7 +19,7 @@ const info = {
   },
   'b': {
     poetry: `<h2>Branding</h2>
-    <h3>划掉多余的，美化剩下的。</h3>
+    <p>划掉多余的，美化剩下的。</p>
     <p>A creative man is motivated by the desire to achieve, </p>
     <p>not by the desire to beat others.</p>
     <p>In order to make every detail perfect, </p>
@@ -37,7 +37,7 @@ const info = {
   },
   'c': {
     poetry: `<h2>Campaign</h2>
-    <h3>如果你外婆不明白你在搞什么，你就没有在搞事情。</h3>
+    <p>如果你外婆不明白你在搞什么，你就没有在搞事情。</p>
     <p>Any powerful idea is </p>
     <p>absolutely fascinating </p>
     <p>and absolutely useless </p>
@@ -55,7 +55,7 @@ const info = {
   },
   'd': {
     poetry: `<h2>Digits & web</h2>
-    <h3>互联网最起码的作用是让你难以回首没有它的日子。</h3>
+    <p>互联网最起码的作用是让你难以回首没有它的日子。</p>
     <p>Internet gives you an exceptionally effective way to </p>
 
     <p>broadcast who you are </p>
@@ -81,7 +81,7 @@ const info = {
   },
   'e': {
     poetry: `<h2>Editorial</h2>
-    <h3>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</h3>
+    <p>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</p>
     <p>If you don't give the market the story to talk about, </p>
 
     <p>They will define your brand's story for you.</p>
@@ -99,7 +99,7 @@ const info = {
   },
   'f': {
     poetry: `<h2>Fabrication</h2>
-    <h3>如果品牌是首诗歌，造出的产品就是诗朗诵。</h3>
+    <p>如果品牌是首诗歌，造出的产品就是诗朗诵。</p>
     <p>A brand is a voice and a product is a souvenir.</p>
 
     <p>Your premium brand </p>

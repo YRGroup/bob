@@ -5,14 +5,6 @@
         <img class="logo1" src="../images/logo.png" alt="logo">
         <img class="logo2" src="../images/logoS.png" alt="logo">
       </router-link>
-      <!-- <div class="service-navs" v-else>
-        <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>.
-        <router-link :class="['item', {'active':id=='b'}]" to="/service/b">论</router-link>
-        <router-link :class="['item', {'active':id=='c'}]" to="/service/c">论</router-link>
-        <router-link :class="['item', {'active':id=='d'}]" to="/service/d">论</router-link>
-        <router-link :class="['item', {'active':id=='e'}]" to="/service/e">论</router-link>
-        <router-link :class="['item', {'active':id=='f'}]" to="/service/f">论</router-link>
-      </div> -->
       <span class="nav-btn" @click="toogleSideNav"></span>
     </header>
 <transition name="sideNav">
@@ -21,64 +13,70 @@
     </span>
     <ul class="side-nav">
       <li>
-        <transition name="navitem" >
-          <div class="wrapper" v-show="show">
-            <router-link class="item" to="/service/a">
+          <div class="wrapper">
+            <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+            :style="{animationDelay:`${n+0*i}s`}"
+            to="/service/a">
               <span class="en"><span>A</span>nalytics</span>
               <span class="cn">论</span>
             </router-link>
           </div>
-        </transition>
       </li>
       <li>
-        <transition name="navitem" >
-          <div class="wrapper" v-show="show">
-            <router-link class="item" to="/service/b">
-              <span class="en"><span>B</span>randing</span>
-              <span class="cn">划</span>
-            </router-link>
-          </div>
-        </transition>
+        <div class="wrapper">
+          <router-link
+          :class="['item',show ? 'navitem-in':'navitem-out']"
+          :style="{animationDelay:`${n+1*i}s`}"
+          to="/service/b">
+            <span class="en"><span>B</span>randing</span>
+            <span class="cn">划</span>
+          </router-link>
+        </div>
       </li>
       <li>
-        <transition name="navitem" >
-          <div class="wrapper" v-show="show">
-            <router-link class="item" to="/service/c">
-              <span class="en"><span>C</span>ampaign</span>
-              <span class="cn">搞</span>
-            </router-link>
-          </div>
-        </transition>
+        <div class="wrapper">
+          <router-link
+          :class="['item',show ? 'navitem-in':'navitem-out']"
+           :style="{animationDelay:`${n+2*i}s`}"
+          to="/service/c">
+            <span class="en"><span>C</span>ampaign</span>
+            <span class="cn">搞</span>
+          </router-link>
+        </div>
       </li>
       <li>
-        <transition name="navitem" >
-          <div class="wrapper" v-show="show">
-            <router-link class="item" to="/service/d">
+        <div class="wrapper">
+          <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+             :style="{animationDelay:`${n+3*i}s`}"
+            to="/service/d">
             <span class="en"><span>D</span>igital & web</span>
             <span class="cn">码</span>
-            </router-link>
-          </div>
-        </transition>
+          </router-link>
+        </div>
       </li>
       <li>
-        <transition name="navitem" >
-          <div class="wrapper" v-show="show">
-            <router-link class="item" to="/service/e">
+        <div class="wrapper">
+          <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+             :style="{animationDelay:`${n+4*i}s`}"
+            to="/service/e">
             <span class="en"><span>E</span>ditorial</span>
             <span class="cn">纪</span>
-            </router-link>
-          </div>
-        </transition>
+          </router-link>
+        </div>
       </li>
       <li>
-        <transition name="navitem" >
-          <div class="wrapper" v-show="show">
-            <router-link class="item" to="/service/f">
-              <span class="en"><span>F</span>abrication</span>
-              <span class="cn">造</span>
-            </router-link>
-          </div>
-        </transition>
+        <div class="wrapper">
+          <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+            :style="{animationDelay:`${n+5*i}s`}"
+            to="/service/f">
+            <span class="en"><span>F</span>abrication</span>
+            <span class="cn">造</span>
+          </router-link>
+        </div>
       </li>
     </ul>
   </div>
@@ -102,7 +100,15 @@ export default {
   },
   data () {
     return {
-      show: true
+      show: false
+    }
+  },
+  computed: {
+    n () {
+      return this.show ? 0 : 0.5
+    },
+    i () {
+      return this.show ? 0.1 : -0.1
     }
   },
   methods: {
@@ -190,12 +196,12 @@ export default {
   .side-nav {
     .flex-column();
   }
-  &.nav-in {
+  .nav-in {
     animation-name: nav-in;
-    animation-delay: 0s;
+    animation-delay: 1s;
   }
 
-  &.nav-out {
+  .nav-out {
     animation-name: nav-out;
     transform: translateX(0%);
     animation-delay: 0.5s;
@@ -245,17 +251,20 @@ export default {
 
       .item {
         display: inline-block;
-        animation-duration: 0.1s;
+        animation-duration: 1s;
         animation-fill-mode: forwards;
         animation-timing-function: cubic-bezier(0.01, 0.67, 0.65, 0.97);
       }
 
       .navitem-in {
+        transform: translateY(100%);
+        opacity: 0;
         animation-name: navitem-in;
       }
 
       .navitem-out {
         transform: translateY(0%);
+        opacity: 1;
         animation-name: navitem-out;
       }
     }
