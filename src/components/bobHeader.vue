@@ -5,14 +5,6 @@
         <img class="logo1" src="../images/logo.png" alt="logo">
         <img class="logo2" src="../images/logoS.png" alt="logo">
       </router-link>
-      <!-- <div class="service-navs" v-else>
-        <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>.
-        <router-link :class="['item', {'active':id=='b'}]" to="/service/b">论</router-link>
-        <router-link :class="['item', {'active':id=='c'}]" to="/service/c">论</router-link>
-        <router-link :class="['item', {'active':id=='d'}]" to="/service/d">论</router-link>
-        <router-link :class="['item', {'active':id=='e'}]" to="/service/e">论</router-link>
-        <router-link :class="['item', {'active':id=='f'}]" to="/service/f">论</router-link>
-      </div> -->
       <span class="nav-btn" @click="toogleSideNav"></span>
     </header>
 <transition name="sideNav">
@@ -22,9 +14,9 @@
     <ul class="side-nav">
       <li>
           <div class="wrapper">
-            <router-link 
-            :class="['item',show ? 'navitem-in':'navitem-out']" 
-            :style="{animationDelay:`${n+0*i}s`}" 
+            <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+            :style="{animationDelay:`${n+0*i}s`}"
             to="/service/a">
               <span class="en"><span>A</span>nalytics</span>
               <span class="cn">论</span>
@@ -33,9 +25,9 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link 
-          :class="['item',show ? 'navitem-in':'navitem-out']"  
-          :style="{animationDelay:`${n+1*i}s`}"  
+          <router-link
+          :class="['item',show ? 'navitem-in':'navitem-out']"
+          :style="{animationDelay:`${n+1*i}s`}"
           to="/service/b">
             <span class="en"><span>B</span>randing</span>
             <span class="cn">划</span>
@@ -44,9 +36,9 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link 
-          :class="['item',show ? 'navitem-in':'navitem-out']" 
-           :style="{animationDelay:`${n+2*i}s`}" 
+          <router-link
+          :class="['item',show ? 'navitem-in':'navitem-out']"
+           :style="{animationDelay:`${n+2*i}s`}"
           to="/service/c">
             <span class="en"><span>C</span>ampaign</span>
             <span class="cn">搞</span>
@@ -55,9 +47,9 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link 
-            :class="['item',show ? 'navitem-in':'navitem-out']" 
-             :style="{animationDelay:`${n+3*i}s`}" 
+          <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+             :style="{animationDelay:`${n+3*i}s`}"
             to="/service/d">
             <span class="en"><span>D</span>igital & web</span>
             <span class="cn">码</span>
@@ -66,9 +58,9 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link 
-            :class="['item',show ? 'navitem-in':'navitem-out']" 
-             :style="{animationDelay:`${n+4*i}s`}"  
+          <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+             :style="{animationDelay:`${n+4*i}s`}"
             to="/service/e">
             <span class="en"><span>E</span>ditorial</span>
             <span class="cn">纪</span>
@@ -77,9 +69,9 @@
       </li>
       <li>
         <div class="wrapper">
-          <router-link 
-            :class="['item',show ? 'navitem-in':'navitem-out']" 
-            :style="{animationDelay:`${n+5*i}s`}" 
+          <router-link
+            :class="['item',show ? 'navitem-in':'navitem-out']"
+            :style="{animationDelay:`${n+5*i}s`}"
             to="/service/f">
             <span class="en"><span>F</span>abrication</span>
             <span class="cn">造</span>
@@ -94,7 +86,7 @@
 
 <script>
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String,
     homeHeader: {
@@ -102,29 +94,29 @@ export default {
       type: Boolean
     },
     id: {
-      default: "",
+      default: '',
       type: String
     }
   },
-  data() {
+  data () {
     return {
       show: false
-    };
+    }
   },
   computed: {
-    n() {
-      return this.show ? 0 : 0.5;
+    n () {
+      return this.show ? 0 : 0.5
     },
-    i() {
-      return this.show ? 0.1 : -0.1;
+    i () {
+      return this.show ? 0.1 : -0.1
     }
   },
   methods: {
-    toogleSideNav() {
-      this.show = !this.show;
+    toogleSideNav () {
+      this.show = !this.show
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
