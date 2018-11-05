@@ -187,7 +187,7 @@ export default {
 // 导航
 #nav-section {
   .flex-column();
-  background: @color-theme-2;
+  background: @color-theme;
   position: fixed;
   width: 100%;
   max-width: 800px;
@@ -199,6 +199,18 @@ export default {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.01, 0.67, 0.65, 0.97);
+  .wrapper{
+    opacity: 0.7;
+    transition: all 0.3s;
+    &:hover{
+      opacity: 1;
+    }
+    a{
+      &:hover{
+        color:#fff;
+      }
+    }
+  }
   .side-nav {
     .flex-column();
   }
