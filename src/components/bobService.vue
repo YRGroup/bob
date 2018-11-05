@@ -28,7 +28,7 @@
               <span>B</span>randing
             </p>
             <div class="p2">
-              <p>logo标志设计</p>
+              <p>LOGO标志设计</p>
               <p>VI基础部分设计</p>
               <p>VI应用部分设计</p>
               <p>宣传册设计</p>
@@ -59,9 +59,12 @@
             <span>D</span><span style="font-size:24px">igital & web</span>
           </p>
           <div class="p2">
-            <p>网站页面设计</p>
-            <p>后台制作</p>
-            <p>小程序开发</p>
+            <p>高端官网定制</p>
+            <p>移动端网站建设</p>
+            <p>微信平台解决方案</p>
+            <p>业务系统开发</p>
+            <p>H5应用开发</p>
+            <p>服务器运营外包</p>
           </div>
             <!-- <p class="p3">+</p> -->
           </div>
@@ -99,127 +102,127 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  @import "../less/variable.less";
-  @import "../less/mixin.less";
-  @import "../less/common.less";
+@import "../less/variable.less";
+@import "../less/mixin.less";
+@import "../less/common.less";
 
-  #section1 {
-    padding-top: 68px;
-    padding-bottom: 80px;
+#section1 {
+  padding-top: 68px;
+  padding-bottom: 80px;
 
-    .wrapper {
-      margin: 0 100px;
-    }
+  .wrapper {
+    margin: 0 100px;
+  }
 
-    .section-title {
-      margin-bottom: 60px;
-    }
+  .section-title {
+    margin-bottom: 60px;
+  }
 
-    .cards {
-      .card {
-        cursor: pointer;
-        .background-cover();
-        -webkit-box-flex: 1;
-        -moz-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        height: 360px;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        transition: all 0.3s;
-        text-align: center;
-        -ms-flex-pack: distribute;
-        position: relative;
+  .cards {
+    .card {
+      cursor: pointer;
+      .background-cover();
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      height: 360px;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      text-align: center;
+      -ms-flex-pack: distribute;
+      position: relative;
 
-        // background-image: url('../images/serviceBg1.jpg');
+      // background-image: url('../images/serviceBg1.jpg');
+      .mask {
+        z-index: 2;
+        justify-content: space-around;
+        height: 100%;
+        transition: all 0.5s;
+      }
+
+      &:hover {
         .mask {
-          z-index: 2;
-          justify-content: space-around;
-          height: 100%;
-          transition: all 0.5s;
-        }
+          background: rgba(229, 77, 4, 0.5);
+          color: #fff;
 
-        &:hover {
-          .mask {
-            background: rgba(229, 77, 4, 0.5);
+          .p1 {
             color: #fff;
+          }
 
-            .p1 {
-              color: #fff;
-            }
-
-            .p2 {
-              color: #fff;
-            }
+          .p2 {
+            color: #fff;
           }
         }
+      }
 
-        &:nth-of-type(odd) {
-          background-color: #eeeeee;
-        }
+      &:nth-of-type(odd) {
+        background-color: #eeeeee;
+      }
 
-        &:nth-of-type(even) {
-          background-color: #f7f7f7;
-        }
+      &:nth-of-type(even) {
+        background-color: #f7f7f7;
+      }
 
-        .p1 {
-          font-size: 28px;
-          color: #333;
-          font-weight: bold;
+      .p1 {
+        font-size: 28px;
+        color: #333;
+        font-weight: bold;
 
-          span {
-            font-size: 64px;
-          }
-        }
-
-        .p2 {
-          font-size: 16px;
-          line-height: 25px;
-          color: #333;
-          transition: all 0.3s;
-          min-height: 180px;
-        }
-
-        .p4 {
-          display: none;
-        }
-
-        .p3 {
-          font-weight: bold;
-          font-size: 20px;
+        span {
+          font-size: 64px;
         }
       }
-    }
 
-    @media (max-width: 768px) {
-      .wrapper {
-        margin: auto;
+      .p2 {
+        font-size: 16px;
+        line-height: 30px;
+        color: #333;
+        transition: all 0.3s;
+        min-height: 180px;
       }
-    }
 
-    @media (max-width: 1100px) {
-      .wrapper {
-        margin: auto;
+      .p4 {
+        display: none;
+      }
+
+      .p3 {
+        font-weight: bold;
+        font-size: 20px;
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .wrapper {
+      margin: auto;
+    }
+  }
+}
 </style>

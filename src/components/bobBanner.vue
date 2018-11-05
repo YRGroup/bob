@@ -194,7 +194,8 @@ export default {
   }
   .keyword {
     justify-content: center;
-    height: 100px;
+    // height: 100px;
+    height: 0.8rem;
   }
   .cn {
     position: absolute;
@@ -204,7 +205,9 @@ export default {
   }
 
   .strings {
-    font-size: 80px;
+    // font-size: 80px;
+    font-size: 0.7rem;
+    // line-height: 0.8rem;
     color: @color-theme;
     display: inline-block;
     cursor: pointer;
@@ -228,7 +231,8 @@ export default {
   }
 
   .curse {
-    font-size: 60px;
+    // font-size: 60px;
+    font-size: 0.6rem;
     animation: curse 1s ease infinite;
     // transform: translateY(-6px);
   }
@@ -247,8 +251,10 @@ export default {
   }
 
   .p3 {
-    font-size: 18px;
-    line-height: 40px;
+    // font-size: 18px;
+    font-size: 0.12rem;
+    // line-height: 40px;
+    line-height: 0.15rem;
     // letter-spacing: 1px;
   }
 
@@ -272,7 +278,7 @@ export default {
     outline: none;
     padding: 0 20px;
     opacity: 0.7;
-
+    cursor: pointer;
     .lines {
       height: 40px;
       position: relative;
@@ -382,9 +388,9 @@ export default {
       font-size: 14px;
     }
 
-    .p3 {
-      font-size: 14px;
-    }
+    // .p3 {
+    //   font-size: 14px;
+    // }
   }
 }
 @keyframes curse {

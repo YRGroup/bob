@@ -49,22 +49,22 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
-      console.log(1)
+    toogleSideNav() {
+      this.show = !this.show;
+      console.log(1);
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -79,7 +79,7 @@ export default {
   .background-cover();
   // background-image: url('../images/gloable.png');
   background: #2e2e2e;
-  .content{
+  .content {
     max-width: 1500px;
   }
   .info {
@@ -121,10 +121,15 @@ export default {
     .foot-title {
       color: #fff;
       font-size: 14px;
+      // font-size: 0.01rem;
     }
 
     .codeImg {
-      margin: 20px 0;
+      margin: 20px auto;
+      text-align: center;
+      img {
+        width: .8rem;
+      }
     }
     .foot-logo {
       height: 100%;
