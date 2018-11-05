@@ -11,9 +11,9 @@
               <span>A</span>nalytice
             </p>
             <div class="p2">
+              <p>品牌核心价值</p>
               <p>品牌研究</p>
               <p>品牌定位</p>
-              <p>品牌核心价值</p>
               <p>品牌愿景</p>
               <p>品牌使命</p>
               <p>品牌主张</p>
@@ -28,9 +28,9 @@
               <span>B</span>randing
             </p>
             <div class="p2">
-              <p>LOGO标志设计</p>
               <p>VI基础部分设计</p>
               <p>VI应用部分设计</p>
+              <p>LOGO标志设计</p>
               <p>宣传册设计</p>
               <p>PPT模板</p>
             </div>
@@ -43,12 +43,12 @@
             <span>C</span>ampaign
           </p>
           <div class="p2">
-            <p>传播调研</p>
-            <p>传播策略</p>
-            <p>传播侃拼方案</p>
-            <p>媒体管理服务</p>
             <p>线下事件活动服务</p>
             <p>线上事件营销活动</p>
+            <p>传播侃拼方案</p>
+            <p>媒体管理服务</p>
+            <p>传播调研</p>
+            <p>传播策略</p>
           </div>
             <!-- <p class="p3">+</p> -->
           </div>
@@ -59,12 +59,12 @@
             <span>D</span><span style="font-size:24px">igital & web</span>
           </p>
           <div class="p2">
+            <p>微信平台解决方案</p>
+            <p>服务器运营外包</p>
             <p>高端官网定制</p>
             <p>移动端网站建设</p>
-            <p>微信平台解决方案</p>
             <p>业务系统开发</p>
             <p>H5应用开发</p>
-            <p>服务器运营外包</p>
           </div>
             <!-- <p class="p3">+</p> -->
           </div>
@@ -75,9 +75,9 @@
             <span>E</span>ditorial
           </p>
           <div class="p2">
-            <p>企业宣传片</p>
             <p>年度影视服务</p>
             <p>年度图片服务</p>
+            <p>企业宣传片</p>
           </div>
             <!-- <p class="p3">+</p> -->
           </div>
@@ -88,9 +88,9 @@
             <span>F</span>abrication
           </p>
           <div class="p2">
+            <p>周边产品定制</p>
             <p>画册印制</p>
             <p>服装定制</p>
-            <p>周边产品定制</p>
           </div>
             <!-- <p class="p3">+</p> -->
           </div>
@@ -102,21 +102,21 @@
 
 <script>
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String
   },
-  data() {
+  data () {
     return {
       show: false
-    };
+    }
   },
   methods: {
-    toogleSideNav() {
-      this.show = !this.show;
+    toogleSideNav () {
+      this.show = !this.show
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -156,9 +156,11 @@ export default {
       // background-image: url('../images/serviceBg1.jpg');
       .mask {
         z-index: 2;
-        justify-content: space-around;
+        justify-content: flex-start;
         height: 100%;
         transition: all 0.5s;
+        padding-top: 30px;
+        box-sizing: border-box;
       }
 
       &:hover {
@@ -195,11 +197,13 @@ export default {
       }
 
       .p2 {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 30px;
         color: #333;
         transition: all 0.3s;
         min-height: 180px;
+        margin-top: 20px;
+        text-align: left;
       }
 
       .p4 {
@@ -219,7 +223,7 @@ export default {
     }
     .cards {
       .card {
-        height: 280px;
+        height: 300px;
         .p1 {
           font-size: 20px;
           span {
