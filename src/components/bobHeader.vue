@@ -5,11 +5,14 @@
         <img class="logo1" src="../images/logo.png" alt="logo">
         <img class="logo2" src="../images/logoS.png" alt="logo">
       </router-link>
-      <span class="nav-btn" @click="toogleSideNav"></span>
+      <span class="nav-btn" @click="toogleSideNav">
+        <span class="btnImg"></span>
+      </span>
     </header>
 <transition name="sideNav">
   <div class="nav-section" id="nav-section" v-show="show">
     <span class="close-btn nav-btn" @click="toogleSideNav">
+      <span class="btnImg"></span>
     </span>
     <ul class="side-nav">
       <li>
@@ -145,9 +148,9 @@ export default {
   justify-content: flex-start;
   box-sizing: border-box;
   padding: 30px 40px;
-  .nav-btn {
-    top: 20px;
-  }
+  // .nav-btn {
+  //   top: 20px;
+  // }
   &.serviceHeader {
     justify-content: space-around;
   }

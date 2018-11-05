@@ -227,18 +227,23 @@ a:focus {
   color: #888;
 }
 .nav-btn {
-  display: inline-block;
-  background-image: url("../images/navBtn.png");
-  background-size: 100% 100%;
   width: 25px;
   height: 25px;
   transition: all 0.5s;
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 10px;
+  padding: 10px;
 }
-.nav-btn:hover {
+.nav-btn .btnImg {
+  background-image: url("../images/navBtn.png");
+  display: inline-block;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+}
+.nav-btn .btnImg:hover {
   background-image: url("../images/navBtn1.png");
   animation: nav-btn 1.8s linear infinite;
 }
