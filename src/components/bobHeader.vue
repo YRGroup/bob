@@ -104,11 +104,11 @@ export default {
     };
   },
   computed: {
-    n() {
-      return this.show ? 0 : 0.5;
+    n () {
+      return this.show ? 0 : 1
     },
-    i() {
-      return this.show ? 0.1 : -0.1;
+    i () {
+      return this.show ? 0.15 : -0.15
     }
   },
   methods: {

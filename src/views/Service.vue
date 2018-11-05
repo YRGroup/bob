@@ -9,7 +9,7 @@
       <div class="partic" id="partic">
         <vue-particles style="height:100%;"
         color="#fff"
-        :particleOpacity="0.4"
+        :particleOpacity="0.3"
         :particlesNumber="4"
         shapeType="circle"
         :particleSize="50"
