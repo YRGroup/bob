@@ -45,16 +45,22 @@
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
         <span class="nav-btn" @click="toogleText"></span>
+        <div class="content">
+          <transition name="poetry">
+            <div class="left-con text" v-show="cn" >
+              <div  v-html="poetry">
 
-        <transition name="poetry">
-          <div class="left-con" v-show="cn" v-html="poetry">
-          </div>
-        </transition>
-        <transition name="poetry">
-          <div class="right-con" v-show="!cn" v-html="items">
+              </div>
+            </div>
+          </transition>
+          <transition name="poetry">
+            <div class="right-con text" v-show="!cn" >
+              <div v-html="items">
 
-          </div>
-        </transition>
+              </div>
+            </div>
+          </transition>
+        </div>
         <div class="changlang">
           <span @click="cn=true" :class="[{'active':cn}]">B一下</span>
           <span> / </span>
@@ -65,19 +71,19 @@
   </div>
 </template>
 <script>
-import { info } from '@/assets/info'
-import bannera from '@/components/bannera/index.vue'
-import bannerb from '@/components/bannerb/index.vue'
-import bannerc from '@/components/bannerc/index.vue'
-import bannerd from '@/components/bannerd/index.vue'
-import bannere from '@/components/bannere/index.vue'
-import bannerf from '@/components/bannerf/index.vue'
+import { info } from "@/assets/info";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
+import bannerc from "@/components/bannerc/index.vue";
+import bannerd from "@/components/bannerd/index.vue";
+import bannere from "@/components/bannere/index.vue";
+import bannerf from "@/components/bannerf/index.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bannera,
     bannerb,
@@ -86,46 +92,46 @@ export default {
     bannere,
     bannerf
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       showText: false,
       showService: false,
       cn: true
-    }
+    };
   },
   computed: {
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     },
-    banner () {
-      return 'banner' + this.id
+    banner() {
+      return "banner" + this.id;
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/mixin.less";
@@ -218,27 +224,44 @@ export default {
     color: #fff;
     .flex-column();
     justify-content: space-around;
-
-    .left-con {
-      line-height: 35px;
-      font-size: 18px;
-      position: relative;
+    .content {
       position: absolute;
+      top: 50px;
+      bottom: 100px;
       width: 100%;
-      h2 {
-        margin-bottom: 30px;
+      padding: 0 10px;
+      // overflow: auto;
+      .text {
+        height: 100%;
+        overflow: auto;
+        .flex-column();
+        justify-content: space-around;
+      }
+
+      .left-con {
+        line-height: 35px;
+        font-size: 18px;
+        h2 {
+          margin-bottom: 30px;
+        }
+      }
+      .right-con {
+        font-size: 28px;
+        line-height: 52px;
       }
     }
-    .right-con {
-      font-size: 28px;
-      line-height: 52px;
+    .nav-btn {
+      z-index: 101;
+      top: 20px;
+      right: 20px;
     }
 
     .changlang {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 50px;
+      bottom: 30px;
+      z-index: 100;
       cursor: pointer;
       .active {
         transition: all 0.5s;
@@ -298,6 +321,13 @@ export default {
       .item {
         display: block;
         margin-top: 20px;
+      }
+    }
+    .text-wrapper {
+      .content {
+        .text {
+          justify-content: flex-start;
+        }
       }
     }
   }
