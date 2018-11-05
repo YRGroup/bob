@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <transition name="page">
-      <router-view/>
+      <router-view ></router-view>
     </transition>
   </div>
 </template>
@@ -39,9 +39,9 @@
 .page-leave-active {
   transition: all 0.5s;
 }
+
 .page-enter,
 .page-leave-to {
   opacity: 0;
-  // transform: translateX(100%)
 }
 </style>
