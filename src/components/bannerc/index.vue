@@ -74,5 +74,9 @@ export default {
       transform: translate(@base, -50%);
     }
   }
+   @media (max-width: 768px) {
+    // width: 1000px;
+    transform: translateX(180px);
+  }
 }
 </style>
