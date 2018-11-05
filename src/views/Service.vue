@@ -44,7 +44,9 @@
     </div>
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
-        <span class="nav-btn" @click="toogleText"></span>
+        <span class="nav-btn" @click="toogleText">
+          <span class="btnImg"></span>
+        </span>
         <div class="content">
           <transition name="poetry">
             <div class="left-con text" v-show="cn" >
@@ -261,8 +263,10 @@ export default {
       z-index: 101;
       top: 20px;
       right: 20px;
-      &:hover {
-        background-image: url("../images/navBtn.png");
+      .btnImg{
+        &:hover {
+          background-image: url("../images/navBtn.png");
+        }
       }
     }
 
