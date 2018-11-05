@@ -126,15 +126,15 @@ export default {
 @import "../less/common.less";
 
 #section1 {
-  padding-top: 68px;
-  padding-bottom: 80px;
-
+  // padding-top: 68px;
+  // padding-bottom: 80px;
+  padding: 0.5rem 0;
   .wrapper {
     margin: 0 100px;
   }
 
   .section-title {
-    margin-bottom: 60px;
+    margin-bottom: 0.5rem;
   }
 
   .cards {
@@ -216,6 +216,20 @@ export default {
   @media (max-width: 768px) {
     .wrapper {
       margin: auto;
+    }
+    .cards {
+      .card {
+        height: 280px;
+        .p1 {
+          font-size: 20px;
+          span {
+            font-size: 30px;
+          }
+        }
+        .p2 {
+          font-size: 15px;
+        }
+      }
     }
   }
 

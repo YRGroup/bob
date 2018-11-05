@@ -73,11 +73,12 @@ const info = {
     <p>you find it hard to imagine </p>
 
     <p>what it was like not to know it.</p>`,
-    items: `<p>网站页面设计</p>
-
-    <p>后台制作</p>
-
-    <p>小程序开发</p>`
+    items: ` <p>高端官网定制</p>
+    <p>移动端网站建设</p>
+    <p>微信平台解决方案</p>
+    <p>业务系统开发</p>
+    <p>H5应用开发</p>
+    <p>服务器运营外包</p>`
   },
   'e': {
     poetry: `<h2>Editorial</h2>

@@ -1,18 +1,9 @@
 <template>
   <footer class="footer container-fluid" id="footer">
-    <!-- <div class=" flex flex-column info">
-      <p class="grey">如有任何疑问请联系我们，7*24小时为您服务！</p>
-      <p class="phone">15811111111</p>
-      <p>郑州新区祥盛街8号福晟国际2号楼</p>
-      <div class="wrapper">
-      <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/codeImg.png" alt="codeImg">
-      </div>
-      <p class="grey">官方微信</p>
-    </div> -->
     <el-row class="content row">
       <el-col :xs="24" :sm="8" class="item col-xs-12 col-sm-4">
-        <p class="foot-title"> SERVICE</p>
-        <div>
+        <p class="item-title"> SERVICE</p>
+        <div class="item-content">
           <p>
             <router-link to="/service/a">Analytics</router-link>
           </p>
@@ -26,8 +17,8 @@
         </div>
       </el-col>
       <el-col :xs="24" :sm="8" class="item col-xs-12 col-sm-4">
-        <p class="foot-title">CONTACT US</p>
-        <div>
+        <p class="item-title">CONTACT US</p>
+        <div class="item-content">
           <p>郑东新区祥盛街8号福晟国际2号楼14F </p>
           <p>0371-55261585</p>
         </div>
@@ -118,17 +109,18 @@ export default {
     .item {
       margin-bottom: 40px;
     }
-    .foot-title {
+    .item-title {
       color: #fff;
-      font-size: 14px;
-      // font-size: 0.01rem;
+      font-size: 17px;
     }
-
+    .item-content {
+      font-size: 15px;
+    }
     .codeImg {
       margin: 20px auto;
       text-align: center;
       img {
-        width: .8rem;
+        width: 120px;
       }
     }
     .foot-logo {
