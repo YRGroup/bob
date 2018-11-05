@@ -40,22 +40,22 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
-      console.log(1)
+    toogleSideNav() {
+      this.show = !this.show;
+      console.log(1);
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -135,6 +135,13 @@ export default {
     background: #2a2a2a;
     color: #888;
     line-height: 35px;
+  }
+  @media (max-width: 768px) {
+    .content {
+      .codeImg {
+        display: none;
+      }
+    }
   }
 }
 </style>
