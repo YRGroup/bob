@@ -9,9 +9,9 @@ const info = {
     <p>asking the right questions.</p>
     <p>The price of trying </p>
     <p>is less than the cost of idling.</p>`,
-    items: `<p>品牌研究</p>
+    items: `<p>品牌核心价值</p>
+    <p>品牌研究</p>
     <p>品牌定位</p>
-    <p>品牌核心价值</p>
     <p>品牌愿景</p>
     <p>品牌使命</p>
     <p>品牌主张</p>
@@ -30,8 +30,9 @@ const info = {
     <p>Therefore, </p>
     <p>Your brand is what other people say about you,</p>
     <p>when you’re not in the room.</p>`,
-    items: `<p>logo标志设计</p>
+    items: `<p>VI基础部分设计</p>
     <p>VI应用部分设计</p>
+    <p>LOGO标志设计</p>
     <p>宣传册设计</p>
     <p>PPT模板</p>`
   },
@@ -46,12 +47,12 @@ const info = {
     <p>if they are not acted upon. </p>
     <p>You do not really achieve anything </p>
     <p>unless you can explain it to your grandmother. </p>`,
-    items: `<p>传播调研</p>
-    <p>传播策略</p>
-    <p>传播战役方案</p>
+    items: `<p>线下事件活动服务</p>
+    <p>线上事件营销活动</p>
+    <p>传播侃拼方案</p>
     <p>媒体管理服务</p>
-    <p>线下事件活动服务</p>
-    <p>线上事件营销活动</p>`
+    <p>传播调研</p>
+    <p>传播策略</p>`
   },
   'd': {
     poetry: `<h2>Digits & web</h2>
@@ -73,12 +74,12 @@ const info = {
     <p>you find it hard to imagine </p>
 
     <p>what it was like not to know it.</p>`,
-    items: ` <p>高端官网定制</p>
+    items: `<p>微信平台解决方案</p>
+    <p>服务器运营外包</p>
+    <p>高端官网定制</p>
     <p>移动端网站建设</p>
-    <p>微信平台解决方案</p>
     <p>业务系统开发</p>
-    <p>H5应用开发</p>
-    <p>服务器运营外包</p>`
+    <p>H5应用开发</p>`
   },
   'e': {
     poetry: `<h2>Editorial</h2>
@@ -94,9 +95,13 @@ const info = {
     <p>because those who mind don't matter </p>
     
     <p>and those who matter don't mind.</p>`,
-    items: `<p>企业宣传片</p>
+    items: `<p>非商业影像服务</p>
+    <p>年度摄影服务</p>
     <p>年度影视服务</p>
-    <p>年度图片服务</p>`
+    <p>家庭影像服务</p>
+    <p>商业摄影</p>
+    <p>人物传记</p>
+    <p>宣传片</p>`
   },
   'f': {
     poetry: `<h2>Fabrication</h2>
