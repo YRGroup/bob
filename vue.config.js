@@ -28,7 +28,6 @@ module.exports = {
   //   } else {
   //     // 为开发环境修改配置...
   //   }
-
   // },
   configureWebpack: {
     resolve: {

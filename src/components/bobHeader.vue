@@ -86,7 +86,7 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String,
     homeHeader: {
@@ -94,29 +94,29 @@ export default {
       type: Boolean
     },
     id: {
-      default: '',
+      default: "",
       type: String
     }
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   computed: {
-    n () {
-      return this.show ? 0 : 0.5
+    n() {
+      return this.show ? 0 : 0.5;
     },
-    i () {
-      return this.show ? 0.1 : -0.1
+    i() {
+      return this.show ? 0.1 : -0.1;
     }
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -145,6 +145,9 @@ export default {
   justify-content: flex-start;
   box-sizing: border-box;
   padding: 30px 40px;
+  .nav-btn {
+    top: 20px;
+  }
   &.serviceHeader {
     justify-content: space-around;
   }
@@ -155,7 +158,7 @@ export default {
 
 .logo {
   display: inline-block;
-  height: 40px;
+  height: 30px;
 
   img {
     height: 100%;
@@ -209,7 +212,6 @@ export default {
 
   .close-btn {
     color: #fff;
-    font-size: 30px;
     cursor: pointer;
     position: absolute;
     top: 20px;
@@ -219,8 +221,6 @@ export default {
   ul {
     text-align: center;
     color: #fff;
-    font-size: 30px;
-    line-height: 50px;
     margin: auto;
     height: 100%;
     overflow: hidden;
@@ -230,19 +230,18 @@ export default {
       padding: 30px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       text-align: left;
-
       .en {
-        font-size: 28px;
-        width: 280px;
+        font-size: 0.2rem;
+        width: 2.5rem;
         display: inline-block;
 
         span {
-          font-size: 64px;
+          font-size: 0.4rem;
         }
       }
 
       .cn {
-        font-size: 50px;
+        font-size: 0.4rem;
       }
 
       .wrapper {
@@ -251,7 +250,7 @@ export default {
 
       .item {
         display: inline-block;
-        animation-duration: 1s;
+        animation-duration: 0.5s;
         animation-fill-mode: forwards;
         animation-timing-function: cubic-bezier(0.01, 0.67, 0.65, 0.97);
       }
@@ -278,16 +277,18 @@ export default {
         padding: 10px;
 
         .en {
-          width: 200px;
-          font-size: 20px;
+          width: 4rem;
+          font-size: 0.3rem;
 
           span {
-            font-size: 40px;
+            // font-size: 40px;
+            font-size: 0.6rem;
           }
         }
 
         .cn {
-          font-size: 40px;
+          // font-size: 40px;
+          font-size: 0.6rem;
         }
       }
     }
@@ -325,10 +326,10 @@ export default {
 
 .navitem-enter-active,
 .navitem-leave-active {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .navitem-enter-active {
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
 }
 .navitem-enter,
 .navitem-leave-to {

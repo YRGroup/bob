@@ -62,12 +62,13 @@
           </transition>
         </div>
         <div class="changlang">
-          <span @click="cn=true" :class="[{'active':cn}]">B一下</span>
+          <button @click="cn=true" :class="[{'active':cn}]">B一下</button>
           <span> / </span>
-          <span @click="cn=false" :class="[{'active':!cn}]">再B一下</span></div>
+          <button @click="cn=false" :class="[{'active':!cn}]">再B一下</button>
+        </div>
       </div>
     </transition>
-    <div class="container" ref="container"></div>
+    <!-- <div class="container" ref="container"></div> -->
   </div>
 </template>
 <script>
@@ -122,6 +123,9 @@ export default {
   methods: {
     toogleText() {
       this.showText = !this.showText;
+      this.timer = setTimeout(() => {
+        this.cn = true;
+      }, 500);
     },
     toogleService() {
       this.showService = !this.showService;
@@ -138,7 +142,7 @@ export default {
 @import "../less/common.less";
 .logo {
   display: inline-block;
-  height: 40px;
+  height: 30px;
   position: absolute;
   left: 20px;
   top: 20px;
@@ -152,7 +156,6 @@ export default {
 
   @media (max-width: 760px) {
     height: 25px;
-
     .logo1 {
       display: none;
     }
@@ -229,31 +232,38 @@ export default {
       top: 50px;
       bottom: 100px;
       width: 100%;
-      padding: 0 10px;
+
       // overflow: auto;
       .text {
-        height: 100%;
+        position: absolute;
+        padding: 0 10px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         overflow: auto;
         .flex-column();
         justify-content: space-around;
-      }
-
-      .left-con {
-        line-height: 35px;
-        font-size: 18px;
-        h2 {
-          margin-bottom: 30px;
+        &.left-con {
+          line-height: 35px;
+          font-size: 18px;
+          h2 {
+            margin-bottom: 30px;
+          }
         }
-      }
-      .right-con {
-        font-size: 28px;
-        line-height: 52px;
+        &.right-con {
+          font-size: 28px;
+          line-height: 52px;
+        }
       }
     }
     .nav-btn {
       z-index: 101;
       top: 20px;
       right: 20px;
+      &:hover {
+        background-image: url("../images/navBtn.png");
+      }
     }
 
     .changlang {
@@ -261,11 +271,23 @@ export default {
       left: 0;
       right: 0;
       bottom: 30px;
-      z-index: 100;
       cursor: pointer;
+      &:hover {
+        background: none;
+      }
+      button {
+        background: none;
+        outline: none;
+        border: none;
+        color: #fff;
+        transition: all 0.3s;
+        height: 30px;
+        line-height: 30px;
+        padding: 10px;
+        cursor: pointer;
+      }
       .active {
-        transition: all 0.5s;
-        font-size: 30px;
+        font-size: 20px;
       }
     }
   }
@@ -279,10 +301,10 @@ export default {
       position: absolute;
       bottom: 10%;
       left: 50%;
-      margin-left: -85px;
+      margin-left: -100px;
       line-height: 40px;
       font-size: 16px;
-      padding: 0 80px;
+      width: 200px;
       border-radius: 50px;
       border: 1px solid #fff;
       color: #fff;
@@ -326,7 +348,17 @@ export default {
     .text-wrapper {
       .content {
         .text {
-          justify-content: flex-start;
+          &.left-con {
+            line-height: 30px;
+            font-size: 16px;
+            justify-content: flex-start;
+            padding-top: 50px;
+          }
+          &.right-con {
+            font-size: 25px;
+            line-height: 45px;
+            justify-content: space-around;
+          }
         }
       }
     }
