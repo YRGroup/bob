@@ -156,6 +156,7 @@ a:focus {
   cursor: pointer;
   position: absolute;
   right: 20px;
+  top: 20px;
 }
 .nav-btn:hover {
   background-image: url("../images/navBtn1.png");
