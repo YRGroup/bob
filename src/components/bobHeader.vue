@@ -105,10 +105,10 @@ export default {
   },
   computed: {
     n () {
-      return this.show ? 0 : 0.5
+      return this.show ? 0 : 1
     },
     i () {
-      return this.show ? 0.1 : -0.1
+      return this.show ? 0.15 : -0.15
     }
   },
   methods: {
