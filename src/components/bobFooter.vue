@@ -125,8 +125,11 @@ export default {
       }
     }
     .foot-logo {
-      height: 100%;
+      height: 100px;
       align-items: center;
+      img {
+        height: 100%;
+      }
     }
   }
 
