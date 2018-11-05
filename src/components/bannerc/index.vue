@@ -1,17 +1,23 @@
 <template>
   <div class="banner-image">
-    <img class="animate-item item1" src="./1.png" alt="">
-    <img class="animate-item item2" src="./2.png" alt="">
+    <div class="lg">
+      <img class="animate-item item1" src="./1.png" alt="">
+      <img class="animate-item item2" src="./2.png" alt="">
+    </div>
+    <div class="xs">
+      <img class="animate-item item1" src="./p1.png" alt="">
+      <img class="animate-item item2" src="./p2.png" alt="">
+    </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'bannerc',
-  data () {
-    return {}
+  name: "bannerc",
+  data() {
+    return {};
   },
-  created () {}
-}
+  created() {}
+};
 </script>
 
 <style lang="less" scoped>
@@ -29,8 +35,8 @@ export default {
   //   transform: translate(-50%, -50%);
   // }
 
-  @base: -500px;
-  @offset: 300px;
+  @base: -5rem;
+  @offset: 1rem;
 
   .animate-item {
     display: inline-block;
@@ -74,9 +80,16 @@ export default {
       transform: translate(@base, -50%);
     }
   }
-   @media (max-width: 768px) {
-    // width: 1000px;
-    transform: translateX(180px);
+  .xs {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .lg {
+      display: none;
+    }
+    .xs {
+      display: block;
+    }
   }
 }
 </style>

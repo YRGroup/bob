@@ -199,15 +199,15 @@ export default {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.01, 0.67, 0.65, 0.97);
-  .wrapper{
+  .wrapper {
     opacity: 0.7;
     transition: all 0.3s;
-    &:hover{
+    &:hover {
       opacity: 1;
     }
-    a{
-      &:hover{
-        color:#fff;
+    a {
+      &:hover {
+        color: #fff;
       }
     }
   }
@@ -229,8 +229,8 @@ export default {
     color: #fff;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 0.1rem;
+    left: 0.1rem;
   }
 
   ul {
@@ -239,10 +239,10 @@ export default {
     margin: auto;
     height: 100%;
     overflow: hidden;
-    padding: 40px 0;
+    padding: 0.6rem 0;
 
     li {
-      padding: 30px;
+      padding: 0.1rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       text-align: left;
       .en {
@@ -286,26 +286,7 @@ export default {
 
   @media (max-width: 768px) {
     ul {
-      padding: 80px 0;
-
-      li {
-        padding: 10px;
-
-        .en {
-          width: 3rem;
-          font-size: 0.3rem;
-
-          span {
-            // font-size: 40px;
-            font-size: 0.6rem;
-          }
-        }
-
-        .cn {
-          // font-size: 40px;
-          font-size: 0.6rem;
-        }
-      }
+      // padding: 80px 0;
     }
   }
 }

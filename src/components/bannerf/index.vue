@@ -1,20 +1,23 @@
 <template>
   <div class="banner-image">
-    <!-- <img class="bg" src="./1.png" alt=""> -->
-    <img class="animate-item item1" src="./1.png" alt="">
-    <img class="animate-item item2" src="./2.png" alt="">
+    <div class="lg">
+      <img class="animate-item item1" src="./1.png" alt="">
+      <img class="animate-item item2" src="./2.png" alt="">
+    </div>
+    <div class="xs">
+      <img class="animate-item item1" src="./p1.png" alt="">
+      <img class="animate-item item2" src="./p2.png" alt="">
+    </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'bannerf',
-  data () {
-    return {}
+  name: "bannerf",
+  data() {
+    return {};
   },
-  created () {
-
-  }
-}
+  created() {}
+};
 </script>
 
 <style lang="less" scoped>
@@ -80,6 +83,17 @@ export default {
     }
     100% {
       transform: translate(-@base, -@base);
+    }
+  }
+  .xs {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .lg {
+      display: none;
+    }
+    .xs {
+      display: block;
     }
   }
 }

@@ -1,51 +1,6 @@
 @media screen and (min-width: 320px) {
   html {
-    font-size: 50px;
-  }
-}
-@media screen and (min-width: 360px) {
-  html {
-    font-size: 56.25px;
-  }
-}
-@media screen and (min-width: 375px) {
-  html {
-    font-size: 58.59375px;
-  }
-}
-@media screen and (min-width: 400px) {
-  html {
-    font-size: 62.5px;
-  }
-}
-@media screen and (min-width: 414px) {
-  html {
-    font-size: 64.6875px;
-  }
-}
-@media screen and (min-width: 440px) {
-  html {
-    font-size: 68.75px;
-  }
-}
-@media screen and (min-width: 480px) {
-  html {
-    font-size: 75px;
-  }
-}
-@media screen and (min-width: 520px) {
-  html {
-    font-size: 81.25px;
-  }
-}
-@media screen and (min-width: 560px) {
-  html {
-    font-size: 87.5px;
-  }
-}
-@media screen and (min-width: 600px) {
-  html {
-    font-size: 93.75px;
+    font-size: 80px;
   }
 }
 @media screen and (min-width: 640px) {
@@ -53,29 +8,9 @@
     font-size: 100px;
   }
 }
-@media screen and (min-width: 680px) {
-  html {
-    font-size: 106.25px;
-  }
-}
-@media screen and (min-width: 720px) {
-  html {
-    font-size: 112.5px;
-  }
-}
-@media screen and (min-width: 760px) {
-  html {
-    font-size: 118.75px;
-  }
-}
-@media screen and (min-width: 800px) {
-  html {
-    font-size: 125px;
-  }
-}
 @media screen and (min-width: 960px) {
   html {
-    font-size: 150px;
+    font-size: 130px;
   }
 }
 .background-cover {
@@ -232,8 +167,8 @@ a:focus {
   transition: all 0.5s;
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: 10px;
+  right: .1rem;
+  top: .1rem;
   padding: 10px;
 }
 .nav-btn .btnImg {

@@ -1,8 +1,14 @@
 <template>
   <div class="banner-image">
     <!-- <img class="bg" src="./1.png" alt=""> -->
-    <img class="animate-item item1" src="./1.png" alt="">
-    <img class="animate-item item2" src="./2.png" alt="">
+    <div class="lg">
+      <img class="animate-item item1" src="./1.png" alt="">
+      <img class="animate-item item2" src="./2.png" alt="">
+    </div>
+    <div class="xs">
+      <img class="animate-item item1" src="./p1.png" alt="">
+      <img class="animate-item item2" src="./p2.png" alt="">
+    </div>
   </div>
 </template>
 <script>
@@ -24,7 +30,9 @@ export default {
   height: 100%;
   // top: 50%;
   // left: 50%;
-
+  .xs {
+    display: none;
+  }
   // transform: translate(-50%, -50%);
   .bg {
     position: absolute;
@@ -35,8 +43,8 @@ export default {
     transform: translate(-50%, -50%);
   }
 
-  @base: -500px;
-  @offset: 150px;
+  @base: -5rem;
+  @offset: 1rem;
 
   .animate-item {
     display: inline-block;
@@ -62,7 +70,7 @@ export default {
     0% {
       transform: translate(-@base - @offset, -50%);
     }
-    90% {
+    80% {
       transform: translate(-@base, -50%);
     }
     100% {
@@ -73,7 +81,7 @@ export default {
     0% {
       transform: translate(-@base + @offset, -50%);
     }
-    90% {
+    80% {
       transform: translate(-@base, -50%);
     }
     100% {
@@ -81,8 +89,12 @@ export default {
     }
   }
   @media (max-width: 768px) {
-    width: 1000px;
-    transform: translateX(-180px) scaleX(.7);
+    .lg {
+      display: none;
+    }
+    .xs {
+      display: block;
+    }
   }
 }
 </style>
