@@ -107,11 +107,11 @@ export default {
     };
   },
   computed: {
-    n () {
-      return this.show ? 0 : 1
+    n() {
+      return this.show ? 0 : 1;
     },
-    i () {
-      return this.show ? 0.15 : -0.15
+    i() {
+      return this.show ? 0.15 : -0.15;
     }
   },
   methods: {
@@ -292,7 +292,7 @@ export default {
         padding: 10px;
 
         .en {
-          width: 4rem;
+          width: 3rem;
           font-size: 0.3rem;
 
           span {
