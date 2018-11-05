@@ -7,14 +7,12 @@
 </template>
 <script>
 export default {
-  name: 'bannera',
-  data () {
-    return {}
+  name: "bannera",
+  data() {
+    return {};
   },
-  created () {
-
-  }
-}
+  created() {}
+};
 </script>
 
 <style lang="less" scoped>
@@ -81,6 +79,10 @@ export default {
     100% {
       transform: translate(-@base, -50%);
     }
+  }
+  @media (max-width: 768px) {
+    width: 1000px;
+    transform: translateX(-180px) scaleX(.7);
   }
 }
 </style>
