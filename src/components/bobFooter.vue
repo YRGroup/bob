@@ -115,12 +115,13 @@ export default {
     // padding-bottom: 40px;
     color: #9d9d9d;
     line-height: 30px;
+    font-size: 14px;
     .item {
       margin-bottom: 40px;
     }
     .foot-title {
       color: #fff;
-      font-size: 14px;
+      font-size: 16px;
       // font-size: 0.01rem;
     }
 
