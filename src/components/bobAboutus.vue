@@ -83,7 +83,7 @@ export default {
     .swiper-slide {
       .flex-column();
       color: #fff;
-      font-size: 24px;
+      font-size: @font-size-xxl;
       justify-content: space-around;
       p {
         text-align: left;
@@ -126,10 +126,6 @@ export default {
   @media (max-width: 768px) {
     .content {
       width: 90%;
-
-      .swiper-slide {
-        font-size: 22px;
-      }
     }
   }
 }
