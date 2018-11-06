@@ -24,40 +24,40 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import "swiper/dist/css/swiper.css";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     swiper,
     swiperSlide
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         autoplay: true,
         spaceBetween: 60,
         pagination: {
-          el: '#section2-pagination',
+          el: "#section2-pagination",
           clickable: true,
           // type: 'fraction'
-          bulletClass: 'my-bullet',
-          bulletActiveClass: 'my-bullet-active'
+          bulletClass: "my-bullet",
+          bulletActiveClass: "my-bullet-active"
         }
       }
-    }
+    };
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     }
   },
-  created () {
+  created() {
     // this.initSwiper();
   },
   methods: {}
-}
+};
 </script>
 <style lang="less" >
 @import "../less/variable.less";
@@ -65,9 +65,9 @@ export default {
 @import "../less/common.less";
 #section2 {
   box-sizing: border-box;
-  margin-bottom: 70px;
+  margin-bottom: 0.5rem;
   .background-cover();
-  height: 500px;
+  height: 3.5rem;
   background-image: url("../images/about_bg.jpg");
   justify-content: space-around;
   background-attachment: fixed;
@@ -107,7 +107,7 @@ export default {
     left: 0;
     right: 0;
     .my-bullet {
-      opacity: .6;
+      opacity: 0.6;
       cursor: pointer;
       transition: all 0.3s;
       background: #fff;

@@ -67,14 +67,8 @@ export default {
 @import "../less/mixin.less";
 @import "../less/common.less";
 
-@wrapper: 180px;
+@wrapper: 1.4rem;
 #section4 {
-  margin-bottom: 50px;
-
-  // background-image: url('../images/section4_bg.jpg');
-  // background-attachment: fixed;
-  // padding: 40px 0;
-  // background-size: cover;
   .content {
     margin: 0 auto;
     flex-wrap: wrap;
@@ -83,37 +77,30 @@ export default {
       position: relative;
       height: @wrapper;
       width: @wrapper;
+      margin: 0 auto;
       .bg {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("../images/icon-2.png") no-repeat;
+        background: url("../images/icon-2.png") no-repeat center center;
         background-size: 100% 100%;
         transition: all ease-in-out 0.5s;
-        // transform: rotateZ(180deg);
-        // animation: rotate infinite linear 3s;
+        animation: rotate infinite linear 3s;
       }
 
       .text {
         height: 100%;
         line-height: @wrapper;
         color: @color-theme;
-        font-size: 70px;
+        font-size: 0.6rem;
 
         .sub {
           display: inline-block;
-          font-size: 14px;
-          transform: translateY(-40px);
+          font-size: 0.12rem;
+          transform: translateY(-0.4rem);
           color: #333;
-        }
-      }
-
-      &:hover {
-        .bg {
-          // transform: rotateZ(180deg);
-          animation: rotate infinite linear 3s;
         }
       }
       @keyframes rotate {
@@ -125,11 +112,14 @@ export default {
 
     .item {
       text-align: center;
-
+      margin-bottom: 0.3rem;
       .p1 {
-        margin-top: 20px;
-        font-size: 20px;
-        line-height: 35px;
+        // margin-top: 20px;
+        // font-size: 20px;
+        // line-height: 35px;
+        margin-top: 0.15rem;
+        font-size: 0.15rem;
+        line-height: 0.3rem;
       }
 
       .p2 {
@@ -145,9 +135,6 @@ export default {
     .content {
       width: 100%;
       justify-content: space-around;
-      .item {
-        margin-bottom: 50px;
-      }
     }
   }
 }
