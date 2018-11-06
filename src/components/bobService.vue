@@ -5,7 +5,7 @@
     </h5>
     <div class="container-fluid wrapper">
       <el-row class="cards">
-        <el-col :lg="4" :sm="12" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
               <span>A</span>nalytice
@@ -22,7 +22,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
               <span>B</span>randing
@@ -37,7 +37,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
             <span>C</span>ampaign
@@ -53,7 +53,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
               <span>D</span>igital & web
@@ -69,7 +69,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
               <span>E</span>ditorial
@@ -86,7 +86,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
             <span>F</span>abrication
@@ -148,7 +148,7 @@ export default {
       -moz-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
-      height: 2.8rem;
+      height: 320px;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
@@ -156,28 +156,21 @@ export default {
       -ms-flex-pack: distribute;
       position: relative;
       margin-bottom: 0.2rem;
-      // background-image: url('../images/serviceBg1.jpg');
       .mask {
+        .background-cover();
         z-index: 2;
         justify-content: flex-start;
         height: 100%;
         transition: all 0.5s;
         padding-top: @font-size-xxl;
         box-sizing: border-box;
+        color: #333;
       }
-
       &:hover {
+        background-image: url("../images/s1.png");
         .mask {
           background: rgba(229, 77, 4, 0.5);
           color: #fff;
-
-          .p1 {
-            color: #fff;
-          }
-
-          .p2 {
-            color: #fff;
-          }
         }
       }
 
@@ -191,18 +184,14 @@ export default {
 
       .p1 {
         font-size: @font-size-xxl;
-        color: #333;
         font-weight: bold;
-
         span {
           font-size: 0.5rem;
         }
       }
-
       .p2 {
-        font-size: @font-size-m;
-        line-height: 0.25rem;
-        color: #333;
+        font-size: 15px;
+        line-height: 25px;
         transition: all 0.3s;
         margin-top: @font-size-xl;
         text-align: center;
@@ -218,10 +207,19 @@ export default {
       }
     }
   }
-
+  @media (max-width: 1200px) {
+    .wrapper {
+      margin: auto;
+    }
+  }
   @media (max-width: 768px) {
     .wrapper {
       margin: auto;
+    }
+    .cards {
+      .card {
+        height: 280px;
+      }
     }
   }
 }

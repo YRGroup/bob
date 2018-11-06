@@ -81,10 +81,10 @@ export default {
     }
     .item-title {
       color: #fff;
-      font-size: @font-size-m;
+      font-size: 16px;
     }
     .item-content {
-      font-size: @font-size-s;
+      font-size: 15px;
     }
     .codeImg {
       margin: 20px auto;
