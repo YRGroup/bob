@@ -272,10 +272,7 @@ export default {
 
     .changlang {
       position: absolute;
-      left: 0;
-      right: 0;
       bottom: 30px;
-      cursor: pointer;
       &:hover {
         background: none;
       }
@@ -285,9 +282,8 @@ export default {
         border: none;
         color: #fff;
         transition: all 0.3s;
-        height: 30px;
         line-height: 30px;
-        padding: 10px;
+        padding: 5px;
         cursor: pointer;
       }
       .active {

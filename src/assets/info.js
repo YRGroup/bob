@@ -95,7 +95,7 @@ const info = {
     <p>because those who mind don't matter </p>
     
     <p>and those who matter don't mind.</p>`,
-    items: `<p>非商业影像服务</p>
+    items: `
     <p>年度摄影服务</p>
     <p>年度影视服务</p>
     <p>家庭影像服务</p>

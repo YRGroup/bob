@@ -75,7 +75,7 @@
             <span>E</span>ditorial
           </p>
           <div class="p2">
-            <p>非商业影像服务</p>
+            <!-- <p>非商业影像服务</p> -->
             <p>年度摄影服务</p>
             <p>年度影视服务</p>
             <p>家庭影像服务</p>
@@ -208,7 +208,7 @@ export default {
         transition: all 0.3s;
         min-height: 180px;
         margin-top: 20px;
-        text-align: left;
+        text-align: center;
       }
 
       .p4 {
