@@ -65,9 +65,9 @@ export default {
 @import "../less/common.less";
 #section2 {
   box-sizing: border-box;
-  margin-bottom: 70px;
+  margin-bottom: 0.5rem;
   .background-cover();
-  height: 500px;
+  height: 3.5rem;
   background-image: url("../images/about_bg.jpg");
   justify-content: space-around;
   background-attachment: fixed;
@@ -83,7 +83,7 @@ export default {
     .swiper-slide {
       .flex-column();
       color: #fff;
-      font-size: 24px;
+      font-size: @font-size-xxl;
       justify-content: space-around;
       p {
         text-align: left;
@@ -107,7 +107,7 @@ export default {
     left: 0;
     right: 0;
     .my-bullet {
-      opacity: .6;
+      opacity: 0.6;
       cursor: pointer;
       transition: all 0.3s;
       background: #fff;
@@ -126,10 +126,6 @@ export default {
   @media (max-width: 768px) {
     .content {
       width: 90%;
-
-      .swiper-slide {
-        font-size: 22px;
-      }
     }
   }
 }

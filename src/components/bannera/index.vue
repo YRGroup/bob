@@ -13,12 +13,12 @@
 </template>
 <script>
 export default {
-  name: "bannera",
-  data() {
-    return {};
+  name: 'bannera',
+  data () {
+    return {}
   },
-  created() {}
-};
+  created () {}
+}
 </script>
 
 <style lang="less" scoped>

@@ -231,6 +231,11 @@ export default {
     position: absolute;
     top: 0.1rem;
     left: 0.1rem;
+    .btnImg {
+      &:hover {
+        background-image: url("../images/navBtn.png");
+      }
+    }
   }
 
   ul {

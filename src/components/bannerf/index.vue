@@ -12,12 +12,12 @@
 </template>
 <script>
 export default {
-  name: "bannerf",
-  data() {
-    return {};
+  name: 'bannerf',
+  data () {
+    return {}
   },
-  created() {}
-};
+  created () {}
+}
 </script>
 
 <style lang="less" scoped>
