@@ -89,7 +89,7 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String,
     homeHeader: {
@@ -97,29 +97,29 @@ export default {
       type: Boolean
     },
     id: {
-      default: '',
+      default: "",
       type: String
     }
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   computed: {
-    n () {
-      return this.show ? 0 : 1
+    n() {
+      return this.show ? 0 : 1;
     },
-    i () {
-      return this.show ? 0.15 : -0.15
+    i() {
+      return this.show ? 0.15 : -0.15;
     }
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -231,6 +231,11 @@ export default {
     position: absolute;
     top: 0.1rem;
     left: 0.1rem;
+    .btnImg {
+      &:hover {
+        background-image: url("../images/navBtn.png");
+      }
+    }
   }
 
   ul {

@@ -39,36 +39,35 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import "swiper/dist/css/swiper.css";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     swiper,
     swiperSlide
   },
-  data () {
-    return {
-
-    }
+  data() {
+    return {};
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     }
   },
-  created () {
+  created() {
     // this.initSwiper();
   },
   methods: {}
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
 @import "../less/mixin.less";
 @import "../less/common.less";
 
+@wrapper: 180px;
 #section4 {
   margin-bottom: 50px;
 
@@ -80,28 +79,26 @@ export default {
     margin: 0 auto;
     flex-wrap: wrap;
     max-width: 1200px;
-
     .icon-wrapper {
       position: relative;
-      @wrapper-height: 165px;
-      height: @wrapper-height;
-
+      height: @wrapper;
+      width: @wrapper;
       .bg {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('../images/icon-2.png') no-repeat center center;
-        transition: all  ease-in-out  .5s;
+        background: url("../images/icon-2.png") no-repeat;
+        background-size: 100% 100%;
+        transition: all ease-in-out 0.5s;
         // transform: rotateZ(180deg);
-        animation: rotate infinite linear 3s;
-
+        // animation: rotate infinite linear 3s;
       }
 
       .text {
         height: 100%;
-        line-height: @wrapper-height;
+        line-height: @wrapper;
         color: @color-theme;
         font-size: 70px;
 
@@ -120,8 +117,8 @@ export default {
         }
       }
       @keyframes rotate {
-        100%{
-          transform:rotateZ(360deg);
+        100% {
+          transform: rotateZ(360deg);
         }
       }
     }
@@ -144,15 +141,14 @@ export default {
       }
     }
   }
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     .content {
       width: 100%;
       justify-content: space-around;
-      .item{
+      .item {
         margin-bottom: 50px;
       }
     }
   }
 }
-
 </style>
