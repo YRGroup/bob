@@ -68,64 +68,33 @@ export default {
 #footer {
   text-align: center;
   .background-cover();
-  // background-image: url('../images/gloable.png');
   background: #2e2e2e;
   .content {
-    max-width: 1500px;
-  }
-  .info {
-    .background-cover();
-    background-image: url("../images/gloable.png");
-    padding: 50px;
-    color: #fff;
-    line-height: 30px;
-
-    .phone {
-      font-size: 30px;
-      color: @color-theme;
-      line-height: 45px;
-    }
-
-    .grey {
-      color: #888;
-    }
-
-    .wrapper {
-      // padding: 5px;
-      border-radius: 10px;
-      border: 1px solid #fff;
-      background: #fff;
-      overflow: hidden;
-      margin-top: 10px;
-    }
-  }
-
-  .content {
     margin: 0 auto;
-    padding-top: 40px;
-    // padding-bottom: 40px;
+    padding-top: 0.3rem;
     color: #9d9d9d;
     line-height: 30px;
-    font-size: 14px;
+    font-size: @font-size-l;
+    max-width: 1500px;
     .item {
-      margin-bottom: 40px;
+      margin-bottom: 0.3rem;
     }
     .item-title {
       color: #fff;
-      font-size: 17px;
+      font-size: @font-size-m;
     }
     .item-content {
-      font-size: 15px;
+      font-size: @font-size-s;
     }
     .codeImg {
       margin: 20px auto;
       text-align: center;
       img {
-        width: 120px;
+        width: 1rem;
       }
     }
     .foot-logo {
-      height: 100px;
+      height: 1rem;
       align-items: center;
       img {
         height: 100%;
