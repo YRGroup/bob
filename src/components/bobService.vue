@@ -167,9 +167,9 @@ export default {
         color: #333;
       }
       &:hover {
-        background-image: url("../images/s1.png");
+        // background-image: url("../images/s1.png");
         .mask {
-          background: rgba(229, 77, 4, 0.5);
+          background-color: rgba(214, 94, 15, 0.7);
           color: #fff;
         }
       }
@@ -192,7 +192,6 @@ export default {
       .p2 {
         font-size: 15px;
         line-height: 25px;
-        transition: all 0.3s;
         margin-top: @font-size-xl;
         text-align: center;
       }
