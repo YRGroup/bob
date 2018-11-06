@@ -39,28 +39,28 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     swiper,
     swiperSlide
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
   computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
+    swiper () {
+      return this.$refs.mySwiper.swiper
     }
   },
-  created() {
+  created () {
     // this.initSwiper();
   },
   methods: {}
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";

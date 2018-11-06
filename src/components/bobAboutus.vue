@@ -24,40 +24,40 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     swiper,
     swiperSlide
   },
-  data() {
+  data () {
     return {
       swiperOption: {
         autoplay: true,
         spaceBetween: 60,
         pagination: {
-          el: "#section2-pagination",
+          el: '#section2-pagination',
           clickable: true,
           // type: 'fraction'
-          bulletClass: "my-bullet",
-          bulletActiveClass: "my-bullet-active"
+          bulletClass: 'my-bullet',
+          bulletActiveClass: 'my-bullet-active'
         }
       }
-    };
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
     }
   },
-  created() {
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  created () {
     // this.initSwiper();
   },
   methods: {}
-};
+}
 </script>
 <style lang="less" >
 @import "../less/variable.less";
