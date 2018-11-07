@@ -40,7 +40,7 @@
         </div>
         <!-- <span class="nav-btn" @click="toogleText"></span> -->
       </div>
-      <div class="more kangxi" @click="toogleText">B 我 们</div>
+      <div class="more" @click="toogleText">B 我 们</div>
     </div>
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
@@ -273,6 +273,7 @@ export default {
     .changlang {
       position: absolute;
       bottom: 30px;
+      cursor: pointer;
       &:hover {
         background: none;
       }
