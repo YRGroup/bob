@@ -59,9 +59,9 @@ const info = {
     <p>互联网最起码的作用是让你难以回首没有它的日子。</p>
     <p>Internet gives you an exceptionally effective way to </p>
 
-    <p>broadcast who you are </p>
+    <p>broadcast who you are</p>
 
-    <p>To your target market quickly and efficiently.</p>
+    <p>to your target market quickly and efficiently.</p>
 
     <p>You should use internet </p>
 

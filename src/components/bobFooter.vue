@@ -34,7 +34,6 @@
       <a target="blank" href="http://www.miitbeian.gov.cn"> 豫ICP备16026588号</a>
       <span>&nbsp;&nbsp;&nbsp;勹卜文化传媒有限公司</span>
     </p>
-
   </footer>
 </template>
 

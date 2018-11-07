@@ -200,10 +200,11 @@ export default {
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.01, 0.67, 0.65, 0.97);
   .wrapper {
-    opacity: 0.7;
+    // opacity: 0.7;
+    color: #ddd;
     transition: all 0.3s;
     &:hover {
-      opacity: 1;
+      color: #fff;
     }
     a {
       &:hover {
