@@ -103,7 +103,7 @@ export default {
   }
 
   #section2-pagination {
-    bottom: 20px;
+    bottom: 0.15rem;
     left: 0;
     right: 0;
     .my-bullet {

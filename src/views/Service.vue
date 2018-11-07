@@ -31,16 +31,16 @@
       </router-link>
       <div class="service-navs">
         <div>
-          <router-link :class="['item', {'active':id=='a'}]" to="/service/a">论</router-link>
-          <router-link :class="['item', {'active':id=='b'}]" to="/service/b">划</router-link>
-          <router-link :class="['item', {'active':id=='c'}]" to="/service/c">搞</router-link>
-          <router-link :class="['item', {'active':id=='d'}]" to="/service/d">码</router-link>
-          <router-link :class="['item', {'active':id=='e'}]" to="/service/e">纪</router-link>
-          <router-link :class="['item', {'active':id=='f'}]" to="/service/f">造</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='a'}]" to="/service/a">论</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='b'}]" to="/service/b">划</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='c'}]" to="/service/c">搞</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='d'}]" to="/service/d">码</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='e'}]" to="/service/e">纪</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='f'}]" to="/service/f">造</router-link>
         </div>
         <!-- <span class="nav-btn" @click="toogleText"></span> -->
       </div>
-      <div class="more" @click="toogleText">B我们</div>
+      <div class="more kangxi" @click="toogleText">B 我 们</div>
     </div>
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
@@ -58,15 +58,15 @@
           <transition name="poetry">
             <div class="right-con text" v-show="!cn" >
               <div v-html="items">
-
               </div>
             </div>
           </transition>
         </div>
         <div class="changlang">
-          <button @click="cn=true" :class="[{'active':cn}]">B一下</button>
-          <span> / </span>
-          <button @click="cn=false" :class="[{'active':!cn}]">再B一下</button>
+          <span @click="cn=true" :class="[{'active':cn},'btn','btn1']"></span>
+          <!-- <button >B一下</button> -->
+          <!-- <span> / </span> -->
+          <span @click="cn=false" :class="[{'active':!cn},'btn','btn2']"></span>
         </div>
       </div>
     </transition>
@@ -74,19 +74,19 @@
   </div>
 </template>
 <script>
-import { info } from '@/assets/info'
-import bannera from '@/components/bannera/index.vue'
-import bannerb from '@/components/bannerb/index.vue'
-import bannerc from '@/components/bannerc/index.vue'
-import bannerd from '@/components/bannerd/index.vue'
-import bannere from '@/components/bannere/index.vue'
-import bannerf from '@/components/bannerf/index.vue'
+import { info } from "@/assets/info";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
+import bannerc from "@/components/bannerc/index.vue";
+import bannerd from "@/components/bannerd/index.vue";
+import bannere from "@/components/bannere/index.vue";
+import bannerf from "@/components/bannerf/index.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bannera,
     bannerb,
@@ -95,49 +95,49 @@ export default {
     bannere,
     bannerf
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       showText: false,
       showService: false,
       cn: true
-    }
+    };
   },
   computed: {
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     },
-    banner () {
-      return 'banner' + this.id
+    banner() {
+      return "banner" + this.id;
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
       this.timer = setTimeout(() => {
-        this.cn = true
-      }, 500)
+        this.cn = true;
+      }, 500);
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/mixin.less";
@@ -276,18 +276,36 @@ export default {
       &:hover {
         background: none;
       }
-      button {
-        background: none;
-        outline: none;
-        border: none;
-        color: #fff;
+      // button {
+      //   background: none;
+      //   outline: none;
+      //   border: none;
+      //   color: #fff;
+      //   transition: all 0.3s;
+      //   line-height: 30px;
+      //   padding: 5px;
+      //   cursor: pointer;
+      // }
+      .btn {
+        width: 60px;
+        height: 30px;
+        display: inline-block;
+        margin: 0 20px;
+        background: no-repeat center center;
+        background-size: 100% auto;
         transition: all 0.3s;
-        line-height: 30px;
-        padding: 5px;
-        cursor: pointer;
+      }
+      .btn1 {
+        background-image: url("../images/B下.png");
+      }
+      .btn2 {
+        background-image: url("../images/BB下.png");
       }
       .active {
-        font-size: 20px;
+        // font-size: 20px;
+        transform: scale(2);
+        // background-image: url("../images/BB.png");
+        // opacity: 0.8;
       }
     }
   }

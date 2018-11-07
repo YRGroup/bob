@@ -87,7 +87,7 @@ const keyWords = [{
   cn: '野心',
   type: 'c'
 }, {
-  keyword: 'Nobility ',
+  keyword: 'Nobility',
   cn: '高贵',
   type: 'c'
 }, {

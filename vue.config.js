@@ -1,7 +1,8 @@
 // vue.config.js
+const baseUrl = '/wp-content/themes/bob-vue/src/'
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
-    ? '/wp-content/themes/bob-vue/src/' : '/',
+    ? baseUrl : '/',
   lintOnSave: true,
   chainWebpack: config => {
     // prefetch  预加载压缩包 提示效率，会增加带宽
@@ -27,6 +28,7 @@ module.exports = {
       alias: {
         'components': '@/components'
       }
-    }
+    },
+    devtool: 'inline-source-map'
   }
 }

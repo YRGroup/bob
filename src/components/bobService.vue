@@ -5,7 +5,7 @@
     </h5>
     <div class="container-fluid wrapper">
       <el-row class="cards">
-        <el-col :lg="4" :sm="12" :xs="24" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
               <span>A</span>nalytice
@@ -22,7 +22,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="24" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
               <span>B</span>randing
@@ -37,7 +37,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="24" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
             <span>C</span>ampaign
@@ -53,27 +53,27 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="24" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
-            <span>D</span><span style="font-size:24px">igital & web</span>
-          </p>
-          <div class="p2">
-            <p>微信平台解决方案</p>
-            <p>服务器运营外包</p>
-            <p>高端官网定制</p>
-            <p>移动端网站建设</p>
-            <p>业务系统开发</p>
-            <p>H5应用开发</p>
-          </div>
+              <span>D</span>igital & web
+            </p>
+            <div class="p2">
+              <p>微信平台解决方案</p>
+              <p>服务器运营外包</p>
+              <p>高端官网定制</p>
+              <p>移动端网站建设</p>
+              <p>业务系统开发</p>
+              <p>H5应用开发</p>
+            </div>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="24" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
-            <span>E</span>ditorial
-          </p>
+              <span>E</span>ditorial
+            </p>
           <div class="p2">
             <!-- <p>非商业影像服务</p> -->
             <p>年度摄影服务</p>
@@ -86,7 +86,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="12" :xs="24" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
             <span>F</span>abrication
@@ -131,8 +131,6 @@ export default {
 @import "../less/common.less";
 
 #section1 {
-  // padding-top: 68px;
-  // padding-bottom: 80px;
   padding: 0.5rem 0;
   .wrapper {
     margin: 0 100px;
@@ -150,36 +148,29 @@ export default {
       -moz-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
-      height: 360px;
+      height: 320px;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
       text-align: center;
       -ms-flex-pack: distribute;
       position: relative;
-
-      // background-image: url('../images/serviceBg1.jpg');
+      margin-bottom: 0.2rem;
       .mask {
+        .background-cover();
         z-index: 2;
         justify-content: flex-start;
         height: 100%;
         transition: all 0.5s;
-        padding-top: 30px;
+        padding-top: @font-size-xxl;
         box-sizing: border-box;
+        color: #333;
       }
-
       &:hover {
+        // background-image: url("../images/s1.png");
         .mask {
-          background: rgba(229, 77, 4, 0.5);
+          background-color: rgba(214, 94, 15, 0.7);
           color: #fff;
-
-          .p1 {
-            color: #fff;
-          }
-
-          .p2 {
-            color: #fff;
-          }
         }
       }
 
@@ -192,22 +183,16 @@ export default {
       }
 
       .p1 {
-        font-size: 28px;
-        color: #333;
+        font-size: @font-size-xxl;
         font-weight: bold;
-
         span {
-          font-size: 64px;
+          font-size: 0.5rem;
         }
       }
-
       .p2 {
         font-size: 15px;
-        line-height: 30px;
-        color: #333;
-        transition: all 0.3s;
-        min-height: 180px;
-        margin-top: 20px;
+        line-height: 25px;
+        margin-top: @font-size-xl;
         text-align: center;
       }
 
@@ -217,34 +202,23 @@ export default {
 
       .p3 {
         font-weight: bold;
-        font-size: 20px;
+        font-size: @font-size-xl;
       }
     }
   }
-
+  @media (max-width: 1200px) {
+    .wrapper {
+      margin: auto;
+    }
+  }
   @media (max-width: 768px) {
     .wrapper {
       margin: auto;
     }
     .cards {
       .card {
-        height: 300px;
-        .p1 {
-          font-size: 20px;
-          span {
-            font-size: 30px;
-          }
-        }
-        .p2 {
-          font-size: 15px;
-        }
+        height: 280px;
       }
-    }
-  }
-
-  @media (max-width: 1100px) {
-    .wrapper {
-      margin: auto;
     }
   }
 }

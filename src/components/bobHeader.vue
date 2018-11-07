@@ -200,10 +200,11 @@ export default {
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.01, 0.67, 0.65, 0.97);
   .wrapper {
-    opacity: 0.7;
+    // opacity: 0.7;
+    color: #ddd;
     transition: all 0.3s;
     &:hover {
-      opacity: 1;
+      color: #fff;
     }
     a {
       &:hover {
@@ -251,19 +252,16 @@ export default {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       text-align: left;
       .en {
-        font-size: 0.2rem;
+        font-size: font-size-xxl;
         width: 2.5rem;
         display: inline-block;
-
         span {
           font-size: 0.4rem;
         }
       }
-
       .cn {
         font-size: 0.4rem;
       }
-
       .wrapper {
         overflow: hidden;
       }
