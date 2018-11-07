@@ -252,7 +252,7 @@ export default {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       text-align: left;
       .en {
-        font-size: font-size-xxl;
+        font-size: @font-size-xxxl;
         width: 2.5rem;
         display: inline-block;
         span {
