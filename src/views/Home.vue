@@ -17,6 +17,7 @@ import bobService from '@/components/bobService.vue'
 import bobAboutus from '@/components/bobAboutus.vue'
 import bobData from '@/components/bobData.vue'
 import bobFooter from '@/components/bobFooter.vue'
+
 export default {
   name: 'home',
   components: {
@@ -26,6 +27,9 @@ export default {
     bobAboutus,
     bobData,
     bobFooter
+  },
+  created () {
+
   }
 }
 </script>

@@ -8,7 +8,7 @@
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
-              <span>A</span>nalytice
+              <span>A</span>nalytics
             </p>
             <div class="p2">
               <p>品牌核心价值</p>
@@ -20,7 +20,7 @@
               <p>品牌命名</p>
             </div>
             <!-- <p class="p3">+</p> -->
-          </div>
+            </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
