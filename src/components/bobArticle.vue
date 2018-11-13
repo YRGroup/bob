@@ -9,12 +9,14 @@ export default {};
 
 <style lang="less">
 .case-article {
-  background: #fdfdfd;
-  max-width:900px;
+  background: #fafafa;
+  max-width:1200px;
+  padding: 0 50px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   position: relative;
+  text-align: left;
   p {
     img {
       // max-width: 100%;

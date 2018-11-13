@@ -81,7 +81,7 @@ export default {
     overflow: hidden;
     .bg {
       .background-cover();
-      filter: blur(15px);
+      filter: blur(55px);
       position: absolute;
       left: -10px;
       top: -10px;
