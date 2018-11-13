@@ -1,15 +1,15 @@
 import axios from 'axios'
-const baseRestUrl = 'http://bob/wp-json/wp/v2/'
+const baseRestUrl = process.env.NODE_ENV == 'development' ? 'http://bob/wp-json/wp/v2/' : '/wp-json/wp/v2/'
 class HTTP {
-  constructor () {
+  constructor() {
     this.baseRestUrl = baseRestUrl
   }
-  getRequest (url, params) {
+  getRequest(url, params) {
     // console.log(11)
     return new Promise((resolve, reject) => {
       axios.get(this.baseRestUrl + url, {
-        params: params
-      })
+          params: params
+        })
         .then(function (res) {
           resolve(res)
         })
@@ -19,7 +19,7 @@ class HTTP {
     })
   }
 
-  postRequest (url, params) {
+  postRequest(url, params) {
     return new Promise((resolve, reject) => {
       axios.post(this.baseRestUrl + url, params)
         .then(function (res) {

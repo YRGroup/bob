@@ -23,111 +23,114 @@
 
     <div v-if="caseList.length" class="case-wrapper">
       <el-row class="case-list">
-        <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
-          <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
-            <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
-
-            </div>
-            <div class="case-title">
-              <p class="p1">{{item.title.rendered}}</p>
-              <p class="p2">{{formatTags(item.tags)}}</p>
-            </div>
-          </router-link>
-        </el-col>
+        <transition-group name="fadeBottom">
+          <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
+            <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
+              <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
+              </div>
+              <div class="case-title">
+                <p class="p1">{{item.title.rendered}}</p>
+                <p class="p2">{{formatTags(item.tags)}}</p>
+              </div>
+            </router-link>
+          </el-col>
+        </transition-group>
       </el-row>
-      <el-row>
-        <el-button v-if="more" @click="getMore">更多</el-button>
-        <p class="foot" v-else>--没有更多了--</p>
+      <el-row class="cases-footer">
+        <el-button v-if="more" @click="getMore">更多案例</el-button>
+        <p class="foot" v-else>-- 没有更多了 --</p>
       </el-row>
     </div>
+    <bob-footer></bob-footer>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import bobHeader from '@/components/bobHeader.vue'
-
-import API from '@/api/index'
+import bobHeader from "@/components/bobHeader.vue";
+import bobFooter from "@/components/bobFooter.vue";
+import API from "@/api/index";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    bobHeader
+    bobHeader,
+    bobFooter
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       bannerList: {
         a: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 5
         },
         b: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 6
         },
         c: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 10
         },
         d: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 4
         },
         e: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 7
         },
         f: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 8
         }
       },
       caseList: [],
       currentPage: 1,
       more: true
-    }
+    };
   },
   computed: {
-    banner () {
-      return this.bannerList[this.id].bannerImg
+    banner() {
+      return this.bannerList[this.id].bannerImg;
     }
   },
 
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
-    this.getData()
+    this.getData();
   },
   methods: {
-    getData () {
-      let id = this.bannerList[this.id].catId
+    getData() {
+      let id = this.bannerList[this.id].catId;
 
       API.getCatPosts(id, this.currentPage)
         .then(res => {
-          console.log(res)
-          this.caseList = this.caseList.concat(res.data)
+          console.log(res);
+          this.caseList = this.caseList.concat(res.data);
           // this.caseList = this.caseList.concat(this.caseList);
         })
         .catch(err => {
           // console.log(err);
-          this.more = false
-        })
+          this.more = false;
+        });
     },
-    getMore () {
-      this.currentPage++
-      this.getData()
+    getMore() {
+      this.currentPage++;
+      this.getData();
     },
-    formatTags (string) {
-      let arr = string.split('/')
-      arr.pop()
-      return arr.join(' / ')
+    formatTags(string) {
+      let arr = string.split("/");
+      arr.pop();
+      return arr.join(" / ");
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -150,10 +153,10 @@ export default {
       .p2 {
         font-size: 15px;
         line-height: 60px;
-        opacity: .8;
+        opacity: 0.8;
       }
       .p3 {
-        opacity: .6;
+        opacity: 0.6;
         span {
           display: inline-block;
           padding: 0 20px;
@@ -176,7 +179,7 @@ export default {
   .case-list {
     max-width: 1450px;
     margin: 0 auto;
-    margin-bottom: 0.5rem;
+    // margin-bottom: 0.5rem;
     @base: 0.85rem;
     .case-item {
       background: #fff;
@@ -219,10 +222,24 @@ export default {
     }
   }
 }
-.foot{
-  color: #666;
-  line-height: 50px;
-  font-size: 15px;
+.cases-footer {
+  padding: 30px 0;
+  .foot {
+    color: #666;
+    line-height: 50px;
+    font-size: 15px;
+  }
+}
 
+.fadeBottom-enter-active,
+.fadeBottom-leave-active {
+  transition: all 0.5s;
+  // transform: translateX(0);
+}
+
+.fadeBottom-enter,
+.fadeBottom-leave-to {
+  transform: translateY(20px);
+  opacity: 0.2;
 }
 </style>

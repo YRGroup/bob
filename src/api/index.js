@@ -8,7 +8,7 @@ API.getCatPosts = (id, currentPage) => {
   let params = {
     categories: id,
     page: currentPage || 1,
-    per_page: 2
+    per_page: 6
   }
   return http.getRequest('posts', params)
 }
