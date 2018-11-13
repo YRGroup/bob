@@ -107,21 +107,21 @@
 
 <script>
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String
   },
-  data() {
+  data () {
     return {
       show: false
-    };
+    }
   },
   methods: {
-    toogleSideNav() {
-      this.show = !this.show;
+    toogleSideNav () {
+      this.show = !this.show
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

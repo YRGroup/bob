@@ -26,90 +26,95 @@
         <el-col v-for="item in caseList" :lg="6" :md="8" :sm="12" :xs="12" :key="item.id">
           <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
             <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
-              
+
             </div>
             <div class="case-title">
               <p class="p1">{{item.title.rendered}}</p>
-              <!-- <p class="p2">高端网站定制</p> -->
+              <p class="p2">{{formatTags(item.tags)}}</p>
             </div>
           </router-link>
         </el-col>
-      </el-row>  
+      </el-row>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
+import bobHeader from '@/components/bobHeader.vue'
 
-import API from "@/api/index";
+import API from '@/api/index'
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     bobHeader
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       bannerList: {
         a: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require('@/images/3.jpg'),
           catId: 5
         },
         b: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require('@/images/3.jpg'),
           catId: 6
         },
         c: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require('@/images/3.jpg'),
           catId: 10
         },
         d: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require('@/images/3.jpg'),
           catId: 4
         },
         e: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require('@/images/3.jpg'),
           catId: 7
         },
         f: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require('@/images/3.jpg'),
           catId: 8
         }
       },
       caseList: []
-    };
+    }
   },
   computed: {
-    banner() {
-      return this.bannerList[this.id].bannerImg;
+    banner () {
+      return this.bannerList[this.id].bannerImg
     }
   },
 
-  created() {
-    this.id = this.$route.params.id;
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
-    this.getData();
+    this.getData()
   },
   methods: {
-    getData() {
-      let id = this.bannerList[this.id].catId;
+    getData () {
+      let id = this.bannerList[this.id].catId
       API.getCatPosts(id)
         .then(res => {
-          console.log(res);
-          this.caseList = res.data;
+          console.log(res)
+          this.caseList = res.data
         })
         .catch(err => {
-          console.log(err);
-        });
+          console.log(err)
+        })
+    },
+    formatTags (string) {
+      let arr = string.split('/')
+      arr.pop()
+      return arr.join(' / ')
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -155,30 +160,40 @@ export default {
     padding-top: 0.3rem;
   }
   .case-list {
-    max-width: 1500px;
+    max-width: 1450px;
     margin: 0 auto;
+
+    @base: 0.6rem;
     .case-item {
       background: #fff;
       margin: 10px auto;
-      width: 2.3rem;
+      width: 4 * @base;
       cursor: pointer;
       border-radius: 0.03rem;
       overflow: hidden;
       .case-content {
         .background-cover();
         // background-size: 80% 80%;
-        height: 1.5rem;
-        .p1 {
-        }
-        .p2 {
-        }
+        background-color: #ddd;
+        height: 3 * @base;
       }
       .case-title {
         border: 1px solid #fff;
         box-sizing: border-box;
-        font-size: 15px;
-        line-height: 50px;
-        color: #333;
+        text-align: left;
+        padding-left: 20px;
+        .p1 {
+          color: #555;
+          font-size: 15px;
+          line-height: 30px;
+
+          font-weight: bold;
+        }
+        .p2 {
+          font-size: 12px;
+          line-height: 30px;
+          color: #aaa;
+        }
       }
     }
   }
