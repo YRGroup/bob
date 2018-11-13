@@ -17,7 +17,12 @@ export default new Router({
   {
     path: '/cases/:id',
     name: 'cases',
-    component: () => import(/* webpackChunkName: "Web" */ './views/Cases.vue')
+    component: () => import(/* webpackChunkName: "cases" */ './views/Cases.vue')
+  },
+  {
+    path: '/case/:id',
+    name: 'case',
+    component: () => import(/* webpackChunkName: "case" */ './views/Case.vue')
   }
 
   ]

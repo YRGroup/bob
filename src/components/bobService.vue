@@ -40,16 +40,16 @@
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
-            <span>C</span>ampaign
-          </p>
-          <div class="p2">
-            <p>线下事件活动服务</p>
-            <p>线上事件营销活动</p>
-            <p>传播侃拼方案</p>
-            <p>媒体管理服务</p>
-            <p>传播调研</p>
-            <p>传播策略</p>
-          </div>
+              <span>C</span>ampaign
+            </p>
+            <div class="p2">
+              <p>线下事件活动服务</p>
+              <p>线上事件营销活动</p>
+              <p>传播侃拼方案</p>
+              <p>媒体管理服务</p>
+              <p>传播调研</p>
+              <p>传播策略</p>
+            </div>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
@@ -107,21 +107,21 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -156,6 +156,8 @@ export default {
       -ms-flex-pack: distribute;
       position: relative;
       margin-bottom: 0.2rem;
+      padding: 0 10px;
+      box-sizing: border-box;
       .mask {
         .background-cover();
         z-index: 2;
@@ -169,17 +171,22 @@ export default {
       &:hover {
         // background-image: url("../images/s1.png");
         .mask {
-          background-color: rgba(214, 94, 15, 0.7);
-          color: #fff;
+          // background-color: rgba(214, 94, 15, 0.7);
+          // color: #fff;
+          box-shadow: 0 0 10px #999;
         }
       }
 
       &:nth-of-type(odd) {
-        background-color: #eeeeee;
+        .mask {
+          background-color: #eeeeee;
+        }
       }
 
       &:nth-of-type(even) {
-        background-color: #f7f7f7;
+        .mask {
+          background-color: #f7f7f7;
+        }
       }
 
       .p1 {
