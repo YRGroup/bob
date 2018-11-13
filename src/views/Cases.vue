@@ -127,22 +127,23 @@ export default {
       padding: 0 0.5rem;
       color: #fff;
       .p1 {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
       }
       .p2 {
         font-size: 15px;
         line-height: 60px;
-        color: #ddd;
+        opacity: .8;
       }
       .p3 {
+        opacity: .6;
         span {
           display: inline-block;
-          padding: 0 10px;
-          border-radius: 20px;
-          line-height: 40px;
+          padding: 0 20px;
+          border-radius: 40px;
+          line-height: 36px;
           border: 1px solid #fff;
           margin: 30px 10px 0;
-          font-size: 0.12rem;
+          font-size: 0.11rem;
         }
       }
     }
