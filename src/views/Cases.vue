@@ -23,7 +23,7 @@
 
     <div v-if="caseList.length" class="case-wrapper">
       <el-row class="case-list">
-        <el-col v-for="item in caseList" :lg="6" :md="8" :sm="12" :xs="12" :key="item.id">
+        <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
           <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
             <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
 
@@ -34,6 +34,10 @@
             </div>
           </router-link>
         </el-col>
+      </el-row>
+      <el-row>
+        <el-button v-if="more" @click="getMore">更多</el-button>
+        <p class="foot" v-else>--没有更多了--</p>
       </el-row>
     </div>
   </div>
@@ -79,7 +83,9 @@ export default {
           catId: 8
         }
       },
-      caseList: []
+      caseList: [],
+      currentPage: 1,
+      more: true
     }
   },
   computed: {
@@ -99,14 +105,21 @@ export default {
   methods: {
     getData () {
       let id = this.bannerList[this.id].catId
-      API.getCatPosts(id)
+
+      API.getCatPosts(id, this.currentPage)
         .then(res => {
           console.log(res)
-          this.caseList = res.data
+          this.caseList = this.caseList.concat(res.data)
+          // this.caseList = this.caseList.concat(this.caseList);
         })
         .catch(err => {
-          console.log(err)
+          // console.log(err);
+          this.more = false
         })
+    },
+    getMore () {
+      this.currentPage++
+      this.getData()
     },
     formatTags (string) {
       let arr = string.split('/')
@@ -162,8 +175,8 @@ export default {
   .case-list {
     max-width: 1450px;
     margin: 0 auto;
-
-    @base: 0.6rem;
+    margin-bottom: 0.5rem;
+    @base: 0.85rem;
     .case-item {
       background: #fff;
       margin: 10px auto;
@@ -181,21 +194,34 @@ export default {
         border: 1px solid #fff;
         box-sizing: border-box;
         text-align: left;
-        padding-left: 20px;
+        padding: 25px 0 25px 20px;
         .p1 {
           color: #555;
           font-size: 15px;
           line-height: 30px;
-
           font-weight: bold;
         }
         .p2 {
           font-size: 12px;
           line-height: 30px;
           color: #aaa;
+          height: 30px;
         }
       }
     }
   }
+  @media (max-width: 768px) {
+    .case-list {
+      .case-item {
+        width: 90%;
+      }
+    }
+  }
+}
+.foot{
+  color: #666;
+  line-height: 50px;
+  font-size: 15px;
+
 }
 </style>
