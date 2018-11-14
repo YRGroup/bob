@@ -10,11 +10,11 @@
             <p class="p2">越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务</p>
             <p class="p3">
               <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
+              <span >服务器运营外包</span>
+              <span >高端官网定制</span>
+              <span >移动端网站建设</span>
+              <span >业务系统开发</span>
+              <span >H5应用开发</span>
             </p>
           </div>
         </div>
@@ -117,11 +117,11 @@ export default {
           catId: 10
         },
         d: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require("@/images/cases/banner_A1.jpg"),
           catId: 4
         },
         e: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require("@/images/cases/banner_E1.jpg"),
           catId: 7
         },
         f: {
