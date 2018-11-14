@@ -1,5 +1,7 @@
 const info = {
   'a': {
+    name: "Analytics",
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
     poetry: `<h2>Analytics</h2>
     <p>不讨论的代价比瞎讨论的代价还要大。</p>
     <p>The alchemists in their search for gold</p>
@@ -16,8 +18,11 @@ const info = {
     <p>品牌使命</p>
     <p>品牌主张</p>
     <p>品牌命名</p>`
+
   },
   'b': {
+    name: "Branding",
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
     poetry: `<h2>Branding</h2>
     <p>划掉多余的，美化剩下的。</p>
     <p>A creative man is motivated by the desire to achieve, </p>
@@ -37,6 +42,8 @@ const info = {
     <p>PPT模板</p>`
   },
   'c': {
+    name: "Campaign",
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
     poetry: `<h2>Campaign</h2>
     <p>如果你外婆不明白你在搞什么，你就没有在搞事情。</p>
     <p>Any powerful idea is </p>
@@ -55,6 +62,8 @@ const info = {
     <p>传播策略</p>`
   },
   'd': {
+    name: "Digital & web",
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
     poetry: `<h2>Digits & web</h2>
     <p>互联网最起码的作用是让你难以回首没有它的日子。</p>
     <p>Internet gives you an exceptionally effective way to </p>
@@ -82,6 +91,8 @@ const info = {
     <p>H5应用开发</p>`
   },
   'e': {
+    name: "Editorial",
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
     poetry: `<h2>Editorial</h2>
     <p>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</p>
     <p>If you don't give the market the story to talk about, </p>
@@ -104,6 +115,8 @@ const info = {
     <p>宣传片</p>`
   },
   'f': {
+    name: "Fabrication",
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
     poetry: `<h2>Fabrication</h2>
     <p>如果品牌是首诗歌，造出的产品就是诗朗诵。</p>
     <p>A brand is a voice and a product is a souvenir.</p>
