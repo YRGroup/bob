@@ -3,7 +3,7 @@
     <bob-header></bob-header>
     <div class="case-content">
       <div class="case-banner" >
-        <div class="bg" :style="{backgroundImage:`url(${caseInfo.thumbnail})`}"></div>
+        <div class="bg" :style="{backgroundImage:`url(${caseInfo.banner})`}"></div>
         <div class="desc">
           <p class="p1">{{caseInfo.title}}</p>    
           <p class="p2">{{caseInfo.tag}}</p> 

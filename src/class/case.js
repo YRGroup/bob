@@ -4,6 +4,7 @@ class Case {
     this.date = data.date
     this.title = data.title.rendered
     this.thumbnail = data.thumbnailurl
+    this.banner = data.banner
     this.tag = this.formatTags(data.tags)
   }
 
