@@ -71,7 +71,7 @@ export default {
 .case-page {
   background: #fff;
   .case-content {
-    margin-bottom: 0.3rem;
+    padding-bottom: 0.3rem;
     background: #fafafa;
   }
   
