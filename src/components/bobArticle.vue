@@ -24,6 +24,7 @@ export default {};
       // max-width: 100%;
       width: 100%;
       height: auto;
+      vertical-align: bottom;
     }
   }
 }
