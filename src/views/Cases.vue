@@ -100,11 +100,11 @@ export default {
     return {
       id: "",
       swiperOption: {
-        // autoplay: true,
+        autoplay: true,
 
         // simulateTouch: false, // 禁止鼠标模拟
         // effect: 'fade',
-        // loop: true,
+        loop: true,
         speed: 1000,
         navigation: {
           nextEl: ".next-btn",
