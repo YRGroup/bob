@@ -125,11 +125,11 @@ export default {
           catId: 10
         },
         d: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require("@/images/cases/banner_A1.jpg"),
           catId: 4
         },
         e: {
-          bannerImg: require("@/images/3.jpg"),
+          bannerImg: require("@/images/cases/banner_E1.jpg"),
           catId: 7
         },
         f: {
