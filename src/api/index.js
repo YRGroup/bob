@@ -1,6 +1,8 @@
-import HTTP from './axios'
+import {
+  postRequest,
+  getRequest
+} from './axios'
 
-let http = new HTTP()
 let API = {}
 
 // @id:分类id; @page:页码； @per_page:每页数量
@@ -10,11 +12,11 @@ API.getCatPosts = (id, currentPage) => {
     page: currentPage || 1,
     per_page: 6
   }
-  return http.getRequest('posts', params)
+  return getRequest('posts', params)
 }
 
 // @id:文章id
 API.getPost = (id) => {
-  return http.getRequest('posts/' + id)
+  return getRequest('posts/' + id)
 }
 export default API

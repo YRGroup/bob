@@ -1,20 +1,48 @@
 <template>
   <div class="case-page">
     <bob-header></bob-header>
-    <div  class="banner-bg" :style="{backgroundImage:`url(${banner})`}">
-      <div class="content">
-        <h3 class="p1">Digital & web</h3>
-        <p class="p2">越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务</p>
-        <p class="p3">
-          <span >微信平台解决方案</span>
-          <span >微信平台解决方案</span>
-          <span >微信平台解决方案</span>
-          <span >微信平台解决方案</span>
-          <span >微信平台解决方案</span>
-          <span >微信平台解决方案</span>
-        </p>
+
+    <swiper class="banner-swiper" :options="swiperOption" ref="mySwiper">
+      <swiper-slide class="swiper-slide">
+        <div class="banner-bg" :style="{backgroundImage:`url(${banner})`}">
+          <div class="content">
+            <h3 class="p1">Digital & web</h3>
+            <p class="p2">越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务</p>
+            <p class="p3">
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span>
+            </p>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide class="swiper-slide">
+        <div class="text animated" >
+          <p class="p1">bridges of brands</p>
+          <p class="p2">赋能那些为人性光辉付出努力的个人和组织</p>
+        </div>
+      </swiper-slide>
+      <!--左箭头-->
+      <div class="prev-btn swiper-btn flex" slot="button-prev">
+        <div class="lines">
+          <span class="top-line line"></span>
+          <span class="bottom-line line"></span>
+        </div>
+        <p class="tip"></p>
       </div>
-    </div>
+      <!--右箭头-->
+      <div class="next-btn swiper-btn flex" slot="button-next">
+        <p class="tip"></p>
+        <div class="lines">
+          <span class="top-line line"></span>
+          <span class="bottom-line line"></span>
+        </div>
+      </div>
+    </swiper>
+
     <div>
       <h5 class="section-title">
         <span>案例展示 / <span class="en">case</span> </span>
@@ -47,6 +75,7 @@
 
 <script>
 // @ is an alias to /src
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 import bobHeader from "@/components/bobHeader.vue";
 import bobFooter from "@/components/bobFooter.vue";
 import API from "@/api/index";
@@ -55,11 +84,25 @@ export default {
   name: "home",
   components: {
     bobHeader,
-    bobFooter
+    bobFooter,
+    swiper,
+    swiperSlide
   },
   data() {
     return {
       id: "",
+      swiperOption: {
+        // autoplay: true,
+
+        // simulateTouch: false, // 禁止鼠标模拟
+        // effect: 'fade',
+        // loop: true,
+        speed: 1000,
+        navigation: {
+          nextEl: ".next-btn",
+          prevEl: ".prev-btn"
+        }
+      },
       bannerList: {
         a: {
           bannerImg: require("@/images/3.jpg"),
@@ -138,10 +181,16 @@ export default {
 
 .case-page {
   background: #fff;
+  .banner-swiper {
+    height: 800px;
+    .swiper-slide {
+      height: 100%;
+    }
+  }
   .banner-bg {
+    height: 100%;
     .background-cover();
     // background-image: url("../images/3.jpg");
-    height: 800px;
     .flex-column();
     .content {
       // height: 100%;
@@ -241,5 +290,97 @@ export default {
 .fadeBottom-leave-to {
   transform: translateY(20px);
   opacity: 0.2;
+}
+
+.swiper-btn {
+  position: absolute;
+  bottom: 50%;
+  z-index: 90;
+  color: #fff;
+  outline: none;
+  padding: 0 20px;
+  opacity: 0.7;
+  cursor: pointer;
+  .lines {
+    height: 40px;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .tip {
+    height: 2px;
+    background: #fff;
+    font-weight: bold;
+    width: 0;
+    transition: width 0.3s;
+    margin: 0 10px;
+  }
+
+  .line {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: #fff;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  .top-line {
+    transform-origin: bottom;
+    top: 0;
+    left: 0;
+  }
+
+  .bottom-line {
+    transform-origin: top;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.prev-btn:hover {
+    .lines {
+      transform: translateX(-10px);
+    }
+
+    .tip {
+      width: 20px;
+    }
+
+    .top-line {
+      transform: rotateZ(45deg);
+      // height: 60px;
+    }
+
+    .bottom-line {
+      transform: rotateZ(-45deg);
+      // height: 60px;
+    }
+  }
+
+  &.next-btn:hover {
+    .lines {
+      transform: translateX(10px);
+    }
+
+    .tip {
+      width: 20px;
+    }
+
+    .top-line {
+      transform: rotateZ(-45deg);
+    }
+
+    .bottom-line {
+      transform: rotateZ(45deg);
+    }
+  }
+}
+
+.prev-btn {
+  left: 50px;
+}
+
+.next-btn {
+  right: 50px;
 }
 </style>
