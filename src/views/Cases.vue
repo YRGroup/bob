@@ -4,8 +4,8 @@
 
     <swiper class="banner-swiper" :options="swiperOption" ref="mySwiper">
       <swiper-slide class="swiper-slide">
-        <div class="banner-bg" :style="{backgroundImage:`url(${banner})`}">
-          <div class="content">
+        <div class="content" :style="{backgroundImage:`url(${banner})`}">
+          <div class="swiper-index">
             <h3 class="p1">Digital & web</h3>
             <p class="p2">越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务</p>
             <p class="p3">
@@ -19,10 +19,16 @@
           </div>
         </div>
       </swiper-slide>
-      <swiper-slide class="swiper-slide">
-        <div class="text animated" >
-          <p class="p1">bridges of brands</p>
-          <p class="p2">赋能那些为人性光辉付出努力的个人和组织</p>
+      <swiper-slide v-for="item in stickyCaseList" :key="item.id" class="swiper-slide" :style="{backgroundImage:`url(${banner})`}">
+        <div class="content" >
+          <router-link class="swiper-case"  tag="div" :to="`/case/${item.id}`">
+            <!-- <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
+            </div>
+            <div class="case-title">
+              <p class="p1">{{item.title.rendered}}</p>
+              <p class="p2">{{formatTags(item.tags)}}</p>
+            </div> -->
+          </router-link>
         </div>
       </swiper-slide>
       <!--左箭头-->
@@ -79,7 +85,7 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
 import bobHeader from "@/components/bobHeader.vue";
 import bobFooter from "@/components/bobFooter.vue";
 import API from "@/api/index";
-
+import { getFirstImg } from "@/assets/utils";
 export default {
   name: "home",
   components: {
@@ -137,6 +143,15 @@ export default {
   computed: {
     banner() {
       return this.bannerList[this.id].bannerImg;
+    },
+    stickyCaseList() {
+      let arr = [];
+      this.caseList.forEach(el => {
+        if (el.sticky) {
+          arr.push(el);
+        }
+      });
+      return arr;
     }
   },
 
@@ -155,6 +170,7 @@ export default {
       API.getCatPosts(id, this.currentPage)
         .then(res => {
           console.log(res);
+          console.log(getFirstImg(res.data[4].content.rendered));
           this.caseList = this.caseList.concat(res.data);
           // this.caseList = this.caseList.concat(this.caseList);
         })
@@ -185,39 +201,44 @@ export default {
     height: 800px;
     .swiper-slide {
       height: 100%;
-    }
-  }
-  .banner-bg {
-    height: 100%;
-    .background-cover();
-    // background-image: url("../images/3.jpg");
-    .flex-column();
-    .content {
-      // height: 100%;
-      padding: 0 0.5rem;
-      color: #fff;
-      .p1 {
-        font-size: 0.8rem;
-      }
-      .p2 {
-        font-size: 15px;
-        line-height: 60px;
-        opacity: 0.8;
-      }
-      .p3 {
-        opacity: 0.6;
-        span {
-          display: inline-block;
-          padding: 0 20px;
-          border-radius: 40px;
-          line-height: 36px;
-          border: 1px solid #fff;
-          margin: 30px 10px 0;
-          font-size: 0.11rem;
+      .content {
+        height: 100%;
+        .background-cover();
+        // background-image: url("../images/3.jpg");
+        .flex-column();
+        .swiper-index {
+          // height: 100%;
+          padding: 0 0.5rem;
+          color: #fff;
+          .p1 {
+            font-size: 0.8rem;
+          }
+          .p2 {
+            font-size: 15px;
+            line-height: 60px;
+            opacity: 0.8;
+          }
+          .p3 {
+            opacity: 0.6;
+            span {
+              display: inline-block;
+              padding: 0 20px;
+              border-radius: 40px;
+              line-height: 36px;
+              border: 1px solid #fff;
+              margin: 30px 10px 0;
+              font-size: 0.11rem;
+            }
+          }
+        }
+        .swiper-case {
+          color: #fff;
+          cursor: pointer;
         }
       }
     }
   }
+
   .section-title {
     padding: 0.3rem 0;
   }
