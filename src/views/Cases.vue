@@ -97,6 +97,7 @@ export default {
         autoplay: true,
         simulateTouch: false, // 禁止鼠标模拟
         // effect: 'fade',
+        init: false,
         loop: true,
         speed: 1000,
         duration: 3000,
@@ -137,6 +138,9 @@ export default {
     };
   },
   computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    },
     banner() {
       return this.bannerList[this.id].bannerImg;
     },
@@ -192,6 +196,13 @@ export default {
       let arr = string.split("/");
       arr.pop();
       return arr.join(" / ");
+    }
+  },
+  watch: {
+    stickyCaseList() {
+      this.$nextTick(() => {
+        this.swiper.init();
+      });
     }
   }
 };
