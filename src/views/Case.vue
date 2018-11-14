@@ -72,7 +72,7 @@ export default {
   background: #fff;
   .case-content {
     margin-bottom: 0.3rem;
-    background: #fff;
+    background: #fafafa;
   }
   
   .case-banner {
