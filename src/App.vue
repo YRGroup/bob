@@ -4,9 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <transition name="page">
-      <router-view ></router-view>
-    </transition>
+ 
+    <router-view ></router-view>
+    
   </div>
 </template>
 
@@ -25,13 +25,13 @@
   background: @color-theme;
   overflow-x: hidden;
 }
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.5s;
-}
+// .page-enter-active,
+// .page-leave-active {
+//   transition: all 0.5s;
+// }
 
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
+// .page-enter,
+// .page-leave-to {
+//   opacity: 0;
+// }
 </style>
