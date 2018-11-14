@@ -9,6 +9,11 @@ import VueParticles from 'vue-particles'
 Vue.config.productionTip = false
 Vue.use(VueParticles)
 Vue.use(ElementUI)
+
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})
+
 new Vue({
   router,
   store,
