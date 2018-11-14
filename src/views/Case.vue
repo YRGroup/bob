@@ -71,8 +71,8 @@ export default {
 .case-page {
   background: #fff;
   .case-content {
-    margin-bottom: 0.3rem;
-    background: #fff;
+    padding-bottom: 0.3rem;
+    background: #fafafa;
   }
   
   .case-banner {
@@ -81,28 +81,28 @@ export default {
     overflow: hidden;
     .bg {
       .background-cover();
-      filter: blur(55px);
+      filter: blur(10px);
       position: absolute;
       left: -10px;
       top: -10px;
       right: -10px;
       bottom: -10px;
       z-index: 0;
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   left: 0;
+      //   top: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   background: rgba(0, 0, 0, 0.5);
+      // }
     }
     .desc {
       position: absolute;
       bottom: 20%;
-      left: 20%;
-      color: #fff;
+      left: 15%;
+      color: #333;
       z-index: 2;
       text-align: left;
       .p1 {
