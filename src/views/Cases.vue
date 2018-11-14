@@ -9,12 +9,6 @@
             <h3 class="p1">{{casesName}}</h3>
             <p class="p2">{{casesIntro}}</p>
             <p class="p3" v-html="caseTypes">
-              <!-- <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span>
-              <span >微信平台解决方案</span> -->
             </p>
           </div>
         </div>
@@ -101,11 +95,11 @@ export default {
       id: "",
       swiperOption: {
         autoplay: true,
-
-        // simulateTouch: false, // 禁止鼠标模拟
+        simulateTouch: false, // 禁止鼠标模拟
         // effect: 'fade',
         loop: true,
         speed: 1000,
+        duration: 3000,
         navigation: {
           nextEl: ".next-btn",
           prevEl: ".prev-btn"
