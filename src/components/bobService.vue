@@ -5,6 +5,7 @@
     </h5>
     <div class="container-fluid wrapper">
       <el-row class="cards">
+        
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
@@ -22,21 +23,23 @@
             <!-- <p class="p3">+</p> -->
             </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
-            <p class="p1">
-              <span>B</span>randing
-            </p>
-            <div class="p2">
-              <p>VI基础部分设计</p>
-              <p>VI应用部分设计</p>
-              <p>LOGO标志设计</p>
-              <p>宣传册设计</p>
-              <p>PPT模板</p>
+        <router-link to="/cases/b">
+          <el-col :lg="4" :sm="8" :xs="12" class="card">
+            <div class="mask  flex flex-column">
+              <p class="p1">
+                <span>B</span>randing
+              </p>
+              <div class="p2">
+                <p>VI基础部分设计</p>
+                <p>VI应用部分设计</p>
+                <p>LOGO标志设计</p>
+                <p>宣传册设计</p>
+                <p>PPT模板</p>
+              </div>
+              <!-- <p class="p3">+</p> -->
             </div>
-            <!-- <p class="p3">+</p> -->
-          </div>
-        </el-col>
+          </el-col>
+        </router-link>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
@@ -53,39 +56,43 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
-            <p class="p1">
-              <span>D</span>igital & web
-            </p>
-            <div class="p2">
-              <p>微信平台解决方案</p>
-              <p>服务器运营外包</p>
-              <p>高端官网定制</p>
-              <p>移动端网站建设</p>
-              <p>业务系统开发</p>
-              <p>H5应用开发</p>
+        <router-link to="/cases/d">
+          <el-col :lg="4" :sm="8" :xs="12" class="card">
+            <div class="mask  flex flex-column">
+              <p class="p1">
+                <span>D</span>igital & web
+              </p>
+              <div class="p2">
+                <p>微信平台解决方案</p>
+                <p>服务器运营外包</p>
+                <p>高端官网定制</p>
+                <p>移动端网站建设</p>
+                <p>业务系统开发</p>
+                <p>H5应用开发</p>
+              </div>
+              <!-- <p class="p3">+</p> -->
             </div>
-            <!-- <p class="p3">+</p> -->
-          </div>
-        </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
-            <p class="p1">
-              <span>E</span>ditorial
-            </p>
-          <div class="p2">
-            <!-- <p>非商业影像服务</p> -->
-            <p>年度摄影服务</p>
-            <p>年度影视服务</p>
-            <p>家庭影像服务</p>
-            <p>商业摄影</p>
-            <p>人物传记</p>
-            <p>宣传片</p>
-          </div>
-            <!-- <p class="p3">+</p> -->
-          </div>
-        </el-col>
+          </el-col>
+        </router-link>
+        <router-link to="/cases/e">
+          <el-col :lg="4" :sm="8" :xs="12" class="card">
+            <div class="mask  flex flex-column">
+              <p class="p1">
+                <span>E</span>ditorial
+              </p>
+            <div class="p2">
+              <!-- <p>非商业影像服务</p> -->
+              <p>年度摄影服务</p>
+              <p>年度影视服务</p>
+              <p>家庭影像服务</p>
+              <p>商业摄影</p>
+              <p>人物传记</p>
+              <p>宣传片</p>
+            </div>
+              <!-- <p class="p3">+</p> -->
+            </div>
+          </el-col>
+        </router-link>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
@@ -156,7 +163,7 @@ export default {
       -ms-flex-pack: distribute;
       position: relative;
       margin-bottom: 0.2rem;
-      padding: 0 10px;
+      padding: 0 7px;
       box-sizing: border-box;
       .mask {
         .background-cover();
@@ -170,10 +177,10 @@ export default {
       }
       &:hover {
         // background-image: url("../images/s1.png");
-        .mask {
           // background-color: rgba(214, 94, 15, 0.7);
+        .mask {
           // color: #fff;
-          box-shadow: 0 0 10px #999;
+          box-shadow: 0 0 16px rgba(0, 0, 0, .2);
         }
       }
 
