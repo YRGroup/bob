@@ -60,11 +60,11 @@
         <transition-group name="fadeBottom">
           <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
             <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
-              <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
+              <div class="case-content" :style="{backgroundImage:`url(${item.thumbnail})`}">
               </div>
               <div class="case-title">
-                <p class="p1">{{item.title.rendered}}</p>
-                <p class="p2">{{formatTags(item.tags)}}</p>
+                <p class="p1">{{item.title}}</p>
+                <p class="p2">{{item.tag}}</p>
               </div>
             </router-link>
           </el-col>
@@ -87,6 +87,7 @@ import bobFooter from "@/components/bobFooter.vue";
 import API from "@/api/index";
 import { getFirstImg } from "@/assets/utils";
 import { info } from "@/assets/info";
+import Case from "@/class/case";
 export default {
   name: "home",
   components: {
@@ -179,10 +180,10 @@ export default {
 
       API.getCatPosts(id, this.currentPage)
         .then(res => {
-          console.log(res);
-          // console.log(getFirstImg(res.data[4].content.rendered));
-          this.caseList = this.caseList.concat(res.data);
-          // this.caseList = this.caseList.concat(this.caseList);
+          res.data.forEach(el => {
+            console.log(el);
+            this.caseList.push(new Case(el));
+          });
         })
         .catch(err => {
           // console.log(err);
@@ -271,6 +272,11 @@ export default {
       cursor: pointer;
       border-radius: 0.03rem;
       overflow: hidden;
+      transition: all 0.5s;
+      &:hover {
+        box-shadow: 0 0 10px #999;
+        transform: translateY(-5px);
+      }
       .case-content {
         .background-cover();
         // background-size: 80% 80%;
