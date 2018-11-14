@@ -6,20 +6,20 @@
       <swiper-slide class="swiper-slide">
         <div class="content" :style="{backgroundImage:`url(${banner})`}">
           <div class="swiper-index">
-            <h3 class="p1">Digital & web</h3>
-            <p class="p2">越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务</p>
-            <p class="p3">
+            <h3 class="p1">{{casesName}}</h3>
+            <p class="p2">{{casesIntro}}</p>
+            <p class="p3" v-html="caseTypes">
+              <!-- <span >微信平台解决方案</span>
               <span >微信平台解决方案</span>
-              <span >服务器运营外包</span>
-              <span >高端官网定制</span>
-              <span >移动端网站建设</span>
-              <span >业务系统开发</span>
-              <span >H5应用开发</span>
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span>
+              <span >微信平台解决方案</span> -->
             </p>
           </div>
         </div>
       </swiper-slide>
-      <swiper-slide v-for="item in stickyCaseList" :key="item.id" class="swiper-slide" :style="{backgroundImage:`url(${banner})`}">
+      <swiper-slide v-for="item in stickyCaseList" :key="item.id" class="swiper-slide" :style="{backgroundImage:`url(${item.banner})`}">
         <div class="content" >
           <router-link class="swiper-case"  tag="div" :to="`/case/${item.id}`">
             <!-- <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
@@ -86,6 +86,7 @@ import bobHeader from "@/components/bobHeader.vue";
 import bobFooter from "@/components/bobFooter.vue";
 import API from "@/api/index";
 import { getFirstImg } from "@/assets/utils";
+import { info } from "@/assets/info";
 export default {
   name: "home",
   components: {
@@ -144,6 +145,15 @@ export default {
     banner() {
       return this.bannerList[this.id].bannerImg;
     },
+    casesName() {
+      return info[this.id].name;
+    },
+    casesIntro() {
+      return info[this.id].introduction;
+    },
+    caseTypes() {
+      return info[this.id].items;
+    },
     stickyCaseList() {
       let arr = [];
       this.caseList.forEach(el => {
@@ -170,7 +180,7 @@ export default {
       API.getCatPosts(id, this.currentPage)
         .then(res => {
           console.log(res);
-          console.log(getFirstImg(res.data[4].content.rendered));
+          // console.log(getFirstImg(res.data[4].content.rendered));
           this.caseList = this.caseList.concat(res.data);
           // this.caseList = this.caseList.concat(this.caseList);
         })
@@ -191,7 +201,7 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
+<style lang="less" >
 @import "../less/variable.less";
 @import "../less/mixin.less";
 
@@ -201,6 +211,7 @@ export default {
     height: 800px;
     .swiper-slide {
       height: 100%;
+      .background-cover();
       .content {
         height: 100%;
         .background-cover();
@@ -220,7 +231,7 @@ export default {
           }
           .p3 {
             opacity: 0.6;
-            span {
+            p {
               display: inline-block;
               padding: 0 20px;
               border-radius: 40px;
@@ -232,6 +243,8 @@ export default {
           }
         }
         .swiper-case {
+          width: 100%;
+          height: 100%;
           color: #fff;
           cursor: pointer;
         }
