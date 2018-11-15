@@ -8,8 +8,8 @@ if (process.env.NODE_ENV == 'development') {
 } else if (process.env.NODE_ENV == 'production') {
   axios.defaults.baseURL = '/wp-json/wp/v2/'
 }
-axios.defaults.timeout = 10000;
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+axios.defaults.timeout = 10000
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 
 // 请求拦截器
 axios.interceptors.request.use(
@@ -18,7 +18,7 @@ axios.interceptors.request.use(
     // 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断
     // const token = store.state.token;
     // token && (config.headers.Authorization = token);
-    return config;
+    return config
   },
   error => {
     return Promise.error(error)
@@ -47,7 +47,7 @@ axios.interceptors.response.use(
           //     redirect: router.currentRoute.fullPath
           //   }
           // });
-          break;
+          break
           // 403 token过期
           // 登录过期对用户进行提示
           // 清除本地token和清空vuex中token对象
@@ -70,7 +70,7 @@ axios.interceptors.response.use(
           //     }
           //   });
           // }, 1000);
-          break;
+          break
           // 404请求不存在
         case 404:
           // Toast({
@@ -78,7 +78,7 @@ axios.interceptors.response.use(
           //   duration: 1500,
           //   forbidClick: true
           // });
-          break;
+          break
           // 其他错误，直接抛出错误提示
         default:
           // Toast({
@@ -92,12 +92,12 @@ axios.interceptors.response.use(
   }
 )
 
-export function getRequest(url, params) {
+export function getRequest (url, params) {
   // console.log(11)
   return new Promise((resolve, reject) => {
     axios.get(url, {
-        params: params
-      })
+      params: params
+    })
       .then(function (res) {
         resolve(res)
       })
@@ -107,7 +107,7 @@ export function getRequest(url, params) {
   })
 }
 
-export function postRequest(url, params) {
+export function postRequest (url, params) {
   return new Promise((resolve, reject) => {
     axios.post(url, params)
       .then(function (res) {

@@ -7,70 +7,80 @@
       <el-row class="cards">
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <p class="p1">
-              <span>A</span>nalytics
-            </p>
-            <div class="p2">
-              <p>品牌核心价值</p>
-              <p>品牌研究</p>
-              <p>品牌定位</p>
-              <p>品牌愿景</p>
-              <p>品牌使命</p>
-              <p>品牌主张</p>
-              <p>品牌命名</p>
-            </div>
-            <!-- <p class="p3">+</p> -->
-            </div>
-        </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
-            <p class="p1">
-              <span>B</span>randing
-            </p>
-            <div class="p2">
-              <p>VI基础部分设计</p>
-              <p>VI应用部分设计</p>
-              <p>LOGO标志设计</p>
-              <p>宣传册设计</p>
-              <p>PPT模板</p>
-            </div>
+            <router-link to="/cases/a">
+              <p class="p1">
+                <span>A</span>nalytics
+              </p>
+              <div class="p2">
+                <p>品牌核心价值</p>
+                <p>品牌研究</p>
+                <p>品牌定位</p>
+                <p>品牌愿景</p>
+                <p>品牌使命</p>
+                <p>品牌主张</p>
+                <p>品牌命名</p>
+              </div>
+            </router-link>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <p class="p1">
-              <span>C</span>ampaign
-            </p>
-            <div class="p2">
-              <p>线下事件活动服务</p>
-              <p>线上事件营销活动</p>
-              <p>传播侃拼方案</p>
-              <p>媒体管理服务</p>
-              <p>传播调研</p>
-              <p>传播策略</p>
-            </div>
+            <router-link to="/cases/b">
+              <p class="p1">
+                <span>B</span>randing
+              </p>
+              <div class="p2">
+                <p>VI基础部分设计</p>
+                <p>VI应用部分设计</p>
+                <p>LOGO标志设计</p>
+                <p>宣传册设计</p>
+                <p>PPT模板</p>
+              </div>
+            <!-- <p class="p3">+</p> -->
+            </router-link>
+          </div>
+        </el-col>
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
+
+          <div class="mask  flex flex-column">
+            <router-link to="/cases/c">
+              <p class="p1">
+                <span>C</span>ampaign
+              </p>
+              <div class="p2">
+                <p>线下事件活动服务</p>
+                <p>线上事件营销活动</p>
+                <p>传播侃拼方案</p>
+                <p>媒体管理服务</p>
+                <p>传播调研</p>
+                <p>传播策略</p>
+              </div>
+            <!-- <p class="p3">+</p> -->
+            </router-link>
+          </div>
+        </el-col>
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
+          <div class="mask  flex flex-column">
+            <router-link to="/cases/d">
+              <p class="p1">
+                <span>D</span>igital & Web
+              </p>
+              <div class="p2">
+                <p>微信平台解决方案</p>
+                <p>服务器运营外包</p>
+                <p>高端官网定制</p>
+                <p>移动端网站建设</p>
+                <p>业务系统开发</p>
+                <p>H5应用开发</p>
+              </div>
+            </router-link>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <p class="p1">
-              <span>D</span>igital & Web
-            </p>
-            <div class="p2">
-              <p>微信平台解决方案</p>
-              <p>服务器运营外包</p>
-              <p>高端官网定制</p>
-              <p>移动端网站建设</p>
-              <p>业务系统开发</p>
-              <p>H5应用开发</p>
-            </div>
-            <!-- <p class="p3">+</p> -->
-          </div>
-        </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+            <router-link to="/cases/e">
             <p class="p1">
               <span>E</span>ditorial
             </p>
@@ -83,20 +93,23 @@
             <p>人物传记</p>
             <p>宣传片</p>
           </div>
+          </router-link>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <p class="p1">
-            <span>F</span>abrication
-          </p>
-          <div class="p2">
-            <p>环境导视系统设计制作</p>
-            <p>周边产品定制</p>
-            <p>印刷品制作</p>
-            <p>服装定制</p>
-          </div>
+            <router-link to="/cases/f">
+              <p class="p1">
+                <span>F</span>abrication
+              </p>
+              <div class="p2">
+                <p>环境导视系统设计制作</p>
+                <p>周边产品定制</p>
+                <p>印刷品制作</p>
+                <p>服装定制</p>
+              </div>
+            </router-link>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>

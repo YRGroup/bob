@@ -1,5 +1,5 @@
 class Case {
-  constructor(data) {
+  constructor (data) {
     this.content = data.content.rendered
     this.date = data.date
     this.title = data.title.rendered
@@ -10,15 +10,15 @@ class Case {
     this.id = data.id
     this.imgs = this.getBanner(data.content.rendered)
   }
-  setBanner(url) {
+  setBanner (url) {
     this.banner = url
   }
-  formatTags(str) {
-    let arr = str.split("/")
+  formatTags (str) {
+    let arr = str.split('/')
     arr.pop()
-    return arr.join(" / ")
+    return arr.join(' / ')
   }
-  getBanner(str) {
+  getBanner (str) {
     console.log(1)
     var imgReg = /<img.*?(?:>|\/>)/gi
     var srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i
@@ -26,7 +26,7 @@ class Case {
     let imgs = []
     for (var i = 0; i < arr.length; i++) {
       var src = arr[i].match(srcReg)
-      //获取图片地址
+      // 获取图片地址
       if (src[1]) {
         // alert('已匹配的图片地址' + (i + 1) + '：' + src[1]);
         imgs.push(src[1])

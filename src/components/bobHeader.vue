@@ -10,28 +10,40 @@
       </span>
       <ul class="nav-list" v-if="type=='cases'">
         <li class="nav-item">
-          <router-link class="nav-item" to="/">
+          <router-link to="/">
             Home
           </router-link>
         </li>
-        <router-link tag="li" class="nav-item" to="/cases/a">
-          Analytics
-        </router-link>
-        <router-link tag="li" class="nav-item" to="/cases/b">
-          Branding
-        </router-link>
-        <router-link tag="li" class="nav-item" to="/cases/c">
+        <li class="nav-item">
+          <router-link to="/cases/a">
+            Analytics
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/cases/b">
+            Branding
+          </router-link>
+        </li>
+        <li class="nav-item">
+            <router-link class="nav-item" to="/cases/c">
           Campaign
         </router-link>
-        <router-link tag="li" class="nav-item" to="/cases/d">
-          Digital & Web
-        </router-link>
-        <router-link tag="li" class="nav-item" to="/cases/e">
-          Editorial
-        </router-link>
-        <router-link tag="li" class="nav-item" to="/cases/f">
-          Fabrication
-        </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-item" to="/cases/d">
+            Digital & Web
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-item" to="/cases/e">
+            Editorial
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link  class="nav-item" to="/cases/f">
+            Fabrication
+          </router-link>
+        </li>
       </ul>
     </header>
     <transition name="sideNav">
@@ -114,43 +126,43 @@
 
 <script>
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String,
     id: {
-      default: "",
+      default: '',
       type: String
     },
     type: {
-      default: "home",
+      default: 'home',
       type: String
     }
   },
-  data() {
+  data () {
     return {
       show: false,
       scrollY: 0
-    };
+    }
   },
   computed: {
-    n() {
-      return this.show ? 0 : 1;
+    n () {
+      return this.show ? 0 : 1
     },
-    i() {
-      return this.show ? 0.15 : -0.15;
+    i () {
+      return this.show ? 0.15 : -0.15
     }
   },
   methods: {
-    toogleSideNav() {
-      this.show = !this.show;
+    toogleSideNav () {
+      this.show = !this.show
     }
   },
-  mounted() {
-    window.addEventListener("scroll", ev => {
-      this.scrollY = window.scrollY;
-    });
+  mounted () {
+    window.addEventListener('scroll', ev => {
+      this.scrollY = window.scrollY
+    })
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -173,7 +185,7 @@ export default {
     position: fixed;
     top: 0;
     background: #4e4e4e;
-    background: @color-theme;
+    // background: @color-theme;
     animation: fixed 0.5s ease-in-out;
   }
 }
