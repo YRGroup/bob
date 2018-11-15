@@ -22,7 +22,7 @@ const info = {
   },
   'b': {
     name: 'Branding',
-    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
+    introduction: '统一的视觉形象与规范可确保品牌的专业性和可识别性，增强品牌体验。',
     poetry: `<h2>Branding</h2>
     <p>划掉多余的，美化剩下的。</p>
     <p>A creative man is motivated by the desire to achieve, </p>
@@ -43,7 +43,7 @@ const info = {
   },
   'c': {
     name: 'Campaign',
-    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务。',
     poetry: `<h2>Campaign</h2>
     <p>如果你外婆不明白你在搞什么，你就没有在搞事情。</p>
     <p>Any powerful idea is </p>
@@ -62,8 +62,7 @@ const info = {
     <p>传播策略</p>`
   },
   'd': {
-    name: 'Digital & web',
-    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
+    name: 'Digital & Web',
     poetry: `<h2>Digits & web</h2>
     <p>互联网最起码的作用是让你难以回首没有它的日子。</p>
     <p>Internet gives you an exceptionally effective way to </p>
@@ -92,7 +91,7 @@ const info = {
   },
   'e': {
     name: 'Editorial',
-    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
+    introduction: '视频、图片形式可以将品牌信息及理念以更为直观的形式传递给目标客户。',
     poetry: `<h2>Editorial</h2>
     <p>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</p>
     <p>If you don't give the market the story to talk about, </p>
@@ -116,7 +115,7 @@ const info = {
   },
   'f': {
     name: 'Fabrication',
-    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
+    introduction: '将设计制作成具体的实物，帮助您节省时间和精力，专注于更加重要的目标。',
     poetry: `<h2>Fabrication</h2>
     <p>如果品牌是首诗歌，造出的产品就是诗朗诵。</p>
     <p>A brand is a voice and a product is a souvenir.</p>

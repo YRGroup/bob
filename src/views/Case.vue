@@ -92,7 +92,7 @@ export default {
     overflow: hidden;
     .bg {
       .background-cover();
-      filter: blur(10px);
+      filter: blur(5px);
       position: absolute;
       left: -10px;
       top: -10px;
@@ -113,12 +113,13 @@ export default {
       position: absolute;
       bottom: 20%;
       left: 15%;
-      color: #333;
+      color: #fff;
       z-index: 2;
       text-align: left;
       .p1 {
         font-size: 0.3rem;
         line-height: 0.5rem;
+        font-weight: 500;
       }
       .p2 {
         font-size: 13px;

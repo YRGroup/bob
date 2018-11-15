@@ -36,7 +36,7 @@
       </div>
     </swiper>
 
-    <div>
+    <div class="casetitle">
       <h5 class="section-title">
         <span>案例展示 / <span class="en">case</span> </span>
       </h5>
@@ -261,7 +261,7 @@ export default {
   }
 
   .section-title {
-    padding: 0.3rem 0;
+    // padding: 0.3rem 0;
   }
   .case-wrapper {
     background: #f1f1f1;
@@ -281,7 +281,7 @@ export default {
       overflow: hidden;
       transition: all 0.5s;
       &:hover {
-        box-shadow: 0 0 10px #999;
+        box-shadow: 0 0 24px rgba(0, 0, 0, .1);
         transform: translateY(-5px);
       }
       .case-content {
@@ -429,5 +429,22 @@ export default {
 
 .next-btn {
   right: 50px;
+}
+
+.casetitle{
+  background : #f1f1f1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  &::before{
+    content: "";
+    background: url("../images/caseBg.png") center center no-repeat;
+    position: absolute;
+    top: 60px;
+    // left: 50%;
+    width: 800px;
+    height: 187px;
+  }
 }
 </style>

@@ -29,13 +29,14 @@ export default {
   overflow: hidden;
   position: relative;
   text-align: left;
+  line-height: 24px;
   img {
     // max-width: 100%;
     width: 100%;
     height: auto;
     vertical-align: bottom;
     p {
-      line-height: 24px;
+      line-height: 28px;
     }
   }
 }

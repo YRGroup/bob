@@ -5,6 +5,7 @@
     </h5>
     <div class="container-fluid wrapper">
       <el-row class="cards">
+
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <router-link to="/cases/a">
@@ -82,10 +83,9 @@
           <div class="mask  flex flex-column">
             <router-link to="/cases/e">
             <p class="p1">
-              <span>E</span>ditorial
-            </p>
+            <span>E</span>ditorial
+          </p>
           <div class="p2">
-            <!-- <p>非商业影像服务</p> -->
             <p>年度摄影服务</p>
             <p>年度影视服务</p>
             <p>家庭影像服务</p>
@@ -169,7 +169,7 @@ export default {
       -ms-flex-pack: distribute;
       position: relative;
       margin-bottom: 0.2rem;
-      padding: 0 10px;
+      padding: 0 7px;
       box-sizing: border-box;
       .mask {
         .background-cover();
@@ -183,10 +183,10 @@ export default {
       }
       &:hover {
         // background-image: url("../images/s1.png");
-        .mask {
           // background-color: rgba(214, 94, 15, 0.7);
+        .mask {
           // color: #fff;
-          box-shadow: 0 0 10px #999;
+          box-shadow: 0 0 16px rgba(0, 0, 0, .2);
         }
       }
 
