@@ -56,7 +56,7 @@
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
-              <span>D</span>igital & web
+              <span>D</span>igital & Web
             </p>
             <div class="p2">
               <p>微信平台解决方案</p>
