@@ -62,6 +62,9 @@
         <p class="foot" v-else>-- 没有更多了 --</p>
       </el-row>
     </div>
+    <!-- <div v-else>
+      暂无案例
+    </div> -->
     <bob-footer></bob-footer>
   </div>
 </template>

@@ -16,9 +16,11 @@
     </div>
     <div class="side-bar">
       <div class="tag" @click="back()">
-
+        <i class="iconfont">&#xe7a4;</i>
       </div>
-      <div class="tag" @click="top()">22</div>
+      <div class="tag" @click="top()">
+        <i class="iconfont">&#xe67f;</i>
+      </div>
     </div>
     <bob-footer></bob-footer>
   </div>
@@ -26,54 +28,54 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from '@/components/bobHeader.vue'
-import bobFooter from '@/components/bobFooter.vue'
-import bobArticle from '@/components/bobArticle.vue'
-import API from '@/api/index'
-import Case from '@/class/case'
+import bobHeader from "@/components/bobHeader.vue";
+import bobFooter from "@/components/bobFooter.vue";
+import bobArticle from "@/components/bobArticle.vue";
+import API from "@/api/index";
+import Case from "@/class/case";
 export default {
-  name: 'home',
+  name: "home",
   components: {
     bobHeader,
     bobFooter,
     bobArticle
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       caseInfo: {}
-    }
+    };
   },
   computed: {},
 
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
-    this.getData()
+    this.getData();
   },
   methods: {
-    getData () {
+    getData() {
       API.getPost(this.id)
         .then(res => {
-          console.log(res)
+          console.log(res);
 
-          this.caseInfo = new Case(res.data)
+          this.caseInfo = new Case(res.data);
         })
         .catch(err => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     },
-    back () {
-      this.$router.back()
+    back() {
+      this.$router.back();
     },
-    top () {
-      window.scrollTo(0, 0)
+    top() {
+      window.scrollTo(0, 0);
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -137,7 +139,12 @@ export default {
       line-height: 0.4rem;
       text-align: center;
       margin: 10px 0;
-      border: 1px solid #aaa;
+      border: 2px solid #e4e4e4;
+      cursor: pointer;
+      .iconfont{
+        font-size: 20px;
+        color: #888888;
+      }
     }
   }
 }
