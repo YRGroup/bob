@@ -1,8 +1,7 @@
 <template>
   <div class="case-page">
-    <bob-header></bob-header>
-
-    <swiper class="banner-swiper" :options="swiperOption" ref="mySwiper">
+    <bob-header type="cases"></bob-header>
+    <swiper v-if="resetSwiper" class="banner-swiper" :options="swiperOption" ref="mySwiper">
       <swiper-slide class="swiper-slide">
         <div class="content" :style="{backgroundImage:`url(${banner})`}">
           <div class="swiper-index">
@@ -16,12 +15,6 @@
       <swiper-slide v-for="item in stickyCaseList" :key="item.id" class="swiper-slide" :style="{backgroundImage:`url(${item.banner})`}">
         <div class="content" >
           <router-link class="swiper-case"  tag="div" :to="`/case/${item.id}`">
-            <!-- <div class="case-content" :style="{backgroundImage:`url(${item.thumbnailurl})`}">
-            </div>
-            <div class="case-title">
-              <p class="p1">{{item.title.rendered}}</p>
-              <p class="p2">{{formatTags(item.tags)}}</p>
-            </div> -->
           </router-link>
         </div>
       </swiper-slide>
@@ -93,12 +86,13 @@ export default {
   data() {
     return {
       id: "",
+      resetSwiper: true,
       swiperOption: {
         autoplay: true,
         simulateTouch: false, // 禁止鼠标模拟
         // effect: 'fade',
         init: false,
-        loop: true,
+        // loop: true,
         speed: 1000,
         duration: 3000,
         navigation: {
@@ -175,11 +169,9 @@ export default {
   methods: {
     getData() {
       let id = this.bannerList[this.id].catId;
-
       API.getCatPosts(id, this.currentPage)
         .then(res => {
           res.data.forEach(el => {
-            console.log(el);
             this.caseList.push(new Case(el));
           });
         })
@@ -201,8 +193,18 @@ export default {
   watch: {
     stickyCaseList() {
       this.$nextTick(() => {
+        // this.resetSwiper = false;
+        // this.resetSwiper = true;
         this.swiper.init();
       });
+    },
+    $route(to, from) {
+      this.id = this.$route.params.id;
+      if (!this.id) {
+        this.$router.push("/");
+      }
+      this.caseList = [];
+      this.getData();
     }
   }
 };

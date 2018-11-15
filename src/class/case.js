@@ -4,11 +4,11 @@ class Case {
     this.date = data.date
     this.title = data.title.rendered
     this.thumbnail = data.thumbnailurl
-    this.banner = data.banner
+    // this.banner = data.banner
     this.sticky = data.sticky
     this.tag = this.formatTags(data.tags)
     this.id = data.id
-    // this.imgs = this.getBanner(data.content.rendered)
+    this.imgs = this.getBanner(data.content.rendered)
   }
   setBanner(url) {
     this.banner = url
@@ -32,7 +32,7 @@ class Case {
         imgs.push(src[1])
       }
     }
-    // this.setBanner(imgs[0])
+    this.setBanner(imgs[0])
     return imgs
   }
 }

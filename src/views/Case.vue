@@ -1,6 +1,6 @@
 <template>
   <div class="case-page">
-    <bob-header></bob-header>
+    <bob-header type="cases"></bob-header>
     <div class="case-content">
       <div class="case-banner" >
         <div class="bg" :style="{backgroundImage:`url(${caseInfo.banner})`}"></div>
@@ -14,7 +14,12 @@
         </div>
       </bob-article>
     </div>
-    
+    <div class="side-bar">
+      <div class="tag" @click="back()">
+
+      </div>
+      <div class="tag" @click="top()">22</div>
+    </div>
     <bob-footer></bob-footer>
   </div>
 </template>
@@ -60,6 +65,12 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    back() {
+      this.$router.back();
+    },
+    top() {
+      window.scrollTo(0, 0);
     }
   }
 };
@@ -74,7 +85,7 @@ export default {
     padding-bottom: 0.3rem;
     background: #fafafa;
   }
-  
+
   .case-banner {
     height: 2.5rem;
     position: relative;
@@ -113,6 +124,20 @@ export default {
       .p2 {
         font-size: 13px;
       }
+    }
+  }
+  .side-bar {
+    position: fixed;
+    right: 5%;
+    bottom: 30%;
+    .tag {
+      width: 0.4rem;
+      height: 0.4rem;
+      background: #fff;
+      line-height: 0.4rem;
+      text-align: center;
+      margin: 10px 0;
+      border: 1px solid #aaa;
     }
   }
 }

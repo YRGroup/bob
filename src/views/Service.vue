@@ -142,31 +142,31 @@ export default {
 <style lang="less" >
 @import "../less/mixin.less";
 @import "../less/common.less";
-.logo {
-  display: inline-block;
-  height: 30px;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  z-index: 11;
-  img {
-    height: 100%;
-  }
-  .logo2 {
-    display: none;
-  }
+// .logo {
+//   display: inline-block;
+//   height: 30px;
+//   position: absolute;
+//   left: 20px;
+//   top: 20px;
+//   z-index: 11;
+//   img {
+//     height: 100%;
+//   }
+//   .logo2 {
+//     display: none;
+//   }
 
-  @media (max-width: 760px) {
-    height: 25px;
-    .logo1 {
-      display: none;
-    }
+//   @media (max-width: 760px) {
+//     height: 25px;
+//     .logo1 {
+//       display: none;
+//     }
 
-    .logo2 {
-      display: block;
-    }
-  }
-}
+//     .logo2 {
+//       display: block;
+//     }
+//   }
+// }
 .partic {
   top: 0;
   bottom: 0;

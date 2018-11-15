@@ -56,30 +56,11 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <router-link to="/cases/d">
-          <el-col :lg="4" :sm="8" :xs="12" class="card">
-            <div class="mask  flex flex-column">
-              <p class="p1">
-                <span>D</span>igital & web
-              </p>
-              <div class="p2">
-                <p>微信平台解决方案</p>
-                <p>服务器运营外包</p>
-                <p>高端官网定制</p>
-                <p>移动端网站建设</p>
-                <p>业务系统开发</p>
-                <p>H5应用开发</p>
-              </div>
-              <!-- <p class="p3">+</p> -->
-            </div>
-          </el-col>
-        </router-link>
-        <router-link to="/cases/e">
-          <el-col :lg="4" :sm="8" :xs="12" class="card">
-            <div class="mask  flex flex-column">
-              <p class="p1">
-                <span>E</span>ditorial
-              </p>
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
+          <div class="mask  flex flex-column">
+            <p class="p1">
+              <span>D</span>igital & Web
+            </p>
             <div class="p2">
               <!-- <p>非商业影像服务</p> -->
               <p>年度摄影服务</p>

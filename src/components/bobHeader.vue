@@ -1,125 +1,156 @@
 <template>
-  <div class="header-wrapper absolute-header">
-    <header :class="['header',{serviceHeader:!homeHeader}]">
-      <router-link to="/" class="logo"  v-if="homeHeader">
+  <div :class="['header-wrapper', 'absolute-header', {'fixed-header':scrollY>200}]">
+    <header class='header'>
+      <router-link to="/" class="logo">
         <img class="logo1" src="../images/logo.png" alt="logo">
         <img class="logo2" src="../images/logoS.png" alt="logo">
       </router-link>
-      <span class="nav-btn" @click="toogleSideNav">
+      <span v-if="type=='home'" class="nav-btn" @click="toogleSideNav">
         <span class="btnImg"></span>
       </span>
+      <ul class="nav-list" v-if="type=='cases'">
+        <li class="nav-item">
+          <router-link class="nav-item" to="/">
+            Home
+          </router-link>
+        </li>
+        <router-link tag="li" class="nav-item" to="/cases/a">
+          Analytics
+        </router-link>
+        <router-link tag="li" class="nav-item" to="/cases/b">
+          Branding
+        </router-link>
+        <router-link tag="li" class="nav-item" to="/cases/c">
+          Campaign
+        </router-link>
+        <router-link tag="li" class="nav-item" to="/cases/d">
+          Digital & Web
+        </router-link>
+        <router-link tag="li" class="nav-item" to="/cases/e">
+          Editorial
+        </router-link>
+        <router-link tag="li" class="nav-item" to="/cases/f">
+          Fabrication
+        </router-link>
+      </ul>
     </header>
-<transition name="sideNav">
-  <div class="nav-section" id="nav-section" v-show="show">
-    <span class="close-btn nav-btn" @click="toogleSideNav">
-      <span class="btnImg"></span>
-    </span>
-    <ul class="side-nav">
-      <li>
-          <div class="wrapper">
-            <router-link
-            :class="['item',show ? 'navitem-in':'navitem-out']"
-            :style="{animationDelay:`${n+0*i}s`}"
-            to="/service/a">
-              <span class="en"><span>A</span>nalytics</span>
-              <span class="cn">论</span>
-            </router-link>
-          </div>
-      </li>
-      <li>
-        <div class="wrapper">
-          <router-link
-          :class="['item',show ? 'navitem-in':'navitem-out']"
-          :style="{animationDelay:`${n+1*i}s`}"
-          to="/service/b">
-            <span class="en"><span>B</span>randing</span>
-            <span class="cn">划</span>
-          </router-link>
-        </div>
-      </li>
-      <li>
-        <div class="wrapper">
-          <router-link
-          :class="['item',show ? 'navitem-in':'navitem-out']"
-           :style="{animationDelay:`${n+2*i}s`}"
-          to="/service/c">
-            <span class="en"><span>C</span>ampaign</span>
-            <span class="cn">搞</span>
-          </router-link>
-        </div>
-      </li>
-      <li>
-        <div class="wrapper">
-          <router-link
-            :class="['item',show ? 'navitem-in':'navitem-out']"
-             :style="{animationDelay:`${n+3*i}s`}"
-            to="/service/d">
-            <span class="en"><span>D</span>igital & web</span>
-            <span class="cn">码</span>
-          </router-link>
-        </div>
-      </li>
-      <li>
-        <div class="wrapper">
-          <router-link
-            :class="['item',show ? 'navitem-in':'navitem-out']"
-             :style="{animationDelay:`${n+4*i}s`}"
-            to="/service/e">
-            <span class="en"><span>E</span>ditorial</span>
-            <span class="cn">纪</span>
-          </router-link>
-        </div>
-      </li>
-      <li>
-        <div class="wrapper">
-          <router-link
-            :class="['item',show ? 'navitem-in':'navitem-out']"
-            :style="{animationDelay:`${n+5*i}s`}"
-            to="/service/f">
-            <span class="en"><span>F</span>abrication</span>
-            <span class="cn">造</span>
-          </router-link>
-        </div>
-      </li>
-    </ul>
-  </div>
+    <transition name="sideNav">
+      <div v-if="type=='home'" class="nav-section" id="nav-section" v-show="show">
+        <span class="close-btn nav-btn" @click="toogleSideNav">
+          <span class="btnImg"></span>
+        </span>
+        <ul class="side-nav">
+          <li>
+              <div class="wrapper">
+                <router-link
+                :class="['item',show ? 'navitem-in':'navitem-out']"
+                :style="{animationDelay:`${n+0*i}s`}"
+                to="/service/a">
+                  <span class="en"><span>A</span>nalytics</span>
+                  <span class="cn">论</span>
+                </router-link>
+              </div>
+          </li>
+          <li>
+            <div class="wrapper">
+              <router-link
+              :class="['item',show ? 'navitem-in':'navitem-out']"
+              :style="{animationDelay:`${n+1*i}s`}"
+              to="/service/b">
+                <span class="en"><span>B</span>randing</span>
+                <span class="cn">划</span>
+              </router-link>
+            </div>
+          </li>
+          <li>
+            <div class="wrapper">
+              <router-link
+              :class="['item',show ? 'navitem-in':'navitem-out']"
+              :style="{animationDelay:`${n+2*i}s`}"
+              to="/service/c">
+                <span class="en"><span>C</span>ampaign</span>
+                <span class="cn">搞</span>
+              </router-link>
+            </div>
+          </li>
+          <li>
+            <div class="wrapper">
+              <router-link
+                :class="['item',show ? 'navitem-in':'navitem-out']"
+                :style="{animationDelay:`${n+3*i}s`}"
+                to="/service/d">
+                <span class="en"><span>D</span>igital & Web</span>
+                <span class="cn">码</span>
+              </router-link>
+            </div>
+          </li>
+          <li>
+            <div class="wrapper">
+              <router-link
+                :class="['item',show ? 'navitem-in':'navitem-out']"
+                :style="{animationDelay:`${n+4*i}s`}"
+                to="/service/e">
+                <span class="en"><span>E</span>ditorial</span>
+                <span class="cn">纪</span>
+              </router-link>
+            </div>
+          </li>
+          <li>
+            <div class="wrapper">
+              <router-link
+                :class="['item',show ? 'navitem-in':'navitem-out']"
+                :style="{animationDelay:`${n+5*i}s`}"
+                to="/service/f">
+                <span class="en"><span>F</span>abrication</span>
+                <span class="cn">造</span>
+              </router-link>
+            </div>
+          </li>
+        </ul>
+      </div>
     </transition>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String,
-    homeHeader: {
-      default: true,
-      type: Boolean
-    },
     id: {
-      default: '',
+      default: "",
+      type: String
+    },
+    type: {
+      default: "home",
       type: String
     }
   },
-  data () {
+  data() {
     return {
-      show: false
-    }
+      show: false,
+      scrollY: 0
+    };
   },
   computed: {
-    n () {
-      return this.show ? 0 : 1
+    n() {
+      return this.show ? 0 : 1;
     },
-    i () {
-      return this.show ? 0.15 : -0.15
+    i() {
+      return this.show ? 0.15 : -0.15;
     }
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
+  },
+  mounted() {
+    window.addEventListener("scroll", ev => {
+      this.scrollY = window.scrollY;
+    });
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -128,26 +159,36 @@ export default {
 @import "../less/mixin.less";
 @import "../less/common.less";
 
-.absolute-header {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 99;
-
-  .nav-item {
-    color: #fff;
-  }
-}
 .header-wrapper {
   // background: #333;
+  width: 100%;
+  transition: all 0.5s;
+  &.absolute-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  &.fixed-header {
+    position: fixed;
+    top: 0;
+    background: #4e4e4e;
+    background: @color-theme;
+    animation: fixed 0.5s ease-in-out;
+  }
+}
+
+@keyframes fixed {
+  0% {
+    transform: translateY(-100%);
+  }
 }
 .header {
   .flex();
   position: relative;
-  justify-content: flex-start;
+  justify-content: space-between;
   box-sizing: border-box;
-  padding: 30px 40px;
+  padding: 18px 40px;
   // .nav-btn {
   //   top: 20px;
   // }
@@ -156,6 +197,14 @@ export default {
   }
   @media (max-width: 768px) {
     padding: 20px 10px;
+  }
+  .nav-list {
+    color: #fff;
+    .nav-item {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 10px;
+    }
   }
 }
 
@@ -173,7 +222,6 @@ export default {
 
   @media (max-width: 760px) {
     height: 25px;
-
     .logo1 {
       display: none;
     }
@@ -184,7 +232,7 @@ export default {
   }
 }
 
-// 导航
+// 侧边导航
 #nav-section {
   .flex-column();
   background: @color-theme;
@@ -195,7 +243,6 @@ export default {
   top: 0;
   right: 0;
   z-index: 99;
-  // transform: translateX(100%);
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.01, 0.67, 0.65, 0.97);

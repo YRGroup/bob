@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <bob-header></bob-header>
+    <bob-header type="home"></bob-header>
     <bob-banner></bob-banner>
     <bob-service></bob-service>
     <bob-aboutus></bob-aboutus>
