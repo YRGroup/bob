@@ -47,6 +47,14 @@
         <transition-group name="fadeBottom">
           <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
             <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
+              <div class="overlay">
+                <div class="border-hor"></div>
+                <div class="border-ver"></div>
+                <div class="text-box">
+                  <p class="p1">{{item.title}}</p>
+                  <p class="p2">{{item.tag}}</p>
+                </div>
+              </div>
               <div class="case-content" :style="{backgroundImage:`url(${item.thumbnail})`}">
               </div>
               <div class="case-title">
@@ -274,15 +282,71 @@ export default {
     @base: 0.85rem;
     .case-item {
       background: #fff;
+      position: relative;
       margin: 10px auto;
       width: 4 * @base;
       cursor: pointer;
       border-radius: 0.03rem;
       overflow: hidden;
       transition: all 0.5s;
-      &:hover {
-        box-shadow: 0 0 24px rgba(0, 0, 0, .1);
-        transform: translateY(-5px);
+      // &:hover {
+      //   box-shadow: 0 0 24px rgba(0, 0, 0, .1);
+      //   transform: translateY(-5px);
+      // }
+      .overlay{
+        width: 100%;
+        height: 3 * @base;
+        position: absolute;
+        transition: all 0.5s;
+        // display: block;
+        .border-hor,.border-ver{
+          position: absolute;
+          top: 30px;
+          left: 30px;
+          bottom: 30px;
+          right: 30px;
+          transition: all .5s;
+        }
+        .border-hor{
+          border-top: 1px solid rgba(255, 255, 255,.8);
+          border-bottom: 1px solid rgba(255, 255, 255,.8);
+          transform: scale(0,1);
+        }
+        .border-ver{
+          border-left: 1px solid rgba(255, 255, 255,.8);
+          border-right: 1px solid rgba(255, 255, 255,.8);
+          transform: scale(1,0);
+        }
+        .text-box{
+          position: absolute;
+          opacity: 0;
+          color: #fff;
+          left: 10%;
+          bottom: 50px;
+          padding-left: 50px;
+          transition: all 0.5s;
+          width: 100%;
+          text-align: left;
+          .p1{
+            font-size: 36px;
+            margin-bottom: 20px;
+          }
+          .p2{
+            font-size: 16px;
+          }
+        }
+      }
+      &:hover{
+        .overlay{
+          background: rgba(0, 0, 0,.5);
+          .border-hor,.border-ver{
+            transform: scale(1,1);
+          }
+          .text-box{
+            left: 0;
+            opacity: 1;
+          }
+        }
       }
       .case-content {
         .background-cover();
