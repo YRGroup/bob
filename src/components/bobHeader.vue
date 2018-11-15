@@ -14,21 +14,21 @@
             Home
           </router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/cases/a">
             Analytics
           </router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
           <router-link to="/cases/b">
             Branding
           </router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <router-link class="nav-item" to="/cases/c">
           Campaign
         </router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
           <router-link class="nav-item" to="/cases/d">
             Digital & Web
@@ -216,6 +216,10 @@ export default {
       cursor: pointer;
       display: inline-block;
       margin: 0 10px;
+      // opacity: .7;
+      &:hover{
+        opacity: 1;
+      }
     }
   }
 }
