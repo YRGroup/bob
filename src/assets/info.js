@@ -63,7 +63,6 @@ const info = {
   },
   'd': {
     name: "Digital & Web",
-    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品服务',
     poetry: `<h2>Digits & web</h2>
     <p>互联网最起码的作用是让你难以回首没有它的日子。</p>
     <p>Internet gives you an exceptionally effective way to </p>

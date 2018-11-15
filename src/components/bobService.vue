@@ -73,7 +73,22 @@
               <!-- <p class="p3">+</p> -->
             </div>
           </el-col>
-        </router-link>
+        <el-col :lg="4" :sm="8" :xs="12" class="card">
+          <div class="mask  flex flex-column">
+            <p class="p1">
+            <span>E</span>ditorial
+          </p>
+          <div class="p2">
+            <p>年度摄影服务</p>
+            <p>年度影视服务</p>
+            <p>家庭影像服务</p>
+            <p>商业摄影</p>
+            <p>人物传记</p>
+            <p>宣传片</p>
+          </div>
+            <!-- <p class="p3">+</p> -->
+          </div>
+        </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
             <p class="p1">
