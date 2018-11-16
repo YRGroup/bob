@@ -16,7 +16,6 @@
     </div>
     <div class="side-bar">
       <div class="tag" @click="back()">
-
       </div>
       <div class="tag" @click="top()">22</div>
     </div>
@@ -131,13 +130,19 @@ export default {
     right: 5%;
     bottom: 30%;
     .tag {
+      cursor: pointer;
       width: 0.4rem;
       height: 0.4rem;
       background: #fff;
       line-height: 0.4rem;
       text-align: center;
       margin: 10px 0;
-      border: 1px solid #aaa;
+      border: 1px solid #e4e4e4;
+      transition: all .5s;
+      &:hover{
+        border: 1px solid #ffe0d1;
+        background: #fff1ea;
+      }
     }
   }
 }

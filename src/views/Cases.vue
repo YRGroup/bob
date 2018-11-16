@@ -328,11 +328,11 @@ export default {
           width: 100%;
           text-align: left;
           .p1{
-            font-size: 36px;
+            font-size: 25px;
             margin-bottom: 20px;
           }
           .p2{
-            font-size: 16px;
+            font-size: 15px;
           }
         }
       }
