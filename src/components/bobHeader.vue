@@ -1,5 +1,5 @@
 <template>
-  <div :class="['header-wrapper', 'absolute-header', {'fixed-header':scrollY>200}]">
+  <div :class="['header-wrapper', 'absolute-header', {'fixed-header':scrollY>100}]">
     <header class='header'>
       <router-link to="/" class="logo">
         <img class="logo1" src="../images/logo.png" alt="logo">
@@ -8,6 +8,16 @@
       <span v-if="type=='home'" class="nav-btn" @click="toogleSideNav">
         <span class="btnImg"></span>
       </span>
+      <div v-if="type=='service'" class="service-navs">
+        <div>
+          <router-link :class="['kangxi','item', {'active':id=='a'}]" to="/service/a">论</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='b'}]" to="/service/b">划</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='c'}]" to="/service/c">搞</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='d'}]" to="/service/d">码</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='e'}]" to="/service/e">纪</router-link>
+          <router-link :class="['kangxi','item', {'active':id=='f'}]" to="/service/f">造</router-link>
+        </div>
+      </div>
       <ul class="nav-list" v-if="type=='cases'">
         <li class="nav-item">
           <router-link to="/">
@@ -152,6 +162,8 @@ export default {
       return this.show ? 0.15 : -0.15
     }
   },
+  created () {
+  },
   methods: {
     toogleSideNav () {
       this.show = !this.show
@@ -210,6 +222,7 @@ export default {
   @media (max-width: 768px) {
     padding: 20px 10px;
   }
+  //cases页nav
   .nav-list {
     color: #fff;
     .nav-item {
@@ -222,12 +235,55 @@ export default {
       }
     }
   }
+  //service页nav
+  .service-navs {
+    z-index: 10;
+    .flex();
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    justify-content: space-around;
+    .item {
+      font-size: 18px;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      opacity: 0.7;
+      color: #fff;
+      margin-left: 20px;
+      margin-right: 20px;
+      &.active {
+        opacity: 1;
+        transform: scale(1.2);
+        animation: nav 0.3s ease-in-out;
+      }
+      @keyframes nav {
+        0% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  @media (max-width: 760px) {
+    .service-navs {
+      justify-content: flex-start;
+      margin-top: 60px;
+      .item {
+        display: block;
+        margin-top: 20px;
+      }
+    }
+  }
 }
 
 .logo {
   display: inline-block;
   height: 30px;
-
+  cursor: pointer;
+  z-index: 20;
   img {
     height: 100%;
   }

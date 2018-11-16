@@ -7,8 +7,11 @@
           <div class="swiper-index">
             <h3 class="p1">{{casesName}}</h3>
             <p class="p2">{{casesIntro}}</p>
-            <p class="p3" v-html="caseTypes">
-            </p>
+            <div class="p3"  v-show="showTag">
+              <transition-group name="list">
+                <p :style="{transitionDelay:`${index*150}ms`}" v-for="(item,index) in caseTypes" :key="index">{{item}}</p>
+              </transition-group>
+            </div>
           </div>
         </div>
       </swiper-slide>
@@ -70,6 +73,9 @@
         <p class="foot" v-else>-- 没有更多了 --</p>
       </el-row>
     </div>
+    <!-- <div v-else>
+      暂无案例
+    </div> -->
     <bob-footer></bob-footer>
   </div>
 </template>
@@ -102,7 +108,7 @@ export default {
         init: false,
         // loop: true,
         speed: 1000,
-        duration: 3000,
+        duration: 5000,
         navigation: {
           nextEl: '.next-btn',
           prevEl: '.prev-btn'
@@ -136,7 +142,8 @@ export default {
       },
       caseList: [],
       currentPage: 1,
-      more: true
+      more: true,
+      showTag: false
     }
   },
   computed: {
@@ -174,6 +181,12 @@ export default {
     }
     this.getData()
   },
+  mounted () {
+    // this.showTag = true;
+    setTimeout(() => {
+      this.showTag = true
+    }, 1000)
+  },
   methods: {
     getData () {
       let id = this.bannerList[this.id].catId
@@ -184,7 +197,7 @@ export default {
           })
         })
         .catch(err => {
-          // console.log(err);
+          console.log(err)
           this.more = false
         })
     },
@@ -201,18 +214,22 @@ export default {
   watch: {
     stickyCaseList () {
       this.$nextTick(() => {
-        // this.resetSwiper = false;
-        // this.resetSwiper = true;
         this.swiper.init()
       })
     },
     $route (to, from) {
+      console.log('last')
+      this.showTag = false
       this.id = this.$route.params.id
       if (!this.id) {
         this.$router.push('/')
       }
       this.caseList = []
       this.getData()
+
+      // setTimeout(() => {
+      //   this.showTag = true;
+      // }, 300);
     }
   }
 }
@@ -241,15 +258,17 @@ export default {
             font-size: 0.8rem;
           }
           .p2 {
-            font-size: 15px;
+            font-size: 0.02rempx;
             line-height: 60px;
             opacity: 0.8;
           }
           .p3 {
             opacity: 0.6;
+            height: 68px;
             p {
               display: inline-block;
               padding: 0 20px;
+              // width: 100px;
               border-radius: 40px;
               line-height: 36px;
               border: 1px solid #fff;
@@ -293,31 +312,32 @@ export default {
       //   box-shadow: 0 0 24px rgba(0, 0, 0, .1);
       //   transform: translateY(-5px);
       // }
-      .overlay{
+      .overlay {
         width: 100%;
         height: 3 * @base;
         position: absolute;
         transition: all 0.5s;
         // display: block;
-        .border-hor,.border-ver{
+        .border-hor,
+        .border-ver {
           position: absolute;
           top: 30px;
           left: 30px;
           bottom: 30px;
           right: 30px;
-          transition: all .5s;
+          transition: all 0.5s;
         }
-        .border-hor{
-          border-top: 1px solid rgba(255, 255, 255,.8);
-          border-bottom: 1px solid rgba(255, 255, 255,.8);
-          transform: scale(0,1);
+        .border-hor {
+          border-top: 1px solid rgba(255, 255, 255, 0.8);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+          transform: scale(0, 1);
         }
-        .border-ver{
-          border-left: 1px solid rgba(255, 255, 255,.8);
-          border-right: 1px solid rgba(255, 255, 255,.8);
-          transform: scale(1,0);
+        .border-ver {
+          border-left: 1px solid rgba(255, 255, 255, 0.8);
+          border-right: 1px solid rgba(255, 255, 255, 0.8);
+          transform: scale(1, 0);
         }
-        .text-box{
+        .text-box {
           position: absolute;
           opacity: 0;
           color: #fff;
@@ -336,13 +356,14 @@ export default {
           }
         }
       }
-      &:hover{
-        .overlay{
-          background: rgba(0, 0, 0,.5);
-          .border-hor,.border-ver{
-            transform: scale(1,1);
+      &:hover {
+        .overlay {
+          background: rgba(0, 0, 0, 0.5);
+          .border-hor,
+          .border-ver {
+            transform: scale(1, 1);
           }
-          .text-box{
+          .text-box {
             left: 0;
             opacity: 1;
           }
@@ -495,13 +516,13 @@ export default {
   right: 50px;
 }
 
-.casetitle{
-  background : #f1f1f1;
+.casetitle {
+  background: #f1f1f1;
   position: relative;
   display: flex;
   justify-content: center;
   padding-top: 100px;
-  &::before{
+  &::before {
     content: "";
     background: url("../images/caseBg.png") center center no-repeat;
     position: absolute;
@@ -509,6 +530,19 @@ export default {
     // left: 50%;
     width: 800px;
     height: 187px;
+  }
+}
+.list-enter-active {
+  transition: all 1s;
+}
+.list-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+@keyframes tag {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
   }
 }
 </style>

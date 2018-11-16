@@ -1,5 +1,6 @@
 <template>
   <div class="service">
+    <bob-header type="service" :id="id"></bob-header>
     <div class="banner" >
       <div class="com-wrapper">
         <transition name="page">
@@ -25,21 +26,6 @@
         clickMode="push">
         </vue-particles>
       </div>
-      <router-link to="/" class="logo">
-        <img class="logo1" src="../images/logo.png" alt="logo">
-        <img class="logo2" src="../images/logoS.png" alt="logo">
-      </router-link>
-      <div class="service-navs">
-        <div>
-          <router-link :class="['kangxi','item', {'active':id=='a'}]" to="/service/a">论</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='b'}]" to="/service/b">划</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='c'}]" to="/service/c">搞</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='d'}]" to="/service/d">码</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='e'}]" to="/service/e">纪</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='f'}]" to="/service/f">造</router-link>
-        </div>
-        <!-- <span class="nav-btn" @click="toogleText"></span> -->
-      </div>
       <div class="more" @click="toogleText">B 我 们</div>
     </div>
     <transition name="opacity">
@@ -57,15 +43,16 @@
           </transition>
           <transition name="poetry">
             <div class="right-con text" v-show="!cn" >
-              <div v-html="items">
+              <div>
+                <p v-for="(item ,index) in items" :key="index">
+                  {{item}}
+                </p>
               </div>
             </div>
           </transition>
         </div>
         <div class="changlang">
           <span @click="cn=true" :class="[{'active':cn},'btn','btn1']"></span>
-          <!-- <button >B一下</button> -->
-          <!-- <span> / </span> -->
           <span @click="cn=false" :class="[{'active':!cn},'btn','btn2']"></span>
         </div>
       </div>
@@ -74,99 +61,77 @@
   </div>
 </template>
 <script>
-import { info } from '@/assets/info'
-import bannera from '@/components/bannera/index.vue'
-import bannerb from '@/components/bannerb/index.vue'
-import bannerc from '@/components/bannerc/index.vue'
-import bannerd from '@/components/bannerd/index.vue'
-import bannere from '@/components/bannere/index.vue'
-import bannerf from '@/components/bannerf/index.vue'
+import { info } from "@/assets/info";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
+import bannerc from "@/components/bannerc/index.vue";
+import bannerd from "@/components/bannerd/index.vue";
+import bannere from "@/components/bannere/index.vue";
+import bannerf from "@/components/bannerf/index.vue";
+import bobHeader from "@/components/bobHeader.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bannera,
     bannerb,
     bannerc,
     bannerd,
     bannere,
-    bannerf
+    bannerf,
+    bobHeader
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       showText: false,
       showService: false,
       cn: true
-    }
+    };
   },
   computed: {
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     },
-    banner () {
-      return 'banner' + this.id
+    banner() {
+      return "banner" + this.id;
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
       this.timer = setTimeout(() => {
-        this.cn = true
-      }, 500)
+        this.cn = true;
+      }, 500);
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/mixin.less";
 @import "../less/common.less";
-// .logo {
-//   display: inline-block;
-//   height: 30px;
-//   position: absolute;
-//   left: 20px;
-//   top: 20px;
-//   z-index: 11;
-//   img {
-//     height: 100%;
-//   }
-//   .logo2 {
-//     display: none;
-//   }
 
-//   @media (max-width: 760px) {
-//     height: 25px;
-//     .logo1 {
-//       display: none;
-//     }
-
-//     .logo2 {
-//       display: block;
-//     }
-//   }
-// }
 .partic {
   top: 0;
   bottom: 0;
@@ -182,37 +147,7 @@ export default {
   .com-wrapper {
     height: 100%;
   }
-  .service-navs {
-    z-index: 10;
-    .flex();
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    justify-content: space-around;
-    .item {
-      font-size: 18px;
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      opacity: 0.7;
-      color: #fff;
-      margin-left: 20px;
-      margin-right: 20px;
-      &.active {
-        opacity: 1;
-        transform: scale(1.2);
-        animation: nav 0.3s ease-in-out;
-      }
-      @keyframes nav {
-        0% {
-          transform: scale(1);
-        }
-      }
-    }
-  }
+
   .nav-btn {
     position: absolute;
     top: 30px;
@@ -357,14 +292,6 @@ export default {
     }
   }
   @media (max-width: 768px) {
-    .service-navs {
-      justify-content: flex-start;
-      margin-top: 60px;
-      .item {
-        display: block;
-        margin-top: 20px;
-      }
-    }
     .text-wrapper {
       .content {
         .text {
