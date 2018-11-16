@@ -21,7 +21,7 @@ export default {
 <style lang="less">
 .case-article {
   background: #fff;
-  max-width: 900px;
+  max-width: 1000px;
   padding: 0.2rem 0.3rem;
   margin-left: auto;
   margin-right: auto;
