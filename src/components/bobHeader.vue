@@ -229,8 +229,8 @@ export default {
       cursor: pointer;
       display: inline-block;
       margin: 0 10px;
-      // opacity: .7;
-      &:hover {
+      opacity: .8;
+      &:hover{
         opacity: 1;
       }
     }

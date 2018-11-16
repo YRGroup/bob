@@ -347,12 +347,12 @@ export default {
           transition: all 0.5s;
           width: 100%;
           text-align: left;
-          .p1 {
-            font-size: 36px;
+          .p1{
+            font-size: 25px;
             margin-bottom: 20px;
           }
-          .p2 {
-            font-size: 16px;
+          .p2{
+            font-size: 15px;
           }
         }
       }

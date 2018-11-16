@@ -144,6 +144,7 @@ export default {
     right: 5%;
     bottom: 10%;
     .tag {
+      cursor: pointer;
       width: 0.3rem;
       height: 0.3rem;
       background: #fff;
