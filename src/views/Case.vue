@@ -142,25 +142,25 @@ export default {
   .side-bar {
     position: fixed;
     right: 5%;
-    bottom: 30%;
+    bottom: 10%;
     .tag {
       cursor: pointer;
-      width: 0.4rem;
-      height: 0.4rem;
+      width: 0.3rem;
+      height: 0.3rem;
       background: #fff;
-      line-height: 0.4rem;
+      line-height: 0.3rem;
       text-align: center;
       margin: 10px 0;
-      border: 2px solid #e4e4e4;
+      border: 1px solid #e4e4e4;
       cursor: pointer;
       color: #888;
       transition: all 0.3s;
       .iconfont {
-        font-size: 25px;
+        font-size: 0.15rem;
       }
       &:hover {
         color: @color-theme;
-        border: 2px solid @color-theme;
+        border: 1px solid @color-theme;
       }
     }
   }
