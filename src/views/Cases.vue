@@ -136,7 +136,7 @@ export default {
           catId: 7
         },
         f: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require('@/images/cases/banner_F1.jpg'),
           catId: 8
         }
       },

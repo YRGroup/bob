@@ -27,7 +27,16 @@
         </div>
       </el-col>
       <el-col :xs="24" :sm="8" class="item foot-logo flex flex-column">
-        <img src="../images/logoFooter.png" alt="">
+        <div class="footerlogo">
+          <img src="../images/logoFooter.png" alt="">
+          <p>To energize those  who made</br> 
+          relentless and respectable efforts </br> 
+          to uplift humanity.</p>
+          <p>
+            赋能那些为人性光辉</br> 
+            付出努力的个人和组织。
+          </p>
+        </div> 
       </el-col>
     </el-row>
     <p class="copyright">
@@ -113,6 +122,20 @@ export default {
         display: none;
       }
     }
+    .footerlogo{
+      p{
+        display: none;
+      }
+    }
+  }
+}
+.footerlogo{
+  opacity: .8;
+  text-align: left;
+  font-size: 14px;
+  line-height: 26px;
+  p{
+    margin-top: 10px;
   }
 }
 </style>
