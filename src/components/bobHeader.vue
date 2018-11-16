@@ -1,5 +1,5 @@
 <template>
-  <div :class="['header-wrapper', 'absolute-header', {'fixed-header':scrollY>200}]">
+  <div :class="['header-wrapper', 'absolute-header', {'fixed-header':scrollY>100}]">
     <header class='header'>
       <router-link to="/" class="logo">
         <img class="logo1" src="../images/logo.png" alt="logo">

@@ -7,9 +7,9 @@
           <div class="swiper-index">
             <h3 class="p1">{{casesName}}</h3>
             <p class="p2">{{casesIntro}}</p>
-            <div class="p3" >
+            <div class="p3"  v-show="showTag">
               <transition-group name="list">
-                <p v-show="showTag" :style="{transitionDelay:`${index*150}ms`}" v-for="(item,index) in caseTypes" :key="index">{{item}}</p>
+                <p :style="{transitionDelay:`${index*150}ms`}" v-for="(item,index) in caseTypes" :key="index">{{item}}</p>
               </transition-group>
             </div>
           </div>
@@ -258,7 +258,7 @@ export default {
             font-size: 0.8rem;
           }
           .p2 {
-            font-size: 15px;
+            font-size: 0.02rempx;
             line-height: 60px;
             opacity: 0.8;
           }
