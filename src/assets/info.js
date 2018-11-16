@@ -11,14 +11,14 @@ const info = {
     <p>asking the right questions.</p>
     <p>The price of trying </p>
     <p>is less than the cost of idling.</p>`,
-    items: `<p>品牌核心价值</p>
-    <p>品牌研究</p>
-    <p>品牌定位</p>
-    <p>品牌愿景</p>
-    <p>品牌使命</p>
-    <p>品牌主张</p>
-    <p>品牌命名</p>`
-
+    items: ['品牌核心价值',
+      '品牌研究',
+      '品牌定位',
+      '品牌愿景',
+      '品牌使命',
+      '品牌主张',
+      '品牌命名'
+    ]
   },
   'b': {
     name: 'Branding',
@@ -35,11 +35,12 @@ const info = {
     <p>Therefore, </p>
     <p>Your brand is what other people say about you,</p>
     <p>when you’re not in the room.</p>`,
-    items: `<p>VI基础部分设计</p>
-    <p>VI应用部分设计</p>
-    <p>LOGO标志设计</p>
-    <p>宣传册设计</p>
-    <p>PPT模板</p>`
+    items: ['VI基础部分设计',
+      'VI应用部分设计',
+      'LOGO标志设计',
+      '宣传册设计',
+      'PPT模板'
+    ]
   },
   'c': {
     name: 'Campaign',
@@ -54,40 +55,36 @@ const info = {
     <p>if they are not acted upon. </p>
     <p>You do not really achieve anything </p>
     <p>unless you can explain it to your grandmother. </p>`,
-    items: `<p>线下事件活动服务</p>
-    <p>线上事件营销活动</p>
-    <p>传播侃拼方案</p>
-    <p>媒体管理服务</p>
-    <p>传播调研</p>
-    <p>传播策略</p>`
+    items: ['线下事件活动服务',
+      '线上事件营销活动',
+      '传播侃拼方案',
+      '媒体管理服务',
+      '传播调研',
+      '传播策略',
+      '品牌命名'
+    ]
   },
   'd': {
     name: 'Digital & Web',
+    introduction: '越来越多的用户通过互联网来了解我们，通过互联网拉近与用户的距离，来更好的为用户提供产品和服务。',
     poetry: `<h2>Digits & web</h2>
     <p>互联网最起码的作用是让你难以回首没有它的日子。</p>
     <p>Internet gives you an exceptionally effective way to </p>
-
     <p>broadcast who you are</p>
-
     <p>to your target market quickly and efficiently.</p>
-
     <p>You should use internet </p>
-
     <p>as a drunken man uses lamp posts </p>
-
     <p>for support rather than for illumination.</p>
-
     <p>Once you know something</p>
-
     <p>you find it hard to imagine </p>
-
     <p>what it was like not to know it.</p>`,
-    items: `<p>微信平台解决方案</p>
-    <p>服务器运营外包</p>
-    <p>高端官网定制</p>
-    <p>移动端网站建设</p>
-    <p>业务系统开发</p>
-    <p>H5应用开发</p>`
+    items: ['微信平台解决方案',
+      '服务器运营外包',
+      '高端官网定制',
+      '移动端网站建设',
+      '业务系统开发',
+      'H5应用开发'
+    ]
   },
   'e': {
     name: 'Editorial',
@@ -105,33 +102,41 @@ const info = {
     <p>because those who mind don't matter </p>
     
     <p>and those who matter don't mind.</p>`,
-    items: `
-    <p>年度摄影服务</p>
-    <p>年度影视服务</p>
-    <p>家庭影像服务</p>
-    <p>商业摄影</p>
-    <p>人物传记</p>
-    <p>宣传片</p>`
+    items: ['年度摄影服务',
+      '年度影视服务',
+      '家庭影像服务',
+      '商业摄影',
+      '人物传记',
+      '宣传片'
+    ]
   },
   'f': {
     name: 'Fabrication',
     introduction: '将设计制作成具体的实物，帮助您节省时间和精力，专注于更加重要的目标。',
-    poetry: `<h2>Fabrication</h2>
-    <p>如果品牌是首诗歌，造出的产品就是诗朗诵。</p>
-    <p>A brand is a voice and a product is a souvenir.</p>
+    poetry: ` < h2 > Fabrication < /h2> <
+    p > 如果品牌是首诗歌， 造出的产品就是诗朗诵。 < /p> <
+    p > A brand is a voice and a product is a souvenir. < /p>
 
-    <p>Your premium brand </p>
-    
-    <p>had better be delivering something special, </p>
-    
-    <p>or it’s not going to get the business.</p>
-    
-    <p>When people use your brand name as a verb, </p>
-    
-    <p>that is remarkably good or bad.</p>`,
-    items: `<p>画册印制</p>
-    <p>服装定制</p>
-    <p>周边产品定制</p>`
+    <
+    p > Your premium brand < /p>
+
+    <
+    p > had better be delivering something special,
+    < /p>
+
+    <
+    p > or it’ s not going to get the business. < /p>
+
+      <
+      p > When people use your brand name as a verb,
+    < /p>
+
+    <
+    p > that is remarkably good or bad. < /p>`,
+    items: ['画册印制',
+      '服装定制',
+      '周边产品定制'
+    ]
   }
 }
 export {

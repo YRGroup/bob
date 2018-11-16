@@ -19,7 +19,6 @@ class Case {
     return arr.join(' / ')
   }
   getBanner (str) {
-    console.log(1)
     var imgReg = /<img.*?(?:>|\/>)/gi
     var srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i
     var arr = str.match(imgReg)

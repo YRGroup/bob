@@ -28,54 +28,53 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import API from "@/api/index";
-import Case from "@/class/case";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import API from '@/api/index'
+import Case from '@/class/case'
 export default {
-  name: "home",
+  name: 'home',
   components: {
     bobHeader,
     bobFooter,
     bobArticle
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       caseInfo: {}
-    };
+    }
   },
   computed: {},
 
-  created() {
-    this.id = this.$route.params.id;
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
-    this.getData();
+    this.getData()
   },
   methods: {
-    getData() {
+    getData () {
       API.getPost(this.id)
         .then(res => {
-          console.log(res);
-
-          this.caseInfo = new Case(res.data);
+          console.log(res)
+          this.caseInfo = new Case(res.data)
         })
         .catch(err => {
-          console.log(err);
-        });
+          console.log(err)
+        })
     },
-    back() {
-      this.$router.back();
+    back () {
+      this.$router.back()
     },
-    top() {
-      window.scrollTo(0, 0);
+    top () {
+      window.scrollTo(0, 0)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -89,7 +88,7 @@ export default {
   }
 
   .case-banner {
-    height: 2.5rem;
+    height: 3.5rem;
     position: relative;
     overflow: hidden;
     .bg {
@@ -141,9 +140,14 @@ export default {
       margin: 10px 0;
       border: 2px solid #e4e4e4;
       cursor: pointer;
-      .iconfont{
-        font-size: 20px;
-        color: #888888;
+      color: #888;
+      transition: all .3s;
+      .iconfont {
+        font-size: 25px;
+      }
+      &:hover {
+        color: @color-theme;
+        border: 2px solid @color-theme;
       }
     }
   }
