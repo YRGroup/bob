@@ -10,6 +10,7 @@
         </div>
       </div>
       <bob-article  v-if="caseInfo.content">
+        <div>{{caseInfo.title}}</div>
         <div v-html="caseInfo.content">>
         </div>
       </bob-article>
@@ -105,7 +106,7 @@ export default {
     overflow: hidden;
     .bg {
       .background-cover();
-      filter: blur(5px);
+      // filter: blur(5px);
       position: absolute;
       left: -10px;
       top: -10px;
