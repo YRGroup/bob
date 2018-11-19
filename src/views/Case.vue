@@ -4,13 +4,13 @@
     <div class="case-content">
       <div class="case-banner" >
         <div class="bg" :style="{backgroundImage:`url(${caseInfo.banner})`}"></div>
-        <div class="desc">
+        <!-- <div class="desc">
           <p class="p1">{{caseInfo.title}}</p>
           <p class="p2">{{caseInfo.tag}}</p>
-        </div>
+        </div> -->
       </div>
       <bob-article  v-if="caseInfo.content">
-        <div>{{caseInfo.title}}</div>
+        <div class="caseinfotitle">{{caseInfo.title}}</div>
         <div v-html="caseInfo.content">>
         </div>
       </bob-article>
@@ -177,5 +177,10 @@ export default {
 .fadeBottom-leave-to {
   transform: translateY(50%);
   opacity: 0;
+}
+.caseinfotitle{
+  text-align: center;
+  font-size: 28px;
+  margin:20px 0 40px;
 }
 </style>
