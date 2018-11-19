@@ -62,7 +62,7 @@
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <router-link to="/cases/d">
+            <router-link to="/service/d">
               <p class="p1">
                 <span>D</span>igital & Web
               </p>

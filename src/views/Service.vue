@@ -26,7 +26,10 @@
         clickMode="push">
         </vue-particles>
       </div>
-      <div class="more" @click="toogleText">B 我 们</div>
+      <div class="more animated fadeInUp" @click="toogleText">B 我 们</div>
+      <div class="scroll-icon">
+        <img  src="../images/icon-1.png" alt="">
+      </div>
     </div>
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
@@ -63,22 +66,22 @@
   </div>
 </template>
 <script>
-import { info } from '@/assets/info'
-import bannera from '@/components/bannera/index.vue'
-import bannerb from '@/components/bannerb/index.vue'
-import bannerc from '@/components/bannerc/index.vue'
-import bannerd from '@/components/bannerd/index.vue'
-import bannere from '@/components/bannere/index.vue'
-import bannerf from '@/components/bannerf/index.vue'
-import bobHeader from '@/components/bobHeader.vue'
-import caseList from '@/components/caseList.vue'
-import bobFooter from '@/components/bobFooter.vue'
+import { info } from "@/assets/info";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
+import bannerc from "@/components/bannerc/index.vue";
+import bannerd from "@/components/bannerd/index.vue";
+import bannere from "@/components/bannere/index.vue";
+import bannerf from "@/components/bannerf/index.vue";
+import bobHeader from "@/components/bobHeader.vue";
+import caseList from "@/components/caseList.vue";
+import bobFooter from "@/components/bobFooter.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bannera,
     bannerb,
@@ -90,54 +93,63 @@ export default {
     caseList,
     bobFooter
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       showText: false,
       showService: false,
       cn: true
-    }
+    };
   },
   computed: {
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     },
-    banner () {
-      return 'banner' + this.id
+    banner() {
+      return "banner" + this.id;
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
       this.timer = setTimeout(() => {
-        this.cn = true
-      }, 500)
+        this.cn = true;
+      }, 500);
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/mixin.less";
 @import "../less/common.less";
-
+@import "../css/animate.css";
+.scroll-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -20px;
+  animation: scrollIcon 3s ease infinite;
+}
 .partic {
   top: 0;
   bottom: 0;
@@ -268,7 +280,7 @@ export default {
       line-height: 40px;
       font-size: 16px;
       width: 200px;
-      border-radius: 50px;
+      border-radius: 5px;
       border: 1px solid #fff;
       color: #fff;
       transition: all 0.3s;
@@ -339,5 +351,11 @@ export default {
 .poetry-leave-to {
   opacity: 0;
   transform: translateX(-150px);
+}
+@keyframes scrollIcon {
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 </style>
