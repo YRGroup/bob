@@ -4,6 +4,7 @@
     <bob-banner></bob-banner>
     <bob-service></bob-service>
     <bob-aboutus></bob-aboutus>
+    <bob-team></bob-team>
     <bob-data></bob-data>
     <bob-footer></bob-footer>
   </div>
@@ -17,6 +18,7 @@ import bobService from '@/components/bobService.vue'
 import bobAboutus from '@/components/bobAboutus.vue'
 import bobData from '@/components/bobData.vue'
 import bobFooter from '@/components/bobFooter.vue'
+import bobTeam from '@/components/bobTeam.vue'
 
 export default {
   name: 'home',
@@ -26,6 +28,7 @@ export default {
     bobService,
     bobAboutus,
     bobData,
+    bobTeam,
     bobFooter
   },
   created () {
@@ -39,4 +42,5 @@ export default {
   position: relative;
   background: #fff;
 }
+
 </style>

@@ -65,7 +65,7 @@ export default {
 @import "../less/common.less";
 #section2 {
   box-sizing: border-box;
-  margin-bottom: 0.5rem;
+  // margin-bottom: 0.5rem;
   .background-cover();
   height: 3.5rem;
   background-image: url("../images/about_bg.jpg");
