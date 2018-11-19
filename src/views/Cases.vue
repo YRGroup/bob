@@ -347,18 +347,19 @@ export default {
           transition: all 0.5s;
           width: 100%;
           text-align: left;
-          .p1 {
-            font-size: 25px;
+          .p1{
+            font-size: 20px;
             margin-bottom: 20px;
           }
-          .p2 {
-            font-size: 15px;
+          .p2{
+            font-size: 14px;
+            opacity: .8;
           }
         }
       }
       &:hover {
         .overlay {
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(0, 0, 0, .8);
           .border-hor,
           .border-ver {
             transform: scale(1, 1);

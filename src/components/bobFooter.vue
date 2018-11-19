@@ -19,7 +19,7 @@
       <el-col :xs="24" :sm="8" class="item col-xs-12 col-sm-4">
         <p class="item-title">CONTACT US</p>
         <div class="item-content">
-          <p>郑东新区祥盛街8号福晟国际2号楼14F </p>
+          <p>郑东新区祥盛街8号 福晟国际大厦1层</p>
           <p>0371-55261585</p>
         </div>
         <div class="codeImg">
