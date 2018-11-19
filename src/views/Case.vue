@@ -32,66 +32,66 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import API from "@/api/index";
-import Case from "@/class/case";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import API from '@/api/index'
+import Case from '@/class/case'
 
-let lazyImg = require("@/images/nodata.jpg");
+let lazyImg = require('@/images/nodata.jpg')
 export default {
-  name: "home",
+  name: 'home',
   components: {
     bobHeader,
     bobFooter,
     bobArticle
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       caseInfo: {},
       scrollY: 0,
       srcset: `${lazyImg} 1236w, ${lazyImg} 813w, ${lazyImg} 768w, ${lazyImg} 1200w `
-    };
+    }
   },
   computed: {
-    showSideBar() {
-      return this.scrollY > 400;
+    showSideBar () {
+      return this.scrollY > 400
     }
   },
 
-  created() {
-    this.id = this.$route.params.id;
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
-    this.getData();
+    this.getData()
   },
-  mounted() {
-    window.addEventListener("scroll", ev => {
-      this.scrollY = window.scrollY;
-    });
+  mounted () {
+    window.addEventListener('scroll', ev => {
+      this.scrollY = window.scrollY
+    })
   },
   methods: {
-    getData() {
+    getData () {
       API.getPost(this.id)
         .then(res => {
-          console.log(res);
-          this.caseInfo = new Case(res.data);
+          console.log(res)
+          this.caseInfo = new Case(res.data)
         })
         .catch(err => {
-          console.log(err);
-        });
+          console.log(err)
+        })
     },
-    back() {
-      this.$router.back();
+    back () {
+      this.$router.back()
     },
-    top() {
-      window.scrollTo(0, 0);
+    top () {
+      window.scrollTo(0, 0)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
