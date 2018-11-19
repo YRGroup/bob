@@ -5,10 +5,9 @@
     </h5>
     <div class="container-fluid wrapper">
       <el-row class="cards">
-
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <!-- <router-link to="/cases/a"> -->
+            <router-link to="/service/a">
               <p class="p1">
                 <span>A</span>nalytics
               </p>
@@ -21,13 +20,13 @@
                 <p>品牌主张</p>
                 <p>品牌命名</p>
               </div>
-            <!-- </router-link> -->
+            </router-link>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <router-link to="/cases/b">
+            <router-link to="/service/b">
               <p class="p1">
                 <span>B</span>randing
               </p>
@@ -45,7 +44,7 @@
         <el-col :lg="4" :sm="8" :xs="12" class="card">
 
           <div class="mask  flex flex-column">
-            <!-- <router-link to="/cases/c"> -->
+            <router-link to="/service/c">
               <p class="p1">
                 <span>C</span>ampaign
               </p>
@@ -58,7 +57,7 @@
                 <p>传播策略</p>
               </div>
             <!-- <p class="p3">+</p> -->
-            <!-- </router-link> -->
+            </router-link>
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
@@ -81,7 +80,7 @@
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <router-link to="/cases/e">
+            <router-link to="/service/e">
             <p class="p1">
             <span>E</span>ditorial
           </p>
@@ -99,7 +98,7 @@
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
-            <router-link to="/cases/f">
+            <router-link to="/service/f">
               <p class="p1">
                 <span>F</span>abrication
               </p>

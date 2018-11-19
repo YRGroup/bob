@@ -1,44 +1,5 @@
 <template>
   <div class="case-page">
-    <bob-header type="cases"></bob-header>
-    <swiper v-if="resetSwiper" class="banner-swiper" :options="swiperOption" ref="mySwiper">
-      <swiper-slide class="swiper-slide">
-        <div class="content" :style="{backgroundImage:`url(${banner})`}">
-          <div class="swiper-index">
-            <h3 class="p1">{{casesName}}</h3>
-            <p class="p2">{{casesIntro}}</p>
-            <div class="p3" >
-              <transition-group name="list">
-                <p class="animated fadeIn" v-for="(item,index) in caseTypes" :key="index">{{item}}</p>
-              </transition-group>
-            </div>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide v-for="item in stickyCaseList" :key="item.id" class="swiper-slide" :style="{backgroundImage:`url(${item.banner})`}">
-        <div class="content" >
-          <router-link class="swiper-case"  tag="div" :to="`/case/${item.id}`">
-          </router-link>
-        </div>
-      </swiper-slide>
-      <!--左箭头-->
-      <div class="prev-btn swiper-btn flex" slot="button-prev">
-        <div class="lines">
-          <span class="top-line line"></span>
-          <span class="bottom-line line"></span>
-        </div>
-        <p class="tip"></p>
-      </div>
-      <!--右箭头-->
-      <div class="next-btn swiper-btn flex" slot="button-next">
-        <p class="tip"></p>
-        <div class="lines">
-          <span class="top-line line"></span>
-          <span class="bottom-line line"></span>
-        </div>
-      </div>
-    </swiper>
-
     <div class="casetitle">
       <h5 class="section-title">
         <span>案例展示 / <span class="en">case</span> </span>
@@ -58,62 +19,39 @@
                   <p class="p2">{{item.tag}}</p>
                 </div>
               </div>
-              <div class="case-content" :style="{backgroundImage:`url(${item.thumbnail})`}">
+              <div v-lazy:background-image="item.thumbnail" class="case-content" :style="{backgroundImage:`url(${item.thumbnail})`}">
               </div>
-              <div class="case-title">
+              <!-- <div class="case-title">
                 <p class="p1">{{item.title}}</p>
                 <p class="p2">{{item.tag}}</p>
-              </div>
+              </div> -->
             </router-link>
           </el-col>
         </transition-group>
       </el-row>
       <el-row class="cases-footer">
         <div class="more"  v-if="more" @click="getMore">更多案例</div>
-        <p class="foot" v-else>-- 没有更多了 --</p>
+        <p class="foot" v-else>~ 没有更多了 ~</p>
       </el-row>
     </div>
     <!-- <div v-else>
       暂无案例
     </div> -->
-    <bob-footer></bob-footer>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import bobHeader from '@/components/bobHeader.vue'
-import bobFooter from '@/components/bobFooter.vue'
 import API from '@/api/index'
 import { getFirstImg } from '@/assets/utils'
 import { info } from '@/assets/info'
 import Case from '@/class/case'
 export default {
   name: 'home',
-  components: {
-    bobHeader,
-    bobFooter,
-    swiper,
-    swiperSlide
-  },
+  components: {},
   data () {
     return {
       id: '',
-      resetSwiper: true,
-      swiperOption: {
-        autoplay: true,
-        simulateTouch: false, // 禁止鼠标模拟
-        // effect: 'fade',
-        init: false,
-        // loop: true,
-        speed: 1000,
-        duration: 5000,
-        navigation: {
-          nextEl: '.next-btn',
-          prevEl: '.prev-btn'
-        }
-      },
       bannerList: {
         a: {
           bannerImg: require('@/images/3.jpg'),
@@ -147,9 +85,6 @@ export default {
     }
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
-    },
     banner () {
       return this.bannerList[this.id].bannerImg
     },
@@ -212,18 +147,14 @@ export default {
     }
   },
   watch: {
-    stickyCaseList () {
-      this.$nextTick(() => {
-        this.swiper.init()
-      })
-    },
     $route (to, from) {
-      this.showTag = false
       this.id = this.$route.params.id
       if (!this.id) {
         this.$router.push('/')
       }
+      this.currentPage = 1
       this.caseList = []
+      this.more = true
       this.getData()
 
       // setTimeout(() => {
@@ -233,7 +164,7 @@ export default {
   }
 }
 </script>
-<style lang="less" >
+<style lang="less" scoped>
 @import "../less/variable.less";
 @import "../less/mixin.less";
 @import "../css/animate.css";
@@ -401,6 +332,56 @@ export default {
     .case-list {
       .case-item {
         width: 90%;
+      }
+    }
+  }
+}
+.cases-footer {
+  // padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  .foot {
+    color: #999;
+    line-height: 50px;
+    font-size: 15px;
+  }
+  .more {
+    position: relative;
+    cursor: pointer;
+    padding: 0 20px;
+    display: inline-block;
+    line-height: 40px;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    color: @color-theme;
+    transition: all 0.3s;
+    z-index: 10;
+    overflow: hidden;
+    background: #fff;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      background-color: @color-theme;
+      transform-origin: 50%;
+      transition-property: transform;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-out;
+    }
+    &:hover {
+      // border: 1px solid @color-theme;
+      color: @color-theme;
+      // background: #fff;
+      color: #fff;
+      &::before {
+        transform: scaleX(1);
       }
     }
   }

@@ -29,14 +29,14 @@
       <el-col :xs="24" :sm="8" class="item foot-logo flex flex-column">
         <div class="footerlogo">
           <img src="../images/logoFooter.png" alt="">
-          <p>To energize those  who made</br> 
-          relentless and respectable efforts </br> 
-          to uplift humanity.</p>
+          <p>To energize those  who made<br>
+          relentless and respectable efforts <br>
+          to uplift humanity.<p>
           <p>
-            赋能那些为人性光辉</br> 
+            赋能那些为人性光辉<br>
             付出努力的个人和组织。
           </p>
-        </div> 
+        </div>
       </el-col>
     </el-row>
     <p class="copyright">

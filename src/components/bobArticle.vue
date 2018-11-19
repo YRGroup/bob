@@ -1,21 +1,21 @@
 <template>
-  <article class="case-article" id="acticle">
+  <article class="case-article" id="acticle"  v-lazy-container="{ selector: 'img' }">
     <slot></slot>
   </article>
 </template>
 <script>
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  created() {},
-  mounted() {
-    let article = document.getElementById("acticle");
-    if (article.getElementsByTagName("img").length) {
-      article.getElementsByTagName("img")[0].style.display = "none";
+  created () {},
+  mounted () {
+    let article = document.getElementById('acticle')
+    if (article.getElementsByTagName('img').length) {
+      article.getElementsByTagName('img')[0].style.display = 'none'
     }
   }
-};
+}
 </script>
 
 <style lang="less">
@@ -38,6 +38,14 @@ export default {
     margin: 0 auto;
     p {
       line-height: 28px;
+    }
+  }
+  .wp-video{
+    max-width: 100%;
+    text-align: center;
+    video{
+      max-width: 80%;
+      height: auto;
     }
   }
 }

@@ -6,6 +6,15 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import VueParticles from 'vue-particles'
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'assets/logo.png',
+  loading: 'assets/logo.png',
+  attempt: 1
+})
+
 Vue.config.productionTip = false
 Vue.use(VueParticles)
 Vue.use(ElementUI)

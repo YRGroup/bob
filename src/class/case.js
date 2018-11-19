@@ -14,15 +14,19 @@ class Case {
     this.banner = url
   }
   formatTags (str) {
+    if (!str) return
     let arr = str.split('/')
     arr.pop()
     return arr.join(' / ')
   }
   getBanner (str) {
     var imgReg = /<img.*?(?:>|\/>)/gi
-    var srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i
+    // var srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i
+    var srcReg = /src=['"]?([^'"]*)['"]?/i
     var arr = str.match(imgReg)
     let imgs = []
+
+    if (!(arr && arr.length)) return
     for (var i = 0; i < arr.length; i++) {
       var src = arr[i].match(srcReg)
       // 获取图片地址
