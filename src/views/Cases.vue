@@ -7,9 +7,9 @@
           <div class="swiper-index">
             <h3 class="p1">{{casesName}}</h3>
             <p class="p2">{{casesIntro}}</p>
-            <div class="p3"  v-show="showTag">
+            <div class="p3" >
               <transition-group name="list">
-                <p :style="{transitionDelay:`${index*150}ms`}" v-for="(item,index) in caseTypes" :key="index">{{item}}</p>
+                <p v-for="(item,index) in caseTypes" :key="index">{{item}}</p>
               </transition-group>
             </div>
           </div>
@@ -82,24 +82,24 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import bobHeader from '@/components/bobHeader.vue'
-import bobFooter from '@/components/bobFooter.vue'
-import API from '@/api/index'
-import { getFirstImg } from '@/assets/utils'
-import { info } from '@/assets/info'
-import Case from '@/class/case'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import bobHeader from "@/components/bobHeader.vue";
+import bobFooter from "@/components/bobFooter.vue";
+import API from "@/api/index";
+import { getFirstImg } from "@/assets/utils";
+import { info } from "@/assets/info";
+import Case from "@/class/case";
 export default {
-  name: 'home',
+  name: "home",
   components: {
     bobHeader,
     bobFooter,
     swiper,
     swiperSlide
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       resetSwiper: true,
       swiperOption: {
         autoplay: true,
@@ -110,33 +110,33 @@ export default {
         speed: 1000,
         duration: 5000,
         navigation: {
-          nextEl: '.next-btn',
-          prevEl: '.prev-btn'
+          nextEl: ".next-btn",
+          prevEl: ".prev-btn"
         }
       },
       bannerList: {
         a: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 5
         },
         b: {
-          bannerImg: require('@/images/cases/banner_B1.jpg'),
+          bannerImg: require("@/images/cases/banner_B1.jpg"),
           catId: 6
         },
         c: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 10
         },
         d: {
-          bannerImg: require('@/images/cases/banner_A1.jpg'),
+          bannerImg: require("@/images/cases/banner_A1.jpg"),
           catId: 4
         },
         e: {
-          bannerImg: require('@/images/cases/banner_E1.jpg'),
+          bannerImg: require("@/images/cases/banner_E1.jpg"),
           catId: 7
         },
         f: {
-          bannerImg: require('@/images/cases/banner_F1.jpg'),
+          bannerImg: require("@/images/cases/banner_F1.jpg"),
           catId: 8
         }
       },
@@ -144,95 +144,95 @@ export default {
       currentPage: 1,
       more: true,
       showTag: false
-    }
+    };
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     },
-    banner () {
-      return this.bannerList[this.id].bannerImg
+    banner() {
+      return this.bannerList[this.id].bannerImg;
     },
-    casesName () {
-      return info[this.id].name
+    casesName() {
+      return info[this.id].name;
     },
-    casesIntro () {
-      return info[this.id].introduction
+    casesIntro() {
+      return info[this.id].introduction;
     },
-    caseTypes () {
-      return info[this.id].items
+    caseTypes() {
+      return info[this.id].items;
     },
-    stickyCaseList () {
-      let arr = []
+    stickyCaseList() {
+      let arr = [];
       this.caseList.forEach(el => {
         if (el.sticky) {
-          arr.push(el)
+          arr.push(el);
         }
-      })
-      return arr
+      });
+      return arr;
     }
   },
 
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
-    this.getData()
+    this.getData();
   },
-  mounted () {
+  mounted() {
     // this.showTag = true;
     setTimeout(() => {
-      this.showTag = true
-    }, 1000)
+      this.showTag = true;
+    }, 1000);
   },
   methods: {
-    getData () {
-      let id = this.bannerList[this.id].catId
+    getData() {
+      let id = this.bannerList[this.id].catId;
       API.getCatPosts(id, this.currentPage)
         .then(res => {
           res.data.forEach(el => {
-            this.caseList.push(new Case(el))
-          })
+            this.caseList.push(new Case(el));
+          });
         })
         .catch(err => {
-          console.log(err)
-          this.more = false
-        })
+          console.log(err);
+          this.more = false;
+        });
     },
-    getMore () {
-      this.currentPage++
-      this.getData()
+    getMore() {
+      this.currentPage++;
+      this.getData();
     },
-    formatTags (string) {
-      let arr = string.split('/')
-      arr.pop()
-      return arr.join(' / ')
+    formatTags(string) {
+      let arr = string.split("/");
+      arr.pop();
+      return arr.join(" / ");
     }
   },
   watch: {
-    stickyCaseList () {
+    stickyCaseList() {
       this.$nextTick(() => {
-        this.swiper.init()
-      })
+        this.swiper.init();
+      });
     },
-    $route (to, from) {
-      console.log('last')
-      this.showTag = false
-      this.id = this.$route.params.id
+    $route(to, from) {
+      console.log("last");
+      this.showTag = false;
+      this.id = this.$route.params.id;
       if (!this.id) {
-        this.$router.push('/')
+        this.$router.push("/");
       }
-      this.caseList = []
-      this.getData()
+      this.caseList = [];
+      this.getData();
 
       // setTimeout(() => {
       //   this.showTag = true;
       // }, 300);
     }
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/variable.less";
@@ -347,11 +347,11 @@ export default {
           transition: all 0.5s;
           width: 100%;
           text-align: left;
-          .p1{
+          .p1 {
             font-size: 25px;
             margin-bottom: 20px;
           }
-          .p2{
+          .p2 {
             font-size: 15px;
           }
         }
@@ -532,12 +532,17 @@ export default {
     height: 187px;
   }
 }
-.list-enter-active {
+.list-enter-active,
+.list-leave-active {
   transition: all 1s;
 }
-.list-enter {
+.list-enter,
+.list-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(30px);
+}
+.list-move {
+  transition: all 1s;
 }
 @keyframes tag {
   0% {
