@@ -57,24 +57,28 @@
         </div>
       </div>
     </transition>
+    <case-list></case-list>
     <!-- <div class="container" ref="container"></div> -->
+    <bob-footer></bob-footer>
   </div>
 </template>
 <script>
-import { info } from "@/assets/info";
-import bannera from "@/components/bannera/index.vue";
-import bannerb from "@/components/bannerb/index.vue";
-import bannerc from "@/components/bannerc/index.vue";
-import bannerd from "@/components/bannerd/index.vue";
-import bannere from "@/components/bannere/index.vue";
-import bannerf from "@/components/bannerf/index.vue";
-import bobHeader from "@/components/bobHeader.vue";
+import { info } from '@/assets/info'
+import bannera from '@/components/bannera/index.vue'
+import bannerb from '@/components/bannerb/index.vue'
+import bannerc from '@/components/bannerc/index.vue'
+import bannerd from '@/components/bannerd/index.vue'
+import bannere from '@/components/bannere/index.vue'
+import bannerf from '@/components/bannerf/index.vue'
+import bobHeader from '@/components/bobHeader.vue'
+import caseList from '@/components/caseList.vue'
+import bobFooter from '@/components/bobFooter.vue'
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: "service",
+  name: 'service',
   components: {
     bannera,
     bannerb,
@@ -82,51 +86,53 @@ export default {
     bannerd,
     bannere,
     bannerf,
-    bobHeader
+    bobHeader,
+    caseList,
+    bobFooter
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       showText: false,
       showService: false,
       cn: true
-    };
+    }
   },
   computed: {
-    poetry() {
-      return info[this.id]["poetry"];
+    poetry () {
+      return info[this.id]['poetry']
     },
-    items() {
-      return info[this.id]["items"];
+    items () {
+      return info[this.id]['items']
     },
-    banner() {
-      return "banner" + this.id;
+    banner () {
+      return 'banner' + this.id
     }
   },
-  created() {
-    this.id = this.$route.params.id;
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    toogleText() {
-      this.showText = !this.showText;
+    toogleText () {
+      this.showText = !this.showText
       this.timer = setTimeout(() => {
-        this.cn = true;
-      }, 500);
+        this.cn = true
+      }, 500)
     },
-    toogleService() {
-      this.showService = !this.showService;
+    toogleService () {
+      this.showService = !this.showService
     }
   },
-  beforeRouteUpdate(to, from, next) {
-    this.id = to.params.id;
-    next();
+  beforeRouteUpdate (to, from, next) {
+    this.id = to.params.id
+    next()
   }
-};
+}
 </script>
 <style lang="less" >
 @import "../less/mixin.less";
@@ -143,7 +149,7 @@ export default {
 .service {
   // height: 100vh;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   .com-wrapper {
     height: 100%;
   }
@@ -154,12 +160,14 @@ export default {
     right: 40px;
   }
   .text-wrapper {
-    position: absolute;
+    position: fixed;
     background: @color-theme;
     top: 0;
-    bottom: 0;
+    // bottom: 0;
     left: 0;
-    right: 0;
+    // right: 0;
+    height: 100vh;
+    width: 100%;
     z-index: 99;
     color: #fff;
     .flex-column();

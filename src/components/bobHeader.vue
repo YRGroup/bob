@@ -162,8 +162,7 @@ export default {
       return this.show ? 0.15 : -0.15
     }
   },
-  created () {
-  },
+  created () {},
   methods: {
     toogleSideNav () {
       this.show = !this.show
@@ -196,7 +195,7 @@ export default {
   &.fixed-header {
     position: fixed;
     top: 0;
-    background: #4e4e4e;
+    background: rgb(78, 78, 78, 0.5);
     // background: @color-theme;
     animation: fixed 0.5s ease-in-out;
   }
@@ -229,8 +228,8 @@ export default {
       cursor: pointer;
       display: inline-block;
       margin: 0 10px;
-      opacity: .8;
-      &:hover{
+      opacity: 0.8;
+      &:hover {
         opacity: 1;
       }
     }
@@ -240,7 +239,7 @@ export default {
     z-index: 10;
     .flex();
     position: absolute;
-    top: 20px;
+    // top: 20px;
     width: 100%;
     justify-content: space-around;
     .item {
@@ -407,9 +406,9 @@ export default {
   }
 
   @media (max-width: 768px) {
-    ul {
-      // padding: 80px 0;
-    }
+    // ul {
+    //   // padding: 80px 0;
+    // }
   }
 }
 

@@ -31,63 +31,63 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import API from "@/api/index";
-import Case from "@/class/case";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import API from '@/api/index'
+import Case from '@/class/case'
 export default {
-  name: "home",
+  name: 'home',
   components: {
     bobHeader,
     bobFooter,
     bobArticle
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       caseInfo: {},
       scrollY: 0
-    };
+    }
   },
   computed: {
-    showSideBar() {
-      return this.scrollY > 400 ? true : false;
+    showSideBar () {
+      return this.scrollY > 400
     }
   },
 
-  created() {
-    this.id = this.$route.params.id;
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
-    this.getData();
+    this.getData()
   },
-  mounted() {
-    window.addEventListener("scroll", ev => {
-      this.scrollY = window.scrollY;
-    });
+  mounted () {
+    window.addEventListener('scroll', ev => {
+      this.scrollY = window.scrollY
+    })
   },
   methods: {
-    getData() {
+    getData () {
       API.getPost(this.id)
         .then(res => {
-          console.log(res);
-          this.caseInfo = new Case(res.data);
+          console.log(res)
+          this.caseInfo = new Case(res.data)
         })
         .catch(err => {
-          console.log(err);
-        });
+          console.log(err)
+        })
     },
-    back() {
-      this.$router.back();
+    back () {
+      this.$router.back()
     },
-    top() {
-      window.scrollTo(0, 0);
+    top () {
+      window.scrollTo(0, 0)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -101,7 +101,7 @@ export default {
   }
 
   .case-banner {
-    height: 3.5rem;
+    height: 4.5rem;
     position: relative;
     overflow: hidden;
     .bg {
@@ -144,6 +144,7 @@ export default {
     position: fixed;
     right: 5%;
     bottom: 10%;
+    z-index: 99;
     .tag {
       cursor: pointer;
       width: 0.3rem;
@@ -152,7 +153,7 @@ export default {
       line-height: 0.3rem;
       text-align: center;
       margin: 10px 0;
-      border: 1px solid #e4e4e4;
+      border: 2px solid #e4e4e4;
       cursor: pointer;
       color: #888;
       transition: all 0.3s;
@@ -161,7 +162,7 @@ export default {
       }
       &:hover {
         color: @color-theme;
-        border: 1px solid @color-theme;
+        border: 2px solid @color-theme;
       }
     }
   }
@@ -178,9 +179,9 @@ export default {
   transform: translateY(50%);
   opacity: 0;
 }
-.caseinfotitle{
+.caseinfotitle {
   text-align: center;
   font-size: 28px;
-  margin:20px 0 40px;
+  margin: 20px 0 40px;
 }
 </style>
