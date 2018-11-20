@@ -17,6 +17,7 @@
                 <div class="text-box">
                   <div>
                     <p class="p1">{{item.title}}</p>
+                    <p class="line"></p>
                     <p class="p2">{{item.tag}}</p>
                   </div>
                 </div>
@@ -44,39 +45,39 @@
 </template>
 
 <script>
-import API from '@/api/index'
-import { getFirstImg } from '@/assets/utils'
-import { info } from '@/assets/info'
-import Case from '@/class/case'
+import API from "@/api/index";
+import { getFirstImg } from "@/assets/utils";
+import { info } from "@/assets/info";
+import Case from "@/class/case";
 export default {
-  name: 'home',
+  name: "home",
   components: {},
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       bannerList: {
         a: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 5
         },
         b: {
-          bannerImg: require('@/images/cases/banner_B1.jpg'),
+          bannerImg: require("@/images/cases/banner_B1.jpg"),
           catId: 6
         },
         c: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 10
         },
         d: {
-          bannerImg: require('@/images/cases/banner_A1.jpg'),
+          bannerImg: require("@/images/cases/banner_A1.jpg"),
           catId: 4
         },
         e: {
-          bannerImg: require('@/images/cases/banner_E1.jpg'),
+          bannerImg: require("@/images/cases/banner_E1.jpg"),
           catId: 7
         },
         f: {
-          bannerImg: require('@/images/cases/banner_F1.jpg'),
+          bannerImg: require("@/images/cases/banner_F1.jpg"),
           catId: 8
         }
       },
@@ -84,87 +85,87 @@ export default {
       currentPage: 1,
       more: true,
       showTag: false
-    }
+    };
   },
   computed: {
-    banner () {
-      return this.bannerList[this.id].bannerImg
+    banner() {
+      return this.bannerList[this.id].bannerImg;
     },
-    casesName () {
-      return info[this.id].name
+    casesName() {
+      return info[this.id].name;
     },
-    casesIntro () {
-      return info[this.id].introduction
+    casesIntro() {
+      return info[this.id].introduction;
     },
-    caseTypes () {
-      return info[this.id].items
+    caseTypes() {
+      return info[this.id].items;
     },
-    stickyCaseList () {
-      let arr = []
+    stickyCaseList() {
+      let arr = [];
       this.caseList.forEach(el => {
         if (el.sticky) {
-          arr.push(el)
+          arr.push(el);
         }
-      })
-      return arr
+      });
+      return arr;
     }
   },
 
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
-    this.getData()
+    this.getData();
   },
-  mounted () {
+  mounted() {
     // this.showTag = true;
     setTimeout(() => {
-      this.showTag = true
-    }, 1000)
+      this.showTag = true;
+    }, 1000);
   },
   methods: {
-    getData () {
-      let id = this.bannerList[this.id].catId
+    getData() {
+      let id = this.bannerList[this.id].catId;
       API.getCatPosts(id, this.currentPage)
         .then(res => {
           res.data.forEach(el => {
-            this.caseList.push(new Case(el))
-          })
+            this.caseList.push(new Case(el));
+          });
         })
         .catch(err => {
-          console.log(err)
-          this.more = false
-        })
+          console.log(err);
+          this.more = false;
+        });
     },
-    getMore () {
-      this.currentPage++
-      this.getData()
+    getMore() {
+      this.currentPage++;
+      this.getData();
     },
-    formatTags (string) {
-      let arr = string.split('/')
-      arr.pop()
-      return arr.join(' / ')
+    formatTags(string) {
+      let arr = string.split("/");
+      arr.pop();
+      return arr.join(" / ");
     }
   },
   watch: {
-    $route (to, from) {
-      this.id = this.$route.params.id
+    $route(to, from) {
+      this.id = this.$route.params.id;
       if (!this.id) {
-        this.$router.push('/')
+        this.$router.push("/");
       }
-      this.currentPage = 1
-      this.caseList = []
-      this.more = true
-      this.getData()
+      this.currentPage = 1;
+      this.caseList = [];
+      this.more = true;
+      this.getData();
 
       // setTimeout(() => {
       //   this.showTag = true;
       // }, 300);
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -287,7 +288,7 @@ export default {
           // padding-left: 50px;
           transition: all 0.5s;
           width: 100%;
-          text-align: center;
+          text-align: left;
           .flex-column();
           justify-content: space-around;
           .p1 {
@@ -298,6 +299,13 @@ export default {
             transform: translateX(100%);
             transition: all 0.5s;
             opacity: 0;
+          }
+          .line {
+            border: 2px solid @color-theme;
+            transform: translateX(200%);
+            transition: all 0.5s;
+            opacity: 0;
+            width: 60px;
           }
           .p2 {
             font-size: 14px;
@@ -320,7 +328,8 @@ export default {
           }
           .text-box {
             .p1,
-            .p2 {
+            .p2,
+            .line {
               transform: translateX(0);
               opacity: 1;
             }
