@@ -23,6 +23,11 @@ export default new Router({
     path: '/case/:id',
     name: 'case',
     component: () => import(/* webpackChunkName: "case" */ './views/Case.vue')
+  },
+  {
+    path: '/team',
+    name: 'team',
+    component: () => import(/* webpackChunkName: "team" */ './views/Team.vue')
   }
 
   ]

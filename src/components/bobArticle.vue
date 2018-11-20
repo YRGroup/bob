@@ -5,24 +5,24 @@
 </template>
 <script>
 export default {
-  data () {
-    return {}
+  data() {
+    return {};
   },
-  created () {},
-  mounted () {
-    let article = document.getElementById('acticle')
-    if (article.getElementsByTagName('img').length) {
-      article.getElementsByTagName('img')[0].style.display = 'none'
+  created() {},
+  mounted() {
+    let article = document.getElementById("acticle");
+    if (article.getElementsByTagName("img").length) {
+      article.getElementsByTagName("img")[0].style.display = "none";
     }
   }
-}
+};
 </script>
 
 <style lang="less">
 .case-article {
   background: #fff;
   max-width: 900px;
-  padding: 0.2rem 0.3rem;
+  padding: 0.2rem 0.2rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -30,6 +30,7 @@ export default {
   position: relative;
   text-align: left;
   line-height: 24px;
+
   img {
     max-width: 100%;
     // width: 100%;
@@ -40,12 +41,21 @@ export default {
       line-height: 28px;
     }
   }
-  .wp-video{
+  .wp-video {
     max-width: 100%;
     text-align: center;
-    video{
+    video {
+      object-fit: cover;
       max-width: 80%;
       height: auto;
+    }
+  }
+  @media (max-width: 760px) {
+    font-size: 0.2rem;
+    .wp-video {
+      video {
+        max-width: 100%;
+      }
     }
   }
 }

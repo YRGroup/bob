@@ -90,7 +90,7 @@ import { getFirstImg } from '@/assets/utils'
 import { info } from '@/assets/info'
 import Case from '@/class/case'
 export default {
-  name: 'home',
+  name: 'cases',
   components: {
     bobHeader,
     bobFooter,
