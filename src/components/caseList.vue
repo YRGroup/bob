@@ -294,14 +294,14 @@ export default {
           .p1 {
             font-size: 20px;
             font-weight: bold;
-            line-height: 35px;
+            margin-bottom: 10px;
             color: #333;
             transform: translateX(100%);
             transition: all 0.5s;
             opacity: 0;
           }
           .line {
-            border: 2px solid @color-theme;
+            border: 1px solid @color-theme;
             transform: translateX(200%);
             transition: all 0.5s;
             opacity: 0;
@@ -309,7 +309,8 @@ export default {
           }
           .p2 {
             font-size: 14px;
-            line-height: 30px;
+            // line-height: 30px;
+            margin-top: 10px;
             color: #666;
             // opacity: 0.8;
             transform: translateX(50%);
