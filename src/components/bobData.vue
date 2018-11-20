@@ -69,6 +69,8 @@ export default {
 
 @wrapper: 1.4rem;
 #section4 {
+  padding-top: 0.5rem;
+  background: #f5f5f5;
   .content {
     margin: 0 auto;
     flex-wrap: wrap;
