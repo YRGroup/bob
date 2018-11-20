@@ -1,6 +1,6 @@
 <template>
   <div class="case-page">
-    <bob-header type="cases"></bob-header>
+    <bob-header type="service"></bob-header>
     <div class="case-content">
       <div class="case-banner" >
         <div class="bg" :style="{backgroundImage:`url(${caseInfo.banner})`}"></div>
@@ -11,9 +11,10 @@
       </div>
       <bob-article  v-if="caseInfo.content">
         <div class="caseinfotitle">{{caseInfo.title}}</div>
-        <div v-html="caseInfo.content">>
+        <div v-lazy="'img.400px.jpg'" :data-srcset="srcset" v-lazy-container="{ selector: 'img' }" v-html="caseInfo.content">
         </div>
       </bob-article>
+      <!-- -->
     </div>
     <transition name="fadeBottom">
         <div class="side-bar" v-show="showSideBar">
@@ -36,6 +37,8 @@ import bobFooter from '@/components/bobFooter.vue'
 import bobArticle from '@/components/bobArticle.vue'
 import API from '@/api/index'
 import Case from '@/class/case'
+
+let lazyImg = require('@/images/nodata.jpg')
 export default {
   name: 'home',
   components: {
@@ -47,7 +50,8 @@ export default {
     return {
       id: '',
       caseInfo: {},
-      scrollY: 0
+      scrollY: 0,
+      srcset: `${lazyImg} 1236w, ${lazyImg} 813w, ${lazyImg} 768w, ${lazyImg} 1200w `
     }
   },
   computed: {

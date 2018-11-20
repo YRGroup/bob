@@ -26,7 +26,10 @@
         clickMode="push">
         </vue-particles>
       </div>
-      <div class="more" @click="toogleText">B 我 们</div>
+      <div class="more animated fadeInUp" @click="toogleText">B 我 们</div>
+      <div class="scroll-icon">
+        <img  src="../images/icon-1.png" alt="">
+      </div>
     </div>
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
@@ -137,7 +140,16 @@ export default {
 <style lang="less" >
 @import "../less/mixin.less";
 @import "../less/common.less";
-
+@import "../css/animate.css";
+.scroll-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -20px;
+  animation: scrollIcon 3s ease infinite;
+}
 .partic {
   top: 0;
   bottom: 0;
@@ -268,7 +280,7 @@ export default {
       line-height: 40px;
       font-size: 16px;
       width: 200px;
-      border-radius: 50px;
+      border-radius: 5px;
       border: 1px solid #fff;
       color: #fff;
       transition: all 0.3s;
@@ -339,5 +351,11 @@ export default {
 .poetry-leave-to {
   opacity: 0;
   transform: translateX(-150px);
+}
+@keyframes scrollIcon {
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 </style>

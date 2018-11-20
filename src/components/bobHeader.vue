@@ -8,16 +8,18 @@
       <span v-if="type=='home'" class="nav-btn" @click="toogleSideNav">
         <span class="btnImg"></span>
       </span>
-      <div v-if="type=='service'" class="service-navs">
-        <div>
-          <router-link :class="['kangxi','item', {'active':id=='a'}]" to="/service/a">论</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='b'}]" to="/service/b">划</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='c'}]" to="/service/c">搞</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='d'}]" to="/service/d">码</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='e'}]" to="/service/e">纪</router-link>
-          <router-link :class="['kangxi','item', {'active':id=='f'}]" to="/service/f">造</router-link>
+      <transition name="sideNav">
+        <div v-if="type=='service'" class="service-navs" v-show="showSideNav||screenWidth>700">
+          <div>
+            <router-link :class="['kangxi','item', {'active':id=='a'}]" to="/service/a">论</router-link>
+            <router-link :class="['kangxi','item', {'active':id=='b'}]" to="/service/b">划</router-link>
+            <router-link :class="['kangxi','item', {'active':id=='c'}]" to="/service/c">搞</router-link>
+            <router-link :class="['kangxi','item', {'active':id=='d'}]" to="/service/d">码</router-link>
+            <router-link :class="['kangxi','item', {'active':id=='e'}]" to="/service/e">纪</router-link>
+            <router-link :class="['kangxi','item', {'active':id=='f'}]" to="/service/f">造</router-link>
+          </div>
         </div>
-      </div>
+      </transition>
       <ul class="nav-list" v-if="type=='cases'">
         <li class="nav-item">
           <router-link to="/">
@@ -151,7 +153,8 @@ export default {
   data () {
     return {
       show: false,
-      scrollY: 0
+      scrollY: 0,
+      screenWidth: window.innerWidth
     }
   },
   computed: {
@@ -160,9 +163,16 @@ export default {
     },
     i () {
       return this.show ? 0.15 : -0.15
+    },
+    showSideNav () {
+      return !(this.scrollY > 30)
     }
   },
-  created () {},
+  created () {
+    window.addEventListener('resize', ev => {
+      this.screenWidth = window.innerWidth
+    })
+  },
   methods: {
     toogleSideNav () {
       this.show = !this.show
@@ -195,7 +205,7 @@ export default {
   &.fixed-header {
     position: fixed;
     top: 0;
-    background: rgb(78, 78, 78, 0.5);
+    background: rgba(100, 100, 100, 0.8);
     // background: @color-theme;
     animation: fixed 0.5s ease-in-out;
   }
@@ -269,7 +279,10 @@ export default {
   @media (max-width: 760px) {
     .service-navs {
       justify-content: flex-start;
-      margin-top: 60px;
+      // margin-top: 60px;
+      top: 60px;
+      right: 10px;
+      width: auto;
       .item {
         display: block;
         margin-top: 20px;

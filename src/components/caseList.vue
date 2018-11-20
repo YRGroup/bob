@@ -1,22 +1,24 @@
 <template>
-  <div class="case-page">
+  <div class="case-page" v-if="caseList.length">
     <div class="casetitle">
       <h5 class="section-title">
         <span>案例展示 / <span class="en">case</span> </span>
       </h5>
     </div>
 
-    <div v-if="caseList.length" class="case-wrapper">
+    <div  class="case-wrapper">
       <el-row class="case-list">
         <transition-group name="fadeBottom">
           <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
             <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
               <div class="overlay">
-                <div class="border-hor"></div>
-                <div class="border-ver"></div>
+                <!-- <div class="border-hor"></div>
+                <div class="border-ver"></div> -->
                 <div class="text-box">
-                  <p class="p1">{{item.title}}</p>
-                  <p class="p2">{{item.tag}}</p>
+                  <div>
+                    <p class="p1">{{item.title}}</p>
+                    <p class="p2">{{item.tag}}</p>
+                  </div>
                 </div>
               </div>
               <div v-lazy:background-image="item.thumbnail" class="case-content" :style="{backgroundImage:`url(${item.thumbnail})`}">
@@ -260,50 +262,74 @@ export default {
           transition: all 0.5s;
         }
         .border-hor {
-          border-top: 1px solid rgba(255, 255, 255, 0.8);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+          // border-top: 1px solid rgba(255, 255, 255, 0.8);
+          // border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+          border-top: 2px solid @color-theme;
+          border-bottom: 2px solid @color-theme;
           transform: scale(0, 1);
         }
         .border-ver {
-          border-left: 1px solid rgba(255, 255, 255, 0.8);
-          border-right: 1px solid rgba(255, 255, 255, 0.8);
+          // border-left: 1px solid rgba(255, 255, 255, 0.8);
+          border-left: 2px solid @color-theme;
+          border-right: 2px solid @color-theme;
+          // border-right: 1px solid rgba(255, 255, 255, 0.8);
           transform: scale(1, 0);
         }
         .text-box {
           position: absolute;
-          opacity: 0;
-          color: #fff;
-          left: 10%;
-          bottom: 50px;
-          padding-left: 50px;
+          // opacity: 0;
+          // color: #fff;
+
+          left: 0;
+          bottom: 0;
+          top: 0;
+          right: 0;
+          // padding-left: 50px;
           transition: all 0.5s;
           width: 100%;
-          text-align: left;
+          text-align: center;
+          .flex-column();
+          justify-content: space-around;
           .p1 {
             font-size: 20px;
-            margin-bottom: 20px;
+            font-weight: bold;
+            line-height: 35px;
+            color: #333;
+            transform: translateX(100%);
+            transition: all 0.5s;
+            opacity: 0;
           }
           .p2 {
             font-size: 14px;
-            opacity: 0.8;
+            line-height: 30px;
+            color: #666;
+            // opacity: 0.8;
+            transform: translateX(50%);
+            transition: all 0.5s;
+            opacity: 0;
           }
         }
       }
       &:hover {
         .overlay {
-          background: rgba(0, 0, 0, 0.8);
+          // background: rgba(0, 0, 0, 0.8);
+          background: rgba(255, 255, 255, 0.9);
           .border-hor,
           .border-ver {
             transform: scale(1, 1);
           }
           .text-box {
-            left: 0;
-            opacity: 1;
+            .p1,
+            .p2 {
+              transform: translateX(0);
+              opacity: 1;
+            }
           }
         }
       }
       .case-content {
         .background-cover();
+        transition: all 0.5s;
         // background-size: 80% 80%;
         background-color: #ddd;
         height: 3 * @base;
@@ -353,7 +379,7 @@ export default {
     line-height: 40px;
     font-size: 16px;
     width: 200px;
-    border-radius: 50px;
+    border-radius: 5px;
     border: 1px solid #fff;
     color: @color-theme;
     transition: all 0.3s;

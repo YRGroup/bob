@@ -1,5 +1,5 @@
 <template>
-  <article class="case-article" id="acticle"  v-lazy-container="{ selector: 'img' }">
+  <article class="case-article" id="acticle">
     <slot></slot>
   </article>
 </template>
