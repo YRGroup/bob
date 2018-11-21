@@ -1,6 +1,7 @@
 <template>
   <div class="service">
     <bob-header type="service" :id="id"></bob-header>
+
     <div class="banner" >
       <div class="com-wrapper">
         <transition name="page">
@@ -38,14 +39,21 @@
         </span>
         <div class="content">
           <transition name="poetry">
-            <div class="left-con text" v-show="cn" >
+            <div class="left-con text" v-show="currentIndex==0" >
               <div  v-html="poetry">
 
               </div>
             </div>
           </transition>
           <transition name="poetry">
-            <div class="right-con text" v-show="!cn" >
+            <div class="text xiaozhang" v-show="currentIndex==1" >
+              <div  v-html="poetryCn">
+
+              </div>
+            </div>
+          </transition>
+          <transition name="poetry">
+            <div class="right-con text" v-show="currentIndex==2" >
               <div>
                 <p v-for="(item ,index) in items" :key="index">
                   {{item}}
@@ -55,8 +63,9 @@
           </transition>
         </div>
         <div class="changlang">
-          <span @click="cn=true" :class="[{'active':cn},'btn','btn1']"></span>
-          <span @click="cn=false" :class="[{'active':!cn},'btn','btn2']"></span>
+          <span @click="currentIndex=0" :class="[{'active':currentIndex==0},'btn','btn1']"></span>
+          <span @click="currentIndex=1" :class="[{'active':currentIndex==1},'btn','btn2']"></span>
+          <span @click="currentIndex=2" :class="[{'active':currentIndex==2},'btn','btn2']"></span>
         </div>
       </div>
     </transition>
@@ -66,22 +75,22 @@
   </div>
 </template>
 <script>
-import { info } from '@/assets/info'
-import bannera from '@/components/bannera/index.vue'
-import bannerb from '@/components/bannerb/index.vue'
-import bannerc from '@/components/bannerc/index.vue'
-import bannerd from '@/components/bannerd/index.vue'
-import bannere from '@/components/bannere/index.vue'
-import bannerf from '@/components/bannerf/index.vue'
-import bobHeader from '@/components/bobHeader.vue'
-import caseList from '@/components/caseList.vue'
-import bobFooter from '@/components/bobFooter.vue'
+import { info } from "@/assets/info";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
+import bannerc from "@/components/bannerc/index.vue";
+import bannerd from "@/components/bannerd/index.vue";
+import bannere from "@/components/bannere/index.vue";
+import bannerf from "@/components/bannerf/index.vue";
+import bobHeader from "@/components/bobHeader.vue";
+import caseList from "@/components/caseList.vue";
+import bobFooter from "@/components/bobFooter.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bannera,
     bannerb,
@@ -93,49 +102,54 @@ export default {
     caseList,
     bobFooter
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       showText: false,
       showService: false,
-      cn: true
-    }
+      cn: true,
+      currentIndex: 0
+    };
   },
   computed: {
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     },
-    banner () {
-      return 'banner' + this.id
+    banner() {
+      return "banner" + this.id;
+    },
+    poetryCn() {
+      return info[this.id]["poetryCn"];
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
       this.timer = setTimeout(() => {
-        this.cn = true
-      }, 500)
+        // this.cn = true;
+        this.currentIndex = 0;
+      }, 500);
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/mixin.less";
@@ -201,16 +215,24 @@ export default {
         overflow: auto;
         .flex-column();
         justify-content: space-around;
+
         &.left-con {
-          line-height: 35px;
-          font-size: 18px;
+          line-height: 2.5;
+          font-size: 17px;
           h2 {
             margin-bottom: 30px;
+          }
+          span {
+            font-size: 24px;
           }
         }
         &.right-con {
           font-size: 28px;
           line-height: 52px;
+        }
+        &.xiaozhang {
+          font-size: 0.8rem;
+          font-weight: bold;
         }
       }
     }
@@ -243,24 +265,25 @@ export default {
       //   cursor: pointer;
       // }
       .btn {
-        width: 60px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         display: inline-block;
-        margin: 0 20px;
+        margin: 0 10px;
         background: no-repeat center center;
-        background-size: 100% auto;
+        background-size: 100% 100%;
         transition: all 0.3s;
         cursor: pointer;
+        background-image: url("../images/navBtn.png");
       }
-      .btn1 {
-        background-image: url("../images/B下.png");
-      }
-      .btn2 {
-        background-image: url("../images/BB下.png");
-      }
+      // .btn1 {
+      //   background-image: url("../images/navBtn.png");
+      // }
+      // .btn2 {
+      //   background-image: url("../images/BB下.png");
+      // }
       .active {
         // font-size: 20px;
-        transform: scale(2);
+        transform: scale(1.4);
         // background-image: url("../images/BB.png");
         // opacity: 0.8;
       }
@@ -316,8 +339,8 @@ export default {
       .content {
         .text {
           &.left-con {
-            line-height: 30px;
-            font-size: 16px;
+            // line-height: 30px;
+            // font-size: 16px;
             justify-content: flex-start;
             padding-top: 50px;
           }
