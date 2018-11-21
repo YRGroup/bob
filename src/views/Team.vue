@@ -88,7 +88,9 @@ export default {
   },
   computed: {},
 
-  created() {},
+  created() {
+    this.getTeamList();
+  },
   mounted() {},
   methods: {
     enter(index) {
@@ -97,6 +99,12 @@ export default {
     },
     leave() {
       this.hover = false;
+    },
+    getTeamList() {
+      let teamId = 500;
+      API.getXcById(teamId).then(res => {
+        console.log(res);
+      });
     }
   }
 };
