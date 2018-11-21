@@ -8,7 +8,7 @@
         :key="index"
         :defaultImg="item.img1"
         :hoverImg="item.img2"
-        :class="[index!=activeIndex&&hover?'disabled':'','people-card','people'+(index+1)]"
+        :class="[index!=activeIndex&&hover&&index!=2?'disabled':'','people-card','people'+(index+1)]"
         @enter="enter(index)"
         @leave="leave"
         >
@@ -58,8 +58,8 @@ export default {
           img2: require("@/images/team/g1.png")
         },
         {
-          img1: require("@/images/team/a.png"),
-          img2: require("@/images/team/a1.png")
+          img1: require("@/images/team/a1.png"),
+          img2: require("@/images/team/a3.png")
         },
         {
           img1: require("@/images/team/b.png"),
@@ -128,7 +128,7 @@ export default {
     &:nth-of-type(1) {
       left: 30%;
       bottom: @bottom2;
-      margin-left: -76px;
+      margin-left: -86px;
     }
     &:nth-of-type(2) {
       left: 40%;
@@ -154,17 +154,17 @@ export default {
     &:nth-of-type(6) {
       left: 20%;
       bottom: @bottom;
-      margin-left: 50px;
+      margin-left: 30px;
     }
     &:nth-of-type(7) {
       left: 30%;
       bottom: @bottom;
-      // margin-left: -76px;
+      margin-left: -30px;
     }
     &:nth-of-type(8) {
       left: 40%;
       bottom: @bottom;
-      // margin-left: -76px;
+      margin-left: 20px;
     }
 
     &:nth-of-type(9) {
