@@ -3,7 +3,7 @@
     <h5 class="section-title">
       <span>服务范围 / <span class="en">our service</span> </span>
     </h5>
-    <div class="container-fluid wrapper">
+    <div class="container-fluid service-wrapper">
       <el-row class="cards">
         <el-col :lg="4" :sm="8" :xs="12" class="card">
           <div class="mask  flex flex-column">
@@ -119,21 +119,21 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -144,7 +144,7 @@ export default {
 
 #section1 {
   padding: 0.5rem 0;
-  .wrapper {
+  .service-wrapper {
     margin: 0 100px;
   }
 
@@ -182,10 +182,10 @@ export default {
       }
       &:hover {
         // background-image: url("../images/s1.png");
-          // background-color: rgba(214, 94, 15, 0.7);
+        // background-color: rgba(214, 94, 15, 0.7);
         .mask {
           // color: #fff;
-          box-shadow: 0 0 16px rgba(0, 0, 0, .2);
+          box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
         }
       }
 
@@ -226,12 +226,12 @@ export default {
     }
   }
   @media (max-width: 1200px) {
-    .wrapper {
+    .service-wrapper {
       margin: auto;
     }
   }
   @media (max-width: 768px) {
-    .wrapper {
+    .service-wrapper {
       margin: auto;
     }
     .cards {

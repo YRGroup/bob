@@ -34,7 +34,8 @@
       :style="{background:currentPeople.color}">
         <div class="flex people-wrapper">
           <div>
-            <img height="460px;" :src="currentPeople.avatar" :alt="currentPeople.name">
+            <img height="460px   
+            ;" :src="currentPeople.avatar" :alt="currentPeople.name">
           </div>
           <div class="flex-column people-text">
             <p class="p1">{{currentPeople.name}}</p>
