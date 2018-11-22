@@ -20,7 +20,7 @@
         <p class="item-title">CONTACT US</p>
         <div class="item-content">
           <p>郑东新区祥盛街8号 福晟国际大厦1层</p>
-          <p>0371-55261585</p>
+          <p>0371-61875269</p>
         </div>
         <div class="codeImg">
           <img src="../images/codeImg.png" alt="">

@@ -6,6 +6,7 @@
     <bob-aboutus></bob-aboutus>
     <!-- <bob-team></bob-team> -->
     <bob-data></bob-data>
+    <bob-team></bob-team>
     <bob-footer></bob-footer>
   </div>
 </template>
