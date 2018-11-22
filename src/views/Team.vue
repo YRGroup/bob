@@ -138,7 +138,7 @@ export default {
     .people-wrapper {
       justify-content: space-around;
       align-items: center;
-      
+      padding: 20px;
       height: 100%;
       .peoplePic{
         height: 85%;
@@ -152,7 +152,7 @@ export default {
         align-items: flex-start;
         color: #fff;
         text-align: left;
-        margin-left: 100px;
+        margin-left: 60px;
         padding-top: 50px;
         font-size: 16px;
         line-height: 3;
@@ -162,7 +162,7 @@ export default {
         }
         .title{
           opacity: .6;
-          margin-right: 20px;
+          margin-right: 10px;
         }
       }
     }
