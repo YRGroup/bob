@@ -175,7 +175,7 @@ export default {
 
   .people-card {
     position: absolute;
-    transition: all 0.3s;
+    transition: all 0.5s;
     z-index: 2;
     &.disabled {
       opacity: 0.5;
