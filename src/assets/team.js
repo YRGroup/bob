@@ -4,10 +4,10 @@ const team = [{
     img1: require("@/images/team/k.png"),
     img2: require("@/images/team/k1.png"),
     skill: '商业摄影 / 人物传记',
-    exp: '5 年',
+    exp: '驾轻就熟',
     property: {
       power: 80,
-      wisdom: 60,
+      wisdom: 90,
       lang: '精确把控，完美出品！'
     },
     color: '#7b536e'
@@ -17,7 +17,7 @@ const team = [{
     img1: require("@/images/team/j.png"),
     img2: require("@/images/team/j1.png"),
     skill: '服务器运营 / 业务系统开发',
-    exp: '10 年',
+    exp: '神乎其技',
     property: {
       power: 90,
       wisdom: 95,
@@ -30,10 +30,10 @@ const team = [{
     img1: require("@/images/team/i.png"),
     img2: require("@/images/team/i1.png"),
     skill: '传播侃拼方案 / 传播策略',
-    exp: '10 年',
+    exp: '一代宗师',
     property: {
-      power: 90,
-      wisdom: 99,
+      power: 100,
+      wisdom: 5,
       lang: '如果你外婆不明白你在搞什么，你就没有在搞事情。'
     },
     color: '#609bb4'
@@ -43,7 +43,7 @@ const team = [{
     img1: require("@/images/team/h.png"),
     img2: require("@/images/team/h1.png"),
     skill: '品牌研究 / 品牌核心价值',
-    exp: '5年',
+    exp: '无与伦比',
     property: {
       power: 80,
       wisdom: 99,
@@ -56,7 +56,7 @@ const team = [{
     img1: require("@/images/team/g.png"),
     img2: require("@/images/team/g1.png"),
     skill: '宣传片 / 影视服务',
-    exp: '5年',
+    exp: '神乎其技',
     property: {
       power: 95,
       wisdom: 96,
@@ -69,10 +69,10 @@ const team = [{
     img1: require("@/images/team/a.png"),
     img2: require("@/images/team/a1.png"),
     skill: '印刷品制作 / 服装定制',
-    exp: '5年',
+    exp: '青出於蓝',
     property: {
-      power: 60,
-      wisdom: 90,
+      power: 5,
+      wisdom: 100,
       lang: '让品牌扎根受众心智，搭建历久弥新的乐园！'
     },
     color: '#dc6545'
@@ -82,10 +82,10 @@ const team = [{
     img1: require("@/images/team/b.png"),
     img2: require("@/images/team/b1.png"),
     skill: '环境导视系统设计制作 / 周边产品定制',
-    exp: '5年',
+    exp: '登堂入室',
     property: {
-      power: 95,
-      wisdom: 95,
+      power: 50,
+      wisdom: 100,
       lang: '好的语句不一定美，但一定又准又稳！'
     },
     color: '#dc6545'
@@ -95,7 +95,7 @@ const team = [{
     img1: require("@/images/team/c.png"),
     img2: require("@/images/team/c1.png"),
     skill: '高端官网定制 / 移动网站建设',
-    exp: '5年',
+    exp: '炉火纯青',
     property: {
       power: 90,
       wisdom: 95,
@@ -108,7 +108,7 @@ const team = [{
     img1: require("@/images/team/d.png"),
     img2: require("@/images/team/d1.png"),
     skill: '印刷品制作 / 周边产品定制',
-    exp: '5年',
+    exp: '青出於蓝',
     property: {
       power: 90,
       wisdom: 95,
@@ -121,7 +121,7 @@ const team = [{
     img1: require("@/images/team/e.png"),
     img2: require("@/images/team/e1.png"),
     skill: 'VI设计 / 宣传册设计',
-    exp: '5年',
+    exp: '返璞归真',
     property: {
       power: 90,
       wisdom: 95,
@@ -134,7 +134,7 @@ const team = [{
     img1: require("@/images/team/f.png"),
     img2: require("@/images/team/f1.png"),
     skill: '高端网站定制 / H5应用开发',
-    exp: '5年',
+    exp: '驾轻就熟',
     property: {
       power: 90,
       wisdom: 90,

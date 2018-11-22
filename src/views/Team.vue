@@ -43,25 +43,32 @@
               <span>{{currentPeople.skill}}</span>
             </p>
             <p class="p3 p">
-              <span class="title">经验：</span>
+              <span class="title">EXP：</span>
               <span>{{currentPeople.exp}}</span>
             </p>
             <p class="p4 p">
-              <span class="title">力量：</span>
+              <span class="title">战力：</span>
               <el-progress
                 class="progress"
+                :stroke-width="8"
+                color="#e9db02"
                 :percentage="currentPeople.property.power">
               </el-progress>
             </p>
             <p class="p5 p">
-              <span class="title">智慧：</span>
+              <span class="title">抗性：</span>
               <el-progress
                 class="progress"
+                :stroke-width="8"
+                color="#ff8c64"
                 :percentage="currentPeople.property.wisdom">
               </el-progress>
             </p>
             <p class="p6 p"> 
-              <span class="title">精神：</span>{{team[cardIndex].property.lang}}
+              <span class="title">签名：</span>
+              <span>
+                {{team[cardIndex].property.lang}}
+              </span>
             </p> 
           </div>
         </div>
@@ -149,6 +156,7 @@ export default {
       justify-content: space-around;
       align-items: center;
       padding: 20px;
+      box-sizing: border-box;
       height: 100%;
       .peoplePic {
         height: 85%;
@@ -163,31 +171,29 @@ export default {
         color: #fff;
         text-align: left;
         margin-left: 60px;
-        padding-top: 50px;
+        // padding-top: 50px;
         font-size: 16px;
         line-height: 3;
-        width: 250px;
+        width: 450px;
         .p {
-          .flex();
-          justify-content: flex-start;
+          // .flex();
+          // justify-content: flex-start;
           width: 100%;
         }
         .title {
           opacity: 0.6;
-          margin-right: 20px;
+          margin-right: 10px;
+          width: 50px;
         }
         .p1 {
           font-size: 30px;
           line-height: 3;
         }
         .progress {
-          width: 150px;
+          width: 200px;
+          display: inline-block;
           .el-progress__text {
             display: none;
-          }
-          .title {
-            opacity: 0.6;
-            margin-right: 10px;
           }
         }
       }
