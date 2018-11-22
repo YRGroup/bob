@@ -54,7 +54,7 @@ const info = {
     <p>if they are not <span>acted upon</span>. </p>
     <p>You do not really <span>achieve</span> anything </p>
     <p><span>unless</span> you can <span>explain</span> it to your <span>grandmother</span>. </p>`,
-    poetryCn: '<p>如果你外婆不明白你在搞什么，你就没有在搞事情。</p>',
+    poetryCn: '<p>如果你外婆不明白你在搞什么，<br>你就没有在搞事情。</p>',
     items: ['线下事件活动服务',
       '线上事件营销活动',
       '传播侃拼方案',
@@ -77,7 +77,7 @@ const info = {
     <p>Once you know something</p>
     <p>you find it hard to <span>imagine</span> </p>
     <p>what it was like not to know it.</p>`,
-    poetryCn: '<p>互联网最起码的作用是让你难以回首没有它的日子。</p>',
+    poetryCn: '<p>互联网最起码的作用是<br>让你难以回首没有它的日子。</p>',
     items: ['微信平台解决方案',
       '服务器运营外包',
       '高端官网定制',
@@ -96,7 +96,7 @@ const info = {
     <p>Be who you are and say what you feel, </p>
     <p>because those who mind don't matter </p>
     <p>and those who matter don't mind.</p>`,
-    poetryCn: '<p>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</p>',
+    poetryCn: '<p>纪录一下自己，给关心你的。<br>纪录一下他人，给你关心的。</p>',
     items: ['年度摄影服务',
       '年度影视服务',
       '家庭影像服务',
@@ -115,7 +115,7 @@ const info = {
     <p> or it’ s not going to get the business. </p>
     <p> When people use your brand name as a verb,</p>
     <p> that is remarkably good or bad. </p>`,
-    poetryCn: '<p> 如果品牌是首诗歌， 造出的产品就是诗朗诵。 </p>',
+    poetryCn: '<p> 如果品牌是首诗歌，<br> 造出的产品就是诗朗诵。 </p>',
     items: ['画册印制',
       '服装定制',
       '周边产品定制'

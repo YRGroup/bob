@@ -231,8 +231,8 @@ export default {
           line-height: 52px;
         }
         &.xiaozhang {
-          font-size: 0.8rem;
-          font-weight: bold;
+          font-size: 0.6rem;
+          font-weight: 600;
         }
       }
     }
@@ -274,6 +274,7 @@ export default {
         transition: all 0.3s;
         cursor: pointer;
         background-image: url("../images/navBtn.png");
+        opacity: .6;
       }
       // .btn1 {
       //   background-image: url("../images/navBtn.png");
@@ -284,6 +285,7 @@ export default {
       .active {
         // font-size: 20px;
         transform: scale(1.4);
+        opacity: 1;
         // background-image: url("../images/BB.png");
         // opacity: 0.8;
       }
@@ -303,7 +305,7 @@ export default {
       line-height: 40px;
       font-size: 16px;
       width: 200px;
-      border-radius: 5px;
+      border-radius: 100px;
       border: 1px solid #fff;
       color: #fff;
       transition: all 0.3s;
