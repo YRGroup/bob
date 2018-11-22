@@ -77,11 +77,11 @@ export default {
     getData() {
       API.getPost(this.id)
         .then(res => {
-          console.log(res);
+          // console.log(res);
           this.caseInfo = new Case(res.data);
         })
         .catch(err => {
-          console.log(err);
+          // console.log(err);
         });
     },
     back() {

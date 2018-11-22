@@ -33,8 +33,8 @@
       <div class="people-info flex"
       :style="{background:currentPeople.color}">
         <div class="flex people-wrapper">
-          <div>
-            <img height="460px   ;" :src="currentPeople.avatar" :alt="currentPeople.name">
+          <div class="peoplePic">
+            <img :src="currentPeople.avatar" :alt="currentPeople.name">
           </div>
           <div class="flex-column people-text">
             <p class="p1 p">{{currentPeople.name}}</p>
@@ -147,14 +147,22 @@ export default {
     justify-content: space-around;
     .people-wrapper {
       justify-content: space-around;
-      align-items: flex-start;
+      align-items: center;
+      padding: 20px;
+      height: 100%;
+      .peoplePic {
+        height: 85%;
+        img {
+          height: 100%;
+        }
+      }
       .people-text {
         height: 100%;
         justify-content: flex-start;
         align-items: flex-start;
         color: #fff;
         text-align: left;
-        margin-left: 100px;
+        margin-left: 60px;
         padding-top: 50px;
         font-size: 16px;
         line-height: 3;
@@ -172,10 +180,14 @@ export default {
           font-size: 30px;
           line-height: 3;
         }
-        .progress{
+        .progress {
           width: 150px;
-          .el-progress__text{
+          .el-progress__text {
             display: none;
+          }
+          .title {
+            opacity: 0.6;
+            margin-right: 10px;
           }
         }
       }
