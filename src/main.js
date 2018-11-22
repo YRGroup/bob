@@ -7,11 +7,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import VueParticles from 'vue-particles'
 import VueLazyload from 'vue-lazyload'
-import VModal from 'vue-js-modal'
-
-Vue.use(VModal, {
-  dialog: true
-})
 
 Vue.use(VueLazyload, {
   preLoad: 1.2,
