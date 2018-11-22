@@ -4,7 +4,7 @@
     <bob-banner></bob-banner>
     <bob-service></bob-service>
     <bob-aboutus></bob-aboutus>
-    <bob-team></bob-team>
+    <!-- <bob-team></bob-team> -->
     <bob-data></bob-data>
     <bob-footer></bob-footer>
   </div>
@@ -12,16 +12,16 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from '@/components/bobHeader.vue'
-import bobBanner from '@/components/bobBanner.vue'
-import bobService from '@/components/bobService.vue'
-import bobAboutus from '@/components/bobAboutus.vue'
-import bobData from '@/components/bobData.vue'
-import bobFooter from '@/components/bobFooter.vue'
-import bobTeam from '@/components/bobTeam.vue'
+import bobHeader from "@/components/bobHeader.vue";
+import bobBanner from "@/components/bobBanner.vue";
+import bobService from "@/components/bobService.vue";
+import bobAboutus from "@/components/bobAboutus.vue";
+import bobData from "@/components/bobData.vue";
+import bobFooter from "@/components/bobFooter.vue";
+import bobTeam from "@/components/bobTeam.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     bobHeader,
     bobBanner,
@@ -31,10 +31,13 @@ export default {
     bobTeam,
     bobFooter
   },
-  created () {
-
+  created() {
+    
+  },
+  methods: {
+    
   }
-}
+};
 </script>
 <style lang="less" scoped>
 // @import "../less/mixin.less";
@@ -42,5 +45,4 @@ export default {
   position: relative;
   background: #fff;
 }
-
 </style>
