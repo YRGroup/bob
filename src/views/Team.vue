@@ -34,24 +34,33 @@
       :style="{background:currentPeople.color}">
         <div class="flex people-wrapper">
           <div>
-            <img height="460px   
-            ;" :src="currentPeople.avatar" :alt="currentPeople.name">
+            <img height="460px   ;" :src="currentPeople.avatar" :alt="currentPeople.name">
           </div>
           <div class="flex-column people-text">
-            <p class="p1">{{currentPeople.name}}</p>
-            <p class="p2">
-              <span class="title">技能：</span><span>{{currentPeople.skill}}</span>
+            <p class="p1 p">{{currentPeople.name}}</p>
+            <p class="p2 ">
+              <span class="title">技能：</span>
+              <span>{{currentPeople.skill}}</span>
             </p>
-            <p class="p3">
-              <span class="title">经验：</span><span>{{currentPeople.exp}}</span>
+            <p class="p3 p">
+              <span class="title">经验：</span>
+              <span>{{currentPeople.exp}}</span>
             </p>
-            <p class="p4">
-              <span class="title">力量：</span>{{currentPeople.property.power}}
+            <p class="p4 p">
+              <span class="title">力量：</span>
+              <el-progress
+                class="progress"
+                :percentage="currentPeople.property.power">
+              </el-progress>
             </p>
-            <p class="p5">
-              <span class="title">智慧：</span>{{currentPeople.property.wisdom}}
+            <p class="p5 p">
+              <span class="title">智慧：</span>
+              <el-progress
+                class="progress"
+                :percentage="currentPeople.property.wisdom">
+              </el-progress>
             </p>
-            <p class="p6"> 
+            <p class="p6 p"> 
               <span class="title">精神：</span>{{team[cardIndex].property.lang}}
             </p> 
           </div>
@@ -149,13 +158,25 @@ export default {
         padding-top: 50px;
         font-size: 16px;
         line-height: 3;
-        .p1{
+        width: 250px;
+        .p {
+          .flex();
+          justify-content: flex-start;
+          width: 100%;
+        }
+        .title {
+          opacity: 0.6;
+          margin-right: 20px;
+        }
+        .p1 {
           font-size: 30px;
           line-height: 3;
         }
-        .title{
-          opacity: .6;
-          margin-right: 20px;
+        .progress{
+          width: 150px;
+          .el-progress__text{
+            display: none;
+          }
         }
       }
     }

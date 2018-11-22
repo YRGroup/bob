@@ -1,5 +1,5 @@
 <template>
-  <div :class="['header-wrapper', 'absolute-header', {'fixed-header':scrollY>100}]">
+  <div :class="['header-wrapper', 'absolute-header', {'fixed-header':scrollY>10}]">
     <header class='header'>
       <router-link to="/" class="logo">
         <img class="logo1" src="../images/logo.png" alt="logo">
@@ -138,52 +138,52 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String,
     id: {
-      default: '',
+      default: "",
       type: String
     },
     type: {
-      default: 'home',
+      default: "home",
       type: String
     }
   },
-  data () {
+  data() {
     return {
       show: false,
       scrollY: 0,
       screenWidth: window.innerWidth
-    }
+    };
   },
   computed: {
-    n () {
-      return this.show ? 0 : 1
+    n() {
+      return this.show ? 0 : 1;
     },
-    i () {
-      return this.show ? 0.15 : -0.15
+    i() {
+      return this.show ? 0.15 : -0.15;
     },
-    showSideNav () {
-      return !(this.scrollY > 30)
+    showSideNav() {
+      return !(this.scrollY > 10);
     }
   },
-  created () {
-    window.addEventListener('resize', ev => {
-      this.screenWidth = window.innerWidth
-    })
+  created() {
+    window.addEventListener("resize", ev => {
+      this.screenWidth = window.innerWidth;
+    });
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   },
-  mounted () {
-    window.addEventListener('scroll', ev => {
-      this.scrollY = window.scrollY
-    })
+  mounted() {
+    window.addEventListener("scroll", ev => {
+      this.scrollY = window.scrollY;
+    });
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -196,6 +196,8 @@ export default {
   // background: #333;
   width: 100%;
   transition: all 0.5s;
+  padding: 18px 40px;
+  box-sizing: border-box;
   &.absolute-header {
     position: absolute;
     top: 0;
@@ -209,6 +211,9 @@ export default {
     // background: @color-theme;
     animation: fixed 0.5s ease-in-out;
   }
+  @media (max-width: 760px) {
+    padding: 15px;
+  }
 }
 
 @keyframes fixed {
@@ -221,15 +226,11 @@ export default {
   position: relative;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 18px 40px;
   // .nav-btn {
   //   top: 20px;
   // }
   &.serviceHeader {
     justify-content: space-around;
-  }
-  @media (max-width: 768px) {
-    padding: 20px 10px;
   }
   //cases页nav
   .nav-list {
@@ -280,8 +281,8 @@ export default {
     .service-navs {
       justify-content: flex-start;
       // margin-top: 60px;
-      top: 60px;
-      right: 10px;
+      top: -5px;
+      right: -5px;
       width: auto;
       .item {
         display: block;

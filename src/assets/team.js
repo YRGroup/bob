@@ -137,7 +137,7 @@ const team = [{
     exp: '5年',
     property: {
       power: 80,
-      wisdom: 80,
+      wisdom: 60,
       lang: '精确把控，完美出品'
     },
     color: '#89b929'
