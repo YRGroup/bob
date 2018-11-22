@@ -33,8 +33,8 @@
       <div class="people-info flex"
       :style="{background:currentPeople.color}">
         <div class="flex people-wrapper">
-          <div>
-            <img height="460px;" :src="currentPeople.avatar" :alt="currentPeople.name">
+          <div class="peoplePic">
+            <img :src="currentPeople.avatar" :alt="currentPeople.name">
           </div>
           <div class="flex-column people-text">
             <p class="p1">{{currentPeople.name}}</p>
@@ -137,7 +137,15 @@ export default {
     justify-content: space-around;
     .people-wrapper {
       justify-content: space-around;
-      align-items: flex-start;
+      align-items: center;
+      
+      height: 100%;
+      .peoplePic{
+        height: 85%;
+        img{
+          height: 100%;
+        }
+      }
       .people-text {
         height: 100%;
         justify-content: flex-start;
