@@ -68,7 +68,7 @@ export default {
   // margin-bottom: 0.5rem;
   .background-cover();
   height: 3.5rem;
-  background-image: url("../images/about_bg.jpg");
+  background-image: url("../images/about_bg2.jpg");
   justify-content: space-around;
   background-attachment: fixed;
   position: relative;
@@ -124,6 +124,7 @@ export default {
   }
 
   @media (max-width: 768px) {
+    background-image: url("../images/about_bg.jpg");
     .content {
       width: 90%;
     }

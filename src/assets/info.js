@@ -91,8 +91,8 @@ const info = {
     introduction: '视频、图片形式可以将品牌信息及理念以更为直观的形式传递给目标客户。',
     poetry: `<h2>Editorial</h2>
     <p>If you don't <span>give</span> the <span>market</span> the <span>story</span> to talk about, </p>
-    <p>They will define your brand's story for you.</p>
-    <p>In a world where you can be anything, be yourself. </p>
+    <p>They will <span>define</span> your brand's story for <span>you</span>.</p>
+    <p>In a world where you can be anything, <span>be yourself</span>. </p>
     <p>Be who you are and say what you feel, </p>
     <p>because those who mind don't matter </p>
     <p>and those who matter don't mind.</p>`,
