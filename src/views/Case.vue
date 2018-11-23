@@ -11,13 +11,13 @@
       </div>
       <bob-article  v-if="caseInfo.content">
         <div class="caseinfotitle">{{caseInfo.title}}</div>
-        <div v-lazy="'img.400px.jpg'" :data-srcset="srcset" v-lazy-container="{ selector: 'img' }" v-html="caseInfo.content">
+        <div v-html="caseInfo.content">
         </div>
       </bob-article>
       <!-- -->
     </div>
     <transition name="fadeBottom">
-        <div class="side-bar" v-show="showSideBar">
+        <div class="side -bar" v-show="showSideBar">
         <div class="tag" @click="back()">
           <i class="iconfont">&#xe7a4;</i>
         </div>
@@ -32,66 +32,66 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import API from "@/api/index";
-import Case from "@/class/case";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import API from '@/api/index'
+import Case from '@/class/case'
 
-let lazyImg = require("@/images/nodata.jpg");
+let lazyImg = require('@/images/nodata.jpg')
 export default {
-  name: "case",
+  name: 'case',
   components: {
     bobHeader,
     bobFooter,
     bobArticle
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       caseInfo: {},
       scrollY: 0,
       srcset: `${lazyImg} 1236w, ${lazyImg} 813w, ${lazyImg} 768w, ${lazyImg} 1200w `
-    };
+    }
   },
   computed: {
-    showSideBar() {
-      return this.scrollY > 400;
+    showSideBar () {
+      return this.scrollY > 400
     }
   },
 
-  created() {
-    this.id = this.$route.params.id;
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
-    this.getData();
+    this.getData()
   },
-  mounted() {
-    window.addEventListener("scroll", ev => {
-      this.scrollY = window.scrollY;
-    });
+  mounted () {
+    window.addEventListener('scroll', ev => {
+      this.scrollY = window.scrollY
+    })
   },
   methods: {
-    getData() {
+    getData () {
       API.getPost(this.id)
         .then(res => {
           // console.log(res);
-          this.caseInfo = new Case(res.data);
+          this.caseInfo = new Case(res.data)
         })
         .catch(err => {
           // console.log(err);
-        });
+        })
     },
-    back() {
-      this.$router.back();
+    back () {
+      this.$router.back()
     },
-    top() {
-      window.scrollTo(0, 0);
+    top () {
+      window.scrollTo(0, 0)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";

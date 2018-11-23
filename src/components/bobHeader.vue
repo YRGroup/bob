@@ -138,52 +138,52 @@
 
 <script>
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String,
     id: {
-      default: "",
+      default: '',
       type: String
     },
     type: {
-      default: "home",
+      default: 'home',
       type: String
     }
   },
-  data() {
+  data () {
     return {
       show: false,
       scrollY: 0,
       screenWidth: window.innerWidth
-    };
+    }
   },
   computed: {
-    n() {
-      return this.show ? 0 : 1;
+    n () {
+      return this.show ? 0 : 1
     },
-    i() {
-      return this.show ? 0.15 : -0.15;
+    i () {
+      return this.show ? 0.15 : -0.15
     },
-    showSideNav() {
-      return !(this.scrollY > 10);
+    showSideNav () {
+      return !(this.scrollY > 10)
     }
   },
-  created() {
-    window.addEventListener("resize", ev => {
-      this.screenWidth = window.innerWidth;
-    });
+  created () {
+    window.addEventListener('resize', ev => {
+      this.screenWidth = window.innerWidth
+    })
   },
   methods: {
-    toogleSideNav() {
-      this.show = !this.show;
+    toogleSideNav () {
+      this.show = !this.show
     }
   },
-  mounted() {
-    window.addEventListener("scroll", ev => {
-      this.scrollY = window.scrollY;
-    });
+  mounted () {
+    window.addEventListener('scroll', ev => {
+      this.scrollY = window.scrollY
+    })
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

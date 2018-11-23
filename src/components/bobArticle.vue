@@ -5,17 +5,18 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  created() {},
-  mounted() {
-    let article = document.getElementById("acticle");
-    if (article.getElementsByTagName("img").length) {
-      article.getElementsByTagName("img")[0].style.display = "none";
+  created () {},
+  mounted () {
+    // 首图为banner,隐藏掉
+    let article = document.getElementById('acticle')
+    if (article.getElementsByTagName('img').length) {
+      article.getElementsByTagName('img')[0].style.display = 'none'
     }
   }
-};
+}
 </script>
 
 <style lang="less">

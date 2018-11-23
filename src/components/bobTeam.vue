@@ -11,7 +11,6 @@
 
 <script>
 
-
 export default {
   name: 'team',
   components: {
@@ -35,7 +34,7 @@ export default {
 
 .section5{
   // padding: 0.5rem 0;
-  
+
   .section-title{
       margin-bottom:0.2rem;
   }

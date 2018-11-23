@@ -1,6 +1,6 @@
 <template>
   <div class="modal" v-show="show">
-    
+
   </div>
 </template>
 <script>
@@ -11,15 +11,15 @@ export default {
       type: Boolean
     }
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  created() {
-    window.addEventListener("scroll", e => {
-      e.preventDefault && e.preventDefault();
-    });
+  created () {
+    window.addEventListener('scroll', e => {
+      e.preventDefault && e.preventDefault()
+    })
   }
-};
+}
 </script>
 
 <style lang="less">
@@ -33,4 +33,3 @@ export default {
   z-index: 20;
 }
 </style>
-

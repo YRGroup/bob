@@ -1,6 +1,6 @@
 <template>
-  <div class="wrapper" 
-    @mouseenter="mouseenter" 
+  <div class="wrapper"
+    @mouseenter="mouseenter"
     @mouseleave="mouseleave"
   >
     <transition name="defaultImg">
@@ -10,7 +10,7 @@
     <transition  name="hoverImg">
       <img v-show="hover" class="img hoverImg" :src="hoverImg" alt="imgName">
     </transition>
-    
+
   </div>
 </template>
 <script>
@@ -18,15 +18,15 @@ export default {
   props: {
     defaultImg: {
       type: String,
-      default: ""
+      default: ''
     },
     hoverImg: {
       type: String,
-      default: ""
+      default: ''
     },
     info: {
       type: String,
-      default: ""
+      default: ''
     },
     posX: {
       type: Number,
@@ -37,24 +37,24 @@ export default {
       default: 0
     }
   },
-  data() {
+  data () {
     return {
       hover: false
-    };
+    }
   },
   computed: {},
-  created() {},
+  created () {},
   methods: {
-    mouseenter() {
-      this.hover = true;
-      this.$emit("enter");
+    mouseenter () {
+      this.hover = true
+      this.$emit('enter')
     },
-    mouseleave() {
-      this.hover = false;
-      this.$emit("leave");
+    mouseleave () {
+      this.hover = false
+      this.$emit('leave')
     }
   }
-};
+}
 </script>
 <style lang="less">
 .wrapper {
@@ -74,8 +74,8 @@ export default {
   transform: scale(1);
 
 }
-.hoverImg-leave-active {
-}
+// .hoverImg-leave-active {
+// }
 .hoverImg-enter,
 .hoverImg-leave-to {
   opacity: 0;
@@ -85,11 +85,10 @@ export default {
 .defaultImg-enter-active {
   transition: all 1s;
 }
-.defaultImg-leave-active {
-}
+// .defaultImg-leave-active {
+// }
 .defaultImg-enter,
 .defaultImg-leave-to {
   opacity: 0;
 }
 </style>
-

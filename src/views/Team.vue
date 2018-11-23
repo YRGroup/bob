@@ -1,20 +1,10 @@
 <template>
   <div class="team-page">
     <bob-header type="home"></bob-header>
+
     <div class="team-content">
-      <!-- <people-card
-        v-for="(item,index) in teamImg" 
-        :key="index"
-        :defaultImg="item.img1"
-        :hoverImg="item.img2"
-        :class="[index!=activeIndex&&hover?'disabled':'','people-card','people'+(index+1)]"
-        @enter="enter(index)"
-        @leave="leave"
-        @click="showModal=true"
-        >
-      </people-card> -->
       <people-card
-        v-for="(item,index) in team" 
+        v-for="(item,index) in team"
         :key="index"
         :defaultImg="item.img1"
         :hoverImg="item.img2"
@@ -24,6 +14,9 @@
         @click.native="showCardHandle(index)"
         >
       </people-card>
+      <div class="top-img">
+        <img src="../images/team_1.png" alt="">
+      </div>
     </div>
     <bob-footer></bob-footer>
     <el-dialog
@@ -64,12 +57,12 @@
                 :percentage="currentPeople.property.wisdom">
               </el-progress>
             </p>
-            <p class="p6 p"> 
+            <p class="p6 p">
               <span class="title">签名：</span>
               <span>
                 {{team[cardIndex].property.lang}}
               </span>
-            </p> 
+            </p>
           </div>
         </div>
       </div>
@@ -79,22 +72,22 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import peopleCard from "@/components/peopleCard.vue";
-import API from "@/api/index";
-import team from "@/assets/team";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import peopleCard from '@/components/peopleCard.vue'
+import API from '@/api/index'
+import team from '@/assets/team'
 
-let lazyImg = require("@/images/nodata.jpg");
+let lazyImg = require('@/images/nodata.jpg')
 
 export default {
-  name: "team",
+  name: 'team',
   components: {
     bobHeader,
     bobFooter,
     peopleCard
   },
-  data() {
+  data () {
     return {
       team: team,
       activeIndex: 0,
@@ -102,38 +95,38 @@ export default {
       showModal: false,
       mydialog: false,
       cardIndex: 0
-    };
+    }
   },
   computed: {
-    currentPeople() {
-      return this.team[this.cardIndex];
+    currentPeople () {
+      return this.team[this.cardIndex]
     }
   },
 
-  created() {
-    this.getTeamList();
+  created () {
+    this.getTeamList()
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    enter(index) {
-      this.hover = true;
-      this.activeIndex = index;
+    enter (index) {
+      this.hover = true
+      this.activeIndex = index
     },
-    leave() {
-      this.hover = false;
+    leave () {
+      this.hover = false
     },
-    showCardHandle(index) {
-      this.mydialog = true;
-      this.cardIndex = index;
+    showCardHandle (index) {
+      this.mydialog = true
+      this.cardIndex = index
     },
-    getTeamList() {
-      let teamId = 500;
+    getTeamList () {
+      let teamId = 500
       // API.getXcById(teamId).then(res => {
       //   console.log(res);
       // });
     }
   }
-};
+}
 </script>
 <style lang="less" >
 @import "../less/variable.less";
@@ -207,12 +200,14 @@ export default {
   height: 1000px;
   // background: #fff;
   // width: 1300px;
-  background-image: url("../images/team/teamBg.jpg");
+  background-image: url("../images/teamBg.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center center;
   position: relative;
-
+  .top-img {
+    padding-top: 100px;
+  }
   .people-card {
     position: absolute;
     transition: all 0.5s;
@@ -224,63 +219,63 @@ export default {
     }
     @bottom: 550px;
     @bottom2: @bottom+150px;
-
+    @offset: 220px;
     &:nth-of-type(1) {
-      left: 30%;
+      left: 50%;
       bottom: @bottom2;
-      margin-left: -86px;
+      margin-left: -2 * @offset - 50px;
     }
     &:nth-of-type(2) {
-      left: 40%;
+      left: 50%;
       bottom: @bottom2;
-      margin-left: -56px;
+      margin-left: -@offset - 50px;
     }
     &:nth-of-type(3) {
       left: 50%;
       bottom: @bottom2;
-      margin-left: -76px;
+      margin-left: -@offset / 2;
     }
     &:nth-of-type(4) {
-      right: 40%;
+      right: 50%;
       bottom: @bottom2;
-      margin-right: 66px;
+      margin-right: -@offset / 2 + 40px;
     }
     &:nth-of-type(5) {
-      right: 30%;
+      right: 50%;
       bottom: @bottom2;
-      margin-right: 66px;
+      margin-right: -@offset - 40px;
     }
 
     &:nth-of-type(6) {
-      left: 20%;
+      left: 50%;
       bottom: @bottom;
-      margin-left: 30px;
+      margin-left: -3 * @offset + 120px;
     }
     &:nth-of-type(7) {
-      left: 30%;
+      left: 50%;
       bottom: @bottom;
-      margin-left: 20px;
+      margin-left: -2 * @offset + 60px;
     }
     &:nth-of-type(8) {
-      left: 40%;
+      left: 50%;
       bottom: @bottom;
-      margin-left: -10px;
+      margin-left: -@offset;
     }
 
     &:nth-of-type(9) {
       right: 50%;
       bottom: @bottom;
-      margin-right: -6px;
+      margin-right: 20px;
     }
     &:nth-of-type(10) {
-      right: 40%;
+      right: 50%;
       bottom: @bottom;
-      margin-right: -26px;
+      margin-right: -@offset + 50px;
     }
     &:nth-of-type(11) {
-      right: 30%;
+      right: 50%;
       bottom: @bottom;
-      margin-right: -56px;
+      margin-right: -@offset*2 + 50px;
     }
   }
 }
