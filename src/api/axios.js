@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 // 环境的切换
-if (process.env.NODE_ENV == 'development') {
+if (process.env.NODE_ENV === 'development') {
   axios.defaults.baseURL = 'http://bob/wp-json/wp/v2/'
-} else if (process.env.NODE_ENV == 'debug') {
+} else if (process.env.NODE_ENV === 'debug') {
   axios.defaults.baseURL = ''
-} else if (process.env.NODE_ENV == 'production') {
+} else if (process.env.NODE_ENV === 'production') {
   axios.defaults.baseURL = '/wp-json/wp/v2/'
 }
 axios.defaults.timeout = 10000
