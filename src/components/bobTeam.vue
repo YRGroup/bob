@@ -3,8 +3,11 @@
     <!-- <h5 class="section-title">
       <span>有那么一群人 / <span class="en">our team</span> </span>
     </h5> -->
-    <router-link to="/team">
-      <div class="teamPic"></div>
+    <router-link to="/team" tag="div">
+      <div class="teamPic">
+        <img class="pic" src="../images/team.jpg" alt="我们的团队">
+        <img class="phonePic" src="../images/teamPhone.jpg" alt="我们的团队">
+      </div>
     </router-link>
   </section>
 </template>
@@ -39,8 +42,27 @@ export default {
       margin-bottom:0.2rem;
   }
   .teamPic{
-      background: url("../images/team.jpg") no-repeat;
-      height: 580px;
+      // background: url("../images/team.jpg") no-repeat;
+      // height: 580px;
+      // max-width: 100%;
+      // background-size: 100%;
+      cursor: pointer;
+      img{
+        max-width: 100%;
+        vertical-align: middle;
+      }
+      .phonePic{
+        display: none;
+      }
+      @media (max-width: 768px) {
+        .phonePic{
+          display: block;
+        }
+        .pic{
+          display: none;
+        }
+      }
   }
 }
+
 </style>
