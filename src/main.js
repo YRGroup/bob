@@ -9,7 +9,7 @@ import VueParticles from 'vue-particles'
 import VueLazyload from 'vue-lazyload'
 
 Vue.use(VueLazyload, {
-  preLoad: 1.2,
+  preLoad: 1.3,
   error: require('@/images/nodata.jpg'),
   loading: require('@/images/nodata.jpg'),
   attempt: 1

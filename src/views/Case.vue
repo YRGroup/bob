@@ -17,7 +17,7 @@
       <!-- -->
     </div>
     <transition name="fadeBottom">
-        <div class="side -bar" v-show="showSideBar">
+        <div class="side-bar" v-show="showSideBar">
         <div class="tag" @click="back()">
           <i class="iconfont">&#xe7a4;</i>
         </div>
