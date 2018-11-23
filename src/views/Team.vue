@@ -75,7 +75,7 @@
 import bobHeader from '@/components/bobHeader.vue'
 import bobFooter from '@/components/bobFooter.vue'
 import peopleCard from '@/components/peopleCard.vue'
-import API from '@/api/index'
+// import API from '@/api/index'
 import team from '@/assets/team'
 
 let lazyImg = require('@/images/nodata.jpg')

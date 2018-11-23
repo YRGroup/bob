@@ -81,7 +81,7 @@ export default {
           this.caseInfo = new Case(res.data)
         })
         .catch(err => {
-          // console.log(err);
+          console.log(err);
         })
     },
     back () {
@@ -151,22 +151,22 @@ export default {
     z-index: 99;
     .tag {
       cursor: pointer;
-      width: 0.3rem;
-      height: 0.3rem;
+      width: 0.4rem;
+      height: 0.4rem;
       background: #fff;
-      line-height: 0.3rem;
+      line-height: 0.4rem;
       text-align: center;
       margin: 10px 0;
-      border: 2px solid #e4e4e4;
+      border: 1px solid #e4e4e4;
       cursor: pointer;
-      color: #888;
+      color: #d0d0d0;
       transition: all 0.3s;
       .iconfont {
-        font-size: 0.15rem;
+        font-size: 0.18rem;
       }
       &:hover {
         color: @color-theme;
-        border: 2px solid @color-theme;
+        border: 1px solid @color-theme;
       }
     }
   }
