@@ -8,7 +8,7 @@
     <div  class="case-wrapper">
       <el-row class="case-list">
         <transition-group name="fadeBottom">
-          <el-col v-for="item in caseList" :lg="8" :md="8" :sm="12" :xs="12" :key="item.id">
+          <el-col v-for="item in caseList" :lg="8" :md="8" :sm="12" :xs="24" :key="item.id">
             <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
               <div class="overlay">
                 <!-- <div class="border-hor"></div>
@@ -44,39 +44,39 @@
 </template>
 
 <script>
-import API from '@/api/index'
+import API from "@/api/index";
 // import { getFirstImg } from '@/assets/utils'
-import { info } from '@/assets/info'
-import Case from '@/class/case'
+import { info } from "@/assets/info";
+import Case from "@/class/case";
 export default {
-  name: 'home',
+  name: "home",
   components: {},
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       bannerList: {
         a: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 5
         },
         b: {
-          bannerImg: require('@/images/cases/banner_B1.jpg'),
+          bannerImg: require("@/images/cases/banner_B1.jpg"),
           catId: 6
         },
         c: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 10
         },
         d: {
-          bannerImg: require('@/images/cases/banner_A1.jpg'),
+          bannerImg: require("@/images/cases/banner_A1.jpg"),
           catId: 4
         },
         e: {
-          bannerImg: require('@/images/cases/banner_E1.jpg'),
+          bannerImg: require("@/images/cases/banner_E1.jpg"),
           catId: 7
         },
         f: {
-          bannerImg: require('@/images/cases/banner_F1.jpg'),
+          bannerImg: require("@/images/cases/banner_F1.jpg"),
           catId: 8
         }
       },
@@ -84,87 +84,87 @@ export default {
       currentPage: 1,
       more: true,
       showTag: false
-    }
+    };
   },
   computed: {
-    banner () {
-      return this.bannerList[this.id].bannerImg
+    banner() {
+      return this.bannerList[this.id].bannerImg;
     },
-    casesName () {
-      return info[this.id].name
+    casesName() {
+      return info[this.id].name;
     },
-    casesIntro () {
-      return info[this.id].introduction
+    casesIntro() {
+      return info[this.id].introduction;
     },
-    caseTypes () {
-      return info[this.id].items
+    caseTypes() {
+      return info[this.id].items;
     },
-    stickyCaseList () {
-      let arr = []
+    stickyCaseList() {
+      let arr = [];
       this.caseList.forEach(el => {
         if (el.sticky) {
-          arr.push(el)
+          arr.push(el);
         }
-      })
-      return arr
+      });
+      return arr;
     }
   },
 
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
-    this.getData()
+    this.getData();
   },
-  mounted () {
+  mounted() {
     // this.showTag = true;
     setTimeout(() => {
-      this.showTag = true
-    }, 1000)
+      this.showTag = true;
+    }, 1000);
   },
   methods: {
-    getData () {
-      let id = this.bannerList[this.id].catId
+    getData() {
+      let id = this.bannerList[this.id].catId;
       API.getCatPosts(id, this.currentPage)
         .then(res => {
           res.data.forEach(el => {
-            this.caseList.push(new Case(el))
-          })
+            this.caseList.push(new Case(el));
+          });
         })
         .catch(err => {
-          console.log(err)
-          this.more = false
-        })
+          console.log(err);
+          this.more = false;
+        });
     },
-    getMore () {
-      this.currentPage++
-      this.getData()
+    getMore() {
+      this.currentPage++;
+      this.getData();
     },
-    formatTags (string) {
-      let arr = string.split('/')
-      arr.pop()
-      return arr.join(' / ')
+    formatTags(string) {
+      let arr = string.split("/");
+      arr.pop();
+      return arr.join(" / ");
     }
   },
   watch: {
-    $route (to, from) {
-      this.id = this.$route.params.id
+    $route(to, from) {
+      this.id = this.$route.params.id;
       if (!this.id) {
-        this.$router.push('/')
+        this.$router.push("/");
       }
-      this.currentPage = 1
-      this.caseList = []
-      this.more = true
-      this.getData()
+      this.currentPage = 1;
+      this.caseList = [];
+      this.more = true;
+      this.getData();
 
       // setTimeout(() => {
       //   this.showTag = true;
       // }, 300);
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -232,7 +232,7 @@ export default {
     max-width: 1250px;
     margin: 0 auto;
     // margin-bottom: 0.5rem;
-    @base: 0.65rem;
+    @base: 0.7rem;
     .case-item {
       background: #fff;
       position: relative;
@@ -294,7 +294,7 @@ export default {
           .flex-column();
           justify-content: space-around;
           .p1 {
-            font-size: 20px;
+            font-size: 0.15rem;
             font-weight: bold;
             margin-bottom: 10px;
             color: #333;
@@ -310,7 +310,7 @@ export default {
             width: 60px;
           }
           .p2 {
-            font-size: 14px;
+            font-size: 12px;
             // line-height: 30px;
             margin-top: 10px;
             color: #666;
@@ -368,10 +368,13 @@ export default {
   }
   @media (max-width: 768px) {
     .case-list {
-      @base: 0.55rem;
+      @base: 0.8rem;
       .case-item {
         width: 4 * @base;
         height: 3 * @base;
+        .case-content {
+          height: 3 * @base;
+        }
       }
     }
   }
@@ -566,7 +569,7 @@ export default {
   }
 }
 @media (max-width: 768px) {
-  .casetitle{
+  .casetitle {
     padding-top: 40px;
   }
 }
