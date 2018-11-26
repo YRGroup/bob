@@ -102,10 +102,6 @@ export default {
       }
     }
     .footerlogo {
-<<<<<<< HEAD
-=======
-      // height: 0.5rem;
->>>>>>> c0615a501173c3b35decdd76f59904f3c9168fa3
       align-items: center;
       text-align: left;
       p {
@@ -114,11 +110,7 @@ export default {
         line-height: 26px;
       }
       img {
-<<<<<<< HEAD
         height: 0.5rem;
-=======
-        max-width: 100%;
->>>>>>> c0615a501173c3b35decdd76f59904f3c9168fa3
       }
     }
   }
