@@ -10,11 +10,7 @@ export default {
   },
   created () {},
   mounted () {
-    // 首图为banner,隐藏掉
-    let article = document.getElementById('acticle')
-    if (article.getElementsByTagName('img').length) {
-      article.getElementsByTagName('img')[0].style.display = 'none'
-    }
+    
   }
 }
 </script>

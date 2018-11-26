@@ -104,7 +104,7 @@ export default {
     .footerlogo {
       align-items: center;
       text-align: left;
-      p {
+      p { 
         margin-top: 10px;
         font-size: 14px;
         line-height: 26px;
