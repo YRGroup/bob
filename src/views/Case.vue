@@ -144,14 +144,14 @@ export default {
       }
     }
     @media (max-width:750px) {
-      height: 2rem;
+      height: 2.5rem;
     }
   }
   .side-bar {
     position: fixed;
     right: 5%;
     bottom: 10%;
-    z-index: 99;
+    z-index: 90;
     .tag {
       cursor: pointer;
       width: 0.4rem;
