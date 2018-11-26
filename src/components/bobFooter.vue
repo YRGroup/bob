@@ -102,7 +102,7 @@ export default {
       }
     }
     .footerlogo {
-      height: 0.5rem;
+      // height: 0.5rem;
       align-items: center;
       text-align: left;
       p {
@@ -111,7 +111,7 @@ export default {
         line-height: 26px;
       }
       img {
-        height: 100%;
+        max-width: 100%;
       }
     }
   }
