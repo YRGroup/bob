@@ -4,14 +4,14 @@ class Case {
     this.date = data.date
     this.title = data.title.rendered
     this.thumbnail = data.thumbnailurl
-    // this.banner = data.banner
     this.sticky = data.sticky
     this.tag = this.formatTags(data.tags)
     this.id = data.id
-    this.imgs = this.getBanner(data.content.rendered)
+    // this.imgs = this.getBanner(data.content.rendered)
+    this.bannerUrl = data.bannerUrl
   }
   setBanner (url) {
-    this.banner = url
+    // this.banner = url
   }
   formatTags (str) {
     if (!str) return
