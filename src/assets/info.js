@@ -94,8 +94,8 @@ const info = {
     <p>They will <span>define</span> your brand's story for <span>you</span>.</p>
     <p>In a world where you can be anything, <span>be yourself</span>. </p>
     <p>Be who you are and say what you feel, </p>
-    <p>because those who mind don't matter </p>
-    <p>and those who matter don't mind.</p>`,
+    <p>because those who mind don't <span>matter</span> </p>
+    <p>and those who matter don't <span>mind</span>.</p>`,
     poetryCn: '<p>纪录一下自己，给关心你的。<br>纪录一下他人，给你关心的。</p>',
     items: ['年度摄影服务',
       '年度影视服务',
@@ -109,12 +109,12 @@ const info = {
     name: 'Fabrication',
     introduction: '将设计制作成具体的实物，帮助您节省时间和精力，专注于更加重要的目标。',
     poetry: `<h2> Fabrication </h2>
-    <p> A brand is a voice and a product is a souvenir. </p>
+    <p> A brand is a <span>voice</span> and a product is a <span>souvenir</span>. </p>
     <p> Your premium brand </p>
-    <p> had better be delivering something special,</p>
+    <p> had better be delivering <span>something special</span>,</p>
     <p> or it’ s not going to get the business. </p>
-    <p> When people use your brand name as a verb,</p>
-    <p> that is remarkably good or bad. </p>`,
+    <p> When people use your brand name as a <span>verb</span>,</p>
+    <p> that is <span>remarkably</span> good or bad. </p>`,
     poetryCn: '<p> 如果品牌是首诗歌，<br> 造出的产品就是诗朗诵。 </p>',
     items: ['画册印制',
       '服装定制',

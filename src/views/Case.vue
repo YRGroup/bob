@@ -1,6 +1,6 @@
 <template>
   <div class="case-page">
-    <bob-header type="service"></bob-header>
+    <bob-header type="home" ></bob-header>
     <div class="case-content">
       <div class="case-banner" >
         <div class="bg" :style="{backgroundImage:`url(${caseInfo.banner})`}"></div>
@@ -112,10 +112,10 @@ export default {
       .background-cover();
       // filter: blur(5px);
       position: absolute;
-      left: -10px;
-      top: -10px;
-      right: -10px;
-      bottom: -10px;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
       z-index: 0;
       // &::after {
       //   content: "";
@@ -142,6 +142,9 @@ export default {
       .p2 {
         font-size: 13px;
       }
+    }
+    @media (max-width:750px) {
+      height: 2rem;
     }
   }
   .side-bar {
@@ -185,7 +188,7 @@ export default {
 }
 .caseinfotitle {
   text-align: center;
-  font-size: 0.25rem;
+  font-size: 0.18rem;
   line-height: 1.3;
   margin: 20px 0 40px;
 }
