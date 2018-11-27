@@ -31,25 +31,25 @@
               class="progress"
               :stroke-width="8"
               color="#ff8c64"
-              :percentage="currentPeople.property.wisdom">
+              :percentage="currentPeople.property.resistance">
             </el-progress>
           </p>
           <p class="p4 p">
-            <span class="title">战力：</span>
+            <span class="title">智慧：</span>
             <el-progress
               class="progress"
               :stroke-width="8"
               color="#e9db02"
-              :percentage="currentPeople.property.power">
+              :percentage="currentPeople.property.wisdom">
             </el-progress>
           </p>
           <p class="p5 p">
-            <span class="title">抗性：</span>
+            <span class="title">颜值：</span>
             <el-progress
               class="progress"
               :stroke-width="8"
               color="#ff8c64"
-              :percentage="currentPeople.property.wisdom">
+              :percentage="currentPeople.property.face">
             </el-progress>
           </p>
           <p class="p6 p">
@@ -120,7 +120,7 @@ export default {
       margin-left: 60px;
       // padding-top: 50px;
       font-size: 16px;
-      line-height: 3;
+      line-height: 2.5;
       // width: 450px;
       .p {
         // .flex();
@@ -133,8 +133,7 @@ export default {
         width: 50px;
       }
       .p1 {
-        font-size: 0.25rem;
-        line-height: 3;
+        font-size: 0.23rem;
       }
       .progress {
         width: 1.5rem;

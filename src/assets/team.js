@@ -7,7 +7,10 @@ const team = [{
   exp: '驾轻就熟',
   property: {
     power: 80,
+    resistance: 90,
     wisdom: 90,
+    wisdom: 90,
+    face: 90,
     lang: '精确把控，完美出品！'
   },
   color: '#7b536e'
@@ -20,7 +23,9 @@ const team = [{
   exp: '神乎其技',
   property: {
     power: 90,
+    resistance: 95,
     wisdom: 95,
+    face: 95,
     lang: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
   },
   color: '#89b929'
@@ -33,7 +38,9 @@ const team = [{
   exp: '一代宗师',
   property: {
     power: 100,
+    resistance: 5,
     wisdom: 5,
+    face: 5,
     lang: '如果你外婆不明白你在搞什么，你就没有在搞事情。'
   },
   color: '#609bb4'
@@ -46,8 +53,10 @@ const team = [{
   exp: '无与伦比',
   property: {
     power: 80,
+    resistance: 99,
     wisdom: 99,
-    lang: '“迎合市场潮流、契合战略蓝图、突出专有特色！'
+    face: 99,
+    lang: '迎合市场潮流、契合战略蓝图、突出专有特色！'
   },
   color: '#d2ad36'
 }, {
@@ -59,7 +68,9 @@ const team = [{
   exp: '神乎其技',
   property: {
     power: 95,
+    resistance: 96,
     wisdom: 96,
+    face: 96,
     lang: '精确把控，完美出品！'
   },
   color: '#7b536e'
@@ -72,7 +83,9 @@ const team = [{
   exp: '青出於蓝',
   property: {
     power: 5,
+    resistance: 100,
     wisdom: 100,
+    face: 100,
     lang: '让品牌扎根受众心智，搭建历久弥新的乐园！'
   },
   color: '#dc6545'
@@ -85,7 +98,9 @@ const team = [{
   exp: '登堂入室',
   property: {
     power: 50,
+    resistance: 95,
     wisdom: 95,
+    face: 95,
     lang: '好的语句不一定美，但一定又准又稳！'
   },
   color: '#dc6545'
@@ -98,7 +113,9 @@ const team = [{
   exp: '炉火纯青',
   property: {
     power: 90,
+    resistance: 95,
     wisdom: 95,
+    face: 95,
     lang: '自称公司颜值担当，大家都懂实际情况！'
   },
   color: '#89b929'
@@ -111,7 +128,9 @@ const team = [{
   exp: '青出於蓝',
   property: {
     power: 90,
+    resistance: 95,
     wisdom: 95,
+    face: 95,
     lang: '守护每个创意作品的诞生，是他的一贯忠诚！'
   },
   color: '#dc6545'
@@ -124,7 +143,9 @@ const team = [{
   exp: '返璞归真',
   property: {
     power: 90,
+    resistance: 95,
     wisdom: 95,
+    face: 95,
     lang: '在磨砺的旅程中探索品牌策划的真意！'
   },
   color: '#c34a43'
@@ -137,7 +158,9 @@ const team = [{
   exp: '驾轻就熟',
   property: {
     power: 90,
+    resistance: 90,
     wisdom: 90,
+    face: 90,
     lang: '跟随感觉去理解、思考，创作、推敲！'
   },
   color: '#89b929'
