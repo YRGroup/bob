@@ -39,7 +39,7 @@
             <el-progress
               class="progress"
               :stroke-width="8"
-              color="#e9db02"
+              color="#07c8ff"
               :percentage="currentPeople.property.wisdom">
             </el-progress>
           </p>
@@ -48,7 +48,7 @@
             <el-progress
               class="progress"
               :stroke-width="8"
-              color="#ff8c64"
+              color="#49e054"
               :percentage="currentPeople.property.face">
             </el-progress>
           </p>
@@ -150,9 +150,11 @@ export default {
       align-items: flex-start;
       .people-text {
         margin-left: 10px;
-        line-height: 2;
+        .p1{
+          font-size: .3rem;
+        }
         .progress{
-          width: 2rem;
+          width: 2.5rem;
         }
       }
       .peoplePic{

@@ -9,8 +9,7 @@ const team = [{
     power: 80,
     resistance: 90,
     wisdom: 90,
-    wisdom: 90,
-    face: 90,
+    face: 95,
     lang: '精确把控，完美出品！'
   },
   color: '#7b536e'
@@ -25,7 +24,7 @@ const team = [{
     power: 90,
     resistance: 95,
     wisdom: 95,
-    face: 95,
+    face: 80,
     lang: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
   },
   color: '#89b929'
@@ -39,8 +38,8 @@ const team = [{
   property: {
     power: 100,
     resistance: 5,
-    wisdom: 5,
-    face: 5,
+    wisdom: 100,
+    face: 95,
     lang: '如果你外婆不明白你在搞什么，你就没有在搞事情。'
   },
   color: '#609bb4'
@@ -55,7 +54,7 @@ const team = [{
     power: 80,
     resistance: 99,
     wisdom: 99,
-    face: 99,
+    face: 95,
     lang: '迎合市场潮流、契合战略蓝图、突出专有特色！'
   },
   color: '#d2ad36'
@@ -69,8 +68,8 @@ const team = [{
   property: {
     power: 95,
     resistance: 96,
-    wisdom: 96,
-    face: 96,
+    wisdom: 95,
+    face: 100,
     lang: '精确把控，完美出品！'
   },
   color: '#7b536e'
@@ -84,8 +83,8 @@ const team = [{
   property: {
     power: 5,
     resistance: 100,
-    wisdom: 100,
-    face: 100,
+    wisdom: 90,
+    face: 90,
     lang: '让品牌扎根受众心智，搭建历久弥新的乐园！'
   },
   color: '#dc6545'
@@ -99,8 +98,8 @@ const team = [{
   property: {
     power: 50,
     resistance: 95,
-    wisdom: 95,
-    face: 95,
+    wisdom: 50,
+    face: 90,
     lang: '好的语句不一定美，但一定又准又稳！'
   },
   color: '#dc6545'
@@ -115,7 +114,7 @@ const team = [{
     power: 90,
     resistance: 95,
     wisdom: 95,
-    face: 95,
+    face: 80,
     lang: '自称公司颜值担当，大家都懂实际情况！'
   },
   color: '#89b929'
@@ -129,8 +128,8 @@ const team = [{
   property: {
     power: 90,
     resistance: 95,
-    wisdom: 95,
-    face: 95,
+    wisdom: 90,
+    face: 70,
     lang: '守护每个创意作品的诞生，是他的一贯忠诚！'
   },
   color: '#dc6545'
@@ -144,8 +143,8 @@ const team = [{
   property: {
     power: 90,
     resistance: 95,
-    wisdom: 95,
-    face: 95,
+    wisdom: 90,
+    face: 70,
     lang: '在磨砺的旅程中探索品牌策划的真意！'
   },
   color: '#c34a43'
@@ -159,8 +158,8 @@ const team = [{
   property: {
     power: 90,
     resistance: 90,
-    wisdom: 90,
-    face: 90,
+    wisdom: 70,
+    face: 50,
     lang: '跟随感觉去理解、思考，创作、推敲！'
   },
   color: '#89b929'
