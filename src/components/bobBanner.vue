@@ -1,7 +1,8 @@
 <template>
   <div class="index-banner">
     <div  class="banner-bg" >
-      <video  src="http://yr-zhxy.oss-cn-beijing.aliyuncs.com/bob/bob-video.mp4" autoplay="autoplay" loop="" preload="auto" muted></video>
+      <video 
+      src="http://yr-zhxy.oss-cn-beijing.aliyuncs.com/bob/bob-video.mp4" autoplay="autoplay" loop="" preload="auto" muted></video>
     </div>
     <div  id="banner">
       <swiper class="banner-swiper" :options="swiperOption" ref="mySwiper" >
