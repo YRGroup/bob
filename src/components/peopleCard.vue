@@ -6,11 +6,9 @@
     <transition name="defaultImg">
       <img  v-show="!hover"  class="img defaultImg" :src="defaultImg" alt="imgName">
     </transition>
-
     <transition  name="hoverImg">
       <img v-show="hover" class="img hoverImg" :src="hoverImg" alt="imgName">
     </transition>
-
   </div>
 </template>
 <script>

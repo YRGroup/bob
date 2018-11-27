@@ -87,8 +87,10 @@ export default {
     position: relative;
     .swiper-slide {
       .flex-column();
+      // padding-top: 20%;
+      box-sizing: border-box;
       color: #fff;
-      font-size: @font-size-xxl;
+      font-size: 0.35rem;
       justify-content: space-around;
       p {
         text-align: left;
