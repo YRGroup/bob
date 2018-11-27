@@ -175,6 +175,7 @@ export default {
       &::after {
         display: none;
       }
+      display: none;
       video {
         display: none;
       }

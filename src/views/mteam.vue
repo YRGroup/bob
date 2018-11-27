@@ -1,15 +1,19 @@
 <template>
   <div class="mteam-page">
+    <bob-header type="home"></bob-header>
     <el-row class="item-row"> 
       <el-col 
         v-for=" (item, index) in sortPeople" 
         :key="index" 
         :span="index==10?24:12"
         @click.native="showCardHandle(item)"
-        class="card">
+        :data-wow-delay="index*.1 + 's'" 
+        data-wow-duration="1s" 
+        class="card wow bounceInUp">
         <img class="people-img" :src="require(`@/images/mteam/teamPhone_0${index+1}.jpg`)" alt="">  
       </el-col>
     </el-row>
+    <bob-footer></bob-footer>
     <el-dialog
       custom-class="people-dialog"
       :show-close="false"
@@ -30,6 +34,7 @@ import peopleCard from "@/components/peopleCard.vue";
 import peopleInfo from "@/components/peopleInfo.vue";
 // import API from '@/api/index'
 import team from "@/assets/team";
+import {WOW} from 'wowjs'
 
 let lazyImg = require("@/images/nodata.jpg");
 
@@ -52,7 +57,9 @@ export default {
   computed: {},
 
   created() {},
-  mounted() {},
+  mounted() {
+    new WOW().init()
+  },
   methods: {
     showCardHandle(index) {
       this.mydialog = true;
@@ -66,6 +73,8 @@ export default {
 @import "../less/mixin.less";
 
 .mteam-page {
+  background: #757575;
+  padding-top: 50px;
   .people-dialog {
     width: 90%;
     max-width: 1000px;
