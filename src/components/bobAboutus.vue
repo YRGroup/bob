@@ -3,18 +3,23 @@
     <div class="content" id="aboutus">
       <swiper class="swiper-wrapper" :options="swiperOption">
         <swiperSlide class="swiper-slide">
-          <p>品牌的建立是为了产品（服务）更具有竞争力的立足于市场，否则再创新性的品牌设计也只是不实用的花衣而已。
-            因此，品牌能够转化成产品（服务）这才是塑造品牌的意义所在。</p>
+          <p>不讨论的代价比瞎讨论的代价还要大。</p>
         </swiperSlide>
         <swiperSlide class="swiper-slide flex flex-column">
-          <p>精悍的团队使BOB具有更专业、更灵动的服务机制。降低沟通成本，简化项目流程，
-            让更多的时间留给创作与研究，为客户做出卓越并且准确的设计。
-          </p>
+          <p>划掉多余的，美化剩下的。</p>
         </swiperSlide>
         <swiperSlide class="swiper-slide">
-          <p>适合并卓越的设计将会助力每一个向往成功的品牌突破自己，获得不可估量的商业价值。</p>
+          <p>如果你外婆不明白你在搞什么，你就没有在搞事情。</p>
         </swiperSlide>
-
+        <swiperSlide class="swiper-slide">
+          <p>互联网最起码的作用是让你难以回首没有它的日子</p>
+        </swiperSlide>
+        <swiperSlide class="swiper-slide">
+          <p>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</p>
+        </swiperSlide>
+        <swiperSlide class="swiper-slide">
+          <p>如果品牌是首诗歌，造出的产品就是诗朗诵。</p>
+        </swiperSlide>
       </swiper>
       <div class="swiper-pagination" id="section2-pagination" slot="pagination"></div>
     </div>
@@ -24,40 +29,40 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import "swiper/dist/css/swiper.css";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     swiper,
     swiperSlide
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         autoplay: true,
         spaceBetween: 60,
         pagination: {
-          el: '#section2-pagination',
+          el: "#section2-pagination",
           clickable: true,
           // type: 'fraction'
-          bulletClass: 'my-bullet',
-          bulletActiveClass: 'my-bullet-active'
+          bulletClass: "my-bullet",
+          bulletActiveClass: "my-bullet-active"
         }
       }
-    }
+    };
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     }
   },
-  created () {
+  created() {
     // this.initSwiper();
   },
   methods: {}
-}
+};
 </script>
 <style lang="less" >
 @import "../less/variable.less";

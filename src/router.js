@@ -28,7 +28,10 @@ export default new Router({
       path: '/full',
       name: 'full',
       component: () => import( /* webpackChunkName: "team" */ './views/Full.vue')
+    },{
+      path: '/mteam',
+      name: 'mteam',
+      component: () => import( /* webpackChunkName: "team" */ './views/mteam.vue')
     }
-
   ]
 })

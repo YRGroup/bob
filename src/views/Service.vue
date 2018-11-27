@@ -32,12 +32,30 @@
         <img  src="../images/icon-1.png" alt="">
       </div>
     </div>
+
     <transition name="opacity">
       <div class="text-wrapper" v-show="showText">
         <span class="nav-btn" @click="toogleText">
           <span class="btnImg"></span>
         </span>
-        <div class="content">
+        <swiper class="content" :options="swiperOption">
+          <swiperSlide class="swiper-slide left-con text">
+            <div  v-html="poetry"></div>
+          </swiperSlide>
+          <swiperSlide class="swiper-slide text xiaozhang">
+            <div v-html="poetryCn"></div>
+          </swiperSlide>
+          <swiperSlide class="swiper-slide right-con text">
+            <div>
+              <p v-for="(item ,index) in items" :key="index">
+                {{item}}
+              </p>
+            </div>
+          </swiperSlide>
+        </swiper>
+        <div class="swiper-pagination changlang" id="section2-pagination" slot="pagination"></div>
+      <!-- <div class="swiper-pagination" id="section2-pagination" slot="pagination"></div> -->
+        <!-- <div class="content">
           <transition name="poetry">
             <div class="left-con text" v-show="currentIndex==0" >
               <div  v-html="poetry">
@@ -61,12 +79,12 @@
               </div>
             </div>
           </transition>
-        </div>
-        <div class="changlang">
+        </div> -->
+        <!-- <div class="changlang">
           <span @click="currentIndex=0" :class="[{'active':currentIndex==0},'btn','btn1']"></span>
           <span @click="currentIndex=1" :class="[{'active':currentIndex==1},'btn','btn2']"></span>
           <span @click="currentIndex=2" :class="[{'active':currentIndex==2},'btn','btn2']"></span>
-        </div>
+        </div> -->
       </div>
     </transition>
     <case-list></case-list>
@@ -75,22 +93,23 @@
   </div>
 </template>
 <script>
-import { info } from '@/assets/info'
-import bannera from '@/components/bannera/index.vue'
-import bannerb from '@/components/bannerb/index.vue'
-import bannerc from '@/components/bannerc/index.vue'
-import bannerd from '@/components/bannerd/index.vue'
-import bannere from '@/components/bannere/index.vue'
-import bannerf from '@/components/bannerf/index.vue'
-import bobHeader from '@/components/bobHeader.vue'
-import caseList from '@/components/caseList.vue'
-import bobFooter from '@/components/bobFooter.vue'
+import { info } from "@/assets/info";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import bannera from "@/components/bannera/index.vue";
+import bannerb from "@/components/bannerb/index.vue";
+import bannerc from "@/components/bannerc/index.vue";
+import bannerd from "@/components/bannerd/index.vue";
+import bannere from "@/components/bannere/index.vue";
+import bannerf from "@/components/bannerf/index.vue";
+import bobHeader from "@/components/bobHeader.vue";
+import caseList from "@/components/caseList.vue";
+import bobFooter from "@/components/bobFooter.vue";
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
 export default {
-  name: 'service',
+  name: "service",
   components: {
     bannera,
     bannerb,
@@ -100,56 +119,69 @@ export default {
     bannerf,
     bobHeader,
     caseList,
-    bobFooter
+    bobFooter,
+    swiper,
+    swiperSlide
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       showText: false,
       showService: false,
       cn: true,
-      currentIndex: 0
-    }
+      currentIndex: 0,
+      swiperOption: {
+        autoplay: false,
+        spaceBetween: 60,
+        pagination: {
+          el: "#section2-pagination",
+          clickable: true,
+          // type: 'fraction'
+          bulletClass: "my-bullet",
+          bulletActiveClass: "my-bullet-active"
+        }
+      }
+    };
   },
   computed: {
-    poetry () {
-      return info[this.id]['poetry']
+    poetry() {
+      return info[this.id]["poetry"];
     },
-    items () {
-      return info[this.id]['items']
+    items() {
+      return info[this.id]["items"];
     },
-    banner () {
-      return 'banner' + this.id
+    banner() {
+      return "banner" + this.id;
     },
-    poetryCn () {
-      return info[this.id]['poetryCn']
+    poetryCn() {
+      return info[this.id]["poetryCn"];
     }
   },
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
   },
-  mounted () {},
+  mounted() {},
   methods: {
-    toogleText () {
-      this.showText = !this.showText
+    toogleText() {
+      this.showText = !this.showText;
       this.timer = setTimeout(() => {
         // this.cn = true;
-        this.currentIndex = 0
-      }, 500)
+        this.currentIndex = 0;
+      }, 500);
     },
-    toogleService () {
-      this.showService = !this.showService
+    toogleService() {
+      this.showService = !this.showService;
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    this.id = to.params.id
-    next()
+  beforeRouteUpdate(to, from, next) {
+    this.id = to.params.id;
+    next();
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/mixin.less";
@@ -201,13 +233,13 @@ export default {
     .content {
       position: absolute;
       top: 50px;
-      bottom: 100px;
+      bottom: 50px;
       width: 100%;
 
       // overflow: auto;
       .text {
-        position: absolute;
-        padding: 0 10px;
+        // position: absolute;
+        // padding: 0 10px;
         top: 0;
         bottom: 0;
         left: 0;
@@ -217,10 +249,10 @@ export default {
         justify-content: space-around;
 
         &.left-con {
-          line-height: 2.5;
+          line-height: 2;
           font-size: 17px;
           h2 {
-            margin-bottom: 30px;
+            margin-bottom: 0.1rem;
           }
           span {
             font-size: 24px;
@@ -249,7 +281,7 @@ export default {
 
     .changlang {
       position: absolute;
-      bottom: 30px;
+      bottom: 20px;
       cursor: pointer;
       &:hover {
         background: none;
@@ -264,9 +296,9 @@ export default {
       //   padding: 5px;
       //   cursor: pointer;
       // }
-      .btn {
-        width: 20px;
-        height: 20px;
+      .my-bullet {
+        width: 15px;
+        height: 15px;
         display: inline-block;
         margin: 0 10px;
         background: no-repeat center center;
@@ -274,7 +306,8 @@ export default {
         transition: all 0.3s;
         cursor: pointer;
         background-image: url("../images/navBtn.png");
-        opacity: .6;
+        opacity: 0.6;
+        outline: none;
       }
       // .btn1 {
       //   background-image: url("../images/navBtn.png");
@@ -282,9 +315,9 @@ export default {
       // .btn2 {
       //   background-image: url("../images/BB下.png");
       // }
-      .active {
+      .my-bullet-active {
         // font-size: 20px;
-        transform: scale(1.4);
+        transform: scale(1.3);
         opacity: 1;
         // background-image: url("../images/BB.png");
         // opacity: 0.8;
@@ -341,10 +374,13 @@ export default {
       .content {
         .text {
           &.left-con {
-            // line-height: 30px;
-            // font-size: 16px;
             justify-content: flex-start;
-            padding-top: 50px;
+            // padding-top: 50px;
+            line-height: 2;
+            font-size: 15px;
+            span {
+              font-size: 20px;
+            }
           }
           &.right-con {
             font-size: 25px;
