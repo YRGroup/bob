@@ -72,7 +72,6 @@ export default {
     let defaultY = offsetY - windowH;
     let domH = this.$refs.prax.clientHeight;
     window.addEventListener("scroll", ev => {
-      console.log(defaultY, window.scrollY);
       if (window.scrollY > defaultY) {
         this.offsetY = (defaultY - window.scrollY) / 3;
       }
