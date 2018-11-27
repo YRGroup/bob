@@ -206,7 +206,7 @@ export default {
         font-size: @font-size-xxl;
         font-weight: bold;
         span {
-          font-size: 0.5rem;
+          font-size: 0.4rem;
         }
       }
       .p2 {
