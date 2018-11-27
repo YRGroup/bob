@@ -9,7 +9,6 @@ const team = [{
     power: 80,
     resistance: 90,
     wisdom: 90,
-    wisdom: 90,
     face: 90,
     lang: '精确把控，完美出品！'
   },

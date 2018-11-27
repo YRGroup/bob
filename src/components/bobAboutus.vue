@@ -1,5 +1,8 @@
 <template>
-  <section class="section2 flex flex-column" id="section2">
+  <section class="section2 flex flex-column"
+    :style="{backgroundPositionY:offsetY+'px'}"
+    ref="prax"
+  id="section2">
     <div class="content" id="aboutus">
       <swiper class="swiper-wrapper" :options="swiperOption">
         <swiperSlide class="swiper-slide">
@@ -30,6 +33,7 @@
 <script>
 // @ is an alias to /src
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+import Parallax from "parallax-js";
 import "swiper/dist/css/swiper.css";
 
 export default {
@@ -50,7 +54,8 @@ export default {
           bulletClass: "my-bullet",
           bulletActiveClass: "my-bullet-active"
         }
-      }
+      },
+      offsetY: 0
     };
   },
   computed: {
@@ -61,6 +66,18 @@ export default {
   created() {
     // this.initSwiper();
   },
+  mounted() {
+    let offsetY = this.$refs.prax.offsetTop;
+    let windowH = document.documentElement.clientHeight;
+    let defaultY = offsetY - windowH;
+    let domH = this.$refs.prax.clientHeight;
+    window.addEventListener("scroll", ev => {
+      console.log(defaultY, window.scrollY);
+      if (window.scrollY > defaultY) {
+        this.offsetY = (defaultY - window.scrollY) / 3;
+      }
+    });
+  },
   methods: {}
 };
 </script>
@@ -68,6 +85,7 @@ export default {
 @import "../less/variable.less";
 @import "../less/mixin.less";
 @import "../less/common.less";
+
 #section2 {
   box-sizing: border-box;
   // margin-bottom: 0.5rem;
@@ -75,7 +93,6 @@ export default {
   height: 3.5rem;
   background-image: url("../images/about_bg2.jpg");
   justify-content: space-around;
-  background-attachment: fixed;
   position: relative;
 
   .content {
@@ -110,7 +127,7 @@ export default {
   }
 
   #section2-pagination {
-    bottom: 0.15rem;
+    bottom: 0;
     left: 0;
     right: 0;
     .my-bullet {
