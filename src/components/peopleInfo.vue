@@ -151,16 +151,14 @@ export default {
       align-items: flex-start;
       .people-text {
         margin-left: 10px;
-        line-height: 2.5;
+        line-height: 2;
         .progress{
           width: 2rem;
         }
       }
       .peoplePic{
-        width: 100px;
-        img{
-
-        }
+        display: none;
+        // width: 200px;
       }
     }
   }

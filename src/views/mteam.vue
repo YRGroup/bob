@@ -2,12 +2,12 @@
   <div class="mteam-page">
     <el-row class="item-row"> 
       <el-col 
-        v-for=" (item, index) in 11" 
+        v-for=" (item, index) in sortPeople" 
         :key="index" 
-        :span="item==11?24:12"
-        @click.native="showCardHandle(index)"
+        :span="index==10?24:12"
+        @click.native="showCardHandle(item)"
         class="card">
-        <img class="people-img" :src="require(`@/images/mteam/teamPhone_0${item}.jpg`)" alt="">  
+        <img class="people-img" :src="require(`@/images/mteam/teamPhone_0${index+1}.jpg`)" alt="">  
       </el-col>
     </el-row>
     <el-dialog
@@ -45,7 +45,8 @@ export default {
     return {
       team: team,
       mydialog: false,
-      curentIndex: 0
+      curentIndex: 0,
+      sortPeople: [3, 9, 2, 1, 0, 8, 10, 7, 6, 5, 4]
     };
   },
   computed: {},
