@@ -151,7 +151,7 @@ export default {
       align-items: flex-start;
       .people-text {
         margin-left: 10px;
-        line-height: 2;
+        line-height: 2.5;
         .progress{
           width: 2rem;
         }
