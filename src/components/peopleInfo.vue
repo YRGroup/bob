@@ -1,22 +1,30 @@
 <template>
   <div>
-    <div class="people-info flex"
-    :style="{background:currentPeople.color}">
-      <div class=" people-wrapper">
+    <div class="people-info flex" :style="{background:currentPeople.color}">
+      <div class="people-wrapper">
         <div class="peoplePic">
           <img :src="currentPeople.avatar" :alt="currentPeople.name">
         </div>
         <div class="flex-column people-text">
-          <p class="p1 p">{{currentPeople.name}}</p>
-          <p class="p2 ">
-            <span class="title">技能：</span>
-            <span>{{currentPeople.skill}}</span>
+          <p class="p1">
+            <span class="span1">{{currentPeople.name}}</span>
+            <span class="span2">{{currentPeople.skill}}</span>
+          </p>
+          <p class="p2">
+            <!-- <span class="title">技能：</span> -->
+            <!-- <span>{{currentPeople.skill}}</span> -->
           </p>
           <p class="p3 p">
             <span class="title">EXP：</span>
             <span>{{currentPeople.exp}}</span>
           </p>
-          <p class="p4 p">
+
+          <p class="p4 p" v-for="(val, name) in currentPeople.property">
+            <span class="title">{{name}}：</span>
+            <el-progress class="progress" :stroke-width="8" color="#e9db02" :percentage="val"></el-progress>
+          </p>
+
+          <!-- <p class="p4 p">
             <span class="title">战力：</span>
             <el-progress
               class="progress"
@@ -51,10 +59,10 @@
               color="#49e054"
               :percentage="currentPeople.property.face">
             </el-progress>
-          </p>
+          </p>-->
           <p class="p6 p">
-            <span class="title">签名：</span>
-            <span>{{currentPeople.property.lang}}</span>
+            <span class="title">BOBER之音：</span>
+            <span>{{currentPeople.motto}}</span>
           </p>
         </div>
       </div>
@@ -62,7 +70,7 @@
   </div>
 </template>
 <script>
-import team from '@/assets/team'
+import team from "@/assets/team";
 export default {
   props: {
     visible: {
@@ -74,19 +82,19 @@ export default {
       default: 0
     }
   },
-  data () {
+  data() {
     return {
       team: team
-    }
+    };
   },
   computed: {
-    currentPeople () {
-      return this.team[this.curentIndex]
+    currentPeople() {
+      return this.team[this.curentIndex];
     }
   },
-  created () {},
+  created() {},
   methods: {}
-}
+};
 </script>
 <style lang="less">
 @import "../less/variable.less";
@@ -133,7 +141,13 @@ export default {
         width: 50px;
       }
       .p1 {
-        font-size: 0.23rem;
+        .span1 {
+          font-size: 0.23rem;
+          margin-right: 10px;
+        }
+        .span2 {
+          color: #ddd;
+        }
       }
       .progress {
         width: 1.5rem;
@@ -151,14 +165,20 @@ export default {
       .people-text {
         margin-left: 10px;
         line-height: 2.5;
-        .p1{
-          font-size: .3rem;
+        .p1 {
+          .span1 {
+            font-size: 0.3rem;
+            margin-right: 10px;
+          }
+          .span2 {
+            color: #ddd;
+          }
         }
-        .progress{
+        .progress {
           width: 2.5rem;
         }
       }
-      .peoplePic{
+      .peoplePic {
         display: none;
         // width: 200px;
       }

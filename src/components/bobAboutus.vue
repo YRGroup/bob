@@ -33,13 +33,15 @@
 <script>
 // @ is an alias to /src
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import parallax from '@/components/parallax'
 import 'swiper/dist/css/swiper.css'
 
 export default {
   name: 'home',
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    parallax
   },
   data () {
     return {
@@ -72,7 +74,7 @@ export default {
     let domH = this.$refs.prax.clientHeight
     window.addEventListener('scroll', ev => {
       if (window.scrollY > defaultY) {
-        this.offsetY = Math.floor((defaultY - window.scrollY) / 5)
+        this.offsetY = Math.floor((defaultY - window.scrollY) / 3)
       }
     })
   },
@@ -91,8 +93,10 @@ export default {
   height: 3.5rem;
   background-image: url("../images/about_bg2.jpg");
   justify-content: space-around;
+  background-repeat: repeat;
   position: relative;
   // transition: all 0.1s;
+  // background-size: 100% 100vh;
   .content {
     width: 48%;
     height: 100%;

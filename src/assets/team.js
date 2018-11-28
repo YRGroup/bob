@@ -1,50 +1,49 @@
 const team = [{
-  name: '高源',
+  name: '阿源',
   avatar: require('@/images/team/k2.png'),
   img1: require('@/images/team/k.png'),
   img2: require('@/images/team/k1.png'),
-  skill: '商业摄影 / 人物传记',
+  skill: '大大的相机拍出美美的照片',
   exp: '驾轻就熟',
   property: {
-    power: 80,
-    resistance: 90,
-    wisdom: 90,
-    face: 95,
-    lang: '精确把控，完美出品！'
+    潮流: 99,
+    美貌: 99,
+    有型: 99
   },
-  color: '#7b536e'
+  color: '#7b536e',
+  motto: '专业服务'
 }, {
-  name: '张继锋',
+  name: 'old张',
   avatar: require('@/images/team/j2.png'),
   img1: require('@/images/team/j.png'),
   img2: require('@/images/team/j1.png'),
-  skill: '服务器运营 / 业务系统开发',
+  skill: '骨灰级码农',
   exp: '神乎其技',
   property: {
     power: 90,
     resistance: 95,
     wisdom: 95,
-    face: 80,
-    lang: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
+    face: 80
   },
-  color: '#89b929'
+  color: '#89b929',
+  motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
-  name: '刘念',
+  name: '念总',
   avatar: require('@/images/team/i2.png'),
   img1: require('@/images/team/i.png'),
   img2: require('@/images/team/i1.png'),
-  skill: '传播侃拼方案 / 传播策略',
+  skill: '要砍拼，哦不，侃拼，你找我',
   exp: '一代宗师',
   property: {
     power: 100,
     resistance: 5,
     wisdom: 100,
-    face: 95,
-    lang: '如果你外婆不明白你在搞什么，你就没有在搞事情。'
+    face: 95
   },
-  color: '#609bb4'
+  color: '#609bb4',
+  motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
-  name: '任佩佩',
+  name: '佩佩',
   avatar: require('@/images/team/h2.png'),
   img1: require('@/images/team/h.png'),
   img2: require('@/images/team/h1.png'),
@@ -54,27 +53,27 @@ const team = [{
     power: 80,
     resistance: 99,
     wisdom: 99,
-    face: 95,
-    lang: '迎合市场潮流、契合战略蓝图、突出专有特色！'
+    face: 95
   },
-  color: '#d2ad36'
+  color: '#d2ad36',
+  motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
-  name: '王靖华',
+  name: '花老师',
   avatar: require('@/images/team/g2.png'),
   img1: require('@/images/team/g.png'),
   img2: require('@/images/team/g1.png'),
-  skill: '宣传片 / 影视服务',
+  skill: '导演，晓得吧',
   exp: '神乎其技',
   property: {
     power: 95,
     resistance: 96,
     wisdom: 95,
-    face: 100,
-    lang: '精确把控，完美出品！'
+    face: 100
   },
-  color: '#7b536e'
+  color: '#7b536e',
+  motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
-  name: '程丽丽',
+  name: '丽丽',
   avatar: require('@/images/team/a2.png'),
   img1: require('@/images/team/a.png'),
   img2: require('@/images/team/a1.png'),
@@ -84,12 +83,12 @@ const team = [{
     power: 5,
     resistance: 100,
     wisdom: 90,
-    face: 90,
-    lang: '让品牌扎根受众心智，搭建历久弥新的乐园！'
+    face: 90
   },
-  color: '#dc6545'
+  color: '#dc6545',
+  motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
-  name: '周志远',
+  name: '周智障',
   avatar: require('@/images/team/b2.png'),
   img1: require('@/images/team/b.png'),
   img2: require('@/images/team/b1.png'),
@@ -99,68 +98,64 @@ const team = [{
     power: 50,
     resistance: 95,
     wisdom: 50,
-    face: 90,
-    lang: '好的语句不一定美，但一定又准又稳！'
+    face: 90
   },
-  color: '#dc6545'
+  color: '#dc6545',
+  motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
   name: '徐川',
   avatar: require('@/images/team/c2.png'),
   img1: require('@/images/team/c.png'),
   img2: require('@/images/team/c1.png'),
-  skill: '高端官网定制 / 移动网站建设',
+  skill: '做些酷炫和不怎么酷炫的网站',
   exp: '炉火纯青',
   property: {
     power: 90,
     resistance: 95,
     wisdom: 95,
-    face: 80,
-    lang: '自称公司颜值担当，大家都懂实际情况！'
+    face: 80
   },
   color: '#89b929'
 }, {
-  name: '李尧',
+  name: '尧仔',
   avatar: require('@/images/team/d2.png'),
   img1: require('@/images/team/d.png'),
   img2: require('@/images/team/d1.png'),
-  skill: '印刷品制作 / 周边产品定制',
+  skill: '',
   exp: '青出於蓝',
   property: {
     power: 90,
     resistance: 95,
     wisdom: 90,
-    face: 70,
-    lang: '守护每个创意作品的诞生，是他的一贯忠诚！'
+    face: 70
   },
   color: '#dc6545'
 }, {
-  name: '张添舜',
+  name: '穗儿',
   avatar: require('@/images/team/e2.png'),
   img1: require('@/images/team/e.png'),
   img2: require('@/images/team/e1.png'),
-  skill: 'VI设计 / 宣传册设计',
+  skill: '左手PS右手VI打天下',
   exp: '返璞归真',
   property: {
     power: 90,
     resistance: 95,
     wisdom: 90,
-    face: 70,
-    lang: '在磨砺的旅程中探索品牌策划的真意！'
+    face: 70
   },
   color: '#c34a43'
 }, {
-  name: '张亚磊',
+  name: '钢铁磊',
   avatar: require('@/images/team/f2.png'),
   img1: require('@/images/team/f.png'),
   img2: require('@/images/team/f1.png'),
-  skill: '高端网站定制 / H5应用开发',
+  skill: '码农里最能搞设计的，设计里最能写代码的',
   exp: '驾轻就熟',
   property: {
     power: 90,
     resistance: 90,
     wisdom: 70,
-    face: 50,
-    lang: '跟随感觉去理解、思考，创作、推敲！'
+    face: 50
   },
   color: '#89b929'
 }
