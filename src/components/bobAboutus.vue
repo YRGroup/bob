@@ -32,53 +32,52 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import Parallax from "parallax-js";
-import "swiper/dist/css/swiper.css";
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     swiper,
     swiperSlide
   },
-  data() {
+  data () {
     return {
       swiperOption: {
         autoplay: true,
         spaceBetween: 60,
         pagination: {
-          el: "#section2-pagination",
+          el: '#section2-pagination',
           clickable: true,
           // type: 'fraction'
-          bulletClass: "my-bullet",
-          bulletActiveClass: "my-bullet-active"
+          bulletClass: 'my-bullet',
+          bulletActiveClass: 'my-bullet-active'
         }
       },
       offsetY: 0
-    };
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
     }
   },
-  created() {
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  created () {
     // this.initSwiper();
   },
-  mounted() {
-    let offsetY = this.$refs.prax.offsetTop;
-    let windowH = document.documentElement.clientHeight;
-    let defaultY = offsetY - windowH;
-    let domH = this.$refs.prax.clientHeight;
-    window.addEventListener("scroll", ev => {
+  mounted () {
+    let offsetY = this.$refs.prax.offsetTop
+    let windowH = document.documentElement.clientHeight
+    let defaultY = offsetY - windowH
+    let domH = this.$refs.prax.clientHeight
+    window.addEventListener('scroll', ev => {
       if (window.scrollY > defaultY) {
-        this.offsetY = (defaultY - window.scrollY) / 3;
+        this.offsetY = Math.floor((defaultY - window.scrollY) / 5)
       }
-    });
+    })
   },
   methods: {}
-};
+}
 </script>
 <style lang="less" >
 @import "../less/variable.less";
@@ -93,7 +92,7 @@ export default {
   background-image: url("../images/about_bg2.jpg");
   justify-content: space-around;
   position: relative;
-
+  // transition: all 0.1s;
   .content {
     width: 48%;
     height: 100%;

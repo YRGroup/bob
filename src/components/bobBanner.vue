@@ -1,30 +1,38 @@
 <template>
   <div class="index-banner">
-    <div  class="banner-bg" >
-      <video 
-      src="http://yr-zhxy.oss-cn-beijing.aliyuncs.com/bob/bob-video.mp4" autoplay="autoplay" loop="" preload="auto" muted></video>
+    <div class="banner-bg" v-if="!$store.state.isMobile">
+      <video
+        src="http://yr-zhxy.oss-cn-beijing.aliyuncs.com/bob/bob-video.mp4"
+        autoplay="autoplay"
+        loop
+        preload="auto"
+        muted
+      ></video>
     </div>
-    <div  id="banner">
-      <swiper class="banner-swiper" :options="swiperOption" ref="mySwiper" >
+    <div id="banner">
+      <swiper class="banner-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="flex">
           <div class="text">
             <p class="p3">We Energize Your Own</p>
-            <div class="flex keyword ">
+            <div class="flex keyword">
               <router-link class="key-link strings" :to="keyLink">
                 <vue-typer
-                  erase-style='backspace'
+                  erase-style="backspace"
                   :eraseDelay="10"
-                  @typed='onTyped' :text="wordList"></vue-typer>
+                  @typed="onTyped"
+                  :text="wordList"
+                ></vue-typer>
               </router-link>
               <span class="curse">|</span>
             </div>
           </div>
           <div class="cn keyword-cn">
-            赋能你的<span>{{keyword}}</span>
+            赋能你的
+            <span>{{keyword}}</span>
           </div>
         </swiper-slide>
         <swiper-slide class="flex">
-          <div class="text animated" >
+          <div class="text animated">
             <p class="p1">bridges of brands</p>
             <p class="p2">赋能那些为人性光辉付出努力的个人和组织</p>
           </div>
@@ -33,24 +41,26 @@
           <div class="text animated" >
             <router-link to="/full"  class="p1">品牌全案策划</router-link>
           </div>
-        </swiper-slide> -->
+        </swiper-slide>-->
         <div class="prev-btn swiper-btn flex" slot="button-prev">
           <div class="lines">
             <span class="top-line line"></span>
             <span class="bottom-line line"></span>
           </div>
           <p class="tip"></p>
-        </div><!--左箭头-->
+        </div>
+        <!--左箭头-->
         <div class="next-btn swiper-btn flex" slot="button-next">
           <p class="tip"></p>
           <div class="lines">
             <span class="top-line line"></span>
             <span class="bottom-line line"></span>
           </div>
-        </div><!--右箭头-->
+        </div>
+        <!--右箭头-->
       </swiper>
       <div class="scroll-icon">
-        <img  src="../images/icon-1.png" alt="">
+        <img src="../images/icon-1.png" alt>
       </div>
     </div>
   </div>
@@ -58,19 +68,19 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
-import { VueTyper } from "vue-typer";
-import { keyWords } from "@/assets/keywords";
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import { VueTyper } from 'vue-typer'
+import { keyWords } from '@/assets/keywords'
 // console.log(keyWords);
 export default {
-  name: "home",
+  name: 'home',
   components: {
     swiper,
     swiperSlide,
     VueTyper
   },
-  data() {
+  data () {
     return {
       swiperOption: {
         // autoplay: true,
@@ -79,38 +89,39 @@ export default {
         // loop: true,
         speed: 1000,
         navigation: {
-          nextEl: ".next-btn",
-          prevEl: ".prev-btn"
+          nextEl: '.next-btn',
+          prevEl: '.prev-btn'
         }
       },
-      keyLink: "",
-      keyword: ""
-    };
+      keyLink: '',
+      keyword: ''
+    }
   },
   computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
+    swiper () {
+      return this.$refs.mySwiper.swiper
     }
   },
-  created() {
+  created () {
     // this.initSwiper();
-    this.wordList = this.getStringList(keyWords);
+    this.wordList = this.getStringList(keyWords)
+    this.isPhone = document.documentElement.clientWidth > 768
   },
   methods: {
-    getStringList(strings) {
-      let arr = [];
+    getStringList (strings) {
+      let arr = []
       strings.forEach(element => {
-        arr.push(element.keyword);
-      });
-      return arr;
+        arr.push(element.keyword)
+      })
+      return arr
     },
-    onTyped(ev) {
-      let index = this.wordList.indexOf(ev);
-      this.keyLink = `/service/${keyWords[index]["type"]}`;
-      this.keyword = keyWords[index]["cn"];
+    onTyped (ev) {
+      let index = this.wordList.indexOf(ev)
+      this.keyLink = `/service/${keyWords[index]['type']}`
+      this.keyword = keyWords[index]['cn']
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
@@ -175,10 +186,7 @@ export default {
       &::after {
         display: none;
       }
-      display: none;
-      video {
-        display: none;
-      }
+      // display: none;
     }
   }
   .scroll-icon {

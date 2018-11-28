@@ -48,22 +48,22 @@
 
 <script>
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String
   },
-  data() {
+  data () {
     return {
       show: false
-    };
+    }
   },
   methods: {
-    toogleSideNav() {
-      this.show = !this.show;
-      console.log(1);
+    toogleSideNav () {
+      this.show = !this.show
+      console.log(1)
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -104,7 +104,7 @@ export default {
     .footerlogo {
       align-items: center;
       text-align: left;
-      p { 
+      p {
         margin-top: 10px;
         font-size: 14px;
         line-height: 26px;

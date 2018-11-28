@@ -1,8 +1,24 @@
 <template>
   <div id="app">
-    <router-view ></router-view>
+    <router-view></router-view>
   </div>
 </template>
+<script>
+export default {
+  data () {
+    return {}
+  },
+  created () {
+    window.onresize = () => {
+      if (document.documentElement.clientWidth > 768) {
+        this.$store.commit('setIsMObile', false)
+      } else {
+        this.$store.commit('setIsMObile', true)
+      }
+    }
+  }
+}
+</script>
 
 <style lang="less">
 @import "./less/variable.less";

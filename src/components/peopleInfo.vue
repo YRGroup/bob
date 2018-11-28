@@ -62,7 +62,7 @@
   </div>
 </template>
 <script>
-import team from "@/assets/team";
+import team from '@/assets/team'
 export default {
   props: {
     visible: {
@@ -74,19 +74,19 @@ export default {
       default: 0
     }
   },
-  data() {
+  data () {
     return {
       team: team
-    };
-  },
-  computed: {
-    currentPeople() {
-      return this.team[this.curentIndex];
     }
   },
-  created() {},
+  computed: {
+    currentPeople () {
+      return this.team[this.curentIndex]
+    }
+  },
+  created () {},
   methods: {}
-};
+}
 </script>
 <style lang="less">
 @import "../less/variable.less";

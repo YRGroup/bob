@@ -27,7 +27,8 @@ API.getCatPosts = (id, currentPage) => {
 API.getPost = (id) => {
   return getRequest('posts/' + id)
 }
-// 获 取 相 册
+
+// 获 取 相 册 @id:相册id
 API.getXcById = (id) => {
   axios.get(origin + '/api/getalbums.php?id=' + id).then(res => {
     console.log(res)
