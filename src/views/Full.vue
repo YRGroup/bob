@@ -9,30 +9,30 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import peopleCard from "@/components/peopleCard.vue";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import peopleCard from '@/components/peopleCard.vue'
 // import API from '@/api/index'
-import team from "@/assets/team";
+import team from '@/assets/team'
 
-let lazyImg = require("@/images/nodata.jpg");
+let lazyImg = require('@/images/nodata.jpg')
 
 export default {
-  name: "full",
+  name: 'full',
   components: {
     bobHeader,
     bobFooter,
     peopleCard
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
   computed: {},
 
-  created() {},
-  mounted() {},
+  created () {},
+  mounted () {},
   methods: {}
-};
+}
 </script>
 <style lang="less" >
 @import "../less/variable.less";

@@ -19,17 +19,17 @@
 </template>
 
 <script>
-import "element-ui/lib/theme-chalk/display.css";
+import 'element-ui/lib/theme-chalk/display.css'
 export default {
-  name: "team",
+  name: 'team',
   components: {},
-  data() {
-    return {};
+  data () {
+    return {}
   },
   computed: {},
-  created() {},
+  created () {},
   methods: {}
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";

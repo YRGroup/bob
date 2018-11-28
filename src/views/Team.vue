@@ -24,67 +24,60 @@
       :show-close="false"
       :visible.sync="mydialog"
       >
-      <people-info 
+      <people-info
         :curentIndex="curentIndex">
       </people-info>
     </el-dialog>
-    
 
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import peopleCard from "@/components/peopleCard.vue";
-import peopleInfo from "@/components/peopleInfo.vue";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import peopleCard from '@/components/peopleCard.vue'
+import peopleInfo from '@/components/peopleInfo.vue'
 // import API from '@/api/index'
-import team from "@/assets/team";
+import team from '@/assets/team'
 
-let lazyImg = require("@/images/nodata.jpg");
+let lazyImg = require('@/images/nodata.jpg')
 
 export default {
-  name: "team",
+  name: 'team',
   components: {
     bobHeader,
     bobFooter,
     peopleCard,
     peopleInfo
   },
-  data() {
+  data () {
     return {
       team: team,
       activeIndex: 0,
       hover: false,
       mydialog: false,
       curentIndex: 0
-    };
+    }
   },
-  created() {
-    this.getTeamList();
+  created () {
+    
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    enter(index) {
-      this.hover = true;
-      this.activeIndex = index;
+    enter (index) {
+      this.hover = true
+      this.activeIndex = index
     },
-    leave() {
-      this.hover = false;
+    leave () {
+      this.hover = false
     },
-    showCardHandle(index) {
-      this.mydialog = true;
-      this.curentIndex = index;
-    },
-    getTeamList() {
-      let teamId = 500;
-      // API.getXcById(teamId).then(res => {
-      //   console.log(res);
-      // });
+    showCardHandle (index) {
+      this.mydialog = true
+      this.curentIndex = index
     }
   }
-};
+}
 </script>
 <style lang="less" >
 @import "../less/variable.less";

@@ -81,7 +81,7 @@ export default {
           this.caseInfo = new Case(res.data)
         })
         .catch(err => {
-          console.log(err);
+          console.log(err)
         })
     },
     back () {
