@@ -25,12 +25,12 @@
               </div>
             </router-link>
             <p class="serviceIcon">
-               <i class="iconfont">&#xe63b;</i>
+              <i class="iconfont">&#xe63b;</i>
             </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s" data-wow-offset="10">
           <div class="mask flex flex-column">
             <router-link to="/service/b">
               <p class="p1">
@@ -46,11 +46,11 @@
               <!-- <p class="p3">+</p> -->
             </router-link>
             <p class="serviceIcon">
-               <i class="iconfont">&#xe601;</i>
+              <i class="iconfont">&#xe601;</i>
             </p>
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s" >
           <div class="mask flex flex-column">
             <router-link to="/service/c">
               <p class="p1">

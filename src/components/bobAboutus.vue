@@ -6,7 +6,7 @@
     id="section2"
   >
     <div class="content" id="aboutus">
-      <swiper class="swiper-wrapper" :options="swiperOption">
+      <swiper class="swiper-wrapper kangxi" :options="swiperOption">
         <swiperSlide class="swiper-slide">
           <p>
             <span>不讨论的代价,</span>
