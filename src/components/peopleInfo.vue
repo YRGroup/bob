@@ -61,7 +61,7 @@
             </el-progress>
           </p>-->
           <p class="p6 p">
-            <span class="title">BOBER之音：</span>
+            <span class="title">格言：</span>
             <span>{{currentPeople.motto}}</span>
           </p>
         </div>
@@ -137,8 +137,9 @@ export default {
       }
       .title {
         opacity: 0.6;
-        margin-right: 10px;
-        width: 50px;
+        // margin-right: 10px;
+        display: inline-block;
+        width: 70px;
       }
       .p1 {
         .span1 {

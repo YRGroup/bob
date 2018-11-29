@@ -6,9 +6,9 @@ const team = [{
   skill: '大大的相机拍出美美的照片',
   exp: '驾轻就熟',
   property: {
-    潮流: 99,
-    美貌: 99,
-    有型: 99
+    '潮流': 99,
+    '美貌': 99,
+    '有型': 99
   },
   color: '#7b536e',
   motto: '专业服务'
@@ -20,10 +20,9 @@ const team = [{
   skill: '骨灰级码农',
   exp: '神乎其技',
   property: {
-    power: 90,
-    resistance: 95,
-    wisdom: 95,
-    face: 80
+    '逻辑': 99,
+    '体型': 99,
+    '拖延症': 99
   },
   color: '#89b929',
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
@@ -35,10 +34,9 @@ const team = [{
   skill: '要砍拼，哦不，侃拼，你找我',
   exp: '一代宗师',
   property: {
-    power: 100,
-    resistance: 5,
-    wisdom: 100,
-    face: 95
+    '眼界': 99,
+    '有型': 99,
+    '浪': 99
   },
   color: '#609bb4',
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
@@ -47,13 +45,12 @@ const team = [{
   avatar: require('@/images/team/h2.png'),
   img1: require('@/images/team/h.png'),
   img2: require('@/images/team/h1.png'),
-  skill: '品牌研究 / 品牌核心价值',
+  skill: '下边都是我小弟',
   exp: '无与伦比',
   property: {
-    power: 80,
-    resistance: 99,
-    wisdom: 99,
-    face: 95
+    '形象': 99,
+    '想法': 99,
+    '高挑': 99
   },
   color: '#d2ad36',
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
@@ -65,10 +62,9 @@ const team = [{
   skill: '导演，晓得吧',
   exp: '神乎其技',
   property: {
-    power: 95,
-    resistance: 96,
-    wisdom: 95,
-    face: 100
+    '逼格': 99,
+    '文艺': 99,
+    '  ': 99
   },
   color: '#7b536e',
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
@@ -77,7 +73,7 @@ const team = [{
   avatar: require('@/images/team/a2.png'),
   img1: require('@/images/team/a.png'),
   img2: require('@/images/team/a1.png'),
-  skill: '印刷品制作 / 服装定制',
+  skill: '就会搞两样的那位的领导',
   exp: '青出於蓝',
   property: {
     power: 5,
@@ -92,7 +88,7 @@ const team = [{
   avatar: require('@/images/team/b2.png'),
   img1: require('@/images/team/b.png'),
   img2: require('@/images/team/b1.png'),
-  skill: '环境导视系统设计制作 / 周边产品定制',
+  skill: '包工头！！',
   exp: '登堂入室',
   property: {
     power: 50,
@@ -121,7 +117,7 @@ const team = [{
   avatar: require('@/images/team/d2.png'),
   img1: require('@/images/team/d.png'),
   img2: require('@/images/team/d1.png'),
-  skill: '',
+  skill: '就会搞两样，这也能搞，那也能搞',
   exp: '青出於蓝',
   property: {
     power: 90,
@@ -149,7 +145,7 @@ const team = [{
   avatar: require('@/images/team/f2.png'),
   img1: require('@/images/team/f.png'),
   img2: require('@/images/team/f1.png'),
-  skill: '码农里最能搞设计的，设计里最能写代码的',
+  skill: '码农里最能设计的，设计里最能写代码的',
   exp: '驾轻就熟',
   property: {
     power: 90,
