@@ -24,6 +24,9 @@
                 <p>品牌命名</p>
               </div>
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe63b;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
@@ -42,6 +45,9 @@
               </div>
               <!-- <p class="p3">+</p> -->
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe601;</i>
+            </p>
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
@@ -60,6 +66,9 @@
               </div>
               <!-- <p class="p3">+</p> -->
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe600;</i>
+            </p>
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
@@ -77,6 +86,9 @@
                 <p>H5应用开发</p>
               </div>
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe639;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
@@ -95,6 +107,9 @@
                 <p>宣传片</p>
               </div>
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe62c;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
@@ -112,6 +127,9 @@
                 <p>场地装饰产品</p>
               </div>
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe6bc;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
@@ -121,6 +139,8 @@
 </template>
 
 <script>
+import { WOW } from 'wowjs'
+
 export default {
   name: "bobHeader",
   props: {
@@ -135,6 +155,9 @@ export default {
     toogleSideNav() {
       this.show = !this.show;
     }
+  },
+  mounted () {
+    new WOW().init()
   }
 };
 </script>
@@ -146,6 +169,7 @@ export default {
 @import "../less/common.less";
 
 #section1 {
+  background: #f5f5f5;
   padding: 0.5rem 0;
   .service-wrapper {
     margin: 0 100px;
@@ -175,6 +199,7 @@ export default {
       box-sizing: border-box;
       .mask {
         .background-cover();
+        position: relative;
         z-index: 2;
         justify-content: flex-start;
         height: 100%;
@@ -182,12 +207,22 @@ export default {
         padding-top: @font-size-xxl;
         box-sizing: border-box;
         color: #333;
+        .serviceIcon{
+          position: absolute;
+          bottom: -16px;
+          right: 0;
+          color: #f5f5f5;
+          opacity: .8;
+          font-size: .7rem;
+          z-index: -1;
+        }
       }
       &:hover {
         // background-image: url("../images/s1.png");
         // background-color: rgba(214, 94, 15, 0.7);
+        margin-top: -10px; 
         .mask {
-          box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
           a {
             color: @color-theme;
           }
@@ -196,13 +231,13 @@ export default {
 
       &:nth-of-type(odd) {
         .mask {
-          background-color: #eeeeee;
+          background-color: #fff;
         }
       }
 
       &:nth-of-type(even) {
         .mask {
-          background-color: #f7f7f7;
+          background-color: #fff;
         }
       }
 

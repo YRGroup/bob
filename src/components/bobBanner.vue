@@ -234,14 +234,14 @@ export default {
       animation-duration: 0s;
     }
     &:hover {
-      text-shadow: 0 0 20px #fff;
+      // text-shadow: 0 0 20px #fff;
     }
   }
 
   .keyword-cn {
     color: @color-theme;
     font-size: 0.13rem;
-    margin-top: 0.6rem;
+    margin-top: 0.4rem;
     span {
       color: #fff;
     }
@@ -286,6 +286,7 @@ export default {
       text-align: center;
       color: #fff;
       animation-duration: 1s;
+      padding-bottom: .2rem;
     }
   }
 
