@@ -1,12 +1,15 @@
 <template>
   <section class="section1 section" id="section1">
     <h5 class="section-title">
-      <span>服务范围 / <span class="en">our service</span> </span>
+      <span>
+        服务范围 /
+        <span class="en">our service</span>
+      </span>
     </h5>
     <div class="container-fluid service-wrapper">
       <el-row class="cards">
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">
+          <div class="mask flex flex-column">
             <router-link to="/service/a">
               <p class="p1">
                 <span>A</span>nalytics
@@ -21,11 +24,14 @@
                 <p>品牌命名</p>
               </div>
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe63b;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
+          <div class="mask flex flex-column">
             <router-link to="/service/b">
               <p class="p1">
                 <span>B</span>randing
@@ -37,13 +43,15 @@
                 <p>宣传册设计</p>
                 <p>PPT模板</p>
               </div>
-            <!-- <p class="p3">+</p> -->
+              <!-- <p class="p3">+</p> -->
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe601;</i>
+            </p>
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-
-          <div class="mask  flex flex-column">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
+          <div class="mask flex flex-column">
             <router-link to="/service/c">
               <p class="p1">
                 <span>C</span>ampaign
@@ -56,12 +64,15 @@
                 <p>传播调研</p>
                 <p>传播策略</p>
               </div>
-            <!-- <p class="p3">+</p> -->
+              <!-- <p class="p3">+</p> -->
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe600;</i>
+            </p>
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
+          <div class="mask flex flex-column">
             <router-link to="/service/d">
               <p class="p1">
                 <span>D</span>igital & Web
@@ -75,29 +86,35 @@
                 <p>H5应用开发</p>
               </div>
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe639;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
+          <div class="mask flex flex-column">
             <router-link to="/service/e">
-            <p class="p1">
-            <span>E</span>ditorial
-          </p>
-          <div class="p2">
-            <p>年度摄影服务</p>
-            <p>年度影视服务</p>
-            <p>家庭影像服务</p>
-            <p>商业摄影</p>
-            <p>人物传记</p>
-            <p>宣传片</p>
-          </div>
-          </router-link>
+              <p class="p1">
+                <span>E</span>ditorial
+              </p>
+              <div class="p2">
+                <p>年度摄影服务</p>
+                <p>年度影视服务</p>
+                <p>家庭影像服务</p>
+                <p>商业摄影</p>
+                <p>人物传记</p>
+                <p>宣传片</p>
+              </div>
+            </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe62c;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
+          <div class="mask flex flex-column">
             <router-link to="/service/f">
               <p class="p1">
                 <span>F</span>abrication
@@ -110,6 +127,9 @@
                 <p>场地装饰产品</p>
               </div>
             </router-link>
+            <p class="serviceIcon">
+               <i class="iconfont">&#xe6bc;</i>
+            </p>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
@@ -119,22 +139,27 @@
 </template>
 
 <script>
+import { WOW } from 'wowjs'
+
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
+  },
+  mounted () {
+    new WOW().init()
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -144,6 +169,7 @@ export default {
 @import "../less/common.less";
 
 #section1 {
+  background: #f5f5f5;
   padding: 0.5rem 0;
   .service-wrapper {
     margin: 0 100px;
@@ -173,6 +199,7 @@ export default {
       box-sizing: border-box;
       .mask {
         .background-cover();
+        position: relative;
         z-index: 2;
         justify-content: flex-start;
         height: 100%;
@@ -180,25 +207,37 @@ export default {
         padding-top: @font-size-xxl;
         box-sizing: border-box;
         color: #333;
+        .serviceIcon{
+          position: absolute;
+          bottom: -16px;
+          right: 0;
+          color: #f5f5f5;
+          opacity: .8;
+          font-size: .7rem;
+          z-index: -1;
+        }
       }
       &:hover {
         // background-image: url("../images/s1.png");
         // background-color: rgba(214, 94, 15, 0.7);
+        margin-top: -10px; 
         .mask {
-          // color: #fff;
-          box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+          a {
+            color: @color-theme;
+          }
         }
       }
 
       &:nth-of-type(odd) {
         .mask {
-          background-color: #eeeeee;
+          background-color: #fff;
         }
       }
 
       &:nth-of-type(even) {
         .mask {
-          background-color: #f7f7f7;
+          background-color: #fff;
         }
       }
 

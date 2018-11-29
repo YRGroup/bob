@@ -84,7 +84,7 @@ const team = [{
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
   name: '周智障',
-  avatar : require('@/images/team/b2.png'),
+  avatar: require('@/images/team/b2.png'),
   img1: require('@/images/team/b.png'),
   img2: require('@/images/team/b1.png'),
   skill: '包工头！！',

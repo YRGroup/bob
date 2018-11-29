@@ -8,7 +8,7 @@
     <div  class="case-wrapper">
       <el-row class="case-list">
         <transition-group name="fadeBottom">
-          <el-col v-for="item in caseList" :lg="8" :md="8" :sm="12" :xs="24" :key="item.id">
+          <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
             <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
               <div class="overlay">
                 <!-- <div class="border-hor"></div>
@@ -232,7 +232,7 @@ export default {
     max-width: 1250px;
     margin: 0 auto;
     // margin-bottom: 0.5rem;
-    @base: 0.7rem;
+    @base: 0.75rem;
     .case-item {
       background: #fff;
       position: relative;

@@ -2,7 +2,7 @@
   <div class="team-page">
     <bob-header type="home"></bob-header>
     <div class="full-banner flex-column">
-      <p class="p1">新品牌策划方案</p>
+      <p class="p1">N B D</p>
     </div>
   </div>
 </template>

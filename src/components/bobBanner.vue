@@ -15,7 +15,7 @@
           <div class="text">
             <p class="p3">We Energize Your Own</p>
             <div class="flex keyword">
-              <router-link class="key-link strings" :to="keyLink">
+              <router-link tag="span" class="key-link strings" :to="keyLink">
                 <vue-typer
                   erase-style="backspace"
                   :eraseDelay="10"
@@ -25,11 +25,15 @@
               </router-link>
               <span class="curse">|</span>
             </div>
+            <div class="cn keyword-cn">
+              赋能你的
+              <span>{{keyword}}</span>
+            </div>
           </div>
-          <div class="cn keyword-cn">
+          <!-- <div class="cn keyword-cn">
             赋能你的
             <span>{{keyword}}</span>
-          </div>
+          </div>-->
         </swiper-slide>
         <swiper-slide class="flex">
           <div class="text animated">
@@ -38,8 +42,8 @@
           </div>
         </swiper-slide>
         <swiper-slide class="flex">
-          <div class="text animated" >
-            <router-link to="/full"  class="p1">品牌全案策划</router-link>
+          <div class="text animated">
+            <router-link to="/full" class="p1">品牌全案策划</router-link>
           </div>
         </swiper-slide>
         <div class="prev-btn swiper-btn flex" slot="button-prev">
@@ -68,19 +72,19 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
-import { VueTyper } from 'vue-typer'
-import { keyWords } from '@/assets/keywords'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import "swiper/dist/css/swiper.css";
+import { VueTyper } from "vue-typer";
+import { keyWords } from "@/assets/keywords";
 // console.log(keyWords);
 export default {
-  name: 'home',
+  name: "home",
   components: {
     swiper,
     swiperSlide,
     VueTyper
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         // autoplay: true,
@@ -89,39 +93,39 @@ export default {
         // loop: true,
         speed: 1000,
         navigation: {
-          nextEl: '.next-btn',
-          prevEl: '.prev-btn'
+          nextEl: ".next-btn",
+          prevEl: ".prev-btn"
         }
       },
-      keyLink: '',
-      keyword: ''
-    }
+      keyLink: "",
+      keyword: ""
+    };
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     }
   },
-  created () {
+  created() {
     // this.initSwiper();
-    this.wordList = this.getStringList(keyWords)
-    this.isPhone = document.documentElement.clientWidth > 768
+    this.wordList = this.getStringList(keyWords);
+    this.isPhone = document.documentElement.clientWidth > 768;
   },
   methods: {
-    getStringList (strings) {
-      let arr = []
+    getStringList(strings) {
+      let arr = [];
       strings.forEach(element => {
-        arr.push(element.keyword)
-      })
-      return arr
+        arr.push(element.keyword);
+      });
+      return arr;
     },
-    onTyped (ev) {
-      let index = this.wordList.indexOf(ev)
-      this.keyLink = `/service/${keyWords[index]['type']}`
-      this.keyword = keyWords[index]['cn']
+    onTyped(ev) {
+      let index = this.wordList.indexOf(ev);
+      this.keyLink = `/service/${keyWords[index]["type"]}`;
+      this.keyword = keyWords[index]["cn"];
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
@@ -211,19 +215,14 @@ export default {
     // height: 100px;
     height: 0.8rem;
   }
-  .cn {
-    position: absolute;
-    bottom: 10%;
-    color: #fff;
-    font-size: 14px;
-  }
 
   .strings {
     // font-size: 80px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     // line-height: 0.8rem;
-    color: @color-theme;
+    // color: @color-theme;
     display: inline-block;
+    transition:  all .5s;
     cursor: pointer;
     span {
       cursor: pointer;
@@ -234,13 +233,17 @@ export default {
     .animated {
       animation-duration: 0s;
     }
+    &:hover {
+      // text-shadow: 0 0 20px #fff;
+    }
   }
 
   .keyword-cn {
-    color: #fff;
-    font-size: 14px;
+    color: @color-theme;
+    font-size: 0.13rem;
+    margin-top: 0.4rem;
     span {
-      color: @color-theme;
+      color: #fff;
     }
   }
 
@@ -266,10 +269,12 @@ export default {
 
   .p3 {
     // font-size: 18px;
-    font-size: 0.12rem;
+    font-size: 0.13rem;
     // line-height: 40px;
     line-height: 0.15rem;
     // letter-spacing: 1px;
+    color: @color-theme;
+    // font-weight: bold;
   }
 
   .swiper-slide {
@@ -281,6 +286,7 @@ export default {
       text-align: center;
       color: #fff;
       animation-duration: 1s;
+      padding-bottom: .2rem;
     }
   }
 
