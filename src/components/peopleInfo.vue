@@ -10,56 +10,14 @@
             <span class="span1">{{currentPeople.name}}</span>
             <span class="span2">{{currentPeople.skill}}</span>
           </p>
-          <p class="p2">
-            <!-- <span class="title">技能：</span> -->
-            <!-- <span>{{currentPeople.skill}}</span> -->
-          </p>
           <p class="p3 p">
             <span class="title">EXP：</span>
             <span>{{currentPeople.exp}}</span>
           </p>
-
           <p class="p4 p" v-for="(val, name) in currentPeople.property">
             <span class="title">{{name}}：</span>
             <el-progress class="progress" :stroke-width="8" color="#e9db02" :percentage="val"></el-progress>
           </p>
-
-          <!-- <p class="p4 p">
-            <span class="title">战力：</span>
-            <el-progress
-              class="progress"
-              :stroke-width="8"
-              color="#e9db02"
-              :percentage="currentPeople.property.power">
-            </el-progress>
-          </p>
-          <p class="p5 p">
-            <span class="title">抗性：</span>
-            <el-progress
-              class="progress"
-              :stroke-width="8"
-              color="#ff8c64"
-              :percentage="currentPeople.property.resistance">
-            </el-progress>
-          </p>
-          <p class="p4 p">
-            <span class="title">智慧：</span>
-            <el-progress
-              class="progress"
-              :stroke-width="8"
-              color="#07c8ff"
-              :percentage="currentPeople.property.wisdom">
-            </el-progress>
-          </p>
-          <p class="p5 p">
-            <span class="title">颜值：</span>
-            <el-progress
-              class="progress"
-              :stroke-width="8"
-              color="#49e054"
-              :percentage="currentPeople.property.face">
-            </el-progress>
-          </p>-->
           <p class="p6 p">
             <span class="title">格言：</span>
             <span>{{currentPeople.motto}}</span>

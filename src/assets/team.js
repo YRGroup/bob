@@ -20,9 +20,9 @@ const team = [{
   skill: '骨灰级码农',
   exp: '神乎其技',
   property: {
-    '逻辑': 99,
-    '体型': 99,
-    '拖延症': 99
+    '逻辑': 90,
+    '体型': 90,
+    '拖延症': 95
   },
   color: '#89b929',
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
@@ -64,7 +64,7 @@ const team = [{
   property: {
     '逼格': 99,
     '文艺': 99,
-    '  ': 99
+    '健身': 99
   },
   color: '#7b536e',
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
@@ -76,23 +76,22 @@ const team = [{
   skill: '就会搞两样的那位的领导',
   exp: '青出於蓝',
   property: {
-    power: 5,
-    resistance: 100,
-    wisdom: 90,
-    face: 90
+    '呆萌': 90,
+    '日系': 95,
+    'wisdom': 98
   },
   color: '#dc6545',
   motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
   name: '周智障',
-  avatar: require('@/images/team/b2.png'),
+  avatar : require('@/images/team/b2.png'),
   img1: require('@/images/team/b.png'),
   img2: require('@/images/team/b1.png'),
   skill: '包工头！！',
   exp: '登堂入室',
   property: {
-    power: 50,
-    resistance: 95,
+    '智商': 50,
+    '': 95,
     wisdom: 50,
     face: 90
   },
@@ -111,7 +110,8 @@ const team = [{
     wisdom: 95,
     face: 80
   },
-  color: '#89b929'
+  color: '#89b929',
+  motto: '用颠覆性思维挖掘市场盲点、定位品牌策略！'
 }, {
   name: '尧仔',
   avatar: require('@/images/team/d2.png'),
@@ -153,7 +153,8 @@ const team = [{
     wisdom: 70,
     face: 50
   },
-  color: '#89b929'
+  color: '#89b929',
+  motto: ''
 }
 
 ]
