@@ -8,7 +8,7 @@
     </h5>
     <div class="container-fluid service-wrapper">
       <el-row class="cards">
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">
           <div class="mask flex flex-column">
             <router-link to="/service/a">
               <p class="p1">
@@ -30,7 +30,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
           <div class="mask flex flex-column">
             <router-link to="/service/b">
               <p class="p1">
@@ -50,7 +50,7 @@
             </p>
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
           <div class="mask flex flex-column">
             <router-link to="/service/c">
               <p class="p1">
@@ -71,7 +71,7 @@
             </p>
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
           <div class="mask flex flex-column">
             <router-link to="/service/d">
               <p class="p1">
@@ -92,7 +92,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
           <div class="mask flex flex-column">
             <router-link to="/service/e">
               <p class="p1">
@@ -113,7 +113,7 @@
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card">
+        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
           <div class="mask flex flex-column">
             <router-link to="/service/f">
               <p class="p1">
