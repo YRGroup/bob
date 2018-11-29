@@ -1,12 +1,15 @@
 <template>
   <section class="section1 section" id="section1">
     <h5 class="section-title">
-      <span>服务范围 / <span class="en">our service</span> </span>
+      <span>
+        服务范围 /
+        <span class="en">our service</span>
+      </span>
     </h5>
     <div class="container-fluid service-wrapper">
       <el-row class="cards">
         <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+          <div class="mask flex flex-column">
             <router-link to="/service/a">
               <p class="p1">
                 <span>A</span>nalytics
@@ -25,7 +28,7 @@
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+          <div class="mask flex flex-column">
             <router-link to="/service/b">
               <p class="p1">
                 <span>B</span>randing
@@ -37,13 +40,12 @@
                 <p>宣传册设计</p>
                 <p>PPT模板</p>
               </div>
-            <!-- <p class="p3">+</p> -->
+              <!-- <p class="p3">+</p> -->
             </router-link>
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
-
-          <div class="mask  flex flex-column">
+          <div class="mask flex flex-column">
             <router-link to="/service/c">
               <p class="p1">
                 <span>C</span>ampaign
@@ -56,12 +58,12 @@
                 <p>传播调研</p>
                 <p>传播策略</p>
               </div>
-            <!-- <p class="p3">+</p> -->
+              <!-- <p class="p3">+</p> -->
             </router-link>
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+          <div class="mask flex flex-column">
             <router-link to="/service/d">
               <p class="p1">
                 <span>D</span>igital & Web
@@ -79,25 +81,25 @@
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+          <div class="mask flex flex-column">
             <router-link to="/service/e">
-            <p class="p1">
-            <span>E</span>ditorial
-          </p>
-          <div class="p2">
-            <p>年度摄影服务</p>
-            <p>年度影视服务</p>
-            <p>家庭影像服务</p>
-            <p>商业摄影</p>
-            <p>人物传记</p>
-            <p>宣传片</p>
-          </div>
-          </router-link>
+              <p class="p1">
+                <span>E</span>ditorial
+              </p>
+              <div class="p2">
+                <p>年度摄影服务</p>
+                <p>年度影视服务</p>
+                <p>家庭影像服务</p>
+                <p>商业摄影</p>
+                <p>人物传记</p>
+                <p>宣传片</p>
+              </div>
+            </router-link>
             <!-- <p class="p3">+</p> -->
           </div>
         </el-col>
         <el-col :lg="4" :sm="8" :xs="12" class="card">
-          <div class="mask  flex flex-column">
+          <div class="mask flex flex-column">
             <router-link to="/service/f">
               <p class="p1">
                 <span>F</span>abrication
@@ -120,21 +122,21 @@
 
 <script>
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -185,8 +187,10 @@ export default {
         // background-image: url("../images/s1.png");
         // background-color: rgba(214, 94, 15, 0.7);
         .mask {
-          // color: #fff;
-          box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+          a {
+            color: @color-theme;
+          }
         }
       }
 

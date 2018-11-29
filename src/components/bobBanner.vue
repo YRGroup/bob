@@ -222,6 +222,7 @@ export default {
     // line-height: 0.8rem;
     // color: @color-theme;
     display: inline-block;
+    transition:  all .5s;
     cursor: pointer;
     span {
       cursor: pointer;
@@ -233,13 +234,13 @@ export default {
       animation-duration: 0s;
     }
     &:hover {
-      text-shadow: 0 0 20px #fff, 0 0 30px @color-theme;
+      text-shadow: 0 0 20px #fff;
     }
   }
 
   .keyword-cn {
     color: @color-theme;
-    font-size: 0.14rem;
+    font-size: 0.13rem;
     margin-top: 0.6rem;
     span {
       color: #fff;
@@ -268,7 +269,7 @@ export default {
 
   .p3 {
     // font-size: 18px;
-    font-size: 0.14rem;
+    font-size: 0.13rem;
     // line-height: 40px;
     line-height: 0.15rem;
     // letter-spacing: 1px;

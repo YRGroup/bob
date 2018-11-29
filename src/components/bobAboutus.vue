@@ -1,85 +1,104 @@
 <template>
-  <section class="section2 flex flex-column"
+  <section
+    class="section2 flex flex-column"
     :style="{backgroundPositionY:offsetY+'px'}"
     ref="prax"
-  id="section2">
+    id="section2"
+  >
     <div class="content" id="aboutus">
       <swiper class="swiper-wrapper" :options="swiperOption">
         <swiperSlide class="swiper-slide">
-          <p>不讨论的代价比瞎讨论的代价还要大。</p>
+          <p>
+            <span>不讨论的代价,</span>
+            <span>比瞎讨论的代价还要大。</span>
+          </p>
         </swiperSlide>
         <swiperSlide class="swiper-slide flex flex-column">
-          <p>划掉多余的，美化剩下的。</p>
+          <p>
+            <span>划掉多余的，</span>
+            <span>美化剩下的。</span>
+          </p>
         </swiperSlide>
         <swiperSlide class="swiper-slide">
-          <p>如果你外婆不明白你在搞什么，你就没有在搞事情。</p>
+          <p>
+            <span>如果你外婆不明白你在搞什么，</span>
+            <span>你就没有在搞事情。</span>
+          </p>
         </swiperSlide>
         <swiperSlide class="swiper-slide">
-          <p>互联网最起码的作用是让你难以回首没有它的日子</p>
+          <p>
+            <span>互联网最起码的作用是,</span>
+            <span>让你难以回首没有它的日子。</span>
+          </p>
         </swiperSlide>
         <swiperSlide class="swiper-slide">
-          <p>纪录一下自己，给关心你的。纪录一下他人，给你关心的。</p>
+          <p>
+            <span>纪录一下自己，给关心你的。</span>
+            <span>纪录一下他人，给你关心的。</span>
+          </p>
         </swiperSlide>
         <swiperSlide class="swiper-slide">
-          <p>如果品牌是首诗歌，造出的产品就是诗朗诵。</p>
+          <p>
+            <span>如果品牌是首诗歌，</span>
+            <span>造出的产品就是诗朗诵。</span>
+          </p>
         </swiperSlide>
       </swiper>
       <div class="swiper-pagination" id="section2-pagination" slot="pagination"></div>
     </div>
-
   </section>
 </template>
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import parallax from '@/components/parallax'
-import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import parallax from "@/components/parallax";
+import "swiper/dist/css/swiper.css";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     swiper,
     swiperSlide,
     parallax
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         autoplay: true,
         spaceBetween: 60,
         pagination: {
-          el: '#section2-pagination',
+          el: "#section2-pagination",
           clickable: true,
           // type: 'fraction'
-          bulletClass: 'my-bullet',
-          bulletActiveClass: 'my-bullet-active'
+          bulletClass: "my-bullet",
+          bulletActiveClass: "my-bullet-active"
         }
       },
       offsetY: 0
-    }
+    };
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     }
   },
-  created () {
+  created() {
     // this.initSwiper();
   },
-  mounted () {
-    let offsetY = this.$refs.prax.offsetTop
-    let windowH = document.documentElement.clientHeight
-    let defaultY = offsetY - windowH
-    let domH = this.$refs.prax.clientHeight
-    window.addEventListener('scroll', ev => {
+  mounted() {
+    let offsetY = this.$refs.prax.offsetTop;
+    let windowH = document.documentElement.clientHeight;
+    let defaultY = offsetY - windowH;
+    let domH = this.$refs.prax.clientHeight;
+    window.addEventListener("scroll", ev => {
       if (window.scrollY > defaultY) {
-        this.offsetY = Math.floor((defaultY - window.scrollY) / 3)
+        this.offsetY = Math.floor((defaultY - window.scrollY) / 3);
       }
-    })
+    });
   },
   methods: {}
-}
+};
 </script>
 <style lang="less" >
 @import "../less/variable.less";
@@ -109,20 +128,23 @@ export default {
       // padding-top: 20%;
       box-sizing: border-box;
       color: #fff;
-      font-size: 0.35rem;
+      font-size: 0.3rem;
       justify-content: space-around;
       p {
         text-align: left;
-        opacity: 0.7;
+        // opacity: 0.7;
         position: relative;
         &::before {
           content: "";
           position: absolute;
           top: -30px;
           left: 0;
-          width: 15%;
+          width: .5rem;
           height: 2px;
           background: #fff;
+        }
+        span {
+          display: block;
         }
       }
     }
