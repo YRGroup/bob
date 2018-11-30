@@ -1,6 +1,6 @@
 <template>
   <div class="team-page">
-    <bob-header type="home"></bob-header>
+    <bob-header class="team-header" type="home"></bob-header>
 
     <div class="team-content">
       <people-card
@@ -12,72 +12,62 @@
         @enter="enter(index)"
         @leave="leave"
         @click.native="showCardHandle(index)"
-        >
-      </people-card>
+      ></people-card>
       <div class="top-img">
-        <img src="../images/team_1.png" alt="">
+        <img src="../images/team_1.png" alt>
       </div>
     </div>
     <bob-footer></bob-footer>
-    <el-dialog
-      custom-class="people-dialog"
-      :show-close="false"
-      :visible.sync="mydialog"
-      >
-      <people-info
-        :curentIndex="curentIndex">
-      </people-info>
+    <el-dialog custom-class="people-dialog" :show-close="false" :visible.sync="mydialog">
+      <people-info :curentIndex="curentIndex"></people-info>
     </el-dialog>
-
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import bobHeader from '@/components/bobHeader.vue'
-import bobFooter from '@/components/bobFooter.vue'
-import peopleCard from '@/components/peopleCard.vue'
-import peopleInfo from '@/components/peopleInfo.vue'
+import bobHeader from "@/components/bobHeader.vue";
+import bobFooter from "@/components/bobFooter.vue";
+import peopleCard from "@/components/peopleCard.vue";
+import peopleInfo from "@/components/peopleInfo.vue";
 // import API from '@/api/index'
-import team from '@/assets/team'
+import team from "@/assets/team";
 
-let lazyImg = require('@/images/nodata.jpg')
+let lazyImg = require("@/images/nodata.jpg");
 
 export default {
-  name: 'team',
+  name: "team",
   components: {
     bobHeader,
     bobFooter,
     peopleCard,
     peopleInfo
   },
-  data () {
+  data() {
     return {
       team: team,
       activeIndex: 0,
       hover: false,
       mydialog: false,
       curentIndex: 0
-    }
+    };
   },
-  created () {
-    
-  },
-  mounted () {},
+  created() {},
+  mounted() {},
   methods: {
-    enter (index) {
-      this.hover = true
-      this.activeIndex = index
+    enter(index) {
+      this.hover = true;
+      this.activeIndex = index;
     },
-    leave () {
-      this.hover = false
+    leave() {
+      this.hover = false;
     },
-    showCardHandle (index) {
-      this.mydialog = true
-      this.curentIndex = index
+    showCardHandle(index) {
+      this.mydialog = true;
+      this.curentIndex = index;
     }
   }
-}
+};
 </script>
 <style lang="less" >
 @import "../less/variable.less";
@@ -95,6 +85,9 @@ export default {
       padding: 0;
     }
   }
+}
+.team-header {
+  background: hsla(0, 0%, 39.2%, 0.8);
 }
 .team-content {
   height: 1000px;

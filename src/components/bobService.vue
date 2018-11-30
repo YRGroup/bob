@@ -8,130 +8,160 @@
     </h5>
     <div class="container-fluid service-wrapper">
       <el-row class="cards">
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s">
-          <div class="mask flex flex-column">
-            <router-link to="/service/a">
-              <p class="p1">
-                <span>A</span>nalytics
-              </p>
-              <div class="p2">
-                <p>品牌核心价值</p>
-                <p>品牌研究</p>
-                <p>品牌定位</p>
-                <p>品牌愿景</p>
-                <p>品牌使命</p>
-                <p>品牌主张</p>
-                <p>品牌命名</p>
-              </div>
-            </router-link>
+        <el-col
+          :lg="4"
+          :sm="8"
+          :xs="12"
+          class="card wow fadeInDown"
+          data-wow-delay=".5s"
+          data-wow-duration="1s"
+        >
+          <router-link class="mask flex flex-column" tag="div" to="/service/a">
+            <p class="p1">
+              <span>A</span>nalytics
+            </p>
+            <div class="p2">
+              <p>品牌核心价值</p>
+              <p>品牌研究</p>
+              <p>品牌定位</p>
+              <p>品牌愿景</p>
+              <p>品牌使命</p>
+              <p>品牌主张</p>
+              <p>品牌命名</p>
+            </div>
             <p class="serviceIcon">
               <i class="iconfont">&#xe63b;</i>
             </p>
-            <!-- <p class="p3">+</p> -->
-          </div>
+          </router-link>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s" data-wow-offset="10">
-          <div class="mask flex flex-column">
-            <router-link to="/service/b">
-              <p class="p1">
-                <span>B</span>randing
-              </p>
-              <div class="p2">
-                <p>VI基础部分设计</p>
-                <p>VI应用部分设计</p>
-                <p>LOGO标志设计</p>
-                <p>宣传册设计</p>
-                <p>PPT模板</p>
-              </div>
-              <!-- <p class="p3">+</p> -->
-            </router-link>
+        <el-col
+          :lg="4"
+          :sm="8"
+          :xs="12"
+          class="card wow fadeInDown"
+          data-wow-delay=".3s"
+          data-wow-duration="1.2s"
+          data-wow-offset="10"
+        >
+          <router-link tag="div" to="/service/b" class="mask flex flex-column">
+            <p class="p1">
+              <span>B</span>randing
+            </p>
+            <div class="p2">
+              <p>VI基础部分设计</p>
+              <p>VI应用部分设计</p>
+              <p>LOGO标志设计</p>
+              <p>宣传册设计</p>
+              <p>PPT模板</p>
+            </div>
+            <!-- <p class="p3">+</p> -->
             <p class="serviceIcon">
               <i class="iconfont">&#xe601;</i>
             </p>
-          </div>
+          </router-link>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s" >
-          <div class="mask flex flex-column">
-            <router-link to="/service/c">
-              <p class="p1">
-                <span>C</span>ampaign
-              </p>
-              <div class="p2">
-                <p>线下事件活动服务</p>
-                <p>线上事件营销活动</p>
-                <p>传播侃拼方案</p>
-                <p>媒体管理服务</p>
-                <p>传播调研</p>
-                <p>传播策略</p>
-              </div>
-              <!-- <p class="p3">+</p> -->
-            </router-link>
-            <p class="serviceIcon">
-               <i class="iconfont">&#xe600;</i>
+        <el-col
+          :lg="4"
+          :sm="8"
+          :xs="12"
+          class="card wow fadeInDown"
+          data-wow-delay="0.5s"
+          data-wow-duration="1s"
+        >
+          <router-link tag="div" to="/service/c" class="mask flex flex-column">
+            <p class="p1">
+              <span>C</span>ampaign
             </p>
-          </div>
-        </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
-          <div class="mask flex flex-column">
-            <router-link to="/service/d">
-              <p class="p1">
-                <span>D</span>igital & Web
-              </p>
-              <div class="p2">
-                <p>微信平台解决方案</p>
-                <p>服务器运营外包</p>
-                <p>高端官网定制</p>
-                <p>移动端网站建设</p>
-                <p>业务系统开发</p>
-                <p>H5应用开发</p>
-              </div>
-            </router-link>
+            <div class="p2">
+              <p>线下事件活动服务</p>
+              <p>线上事件营销活动</p>
+              <p>传播侃拼方案</p>
+              <p>媒体管理服务</p>
+              <p>传播调研</p>
+              <p>传播策略</p>
+            </div>
             <p class="serviceIcon">
-               <i class="iconfont">&#xe639;</i>
+              <i class="iconfont">&#xe600;</i>
             </p>
-            <!-- <p class="p3">+</p> -->
-          </div>
+          </router-link>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1s">
-          <div class="mask flex flex-column">
-            <router-link to="/service/e">
-              <p class="p1">
-                <span>E</span>ditorial
-              </p>
-              <div class="p2">
-                <p>年度摄影服务</p>
-                <p>年度影视服务</p>
-                <p>家庭影像服务</p>
-                <p>商业摄影</p>
-                <p>人物传记</p>
-                <p>宣传片</p>
-              </div>
-            </router-link>
+        <el-col
+          :lg="4"
+          :sm="8"
+          :xs="12"
+          class="card wow fadeInDown"
+          data-wow-delay=".3s"
+          data-wow-duration="1.2s"
+        >
+          <router-link tag="div" to="/service/d" class="mask flex flex-column">
+            <p class="p1">
+              <span>D</span>igital & Web
+            </p>
+            <div class="p2">
+              <p>微信平台解决方案</p>
+              <p>服务器运营外包</p>
+              <p>高端官网定制</p>
+              <p>移动端网站建设</p>
+              <p>业务系统开发</p>
+              <p>H5应用开发</p>
+            </div>
+
             <p class="serviceIcon">
-               <i class="iconfont">&#xe62c;</i>
+              <i class="iconfont">&#xe639;</i>
             </p>
             <!-- <p class="p3">+</p> -->
-          </div>
+          </router-link>
         </el-col>
-        <el-col :lg="4" :sm="8" :xs="12" class="card wow fadeInDown" data-wow-delay=".3s" data-wow-duration="1.2s">
-          <div class="mask flex flex-column">
-            <router-link to="/service/f">
-              <p class="p1">
-                <span>F</span>abrication
-              </p>
-              <div class="p2">
-                <p>广告印刷产品</p>
-                <p>广告电子产品</p>
-                <p>广告户外产品</p>
-                <p>文化周边产品</p>
-                <p>场地装饰产品</p>
-              </div>
-            </router-link>
+        <el-col
+          :lg="4"
+          :sm="8"
+          :xs="12"
+          class="card wow fadeInDown"
+          data-wow-delay="0.5s"
+          data-wow-duration="1s"
+        >
+          <router-link tag="div" to="/service/e" class="mask flex flex-column">
+            <p class="p1">
+              <span>E</span>ditorial
+            </p>
+            <div class="p2">
+              <p>年度摄影服务</p>
+              <p>年度影视服务</p>
+              <p>家庭影像服务</p>
+              <p>商业摄影</p>
+              <p>人物传记</p>
+              <p>宣传片</p>
+            </div>
             <p class="serviceIcon">
-               <i class="iconfont">&#xe6bc;</i>
+              <i class="iconfont">&#xe62c;</i>
             </p>
             <!-- <p class="p3">+</p> -->
-          </div>
+          </router-link>
+        </el-col>
+        <el-col
+          :lg="4"
+          :sm="8"
+          :xs="12"
+          class="card wow fadeInDown"
+          data-wow-delay=".3s"
+          data-wow-duration="1.2s"
+        >
+          <router-link tag="div" to="/service/f" class="mask flex flex-column">
+            <p class="p1">
+              <span>F</span>abrication
+            </p>
+            <div class="p2">
+              <p>广告印刷产品</p>
+              <p>广告电子产品</p>
+              <p>广告户外产品</p>
+              <p>文化周边产品</p>
+              <p>场地装饰产品</p>
+            </div>
+            <p class="serviceIcon">
+              <i class="iconfont">&#xe6bc;</i>
+            </p>
+            <!-- <p class="p3">+</p> -->
+          </router-link>
         </el-col>
       </el-row>
     </div>
@@ -139,7 +169,7 @@
 </template>
 
 <script>
-import { WOW } from 'wowjs'
+import { WOW } from "wowjs";
 
 export default {
   name: "bobHeader",
@@ -156,8 +186,8 @@ export default {
       this.show = !this.show;
     }
   },
-  mounted () {
-    new WOW().init()
+  mounted() {
+    new WOW().init();
   }
 };
 </script>
@@ -207,28 +237,21 @@ export default {
         padding-top: @font-size-xxl;
         box-sizing: border-box;
         color: #333;
-        .serviceIcon{
+        .serviceIcon {
           position: absolute;
           bottom: -16px;
           right: 0;
           color: #f5f5f5;
-          opacity: .8;
-          font-size: .7rem;
+          opacity: 0.8;
+          font-size: 0.7rem;
           z-index: -1;
         }
-      }
-      &:hover {
-        // background-image: url("../images/s1.png");
-        // background-color: rgba(214, 94, 15, 0.7);
-        margin-top: -10px; 
-        .mask {
+        &:hover {
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-          a {
-            color: @color-theme;
-          }
+          transform: translateY(-10px);
+          color: @color-theme;
         }
       }
-
       &:nth-of-type(odd) {
         .mask {
           background-color: #fff;
