@@ -18,10 +18,10 @@
             <span class="title">{{name}}：</span>
             <el-progress class="progress" :stroke-width="8" color="#e9db02" :percentage="val"></el-progress>
           </p>
-          <p class="p6 p">
+          <!-- <p class="p6 p">
             <span class="title">格言：</span>
             <span>{{currentPeople.motto}}</span>
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
@@ -128,6 +128,7 @@ export default {
           .span1 {
             font-size: 0.3rem;
             margin-right: 10px;
+            display: block;
           }
           .span2 {
             color: #ddd;
