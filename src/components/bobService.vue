@@ -135,7 +135,6 @@
             <p class="serviceIcon">
               <i class="iconfont">&#xe62c;</i>
             </p>
-            <!-- <p class="p3">+</p> -->
           </router-link>
         </el-col>
         <el-col
