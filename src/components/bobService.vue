@@ -201,6 +201,7 @@ export default {
 #section1 {
   background: #f5f5f5;
   padding: 0.5rem 0;
+
   .service-wrapper {
     margin: 0 100px;
   }
@@ -237,21 +238,24 @@ export default {
         padding-top: @font-size-xxl;
         box-sizing: border-box;
         color: #333;
+
         .serviceIcon {
           position: absolute;
-          bottom: -16px;
+          bottom: -12px;
           right: 0;
           color: #f5f5f5;
           opacity: 0.8;
           font-size: 0.7rem;
           z-index: -1;
         }
+
         &:hover {
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
           transform: translateY(-10px);
           color: @color-theme;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
       }
+
       &:nth-of-type(odd) {
         .mask {
           background-color: #fff;
@@ -267,10 +271,12 @@ export default {
       .p1 {
         font-size: @font-size-xxl;
         font-weight: bold;
+
         span {
           font-size: 0.4rem;
         }
       }
+
       .p2 {
         font-size: 15px;
         line-height: 25px;
@@ -288,15 +294,18 @@ export default {
       }
     }
   }
+
   @media (max-width: 1200px) {
     .service-wrapper {
       margin: auto;
     }
   }
+
   @media (max-width: 768px) {
     .service-wrapper {
       margin: auto;
     }
+
     .cards {
       .card {
         height: 280px;

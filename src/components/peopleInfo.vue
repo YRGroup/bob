@@ -71,10 +71,12 @@ export default {
     box-sizing: border-box;
     height: 100%;
     .peoplePic {
-      height: 85%;
+      width: 400px;
+      height: 400px;
       img {
         // height: 400px;
-        width: 80%;
+        max-width: 100%;
+        max-height: 100%;
       }
     }
     .people-text {

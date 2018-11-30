@@ -2,7 +2,7 @@
   <div class="index-banner">
     <div class="banner-bg" v-if="!$store.state.isMobile">
       <video
-        src="http://yr-zhxy.oss-cn-beijing.aliyuncs.com/bob/bob-video.mp4"
+        src="http://yr-zhxy.oss-cn-beijing.aliyuncs.com/bob/bob-video1.mp4"
         autoplay="autoplay"
         loop
         preload="auto"
