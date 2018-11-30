@@ -86,9 +86,9 @@ export default {
     }
   }
 }
-.team-header {
-  background: hsla(0, 0%, 39.2%, 0.8);
-}
+// .team-header {
+//   background: hsla(0, 0%, 39.2%, 0.8);
+// }
 .team-content {
   height: 1000px;
   // background: #fff;
