@@ -2,7 +2,7 @@
   <div class="nbd-page">
     <bob-header type="home"></bob-header>
     <div class="nbd-banner flex-column">
-      <p class="p1 wow bounceInUp" data-wow-duration="1s">
+      <p class="p1 wow bounceInDown" data-wow-duration="1s">
         <img src="../images/nbd/nbd1.png" alt>
       </p>
     </div>
