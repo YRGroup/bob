@@ -2,8 +2,7 @@
   <div class="case-page" v-if="caseList.length">
     <div class="casetitle">
       <h5 class="section-title">
-        <span>
-          案例展示 /
+        <span>案例展示 /
           <span class="en">case</span>
         </span>
       </h5>

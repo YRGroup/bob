@@ -190,7 +190,6 @@ export default {
       &::after {
         display: none;
       }
-      // display: none;
     }
   }
   .scroll-icon {
@@ -210,17 +209,15 @@ export default {
   .banner-swiper {
     height: 100%;
   }
+  @keywordHeight:1.5rem;
   .keyword {
     justify-content: center;
-    // height: 100px;
-    height: 0.8rem;
+    height: @keywordHeight;
   }
 
   .strings {
-    // font-size: 80px;
-    font-size: 0.8rem;
-    // line-height: 0.8rem;
-    // color: @color-theme;
+    font-size: 1rem;
+    line-height: @keywordHeight;
     display: inline-block;
     transition:  all .5s;
     cursor: pointer;
@@ -228,53 +225,39 @@ export default {
       cursor: pointer;
     }
     font-weight: bold;
-    // text-transform: uppercase;
-    margin-top: 20px;
     .animated {
       animation-duration: 0s;
-    }
-    &:hover {
-      // text-shadow: 0 0 20px #fff;
     }
   }
 
   .keyword-cn {
     color: @color-theme;
     font-size: 0.13rem;
-    margin-top: 0.4rem;
     span {
       color: #fff;
     }
   }
 
   .curse {
-    // font-size: 60px;
     font-size: 0.6rem;
     animation: curse 1s ease infinite;
-    // transform: translateY(-6px);
   }
 
   .p1 {
     text-transform: uppercase;
     font-size: 80px;
-    // line-height: 95px;
     font-weight: bold;
   }
 
   .p2 {
-    // font-weight: bold;
     font-size: 18px;
     line-height: 50px;
   }
 
   .p3 {
-    // font-size: 18px;
     font-size: 0.13rem;
-    // line-height: 40px;
     line-height: 0.15rem;
-    // letter-spacing: 1px;
     color: @color-theme;
-    // font-weight: bold;
   }
 
   .swiper-slide {
@@ -396,7 +379,7 @@ export default {
     }
 
     .strings {
-      font-size: 40px;
+      font-size: 0.6rem;
       margin-top: 10px;
     }
 
