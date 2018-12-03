@@ -31,7 +31,7 @@ export default new Router({
   }, {
     path: '/mteam',
     name: 'mteam',
-    component: () => import(/* webpackChunkName: "team" */ './views/mteam.vue')
+    component: () => import(/* webpackChunkName: "mteam" */ './views/mteam.vue')
   }
   ]
 })

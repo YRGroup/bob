@@ -35,17 +35,20 @@
             <span>{{keyword}}</span>
           </div>-->
         </swiper-slide>
+        <!-- <swiper-slide class="flex">
+          <div class="text animated">
+            <router-link to="/nbd" class="p1">
+              <img src="../images/nbd/nbd1.png" alt="">
+            </router-link>
+          </div>
+        </swiper-slide> -->
         <swiper-slide class="flex">
           <div class="text animated">
             <p class="p1">bridges of brands</p>
             <p class="p2">赋能那些为人性光辉付出努力的个人和组织</p>
           </div>
         </swiper-slide>
-        <swiper-slide class="flex">
-          <div class="text animated">
-            <router-link to="/nbd" class="p1">NBD</router-link>
-          </div>
-        </swiper-slide>
+
         <div class="prev-btn swiper-btn flex" slot="button-prev">
           <div class="lines">
             <span class="top-line line"></span>
@@ -209,7 +212,7 @@ export default {
   .banner-swiper {
     height: 100%;
   }
-  @keywordHeight:1.5rem;
+  @keywordHeight: 1.5rem;
   .keyword {
     justify-content: center;
     height: @keywordHeight;
@@ -219,7 +222,7 @@ export default {
     font-size: 1rem;
     line-height: @keywordHeight;
     display: inline-block;
-    transition:  all .5s;
+    transition: all 0.5s;
     cursor: pointer;
     span {
       cursor: pointer;
@@ -269,7 +272,7 @@ export default {
       text-align: center;
       color: #fff;
       animation-duration: 1s;
-      padding-bottom: .2rem;
+      padding-bottom: 0.2rem;
     }
   }
 
