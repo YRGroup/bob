@@ -2,17 +2,19 @@
   <div class="case-page" v-if="caseList.length">
     <div class="casetitle">
       <h5 class="section-title">
-        <span>案例展示 / <span class="en">case</span> </span>
+        <span>案例展示 /
+          <span class="en">case</span>
+        </span>
       </h5>
     </div>
-    <div  class="case-wrapper">
+    <div class="case-wrapper">
       <el-row class="case-list">
         <transition-group name="fadeBottom">
           <el-col v-for="item in caseList" :lg="8" :md="12" :sm="12" :xs="24" :key="item.id">
-            <router-link class="case-item"  tag="div" :to="`/case/${item.id}`">
+            <router-link class="case-item" tag="div" :to="`/case/${item.id}`">
               <div class="overlay">
                 <!-- <div class="border-hor"></div>
-                <div class="border-ver"></div> -->
+                <div class="border-ver"></div>-->
                 <div class="text-box">
                   <div>
                     <p class="p1">{{item.title}}</p>
@@ -21,62 +23,64 @@
                   </div>
                 </div>
               </div>
-              <div v-lazy:background-image="item.thumbnail" class="case-content" :style="{backgroundImage:`url(${item.thumbnail})`}">
-              </div>
+              <div
+                v-lazy:background-image="item.thumbnail"
+                class="case-content"
+                :style="{backgroundImage:`url(${item.thumbnail})`}"
+              ></div>
               <!-- <div class="case-title">
                 <p class="p1">{{item.title}}</p>
                 <p class="p2">{{item.tag}}</p>
-              </div> -->
+              </div>-->
             </router-link>
           </el-col>
         </transition-group>
       </el-row>
       <el-row class="cases-footer">
-        <div class="more"  v-if="more" @click="getMore">更多案例</div>
+        <div class="more" v-if="more" @click="getMore">更多案例</div>
         <p class="foot" v-else>~ 没有更多了 ~</p>
       </el-row>
     </div>
     <!-- <div v-else>
       暂无案例
-    </div> -->
-
+    </div>-->
   </div>
 </template>
 
 <script>
-import API from '@/api/index'
+import API from "@/api/index";
 // import { getFirstImg } from '@/assets/utils'
-import { info } from '@/assets/info'
-import Case from '@/class/case'
+import { info } from "@/assets/info";
+import Case from "@/class/case";
 export default {
-  name: 'home',
+  name: "home",
   components: {},
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       bannerList: {
         a: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 5
         },
         b: {
-          bannerImg: require('@/images/cases/banner_B1.jpg'),
+          bannerImg: require("@/images/cases/banner_B1.jpg"),
           catId: 6
         },
         c: {
-          bannerImg: require('@/images/3.jpg'),
+          bannerImg: require("@/images/3.jpg"),
           catId: 10
         },
         d: {
-          bannerImg: require('@/images/cases/banner_A1.jpg'),
+          bannerImg: require("@/images/cases/banner_A1.jpg"),
           catId: 4
         },
         e: {
-          bannerImg: require('@/images/cases/banner_E1.jpg'),
+          bannerImg: require("@/images/cases/banner_E1.jpg"),
           catId: 7
         },
         f: {
-          bannerImg: require('@/images/cases/banner_F1.jpg'),
+          bannerImg: require("@/images/cases/banner_F1.jpg"),
           catId: 8
         }
       },
@@ -84,87 +88,87 @@ export default {
       currentPage: 1,
       more: true,
       showTag: false
-    }
+    };
   },
   computed: {
-    banner () {
-      return this.bannerList[this.id].bannerImg
+    banner() {
+      return this.bannerList[this.id].bannerImg;
     },
-    casesName () {
-      return info[this.id].name
+    casesName() {
+      return info[this.id].name;
     },
-    casesIntro () {
-      return info[this.id].introduction
+    casesIntro() {
+      return info[this.id].introduction;
     },
-    caseTypes () {
-      return info[this.id].items
+    caseTypes() {
+      return info[this.id].items;
     },
-    stickyCaseList () {
-      let arr = []
+    stickyCaseList() {
+      let arr = [];
       this.caseList.forEach(el => {
         if (el.sticky) {
-          arr.push(el)
+          arr.push(el);
         }
-      })
-      return arr
+      });
+      return arr;
     }
   },
 
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
-    this.getData()
+    this.getData();
   },
-  mounted () {
+  mounted() {
     // this.showTag = true;
     setTimeout(() => {
-      this.showTag = true
-    }, 1000)
+      this.showTag = true;
+    }, 1000);
   },
   methods: {
-    getData () {
-      let id = this.bannerList[this.id].catId
+    getData() {
+      let id = this.bannerList[this.id].catId;
       API.getCatPosts(id, this.currentPage)
         .then(res => {
           res.data.forEach(el => {
-            this.caseList.push(new Case(el))
-          })
+            this.caseList.push(new Case(el));
+          });
         })
         .catch(err => {
-          console.log(err)
-          this.more = false
-        })
+          console.log(err);
+          this.more = false;
+        });
     },
-    getMore () {
-      this.currentPage++
-      this.getData()
+    getMore() {
+      this.currentPage++;
+      this.getData();
     },
-    formatTags (string) {
-      let arr = string.split('/')
-      arr.pop()
-      return arr.join(' / ')
+    formatTags(string) {
+      let arr = string.split("/");
+      arr.pop();
+      return arr.join(" / ");
     }
   },
   watch: {
-    $route (to, from) {
-      this.id = this.$route.params.id
+    $route(to, from) {
+      this.id = this.$route.params.id;
       if (!this.id) {
-        this.$router.push('/')
+        this.$router.push("/");
       }
-      this.currentPage = 1
-      this.caseList = []
-      this.more = true
-      this.getData()
+      this.currentPage = 1;
+      this.caseList = [];
+      this.more = true;
+      this.getData();
 
       // setTimeout(() => {
       //   this.showTag = true;
       // }, 300);
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -368,12 +372,19 @@ export default {
   }
   @media (max-width: 768px) {
     .case-list {
-      @base: 0.8rem;
+      // @base: 0.8rem;
       .case-item {
-        width: 4 * @base;
-        height: 3 * @base;
+        width: 90vw;
+        height: 67.5vw;
         .case-content {
-          height: 3 * @base;
+          height: 67.5vw;
+        }
+        .overlay {
+          .text-box {
+            .p1 {
+              font-size: 0.2rem;
+            }
+          }
         }
       }
     }
