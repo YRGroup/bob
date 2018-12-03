@@ -41,11 +41,11 @@
             <p class="p2">赋能那些为人性光辉付出努力的个人和组织</p>
           </div>
         </swiper-slide>
-        <!-- <swiper-slide class="flex">
+        <swiper-slide class="flex">
           <div class="text animated">
-            <router-link to="/full" class="p1">品牌全案策划</router-link>
+            <router-link to="/nbd" class="p1">品牌全案策划</router-link>
           </div>
-        </swiper-slide> -->
+        </swiper-slide>
         <div class="prev-btn swiper-btn flex" slot="button-prev">
           <div class="lines">
             <span class="top-line line"></span>
