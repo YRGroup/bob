@@ -190,7 +190,6 @@ export default {
       &::after {
         display: none;
       }
-      // display: none;
     }
   }
   .scroll-icon {
@@ -210,17 +209,15 @@ export default {
   .banner-swiper {
     height: 100%;
   }
+  @keywordHeight:1.5rem;
   .keyword {
     justify-content: center;
-    // height: 100px;
-    height: 0.8rem;
+    height: @keywordHeight;
   }
 
   .strings {
-    // font-size: 80px;
     font-size: 1rem;
-    // line-height: 0.8rem;
-    // color: @color-theme;
+    line-height: @keywordHeight;
     display: inline-block;
     transition:  all .5s;
     cursor: pointer;
@@ -228,8 +225,6 @@ export default {
       cursor: pointer;
     }
     font-weight: bold;
-    // text-transform: uppercase;
-    margin-top: 20px;
     .animated {
       animation-duration: 0s;
     }
@@ -238,17 +233,14 @@ export default {
   .keyword-cn {
     color: @color-theme;
     font-size: 0.13rem;
-    margin-top: 0.4rem;
     span {
       color: #fff;
     }
   }
 
   .curse {
-    // font-size: 60px;
     font-size: 0.6rem;
     animation: curse 1s ease infinite;
-    // transform: translateY(-6px);
   }
 
   .p1 {
