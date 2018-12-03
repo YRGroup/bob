@@ -151,7 +151,7 @@ const team = [{
   avatar: require('@/images/team/f2.png'),
   img1: require('@/images/team/f.png'),
   img2: require('@/images/team/f1.png'),
-  skill: '码农里最能设计的，设计里最能写代码的',
+  skill: '码农里最会搞设计的，设计里最会写代码的',
   exp: '驾轻就熟',
   property: {
     '抗性': 80,
@@ -161,7 +161,5 @@ const team = [{
   },
   color: '#89b929',
   motto: ''
-}
-
-]
+}]
 export default team
