@@ -25,22 +25,25 @@
           <p class="wow bounceInUp" data-wow-duration="1s" data-wow-delay=".5s">
             <img src="../images/nbd/D.png" alt>
           </p>
-          <p class="flex-column wow bounceInUp lsr" data-wow-duration=".6" data-wow-delay="1.2s">
+          <p 
+          class="flex-column wow bounceInUp lsr" 
+          data-wow-duration="1s" 
+          data-wow-delay=".6s">
             <img src="../images/nbd/lrs1.png" alt>
             <img src="../images/nbd/lrs1.png" alt>
             <img src="../images/nbd/lrs1.png" alt>
           </p>
         </div>
         <div class="flex" style="justify-content: flex-start;">
-          <p class="wow bounceInUp" data-wow-duration="1s">
+          <p class="wow bounceInUp" data-wow-duration="1s" data-wow-delay="1s">
             <img src="../images/nbd/line1.png" alt>
           </p>
         </div>
         <div class="flex">
-          <p class="wow bounceInUp" data-wow-duration="1s">
+          <p class="wow bounceInUp" data-wow-duration="1s" data-wow-delay="1s">
             <img src="../images/nbd/F.png" alt>
           </p>
-          <p class="wow bounceInUp" data-wow-duration="1s">
+          <p class="wow bounceInUp" data-wow-duration="1s" data-wow-delay="1s">
             <img src="../images/nbd/E.png" alt>
           </p>
           <p style="visibility:hidden;">
@@ -138,5 +141,24 @@ export default {
     .content {
     }
   }
+}
+@keyframes bounceInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(100px);
+	}
+	
+	50% {
+		opacity: 1;
+		-webkit-transform: translateY(-30px);
+	}
+	
+	75% {
+		-webkit-transform: translateY(10px);
+	}
+	
+	100% {
+		-webkit-transform: translateY(0);
+	}
 }
 </style>
