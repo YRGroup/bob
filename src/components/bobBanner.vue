@@ -41,11 +41,11 @@
             <p class="p2">赋能那些为人性光辉付出努力的个人和组织</p>
           </div>
         </swiper-slide>
-        <!-- <swiper-slide class="flex">
+        <swiper-slide class="flex">
           <div class="text animated">
-            <router-link to="/full" class="p1">品牌全案策划</router-link>
+            <router-link to="/nbd" class="p1">品牌全案策划</router-link>
           </div>
-        </swiper-slide> -->
+        </swiper-slide>
         <div class="prev-btn swiper-btn flex" slot="button-prev">
           <div class="lines">
             <span class="top-line line"></span>
@@ -218,7 +218,7 @@ export default {
 
   .strings {
     // font-size: 80px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     // line-height: 0.8rem;
     // color: @color-theme;
     display: inline-block;
@@ -232,9 +232,6 @@ export default {
     margin-top: 20px;
     .animated {
       animation-duration: 0s;
-    }
-    &:hover {
-      // text-shadow: 0 0 20px #fff;
     }
   }
 
@@ -257,24 +254,18 @@ export default {
   .p1 {
     text-transform: uppercase;
     font-size: 80px;
-    // line-height: 95px;
     font-weight: bold;
   }
 
   .p2 {
-    // font-weight: bold;
     font-size: 18px;
     line-height: 50px;
   }
 
   .p3 {
-    // font-size: 18px;
     font-size: 0.13rem;
-    // line-height: 40px;
     line-height: 0.15rem;
-    // letter-spacing: 1px;
     color: @color-theme;
-    // font-weight: bold;
   }
 
   .swiper-slide {
@@ -396,7 +387,7 @@ export default {
     }
 
     .strings {
-      font-size: 40px;
+      font-size: 0.6rem;
       margin-top: 10px;
     }
 
