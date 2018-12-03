@@ -51,7 +51,7 @@ export default {
       team: team,
       mydialog: false,
       curentIndex: 0,
-      sortPeople: [3, 9, 2, 1, 0, 8, 10, 7, 6, 5, 4]
+      sortPeople: [3, 9, 2, 1, 0, 8, 10, 5, 6, 7, 4]
     }
   },
   computed: {},
