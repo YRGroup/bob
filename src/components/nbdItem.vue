@@ -1,4 +1,8 @@
 <template>
+<div class="nbdCon">
+  <div class="arrow">
+    <img src="../images/arrow.png" alt="">
+  </div>
   <div class="wrappper" @mouseenter="showIcons=true" @mouseleave="showIcons=false">
     <div class="p1">{{item.name}}</div>
     <div class="icons">
@@ -16,6 +20,7 @@
         </div>
       </transition-group>
     </div>
+  </div>
   </div>
 </template>
 <script>
@@ -37,16 +42,29 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+@import "../less/variable.less";
+.nbdCon{
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+.arrow{
+  margin-top: 32px;
+  margin-right: 10px;
+}
 .wrappper {
   position: relative;
+  
   .p1 {
-    width: 95px;
-    height: 95px;
-    border: 2px solid #fff;
-    line-height: 95px;
-    font-size: 50px;
+    width: 80px;
+    height: 80px;
+    // border: 2px solid @color-theme;
+    background: @color-theme;
+    line-height: 80px;
+    font-size: 36px;
     text-align: center;
     color: #fff;
+    border-radius: 50%;
     cursor: pointer;
   }
   .icons {
@@ -67,6 +85,8 @@ export default {
     .p2 {
       font-size: 16px;
       margin-bottom: 20px;
+      color: @color-theme;
+
     }
   }
 }

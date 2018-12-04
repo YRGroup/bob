@@ -125,11 +125,18 @@ export default {
   .section2 {
     padding: 60px 0;
     overflow: hidden;
-    background: @color-theme;
+    height: 400px;
     .content {
       width: 1200px;
       margin: 0 auto;
       align-items: flex-start;
+      .item{
+        &:first-child{
+          .arrow{
+            display: none;
+          }
+        }
+      }
     }
   }
   .section3 {
