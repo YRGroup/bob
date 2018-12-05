@@ -162,10 +162,10 @@ export default {
     z-index: 90;
     .tag {
       cursor: pointer;
-      width: 0.4rem;
-      height: 0.4rem;
+      width: 0.35rem;
+      height: 0.35rem;
       background: #fff;
-      line-height: 0.4rem;
+      line-height: 0.35rem;
       text-align: center;
       margin: 10px 0;
       border: 1px solid #e4e4e4;
@@ -173,7 +173,7 @@ export default {
       color: #d0d0d0;
       transition: all 0.3s;
       .iconfont {
-        font-size: 0.18rem;
+        font-size: 0.16rem;
       }
       &:hover {
         color: @color-theme;
