@@ -9,9 +9,10 @@
           <p class="p2">{{caseInfo.tag}}</p>
         </div>-->
       </div>
-      <bob-article v-if="caseInfo.content">
-        <div class="caseinfotitle">{{caseInfo.title}}</div>
-        <div v-html="caseInfo.content"></div>
+      <bob-article 
+      v-if="caseInfo.content" 
+      :caseInfo="caseInfo">
+      
       </bob-article>
       <!-- -->
     </div>
