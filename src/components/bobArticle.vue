@@ -20,8 +20,9 @@ export default {
 };
 </script>
 
-<style lang="less" >
-@import "../less/wp-article.css";
+<style lang="less">
+@import "../less/wp-article.less";
+
 #case-article {
   background: #fff;
   max-width: 900px;
@@ -45,10 +46,7 @@ export default {
   }
   img {
     max-width: 100%;
-    // width: 100%;
     height: auto;
-    // display: block;
-    margin: 0 auto;
   }
 
   @media (max-width: 760px) {
