@@ -1,26 +1,26 @@
 <template>
-<div class="nbdCon">
-  <div class="arrow">
-    <img src="../images/arrow.png" alt="">
-  </div>
-  <div class="wrappper" @mouseenter="showIcons=true" @mouseleave="showIcons=false">
-    <div class="p1">{{item.name}}</div>
-    <div class="icons">
-      <transition-group name="fade" tag="div">
-        <div
-          v-for="(type, i) in item.types"
-          :key="i"
-          v-show="showIcons"
-          :style="{transitionDelay:i*0.2+'s'}"
-        >
-          <p class="icon">
-            <img :src="type.icon" alt>
-          </p>
-          <p class="p2">{{type.name}}</p>
-        </div>
-      </transition-group>
+  <div class="nbdCon">
+    <div class="arrow" v-if="showArrow">
+      <img src="../images/arrow.png" alt>
     </div>
-  </div>
+    <div class="wrappper" @mouseenter="showIcons=true" @mouseleave="showIcons=false">
+      <div class="p1">{{item.name}}</div>
+      <transition name="icons">
+        <div class="icons" v-show="showIcons">
+          <div
+            v-for="(type, i) in item.types"
+            :key="i"
+            :style="{animationDelay:`${x+i*y}s`}"
+            :class="['icon-box',showIcons ? 'icon-in':'icon-out']"
+          >
+            <p class="icon">
+              <img :src="type.icon" alt>
+            </p>
+            <p class="p2">{{type.name}}</p>
+          </div>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 <script>
@@ -29,12 +29,24 @@ export default {
     item: {
       default: {},
       type: Object
+    },
+    showArrow: {
+      default: false,
+      type: Boolean
     }
   },
   data() {
     return {
       showIcons: false
     };
+  },
+  computed: {
+    x() {
+      return this.showIcons ? 0 : 0.3;
+    },
+    y() {
+      return this.showIcons ? 0.1 : -0.1;
+    }
   },
   created() {},
   methods: {},
@@ -43,18 +55,18 @@ export default {
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
-.nbdCon{
+.nbdCon {
   display: flex;
   flex-direction: row;
   align-items: top;
 }
-.arrow{
+.arrow {
   margin-top: 32px;
   margin-right: 10px;
 }
 .wrappper {
   position: relative;
-  
+
   .p1 {
     width: 80px;
     height: 80px;
@@ -74,6 +86,20 @@ export default {
     color: #fff;
     margin-top: 10px;
     overflow: hidden;
+    .icon-box {
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+    .icon-in {
+      animation-name: icon-in;
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    .icon-out {
+      animation-name: icon-out;
+      // transform: translateX(0%);
+    }
     .icon {
       text-align: center;
 
@@ -86,7 +112,6 @@ export default {
       font-size: 16px;
       margin-bottom: 20px;
       color: @color-theme;
-
     }
   }
 }
@@ -102,16 +127,42 @@ export default {
 }
 .fade-leave-to {
   opacity: 0;
-  // transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
-@keyframes loadingIcon {
-  50% {
-    transform: rotateZ(180deg) scale(1.3);
-  }
+.icons-enter-active,
+.icons-leave-active {
+  // transition: all 0.5s;
+  // transform: translateX(0);
+}
+.icons-leave-active {
+  transition-delay: 0.5s;
+}
+.icons-enter,
+.icons-leave-to {
+  // transform: translateX(100%);
+}
+
+@keyframes icon-in {
+  // 0% {
+  //   opacity: 0;
+  //   transform: translateY(-100%);
+  // }
 
   100% {
-    transform: rotateZ(360deg) scale(1);
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes icon-out {
+  // 0% {
+  //   opacity: 1;
+  //   transform: translateY(0%);
+  // }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
   }
 }
 </style>

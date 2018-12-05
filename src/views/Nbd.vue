@@ -68,7 +68,10 @@
     <div class="section2">
       <div class="content flex">
         <div class="item" v-for="(item, index) in nbd" :key="index">
-          <nbd-item :item="item"></nbd-item>
+          <nbd-item 
+          :item="item" 
+          :showArrow="index?true:false">
+          </nbd-item>
         </div>
       </div>
     </div>
@@ -107,7 +110,7 @@ export default {
   methods: {}
 };
 </script>
-<style lang="less" >
+<style lang="less" scoped>
 @import "../less/variable.less";
 @import "../less/mixin.less";
 .nbd-page {
@@ -130,13 +133,6 @@ export default {
       width: 1200px;
       margin: 0 auto;
       align-items: flex-start;
-      .item{
-        &:first-child{
-          .arrow{
-            display: none;
-          }
-        }
-      }
     }
   }
   .section3 {
