@@ -49,8 +49,8 @@ export default {
   align-items: top;
 }
 .arrow{
-  margin-top: 32px;
-  margin-right: 10px;
+  margin-top: 25px;
+  margin-right: 12px;
 }
 .wrappper {
   position: relative;
@@ -59,7 +59,7 @@ export default {
     width: 80px;
     height: 80px;
     // border: 2px solid @color-theme;
-    background: @color-theme;
+    background: #c34a44;
     line-height: 80px;
     font-size: 36px;
     text-align: center;
@@ -76,16 +76,18 @@ export default {
     overflow: hidden;
     .icon {
       text-align: center;
-
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
       img {
-        width: 50px;
-        height: 50px;
+        max-width: 100%;
+        max-height: 100%;
       }
     }
     .p2 {
       font-size: 16px;
       margin-bottom: 20px;
-      color: @color-theme;
+      color: #c34a44;
 
     }
   }

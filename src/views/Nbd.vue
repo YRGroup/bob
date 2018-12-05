@@ -66,6 +66,7 @@
       </div>
     </div>-->
     <div class="section2">
+      <h5>开发流程 <span>/ Workflow</span></h5>
       <div class="content flex">
         <div class="item" v-for="(item, index) in nbd" :key="index">
           <nbd-item :item="item"></nbd-item>
@@ -110,6 +111,14 @@ export default {
 <style lang="less" >
 @import "../less/variable.less";
 @import "../less/mixin.less";
+h5 {
+      font-size: 0.25rem;
+      margin-bottom: 60px;
+      span{
+        font-size: 0.2rem;
+        opacity: .5;
+      }
+    }
 .nbd-page {
   background: #fff;
   .nbd-banner {
@@ -125,7 +134,7 @@ export default {
   .section2 {
     padding: 60px 0;
     overflow: hidden;
-    height: 400px;
+    height: 450px;
     .content {
       width: 1200px;
       margin: 0 auto;
