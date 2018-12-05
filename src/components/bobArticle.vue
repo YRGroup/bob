@@ -5,17 +5,17 @@
 </template>
 <script>
 export default {
-  data () {
-    return {}
+  data() {
+    return {};
   },
-  created () {},
-  mounted () {
-
-  }
-}
+  created() {},
+  mounted() {}
+};
 </script>
 
 <style lang="less">
+@import "../less/wp-article.css";
+
 .case-article {
   background: #fff;
   max-width: 900px;
@@ -27,16 +27,16 @@ export default {
   position: relative;
   text-align: left;
   line-height: 24px;
-
+  p {
+    // line-height: 28px;
+    // // text-align: ceil()
+  }
   img {
     max-width: 100%;
     // width: 100%;
     height: auto;
-    display: block;
+    // display: block;
     margin: 0 auto;
-    p {
-      line-height: 28px;
-    }
   }
   .wp-video {
     max-width: 100%;

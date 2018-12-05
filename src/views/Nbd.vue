@@ -66,13 +66,15 @@
       </div>
     </div>-->
     <div class="section2">
-      <h5>开发流程 <span>/ Workflow</span></h5>
+      <h5>
+        开发流程
+        <span>/ Development Workflow</span>
+      </h5>
       <div class="content flex">
         <div class="item" v-for="(item, index) in nbd" :key="index">
-          <nbd-item 
-          :item="item" 
-          :showArrow="index?true:false">
-          </nbd-item>
+          <transition name="fade" appear>
+            <nbd-item @handle="showDetail(item.content)" :item="item" :showArrow="index?true:false"></nbd-item>
+          </transition>
         </div>
       </div>
     </div>
@@ -108,20 +110,24 @@ export default {
   mounted() {
     new WOW().init();
   },
-  methods: {}
+  methods: {
+    showDetail(s){
+      console.log(s)
+    }
+  }
 };
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
 @import "../less/mixin.less";
 h5 {
-      font-size: 0.25rem;
-      margin-bottom: 60px;
-      span{
-        font-size: 0.2rem;
-        opacity: .5;
-      }
-    }
+  font-size: 0.25rem;
+  margin-bottom: 60px;
+  span {
+    font-size: 0.2rem;
+    opacity: 0.5;
+  }
+}
 .nbd-page {
   background: #fff;
   .nbd-banner {
@@ -176,5 +182,16 @@ h5 {
   100% {
     -webkit-transform: translateY(0);
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s linear;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 </style>
