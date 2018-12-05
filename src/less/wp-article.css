@@ -32,7 +32,7 @@ Description: Used to style the TinyMCE editor.
 	max-width: 600px;
 	vertical-align: baseline;
 } */
-#acticle {
+#case-article {
   body.post-type-page {
     max-width: 840px;
   }

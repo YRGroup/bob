@@ -1,5 +1,5 @@
 <template>
-  <article class="case-article" id="acticle">
+  <article class="case-article" id="case-article">
     <div class="case-title">{{caseInfo.title}}</div>
     <div v-html="caseInfo.content"></div>
   </article>
@@ -22,7 +22,7 @@ export default {
 
 <style lang="less" >
 @import "../less/wp-article.css";
-#acticle {
+#case-article {
   background: #fff;
   max-width: 900px;
   padding: 0.2rem 0.2rem;
