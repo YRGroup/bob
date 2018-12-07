@@ -132,7 +132,8 @@ h5 {
     color: #fff;
     justify-content: space-around;
     overflow: hidden;
-    background: url("../images/nbd/banner.png") no-repeat;
+    // background: url("../images/nbd/banner.png") no-repeat;
+    background: #c34a44;
   }
   .section2 {
     padding: 60px 0;
