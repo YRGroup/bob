@@ -6,65 +6,6 @@
         <img src="../images/nbd/nbd1.png" alt>
       </p>
     </div>
-    <!-- <div class="section2">
-      <h5>品牌全案服务流程</h5>
-      <div class="content">
-        <p class="wow bounceInUp" data-wow-duration="1s">
-          <img src="../images/nbd/A.png" alt>
-        </p>
-        <p class="wow bounceInUp" data-wow-duration="1s">
-          <img src="../images/nbd/line.png" alt>
-        </p>
-        <div class="flex">
-          <p class="wow bounceInUp" data-wow-duration="1s" >
-            <img src="../images/nbd/B.png" alt>
-          </p>
-          <p class="wow bounceInUp" data-wow-duration="1s">
-            <img src="../images/nbd/C.png" alt>
-          </p>
-          <p class="wow bounceInUp" data-wow-duration="1s" >
-            <img src="../images/nbd/D.png" alt>
-          </p>
-          <p 
-          class="flex-column wow bounceInUp lsr" 
-          data-wow-duration="1s">
-            <img src="../images/nbd/lrs1.png" alt>
-            <img src="../images/nbd/lrs1.png" alt>
-            <img src="../images/nbd/lrs1.png" alt>
-          </p>
-        </div>
-        <div class="flex" style="justify-content: flex-start;">
-          <p class="wow bounceInUp" data-wow-duration="1s" data-wow-delay="1s">
-            <img src="../images/nbd/line1.png" alt>
-          </p>
-        </div>
-        <div class="flex">
-          <p class="wow bounceInUp" data-wow-duration="1s" data-wow-delay="1s">
-            <img src="../images/nbd/F.png" alt>
-          </p>
-          <p class="wow bounceInUp" data-wow-duration="1s" data-wow-delay="1s">
-            <img src="../images/nbd/E.png" alt>
-          </p>
-          <p style="visibility:hidden;">
-            <img src="../images/nbd/E.png" alt>
-          </p>
-          <p style="visibility:hidden;">
-            <img src="../images/nbd/E.png" alt>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section3">
-      <h5>专业定制一体化综合方案</h5>
-      <div class="content">
-        <p class="wow bounceInUp" data-wow-duration="1s">
-          <img src="../images/nbd/pic1.png" alt>
-        </p>
-        <p style="margin-top:20px;" class="wow bounceInUp" data-wow-duration="1s">
-          <img src="../images/nbd/333.png" alt>
-        </p>
-      </div>
-    </div>-->
     <div class="section2">
       <h5>
         开发流程
@@ -73,11 +14,17 @@
       <div class="content flex">
         <div class="item" v-for="(item, index) in nbd" :key="index">
           <transition name="fade" appear>
-            <nbd-item @handle="showDetail(item.content)" :item="item" :showArrow="index?true:false"></nbd-item>
+            <nbd-item
+              @handle="showDetail(posts[index].id)"
+              :item="item"
+              :style="{transitionDelay:`${index*0.1}s`}"
+              :showArrow="index?true:false"
+            ></nbd-item>
           </transition>
         </div>
       </div>
     </div>
+    
     <bob-footer></bob-footer>
   </div>
 </template>
@@ -88,10 +35,11 @@ import bobHeader from "@/components/bobHeader.vue";
 import bobFooter from "@/components/bobFooter.vue";
 import peopleCard from "@/components/peopleCard.vue";
 import nbdItem from "@/components/nbdItem.vue";
-// import API from '@/api/index'
+
+import API from "@/api/index";
 import nbd from "@/assets/nbd";
 import { WOW } from "wowjs";
-
+const NBD_CAT_ID = 44;
 export default {
   name: "nbd",
   components: {
@@ -102,17 +50,29 @@ export default {
   },
   data() {
     return {
-      nbd: nbd
+      nbd: nbd,
+      posts: []
     };
   },
   computed: {},
-  created() {},
+  created() {
+    this.getPosts();
+  },
   mounted() {
     new WOW().init();
   },
   methods: {
-    showDetail(s){
-      console.log(s)
+    showDetail(id) {
+      console.log(id);
+      this.$router.push({
+        path: "/nbddetail/" + id
+      });
+    },
+    getPosts() {
+      API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
+        console.log(res);
+        this.posts = res.data;
+      });
     }
   }
 };
@@ -186,12 +146,12 @@ h5 {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.3s linear;
+  transition: all 0.3s ease-out;
 }
 
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(-20px);
+  transform: translateX(-100%);
 }
 </style>

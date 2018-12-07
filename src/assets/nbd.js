@@ -2,62 +2,68 @@ const nbd = [{
   name: 'A',
   types: [{
     name: '资金',
-    icon: require('@/images/nbd/a1.png')
+    icon: '&#xe61e;'
   }, {
     name: '市场',
-    icon: require('@/images/nbd/a2.png')
+    icon: '&#xe61f;'
   }, {
     name: '产品',
-    icon: require('@/images/nbd/a3.png')
+    icon: '&#xe61d;'
   }],
   content: '11111111111111111111111111111111'
 }, {
   name: 'B',
   types: [{
     name: 'LOGO',
-    icon: require('@/images/nbd/b1.png')
+    icon: '&#xe626;'
   }]
 }, {
   name: 'C',
   types: [{
     name: '宣传',
-    icon: require('@/images/nbd/c1.png')
+    icon: '&#xe622;'
   }]
 }, {
   name: 'D',
   types: [{
-    name: '网站',
-    icon: require('@/images/nbd/d1.png')
+    name: '网站建设',
+    icon: '&#xe621;'
+  }, {
+    name: '小程序开发',
+    icon: '&#xe621;'
+  }, {
+    name: 'H5营销',
+    icon: '&#xe621;'
   }]
 }, {
   name: 'E',
   types: [{
     name: '产品照',
-    icon: require('@/images/nbd/e1.png')
+    icon: '&#xe61d;'
   }]
 }, {
   name: 'F',
   types: [{
     name: '用具',
-    icon: require('@/images/nbd/f1.png')
+    icon: '&#xe627;'
   }]
 }, {
   name: 'L',
   types: [{
     name: '选址',
-    icon: require('@/images/nbd/l1.png')
+    icon: '&#xe624;'
   }]
 }, {
   name: 'S',
   types: [{
     name: '设计',
-    icon: require('@/images/nbd/s1.png')
+    icon: '&#xe620;'
   }]
 }, {
   name: 'R',
   types: [{
     name: '施工',
-    icon: require('@/images/nbd/r1.png')
+    icon: '&#xe625;'
   }]
 }]
 export default nbd

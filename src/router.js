@@ -32,6 +32,10 @@ export default new Router({
     path: '/mteam',
     name: 'mteam',
     component: () => import(/* webpackChunkName: "mteam" */ './views/mteam.vue')
+  }, {
+    path: '/nbddetail/:id',
+    name: 'nbddetail',
+    component: () => import(/* webpackChunkName: "mteam" */ './views/nbddetail.vue')
   }
   ]
 })

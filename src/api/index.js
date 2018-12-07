@@ -14,11 +14,11 @@ if (process.env.NODE_ENV === 'development') {
   origin = window.location.origin
 }
 // @id:分类id; @page:页码； @per_page:每页数量
-API.getCatPosts = (id, currentPage) => {
+API.getCatPosts = (id, currentPage = 1, per_page = 6) => {
   let params = {
     categories: id,
-    page: currentPage || 1,
-    per_page: 6
+    page: currentPage,
+    per_page: per_page
   }
   return getRequest('posts', params)
 }

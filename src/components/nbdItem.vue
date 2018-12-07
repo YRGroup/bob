@@ -14,7 +14,8 @@
             :class="['icon-box',showIcons ? 'icon-in':'icon-out']"
           >
             <p class="icon">
-              <img :src="type.icon" alt>
+              <!-- <img :src="type.icon" alt> -->
+              <i class="iconfont" v-html="type.icon"></i>
             </p>
             <p class="p2">{{type.name}}</p>
           </div>
@@ -112,6 +113,10 @@ export default {
       img {
         max-width: 100%;
         max-height: 100%;
+      }
+      .iconfont{
+        color: #c34a44;
+        font-size: 40px;
       }
     }
     .p2 {
