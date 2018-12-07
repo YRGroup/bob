@@ -1,0 +1,446 @@
+/*
+Theme Name: Twenty Sixteen
+Description: Used to style the TinyMCE editor.
+*/
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Body
+ * 2.0 - Typography
+ * 3.0 - Elements
+ * 4.0 - Alignment
+ * 5.0 - Caption
+ * 6.0 - Galleries
+ * 7.0 - Audio / Video
+ * 8.0 - RTL
+ */
+/**
+ * 1.0 - Body
+ */
+/* body {
+	color: #1a1a1a;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.75;
+	margin: 20px 40px;
+	max-width: 600px;
+	vertical-align: baseline;
+} */
+#case-article {
+  /**
+ * 2.0 - Typography
+ */
+  /**
+ * 3.0 - Elements
+ */
+  /**
+ * 4.0 - Alignment
+ */
+  /**
+ * 5.0 - Caption
+ */
+  /**
+ * 6.0 - Galleries
+ */
+  /**
+ * 7.0 - Audio / Video
+ */
+  /**
+ * 8.0 - RTL
+ */
+}
+#case-article body.post-type-page {
+  max-width: 840px;
+}
+#case-article h1,
+#case-article h2,
+#case-article h3,
+#case-article h4,
+#case-article h5,
+#case-article h6 {
+  clear: both;
+  font-weight: 900;
+  margin: 56px 0 28px;
+}
+#case-article h1 {
+  font-size: 33px;
+  line-height: 1.2727272727;
+}
+#case-article h2 {
+  font-size: 28px;
+  line-height: 1.25;
+}
+#case-article h3 {
+  font-size: 23px;
+  line-height: 1.2173913043;
+}
+#case-article h4,
+#case-article h5,
+#case-article h6 {
+  font-size: 19px;
+  line-height: 1.1052631579;
+}
+#case-article h4 {
+  letter-spacing: 0.13333em;
+  text-transform: uppercase;
+}
+#case-article h6 {
+  font-style: italic;
+}
+#case-article h1:first-child,
+#case-article h2:first-child,
+#case-article h3:first-child,
+#case-article h4:first-child,
+#case-article h5:first-child,
+#case-article h6:first-child {
+  margin-top: 0;
+}
+#case-article p {
+  line-height: 1.3;
+}
+#case-article b,
+#case-article strong {
+  font-weight: 700;
+}
+#case-article dfn,
+#case-article cite,
+#case-article em,
+#case-article i {
+  font-style: italic;
+}
+#case-article blockquote {
+  border-left: 4px solid #1a1a1a;
+  color: #686868;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.4736842105;
+  margin-bottom: 28px;
+  overflow: hidden;
+  padding: 0 0 0 24px;
+}
+#case-article blockquote:not(.alignleft):not(.alignright) {
+  margin-left: -28px;
+}
+#case-article blockquote blockquote:not(.alignleft):not(.alignright) {
+  margin-left: 0;
+}
+#case-article blockquote:before,
+#case-article blockquote:after {
+  content: "";
+  display: table;
+}
+#case-article blockquote:after {
+  clear: both;
+}
+#case-article blockquote > :last-child {
+  margin-bottom: 0;
+}
+#case-article blockquote cite,
+#case-article blockquote small {
+  color: #1a1a1a;
+  font-size: 16px;
+  line-height: 1.75;
+}
+#case-article blockquote em,
+#case-article blockquote i,
+#case-article blockquote cite {
+  font-style: normal;
+}
+#case-article blockquote strong,
+#case-article blockquote b {
+  font-weight: 400;
+}
+#case-article blockquote.alignleft,
+#case-article blockquote.alignright {
+  border: 0 solid #1a1a1a;
+  border-top-width: 4px;
+  padding: 18px 0 0;
+  width: -webkit-calc(36%);
+  width: calc(36%);
+}
+#case-article address {
+  font-style: italic;
+  margin: 0 0 28px;
+}
+#case-article code,
+#case-article kbd,
+#case-article tt,
+#case-article var,
+#case-article samp,
+#case-article pre {
+  font-family: Inconsolata, monospace;
+}
+#case-article pre {
+  border: 1px solid #d1d1d1;
+  font-size: 16px;
+  line-height: 1.3125;
+  margin: 0 0 28px;
+  max-width: 100%;
+  overflow: auto;
+  padding: 14px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+#case-article code {
+  background-color: #d1d1d1;
+  padding: 2px 4px;
+}
+#case-article abbr[title] {
+  border-bottom: 1px dotted #d1d1d1;
+  cursor: help;
+}
+#case-article mark,
+#case-article ins {
+  background: #007acc;
+  color: #fff;
+  padding: 2px 4px;
+  text-decoration: none;
+}
+#case-article sup,
+#case-article sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+#case-article sub {
+  top: -6px;
+}
+#case-article sup {
+  bottom: -3px;
+}
+#case-article small {
+  font-size: 80%;
+}
+#case-article big {
+  font-size: 125%;
+}
+#case-article hr {
+  background-color: #d1d1d1;
+  border: 0;
+  height: 1px;
+  margin-bottom: 28px;
+}
+#case-article ul,
+#case-article ol {
+  margin: 0 0 28px 0;
+  padding: 0;
+}
+#case-article ul {
+  list-style: disc;
+}
+#case-article ol {
+  list-style: decimal;
+}
+#case-article li > ul,
+#case-article li > ol {
+  margin-bottom: 0;
+}
+#case-article li > ul,
+#case-article blockquote > ul {
+  margin-left: 20px;
+}
+#case-article li > ol,
+#case-article blockquote > ol {
+  margin-left: 24px;
+}
+#case-article dl {
+  margin: 0 0 28px;
+}
+#case-article dt {
+  font-weight: bold;
+}
+#case-article dd {
+  margin: 0 0 28px;
+}
+#case-article table,
+#case-article th,
+#case-article td,
+#case-article .mce-item-table,
+#case-article .mce-item-table th,
+#case-article .mce-item-table td {
+  border: 1px solid #d1d1d1;
+}
+#case-article table a {
+  color: #007acc;
+}
+#case-article table,
+#case-article .mce-item-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-width: 1px 0 0 1px;
+  margin: 0 0 28px;
+  width: 100%;
+}
+#case-article table th,
+#case-article .mce-item-table th,
+#case-article table caption {
+  border-width: 0 1px 1px 0;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 7px;
+  text-align: left;
+  vertical-align: baseline;
+}
+#case-article table td,
+#case-article .mce-item-table td {
+  border-width: 0 1px 1px 0;
+  font-size: 16px;
+  padding: 7px;
+  vertical-align: baseline;
+}
+#case-article img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+#case-article a img {
+  display: block;
+}
+#case-article figure {
+  margin: 0;
+}
+#case-article del {
+  opacity: 0.8;
+}
+#case-article a {
+  box-shadow: 0 1px 0 0 currentColor;
+  color: #007acc;
+  text-decoration: none;
+}
+#case-article fieldset {
+  border: 1px solid #d1d1d1;
+  margin: 0 0 28px;
+  padding: 14px;
+}
+#case-article .alignleft {
+  float: left;
+  margin: 6px 28px 28px 0;
+}
+#case-article .alignright {
+  float: right;
+  margin: 6px 0 28px 28px;
+}
+#case-article .aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto 28px;
+}
+#case-article .wp-caption {
+  background: transparent;
+  border: none;
+  margin-bottom: 28px;
+  max-width: 100%;
+  padding: 0;
+  text-align: inherit;
+}
+#case-article .wp-caption-text,
+#case-article .wp-caption-dd {
+  color: #686868;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.6153846154;
+  padding-top: 7px;
+}
+#case-article .mce-content-body .wpview-wrap {
+  margin-bottom: 28px;
+}
+#case-article .gallery {
+  margin: 0 -1.1666667%;
+  padding: 0;
+}
+#case-article .gallery .gallery-item {
+  display: inline-block;
+  max-width: 33.33%;
+  padding: 0 1.1400652% 2.2801304%;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+#case-article .gallery-columns-1 .gallery-item {
+  max-width: 100%;
+}
+#case-article .gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+#case-article .gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+#case-article .gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+#case-article .gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+#case-article .gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+#case-article .gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+#case-article .gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+#case-article .gallery .gallery-caption {
+  font-size: 13px;
+  margin: 0;
+}
+#case-article .gallery-columns-6 .gallery-caption,
+#case-article .gallery-columns-7 .gallery-caption,
+#case-article .gallery-columns-8 .gallery-caption,
+#case-article .gallery-columns-9 .gallery-caption {
+  display: none;
+}
+#case-article .wp-audio-shortcode a,
+#case-article .wp-playlist a {
+  box-shadow: none;
+}
+#case-article .mce-content-body .wp-audio-playlist {
+  margin: 0;
+  padding-bottom: 0;
+}
+#case-article .mce-content-body .wp-playlist-tracks {
+  margin-top: 0;
+}
+#case-article .mce-content-body .wp-playlist-item {
+  padding: 10px 0;
+}
+#case-article .mce-content-body .wp-playlist-item-length {
+  top: 10px;
+}
+#case-article .rtl blockquote {
+  border: 0 solid #1a1a1a;
+  border-right-width: 4px;
+}
+#case-article .rtl blockquote.alignleft,
+#case-article .rtl blockquote.alignright {
+  border: 0 solid #1a1a1a;
+  border-top-width: 4px;
+}
+#case-article .rtl blockquote:not(.alignleft):not(.alignright) {
+  margin-right: -28px;
+  padding: 0 24px 0 0;
+}
+#case-article .rtl blockquote blockquote:not(.alignleft):not(.alignright) {
+  margin-right: 0;
+  margin-left: auto;
+}
+#case-article .rtl li > ul,
+#case-article .rtl blockquote > ul {
+  margin-right: 20px;
+  margin-left: auto;
+}
+#case-article .rtl li > ol,
+#case-article .rtl blockquote > ol {
+  margin-right: 24px;
+  margin-left: auto;
+}
+#case-article .rtl table th,
+#case-article .rtl .mce-item-table th,
+#case-article .rtl table caption {
+  text-align: right;
+}

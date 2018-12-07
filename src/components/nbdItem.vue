@@ -4,7 +4,7 @@
       <img src="../images/arrow.png" alt>
     </div>
     <div class="wrappper" @mouseenter="showIcons=true" @mouseleave="showIcons=false">
-      <div class="p1">{{item.name}}</div>
+      <div class="p1" @click="handle">{{item.name}}</div>
       <transition name="icons">
         <div class="icons" v-show="showIcons">
           <div
@@ -49,7 +49,11 @@ export default {
     }
   },
   created() {},
-  methods: {},
+  methods: {
+    handle(){
+      this.$emit('handle')
+    }
+  },
   watch: {}
 };
 </script>
@@ -89,7 +93,7 @@ export default {
     .icon-box {
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      animation-timing-function: linear;
+      animation-timing-function: ease-out;
     }
     .icon-in {
       animation-name: icon-in;

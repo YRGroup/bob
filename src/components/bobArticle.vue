@@ -1,22 +1,29 @@
 <template>
-  <article class="case-article" id="acticle">
-    <slot></slot>
+  <article class="case-article" id="case-article">
+    <div class="case-title">{{caseInfo.title}}</div>
+    <div v-html="caseInfo.content"></div>
   </article>
 </template>
 <script>
 export default {
-  data () {
-    return {}
+  props: {
+    caseInfo: {
+      type: Object,
+      default: {}
+    }
   },
-  created () {},
-  mounted () {
-
-  }
-}
+  data() {
+    return {};
+  },
+  created() {},
+  mounted() {}
+};
 </script>
 
 <style lang="less">
-.case-article {
+@import "../less/wp-article.less";
+
+#case-article {
   background: #fff;
   max-width: 900px;
   padding: 0.2rem 0.2rem;
@@ -27,26 +34,21 @@ export default {
   position: relative;
   text-align: left;
   line-height: 24px;
-
+  .case-title {
+    font-size: 0.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  p {
+    // line-height: 28px;
+    // // text-align: ceil()
+  }
   img {
     max-width: 100%;
-    // width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
-    p {
-      line-height: 28px;
-    }
   }
-  .wp-video {
-    max-width: 100%;
-    text-align: center;
-    video {
-      object-fit: cover;
-      max-width: 80%;
-      height: auto;
-    }
-  }
+
   @media (max-width: 760px) {
     font-size: 0.2rem;
     .wp-video {
@@ -56,4 +58,13 @@ export default {
     }
   }
 }
+  .wp-video {
+    max-width: 100%;
+    text-align: center;
+    video {
+      object-fit: cover;
+      max-width: 80%;
+      height: auto;
+    }
+  }
 </style>
