@@ -16,6 +16,12 @@ const nbd = [{
   types: [{
     name: 'LOGO',
     icon: '&#xe626;'
+  }, {
+    name: 'LOGO',
+    icon: '&#xe626;'
+  }, {
+    name: 'LOGO',
+    icon: '&#xe626;'
   }]
 }, {
   name: 'C',
@@ -30,16 +36,22 @@ const nbd = [{
     icon: '&#xe621;'
   }, {
     name: '小程序开发',
-    icon: '&#xe621;'
+    icon: '&#xe60e;'
   }, {
     name: 'H5营销',
-    icon: '&#xe621;'
+    icon: '&#xe605;'
   }]
 }, {
   name: 'E',
   types: [{
     name: '产品照',
     icon: '&#xe61d;'
+  }, {
+    name: '宣传片',
+    icon: '&#xe686;'
+  }, {
+    name: '活动照',
+    icon: '&#xe62c;'
   }]
 }, {
   name: 'F',
