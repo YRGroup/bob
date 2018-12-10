@@ -41,10 +41,10 @@ const nbd = [{
     icon: '&#xe621;'
   }, {
     name: '小程序开发',
-    icon: '&#xe621;'
+    icon: '&#xe60e;'
   }, {
     name: 'H5营销',
-    icon: '&#xe621;'
+    icon: '&#xe605;'
   }]
 }, {
   name: 'E',
@@ -57,6 +57,12 @@ const nbd = [{
   }, {
     name: '产品摄影',
     icon: '&#xe61d;'
+  }, {
+    name: '宣传片',
+    icon: '&#xe686;'
+  }, {
+    name: '活动照',
+    icon: '&#xe62c;'
   }]
 }, {
   name: 'F',
