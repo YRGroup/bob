@@ -1,6 +1,6 @@
 <template>
   <article class="case-article" id="case-article">
-    <div class="case-title">{{caseInfo.title}}</div>
+    <div v-if="showTitle" class="case-title">{{caseInfo.title}}</div>
     <div v-html="caseInfo.content"></div>
   </article>
 </template>
@@ -10,6 +10,10 @@ export default {
     caseInfo: {
       type: Object,
       default: {}
+    },
+    showTitle: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -58,13 +62,13 @@ export default {
     }
   }
 }
-  .wp-video {
-    max-width: 100%;
-    text-align: center;
-    video {
-      object-fit: cover;
-      max-width: 80%;
-      height: auto;
-    }
+.wp-video {
+  max-width: 100%;
+  text-align: center;
+  video {
+    object-fit: cover;
+    max-width: 80%;
+    height: auto;
   }
+}
 </style>

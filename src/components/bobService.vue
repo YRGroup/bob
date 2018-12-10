@@ -12,7 +12,7 @@
           :lg="4"
           :sm="8"
           :xs="12"
-          class="card wow fadeInDown"
+          class="card wow bounceInUp"
           data-wow-delay=".5s"
           data-wow-duration="1s"
         >
@@ -38,7 +38,7 @@
           :lg="4"
           :sm="8"
           :xs="12"
-          class="card wow fadeInDown"
+          class="card wow bounceInUp"
           data-wow-delay=".3s"
           data-wow-duration="1.2s"
           data-wow-offset="10"
@@ -64,7 +64,7 @@
           :lg="4"
           :sm="8"
           :xs="12"
-          class="card wow fadeInDown"
+          class="card wow bounceInUp"
           data-wow-delay="0.5s"
           data-wow-duration="1s"
         >
@@ -89,7 +89,7 @@
           :lg="4"
           :sm="8"
           :xs="12"
-          class="card wow fadeInDown"
+          class="card wow bounceInUp"
           data-wow-delay=".3s"
           data-wow-duration="1.2s"
         >
@@ -116,7 +116,7 @@
           :lg="4"
           :sm="8"
           :xs="12"
-          class="card wow fadeInDown"
+          class="card wow bounceInUp"
           data-wow-delay="0.5s"
           data-wow-duration="1s"
         >
@@ -141,7 +141,7 @@
           :lg="4"
           :sm="8"
           :xs="12"
-          class="card wow fadeInDown"
+          class="card wow bounceInUp"
           data-wow-delay=".3s"
           data-wow-duration="1.2s"
         >
@@ -196,7 +196,7 @@ export default {
 @import "../less/variable.less";
 @import "../less/mixin.less";
 @import "../less/common.less";
-
+// @import "../css/animate.css";
 #section1 {
   background: #f5f5f5;
   padding: 0.5rem 0;
@@ -310,25 +310,6 @@ export default {
         height: 280px;
       }
     }
-  }
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(50px);
-  }
-
-  50% {
-    opacity: 1;
-    -webkit-transform: translateY(-30px);
-  }
-
-  75% {
-    -webkit-transform: translateY(10px);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
   }
 }
 </style>

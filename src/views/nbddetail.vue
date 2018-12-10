@@ -74,7 +74,7 @@ export default {
 <style lang="less" scoped>
 @import "../less/mixin.less";
 @import "../less/common.less";
-@import "../css/animate.css";
+// @import "../css/animate.css";
 .nbddetail {
   background: #ffff;
   .content {

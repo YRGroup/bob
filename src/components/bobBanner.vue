@@ -261,6 +261,7 @@ export default {
     font-size: 0.13rem;
     line-height: 0.15rem;
     color: @color-theme;
+    transform: translateY(20px);
   }
 
   .swiper-slide {

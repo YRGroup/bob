@@ -4,7 +4,8 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import 'animate.css'
+// import 'animate.css'
+import "./css/animate.css"
 
 import VueParticles from 'vue-particles'
 import VueLazyload from 'vue-lazyload'

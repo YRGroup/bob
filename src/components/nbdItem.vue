@@ -76,7 +76,7 @@ export default {
     width: 80px;
     height: 80px;
     // border: 2px solid @color-theme;
-    background: #c34a44;
+    background: @color-theme;;
     line-height: 80px;
     font-size: 36px;
     text-align: center;
@@ -115,14 +115,14 @@ export default {
         max-height: 100%;
       }
       .iconfont{
-        color: #c34a44;
+        color: @color-theme;;
         font-size: 40px;
       }
     }
     .p2 {
       font-size: 16px;
       margin-bottom: 20px;
-      color: #c34a44;
+      color: @color-theme;;
 
     }
   }

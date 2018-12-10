@@ -158,7 +158,7 @@ export default {
 <style lang="less" >
 @import "../less/mixin.less";
 @import "../less/common.less";
-@import "../css/animate.css";
+// @import "../css/animate.css";
 .scroll-icon {
   width: 40px;
   height: 40px;

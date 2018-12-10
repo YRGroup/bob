@@ -15,7 +15,7 @@
         <div class="item" v-for="(item, index) in nbd" :key="index">
           <transition name="fade" appear>
             <nbd-item
-              @handle="showDetail(posts[index].id)"
+              @handle="showDetail(posts[index].id,index)"
               :item="item"
               :style="{transitionDelay:`${index*0.1}s`}"
               :showArrow="index?true:false"
@@ -24,8 +24,23 @@
         </div>
       </div>
     </div>
-    
+
     <bob-footer></bob-footer>
+    <transition name="fade">
+      <div class="slideDialog" v-show="showSideDialog">
+        <div class="dialogContent">
+          <ul class="nav-list">
+            <li
+              :class="['item',index==currentIndex&&'active']"
+              v-for="(item, index) in nbd"
+              :key="index"
+              @click="handleNavItem(index)"
+            >{{item.name}}</li>
+          </ul>
+          <bob-article :showTitle="false" v-if="post&&post.content" :caseInfo="post"></bob-article>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -34,8 +49,9 @@
 import bobHeader from "@/components/bobHeader.vue";
 import bobFooter from "@/components/bobFooter.vue";
 import peopleCard from "@/components/peopleCard.vue";
+import bobArticle from "@/components/bobArticle.vue";
 import nbdItem from "@/components/nbdItem.vue";
-
+import Case from "@/class/case";
 import API from "@/api/index";
 import nbd from "@/assets/nbd";
 import { WOW } from "wowjs";
@@ -46,15 +62,24 @@ export default {
     bobHeader,
     bobFooter,
     peopleCard,
-    nbdItem
+    nbdItem,
+    bobArticle
   },
   data() {
     return {
       nbd: nbd,
-      posts: []
+      posts: [],
+      showSideDialog: false,
+      currentIndex: -1
     };
   },
-  computed: {},
+  computed: {
+    post() {
+      if (this.currentIndex != -1) {
+        return new Case(this.posts[this.currentIndex]);
+      }
+    }
+  },
   created() {
     this.getPosts();
   },
@@ -62,11 +87,16 @@ export default {
     new WOW().init();
   },
   methods: {
-    showDetail(id) {
+    showDetail(id, index) {
       console.log(id);
-      this.$router.push({
-        path: "/nbddetail/" + id
-      });
+      // this.$router.push({
+      //   path: "/nbddetail/" + id
+      // });
+      this.showSideDialog = true;
+      this.currentIndex = index;
+    },
+    handleNavItem(index) {
+      this.currentIndex = index;
     },
     getPosts() {
       API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
@@ -99,7 +129,7 @@ h5 {
     justify-content: space-around;
     overflow: hidden;
     // background: url("../images/nbd/banner.png") no-repeat;
-    background: #c34a44;
+    background: @color-theme;
   }
   .section2 {
     padding: 60px 0;
@@ -124,26 +154,45 @@ h5 {
       width: 1250px;
     }
   }
+  .slideDialog {
+    // background: #333;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    .dialogContent {
+      height: 100%;
+      background: #fff;
+      overflow: scroll;
+      .nav-list {
+        margin: 20px auto;
+        .item {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          border: 1px solid @color-theme;
+          color: @color-theme;
+          border-radius: 50%;
+          line-height: 50px;
+          margin: 0 10px;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            color: #fff;
+            background: @color-theme;
+          }
+          &.active {
+            color: #fff;
+            background: @color-theme;
+          }
+        }
+      }
+    }
+  }
 }
-@keyframes bounceInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100px);
-  }
 
-  50% {
-    opacity: 1;
-    -webkit-transform: translateY(-30px);
-  }
-
-  75% {
-    -webkit-transform: translateY(10px);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
 
 .fade-enter-active,
 .fade-leave-active {

@@ -236,7 +236,7 @@ export default {
 <style lang="less" >
 @import "../less/variable.less";
 @import "../less/mixin.less";
-@import "../css/animate.css";
+// @import "../css/animate.css";
 
 .case-page {
   background: #fff;
