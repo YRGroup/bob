@@ -16,12 +16,12 @@ export default {
       default: true
     }
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  created() {},
-  mounted() {}
-};
+  created () {},
+  mounted () {}
+}
 </script>
 
 <style lang="less">
@@ -29,11 +29,6 @@ export default {
 
 #case-article {
   background: #fff;
-  max-width: 900px;
-  padding: 0.2rem 0.2rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
   overflow: hidden;
   position: relative;
   text-align: left;
@@ -43,10 +38,6 @@ export default {
     font-weight: 500;
     text-align: center;
     margin-bottom: 50px;
-  }
-  p {
-    // line-height: 28px;
-    // // text-align: ceil()
   }
   img {
     max-width: 100%;

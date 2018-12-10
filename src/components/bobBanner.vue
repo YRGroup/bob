@@ -75,19 +75,19 @@
 
 <script>
 // @ is an alias to /src
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
-import { VueTyper } from "vue-typer";
-import { keyWords } from "@/assets/keywords";
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import { VueTyper } from 'vue-typer'
+import { keyWords } from '@/assets/keywords'
 // console.log(keyWords);
 export default {
-  name: "home",
+  name: 'home',
   components: {
     swiper,
     swiperSlide,
     VueTyper
   },
-  data() {
+  data () {
     return {
       swiperOption: {
         // autoplay: true,
@@ -96,39 +96,39 @@ export default {
         // loop: true,
         speed: 1000,
         navigation: {
-          nextEl: ".next-btn",
-          prevEl: ".prev-btn"
+          nextEl: '.next-btn',
+          prevEl: '.prev-btn'
         }
       },
-      keyLink: "",
-      keyword: ""
-    };
+      keyLink: '',
+      keyword: ''
+    }
   },
   computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
+    swiper () {
+      return this.$refs.mySwiper.swiper
     }
   },
-  created() {
+  created () {
     // this.initSwiper();
-    this.wordList = this.getStringList(keyWords);
-    this.isPhone = document.documentElement.clientWidth > 768;
+    this.wordList = this.getStringList(keyWords)
+    this.isPhone = document.documentElement.clientWidth > 768
   },
   methods: {
-    getStringList(strings) {
-      let arr = [];
+    getStringList (strings) {
+      let arr = []
       strings.forEach(element => {
-        arr.push(element.keyword);
-      });
-      return arr;
+        arr.push(element.keyword)
+      })
+      return arr
     },
-    onTyped(ev) {
-      let index = this.wordList.indexOf(ev);
-      this.keyLink = `/service/${keyWords[index]["type"]}`;
-      this.keyword = keyWords[index]["cn"];
+    onTyped (ev) {
+      let index = this.wordList.indexOf(ev)
+      this.keyLink = `/service/${keyWords[index]['type']}`
+      this.keyword = keyWords[index]['cn']
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";

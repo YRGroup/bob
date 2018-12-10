@@ -8,20 +8,20 @@
   </div>
 </template>
 <script>
-import { info } from "@/assets/info";
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import API from "@/api/index";
-import bobHeader from "@/components/bobHeader.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import Case from "@/class/case";
+import { info } from '@/assets/info'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import API from '@/api/index'
+import bobHeader from '@/components/bobHeader.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import Case from '@/class/case'
 // import * as THREE from "three";
 // import * as TWEEN from "tween";
 // console.log(THREE);
 
-const NBD_CAT_ID = 44;
+const NBD_CAT_ID = 44
 export default {
-  name: "nbddetail",
+  name: 'nbddetail',
   components: {
     bobHeader,
     bobFooter,
@@ -29,47 +29,47 @@ export default {
     swiperSlide,
     bobArticle
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       posts: [],
       post: {}
-    };
+    }
   },
   computed: {},
-  created() {
-    this.id = this.$route.params.id;
-    console.log(this.$route);
+  created () {
+    this.id = this.$route.params.id
+    console.log(this.$route)
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
     // this.getPosts();
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    getPosts() {
+    getPosts () {
       API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
-        console.log(res);
-        this.posts = res.data;
-      });
+        console.log(res)
+        this.posts = res.data
+      })
     },
-    getPost(id) {
+    getPost (id) {
       API.getPost(id).then(res => {
-        console.log(res);
-        this.post = new Case(res.data);
-      });
+        console.log(res)
+        this.post = new Case(res.data)
+      })
     }
   },
   watch: {
-    id(newVal) {
-      this.getPost(newVal);
+    id (newVal) {
+      this.getPost(newVal)
     }
   },
-  beforeRouteUpdate(to, from, next) {
-    this.id = to.params.id;
-    next();
+  beforeRouteUpdate (to, from, next) {
+    this.id = to.params.id
+    next()
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";
