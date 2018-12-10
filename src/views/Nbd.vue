@@ -38,6 +38,7 @@
             >{{item.name}}</li>
           </ul>
           <bob-article :showTitle="false" v-if="post&&post.content" :caseInfo="post"></bob-article>
+          <div class="close"></div>
         </div>
       </div>
     </transition>
@@ -55,6 +56,7 @@ import Case from "@/class/case";
 import API from "@/api/index";
 import nbd from "@/assets/nbd";
 import { WOW } from "wowjs";
+import { initBody, hiddenBody } from "@/assets/utils.js";
 const NBD_CAT_ID = 44;
 export default {
   name: "nbd",
@@ -94,6 +96,7 @@ export default {
       // });
       this.showSideDialog = true;
       this.currentIndex = index;
+      hiddenBody();
     },
     handleNavItem(index) {
       this.currentIndex = index;
@@ -192,7 +195,6 @@ h5 {
     }
   }
 }
-
 
 .fade-enter-active,
 .fade-leave-active {

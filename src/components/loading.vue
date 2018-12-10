@@ -6,6 +6,8 @@
   </transition>
 </template>
 <script>
+import { initBody, hiddenBody } from "@/assets/utils.js";
+
 export default {
   props: {
     visiable: {
@@ -21,12 +23,10 @@ export default {
   },
   methods: {
     initBody() {
-      document.getElementsByTagName("body")[0].style.height = "100vh";
-      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+      hiddenBody();
     },
     closeHandle() {
-      document.getElementsByTagName("body")[0].style.height = "";
-      document.getElementsByTagName("body")[0].style.overflow = "";
+      initBody();
     }
   },
   watch: {
