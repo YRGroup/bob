@@ -6,12 +6,12 @@ export function getFirstImg(content) {
   return firstImg
 }
 
-export function hiddenBody(content) {
+export function hiddenBody() {
   document.getElementsByTagName("body")[0].style.height = "100vh";
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
 }
 
-export function initBody(content) {
+export function initBody() {
   document.getElementsByTagName("body")[0].style.height = "";
   document.getElementsByTagName("body")[0].style.overflow = "";
 }

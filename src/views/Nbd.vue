@@ -36,9 +36,9 @@
               :key="index"
               @click="handleNavItem(index)"
             >{{item.name}}</li>
+            <li class="item" @click="handleClose">x</li>
           </ul>
           <bob-article :showTitle="false" v-if="post&&post.content" :caseInfo="post"></bob-article>
-          <div class="close"></div>
         </div>
       </div>
     </transition>
@@ -100,6 +100,10 @@ export default {
     },
     handleNavItem(index) {
       this.currentIndex = index;
+    },
+    handleClose() {
+      this.showSideDialog = false;
+      initBody();
     },
     getPosts() {
       API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
@@ -169,17 +173,21 @@ h5 {
       height: 100%;
       background: #fff;
       overflow: scroll;
+      position: relative;
       .nav-list {
-        margin: 20px auto;
+        // margin: 20px auto;
+        position: fixed;
+        right: 160px;
+        top: 50px;
         .item {
-          display: inline-block;
+          // display: inline-block;
           width: 50px;
           height: 50px;
           border: 1px solid @color-theme;
           color: @color-theme;
           border-radius: 50%;
           line-height: 50px;
-          margin: 0 10px;
+          margin: 15px 0;
           cursor: pointer;
           transition: all 0.3s;
           &:hover {
@@ -191,6 +199,13 @@ h5 {
             background: @color-theme;
           }
         }
+      }
+      .close {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        font-size: 30px;
+        cursor: pointer;
       }
     }
   }

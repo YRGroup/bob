@@ -9,25 +9,30 @@ const nbd = [{
   }, {
     name: '产品',
     icon: '&#xe61d;'
-  }],
-  content: '11111111111111111111111111111111'
+  }]
 }, {
   name: 'B',
   types: [{
-    name: 'LOGO',
-    icon: '&#xe626;'
+    name: 'VIS基础',
+    icon: '&#xe61e;'
   }, {
-    name: 'LOGO',
-    icon: '&#xe626;'
+    name: 'VIS应用',
+    icon: '&#xe61f;'
   }, {
-    name: 'LOGO',
-    icon: '&#xe626;'
+    name: 'VIS扩展',
+    icon: '&#xe61d;'
   }]
 }, {
   name: 'C',
   types: [{
-    name: '宣传',
-    icon: '&#xe622;'
+    name: '前置营销',
+    icon: '&#xe61e;'
+  }, {
+    name: '开业营销',
+    icon: '&#xe61f;'
+  }, {
+    name: '季度/年度营销',
+    icon: '&#xe61d;'
   }]
 }, {
   name: 'D',
@@ -44,7 +49,13 @@ const nbd = [{
 }, {
   name: 'E',
   types: [{
-    name: '产品照',
+    name: '公关摄影',
+    icon: '&#xe61e;'
+  }, {
+    name: '形象片拍摄',
+    icon: '&#xe61f;'
+  }, {
+    name: '产品摄影',
     icon: '&#xe61d;'
   }, {
     name: '宣传片',
@@ -56,8 +67,14 @@ const nbd = [{
 }, {
   name: 'F',
   types: [{
-    name: '用具',
-    icon: '&#xe627;'
+    name: '资金',
+    icon: '&#xe61e;'
+  }, {
+    name: '市场',
+    icon: '&#xe61f;'
+  }, {
+    name: '产品',
+    icon: '&#xe61d;'
   }]
 }, {
   name: 'L',
