@@ -33,9 +33,9 @@
             <p>Analytics</p>
           </div>
           <ul class="nav-list">
-            <li class="item back" @click="handleClose">
+            <!-- <li class="item back" @click="handleClose">
               <i class="iconfont">&#xe67f;</i>
-            </li>
+            </li> -->
             <li
               :class="['item',index==currentIndex&&'active']"
               v-for="(item, index) in nbd"
@@ -232,17 +232,14 @@ h5 {
             color: #fff;
             background: @color-theme;
           }
-<<<<<<< HEAD
 
         }
         .closenbd{
+          // &.back {
+          //   transform: rotate(-90deg);
+          // }
           color: #fff;
           background: @color-theme;
-=======
-          &.back {
-            transform: rotate(-90deg);
-          }
->>>>>>> 42e8aad5997517e4f3333c184bd8533f16757959
         }
       }
       .close {
