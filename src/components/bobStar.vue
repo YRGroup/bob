@@ -1,5 +1,6 @@
 <template>
-  <div class="wrapper">
+  <div class="can-wrapper">
+    <div class="bg"></div>
     <canvas id="canvas"></canvas>
   </div>
 </template>
@@ -9,70 +10,60 @@ export default {
   data() {
     return {};
   },
-  created() {
+  created() {},
+  mounted() {
     this.initCanvas();
   },
   methods: {
     initCanvas() {
       var canvas = document.getElementById("canvas"),
-        canvas2 = document.createElement("canvas");
-      console.log(canvas.width);
-      var w = (canvas.width = window.innerWidth),
-        h = (canvas.height = window.innerHeight),
+        ctx = canvas.getContext("2d"),
+        w = (canvas.width = window.innerWidth),
+        h = (canvas.height = 650),
         hue = 217,
         stars = [],
         count = 0,
         maxStars = 1300; //星星数量
-
+      var canvas2 = document.createElement("canvas"),
+        ctx2 = canvas2.getContext("2d");
       canvas2.width = 100;
       canvas2.height = 100;
-      console.log(canvas2.width, canvas2.height);
-
-      var half = canvas2.width / 2;
-      this.ctx = canvas.getContext("2d");
-      this.ctx2 = canvas2.getContext("2d");
-
-      var gradient2 = this.ctx2.createRadialGradient(
-        half,
-        half,
-        0,
-        half,
-        half,
-        half
-      );
+      var half = canvas2.width / 2,
+        gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
       gradient2.addColorStop(0.025, "#CCC");
       gradient2.addColorStop(0.1, "hsl(" + hue + ", 61%, 33%)");
       gradient2.addColorStop(0.25, "hsl(" + hue + ", 64%, 6%)");
       gradient2.addColorStop(1, "transparent");
 
-      this.ctx2.fillStyle = gradient2;
-      this.ctx2.beginPath();
-      this.ctx2.arc(half, half, half, 0, Math.PI * 2);
-      this.ctx2.fill();
-      this.showStar(maxStars);
-      this.animation(stars);
-    },
-    random(min, max) {
-      if (arguments.length < 2) {
-        max = min;
-        min = 0;
+      ctx2.fillStyle = gradient2;
+      ctx2.beginPath();
+      ctx2.arc(half, half, half, 0, Math.PI * 2);
+      ctx2.fill();
+
+      // End cache
+
+      function random(min, max) {
+        if (arguments.length < 2) {
+          max = min;
+          min = 0;
+        }
+
+        if (min > max) {
+          var hold = max;
+          max = min;
+          min = hold;
+        }
+
+        return Math.floor(Math.random() * (max - min + 1)) + min;
       }
 
-      if (min > max) {
-        var hold = max;
-        max = min;
-        min = hold;
+      function maxOrbit(x, y) {
+        var max = Math.max(x, y),
+          diameter = Math.round(Math.sqrt(max * max + max * max));
+        return diameter / 2;
+        //星星移动范围，值越大范围越小，
       }
 
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    },
-    maxOrbit(x, y) {
-      var max = Math.max(x, y),
-        diameter = Math.round(Math.sqrt(max * max + max * max));
-      return diameter / 2;
-      //星星移动范围，值越大范围越小，
-    },
-    showStar(maxStars) {
       var Star = function() {
         this.orbitRadius = random(maxOrbit(w, h));
         this.radius = random(60, this.orbitRadius) / 8;
@@ -80,8 +71,9 @@ export default {
         this.orbitX = w / 2;
         this.orbitY = h / 2;
         this.timePassed = random(0, maxStars);
-        this.speed = random(this.orbitRadius) / 100000;
         //星星移动速度
+        this.speed = random(this.orbitRadius) / 500000;
+
         this.alpha = random(2, 10) / 10;
 
         count++;
@@ -109,25 +101,41 @@ export default {
         );
         this.timePassed += this.speed;
       };
+
       for (var i = 0; i < maxStars; i++) {
         new Star();
       }
-    },
-    animation(stars) {
-      this.ctx.globalCompositeOperation = "source-over";
-      this.ctx.globalAlpha = 0.8; //尾巴
-      this.ctx.fillStyle = "hsla(" + hue + ", 64%, 6%, 2)";
-      this.ctx.fillRect(0, 0, w, h);
 
-      this.ctx.globalCompositeOperation = "lighter";
-      for (var i = 1, l = stars.length; i < l; i++) {
-        stars[i].draw();
+      function animation() {
+        ctx.globalCompositeOperation = "source-over";
+        ctx.globalAlpha = 0.8; //尾巴
+        ctx.fillStyle = "hsla(" + hue + ", 64%, 6%, 2)";
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.globalCompositeOperation = "lighter";
+        for (var i = 1, l = stars.length; i < l; i++) {
+          stars[i].draw();
+        }
+
+        window.requestAnimationFrame(animation);
       }
 
-      window.requestAnimationFrame(animation);
+      animation();
     }
   }
 };
 </script>
 <style lang="less" scoped>
+.can-wrapper {
+  position: relative;
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: url("11.jpg") no-repeat center center;
+    opacity: 0.2;
+  }
+}
 </style>
