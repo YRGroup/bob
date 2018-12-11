@@ -15,14 +15,14 @@ const nbd = [{
   name: 'B',
   icon: '&#xe61e',
   types: [{
-    name: 'VIS基础',
+    name: 'LOGO',
     icon: '&#xe626;'
   }, {
-    name: 'VIS应用',
-    icon: '&#xe61f;'
+    name: 'VIS',
+    icon: '&#xe64d;'
   }, {
-    name: 'VIS扩展',
-    icon: '&#xe61d;'
+    name: 'VIS应用和开发',
+    icon: '&#xe614;'
   }]
 }, {
   name: 'C',

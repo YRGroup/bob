@@ -118,12 +118,13 @@ export default {
     max-width: 1000px;
     img {
       width: 100%;
+      vertical-align: bottom;
     }
   }
   .detail-content {
     align-items: flex-start;
     justify-content: space-around;
-    padding-top: 50px;
+    padding: 50px 0;
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
