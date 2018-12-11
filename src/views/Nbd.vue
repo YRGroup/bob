@@ -46,8 +46,6 @@
             <p
               v-for="(item, index) in post.imgs"
               :key="index"
-              class="animated bounceInDown"
-              data-wow-duration="1s"
             >
               <img :src="item" alt="BOB">
             </p>

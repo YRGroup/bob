@@ -94,6 +94,7 @@ export default {
     margin-top: 10px;
     overflow: hidden;
     .icon-box {
+      padding-top: 10px;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
       animation-timing-function: ease-out;
@@ -123,7 +124,6 @@ export default {
     }
     .p2 {
       font-size: 16px;
-      margin-bottom: 20px;
       color: @color-theme;
     }
   }
