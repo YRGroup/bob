@@ -29,16 +29,22 @@
     <transition name="fade">
       <div class="slideDialog" v-show="showSideDialog">
         <div class="dialogContent">
+          <div class="dialoHeader">
+            <p>Analytics</p>
+          </div>
           <ul class="nav-list">
-            <li class="item back" @click="handleClose">
+            <!-- <li class="item back" @click="handleClose">
               <i class="iconfont">&#xe67f;</i>
-            </li>
+            </li> -->
             <li
               :class="['item',index==currentIndex&&'active']"
               v-for="(item, index) in nbd"
               :key="index"
               @click="handleNavItem(index)"
             >{{item.name}}</li>
+            <li class="item closenbd" @click="handleClose">
+               <i class="iconfont">&#xe604;</i>
+            </li>
           </ul>
 
           <div class="case-article" v-if="post">
@@ -185,11 +191,26 @@ h5 {
       background: #fff;
       overflow: scroll;
       position: relative;
+      .dialoHeader{
+        background: url("../images/nbd/headerBg.jpg") no-repeat;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+          display: inline-block;
+          width: 900px;
+          text-align: left;
+          color: #fff;
+          font-size: .3rem;
+          opacity: .7;
+        }
+      }
       .nav-list {
         // margin: 20px auto;
         position: fixed;
         right: 160px;
-        top: 50px;
+        top: 160px;
         .item {
           // display: inline-block;
           width: 50px;
@@ -198,7 +219,7 @@ h5 {
           color: @color-theme;
           border-radius: 50%;
           line-height: 50px;
-          margin: 15px 0;
+          margin: 10px 0;
           cursor: pointer;
           transition: all 0.3s;
           &:hover {
@@ -209,9 +230,14 @@ h5 {
             color: #fff;
             background: @color-theme;
           }
-          &.back {
-            transform: rotate(-90deg);
-          }
+
+        }
+        .closenbd{
+          // &.back {
+          //   transform: rotate(-90deg);
+          // }
+          color: #fff;
+          background: @color-theme;
         }
       }
       .close {
