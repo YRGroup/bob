@@ -19,7 +19,7 @@
       <div class="content">
         <div class="case-article" v-if="post">
           <p
-            class="wow fadeInUp"
+            class="wow fadeInUpBig"
             data-wow-duration="1.2s"
             v-for="(item, index) in post.imgs"
             :key="index"
@@ -42,10 +42,6 @@ import bobFooter from "@/components/bobFooter.vue";
 import Case from "@/class/case";
 import nbd from "@/assets/nbd";
 import { WOW } from "wowjs";
-// import * as THREE from "three";
-// import * as TWEEN from "tween";
-// console.log(THREE);
-
 const NBD_CAT_ID = 44;
 export default {
   name: "nbddetail",
@@ -128,6 +124,7 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    padding-bottom: 50px;
   }
   .nav-list {
     // position: absolute;

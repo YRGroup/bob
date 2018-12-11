@@ -5,7 +5,9 @@
       <p class="p1 wow bounceInDown" data-wow-duration="1s">
         <img src="../images/nbd/nbd1.png" alt>
       </p>
+      <bob-star></bob-star>
     </div>
+
     <div class="section2">
       <h5>
         开发流程
@@ -34,6 +36,7 @@ import bobHeader from "@/components/bobHeader.vue";
 import bobFooter from "@/components/bobFooter.vue";
 import peopleCard from "@/components/peopleCard.vue";
 import bobArticle from "@/components/bobArticle.vue";
+import bobStar from "@/components/bobStar.vue";
 import nbdItem from "@/components/nbdItem.vue";
 import Case from "@/class/case";
 import API from "@/api/index";
@@ -48,7 +51,8 @@ export default {
     bobFooter,
     peopleCard,
     nbdItem,
-    bobArticle
+    bobArticle,
+    bobStar
   },
   data() {
     return {
@@ -118,6 +122,10 @@ h5 {
     overflow: hidden;
     // background: url("../images/nbd/banner.png") no-repeat;
     background: @color-theme;
+    .p1 {
+      position: absolute;
+      z-index: 20;
+    }
   }
   .section2 {
     padding: 60px 0;

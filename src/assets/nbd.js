@@ -1,6 +1,6 @@
 const nbd = [{
   name: 'A',
-  icon: '&#xe61e',
+  icon: '&#xe63b;',
   types: [{
     name: '资金',
     icon: '&#xe61e;'
@@ -13,7 +13,7 @@ const nbd = [{
   }]
 }, {
   name: 'B',
-  icon: '&#xe61e',
+  icon: '&#xe601;',
   types: [{
     name: 'LOGO',
     icon: '&#xe626;'
@@ -26,7 +26,7 @@ const nbd = [{
   }]
 }, {
   name: 'C',
-  icon: '&#xe61e',
+  icon: '&#xe600;',
   types: [{
     name: '前置营销',
     icon: '&#xe65d;'
@@ -39,7 +39,7 @@ const nbd = [{
   }]
 }, {
   name: 'D',
-  icon: '&#xe61e',
+  icon: '&#xe639;',
   types: [{
     name: '网站建设',
     icon: '&#xe621;'
@@ -52,7 +52,7 @@ const nbd = [{
   }]
 }, {
   name: 'E',
-  icon: '&#xe61e',
+  icon: '&#xe62c;',
   types: [{
     name: '公关摄影',
     icon: '&#xe62c;'
@@ -65,7 +65,7 @@ const nbd = [{
   }]
 }, {
   name: 'F',
-  icon: '&#xe61e',
+  icon: '&#xe6bc;',
   types: [{
     name: '周边定制',
     icon: '&#xe6bc;'
@@ -78,7 +78,7 @@ const nbd = [{
   }]
 }, {
   name: 'L',
-  icon: '&#xe61e',
+  icon: '&#xe624;',
   types: [{
     name: '商圈考察',
     icon: '&#xe79d;'
@@ -91,7 +91,7 @@ const nbd = [{
   }]
 }, {
   name: 'S',
-  icon: '&#xe61e',
+  icon: '&#xe620;',
   types: [{
     name: '测量',
     icon: '&#xe684;'
@@ -104,7 +104,7 @@ const nbd = [{
   }]
 }, {
   name: 'R',
-  icon: '&#xe61e',
+  icon: '&#xe625;',
   types: [{
     name: '选材',
     icon: '&#xe61a;'
