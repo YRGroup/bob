@@ -24,41 +24,7 @@
         </div>
       </div>
     </div>
-
     <bob-footer></bob-footer>
-    <transition name="fade">
-      <div class="slideDialog" v-show="showSideDialog">
-        <div class="dialogContent">
-          <div class="dialoHeader">
-            <p>Analytics</p>
-          </div>
-          <ul class="nav-list">
-            <!-- <li class="item back" @click="handleClose">
-              <i class="iconfont">&#xe67f;</i>
-            </li> -->
-            <li
-              :class="['item',index==currentIndex&&'active']"
-              v-for="(item, index) in nbd"
-              :key="index"
-              @click="handleNavItem(index)"
-            >{{item.name}}</li>
-            <li class="item closenbd" @click="handleClose">
-               <i class="iconfont">&#xe604;</i>
-            </li>
-          </ul>
-
-          <div class="case-article" v-if="post">
-            <!-- <bob-article :showTitle="false"  :caseInfo="post"></bob-article> -->
-            <p
-              v-for="(item, index) in post.imgs"
-              :key="index"
-            >
-              <img :src="item" alt="BOB">
-            </p>
-          </div>
-        </div>
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -108,12 +74,10 @@ export default {
   },
   methods: {
     showDetail(id, index) {
-      // this.$router.push({
-      //   path: "/nbddetail/" + id
-      // });
-      this.showSideDialog = true;
+      // this.currentIndex = index;
+      this.$router.push("nbddetail/" + id);
       this.currentIndex = index;
-      hiddenBody();
+      // hiddenBody();
     },
     handleNavItem(index) {
       this.currentIndex = index;
@@ -191,19 +155,19 @@ h5 {
       background: #fff;
       overflow: scroll;
       position: relative;
-      .dialoHeader{
+      .dialoHeader {
         background: url("../images/nbd/headerBg.jpg") no-repeat;
         height: 160px;
         display: flex;
         align-items: center;
         justify-content: center;
-        p{
+        p {
           display: inline-block;
           width: 900px;
           text-align: left;
           color: #fff;
-          font-size: .3rem;
-          opacity: .7;
+          font-size: 0.3rem;
+          opacity: 0.7;
         }
       }
       .nav-list {
@@ -230,9 +194,8 @@ h5 {
             color: #fff;
             background: @color-theme;
           }
-
         }
-        .closenbd{
+        .closenbd {
           // &.back {
           //   transform: rotate(-90deg);
           // }

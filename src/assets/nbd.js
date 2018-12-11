@@ -1,5 +1,6 @@
 const nbd = [{
   name: 'A',
+  icon: '&#xe61e',
   types: [{
     name: '资金',
     icon: '&#xe61e;'
@@ -12,6 +13,7 @@ const nbd = [{
   }]
 }, {
   name: 'B',
+  icon: '&#xe61e',
   types: [{
     name: 'VIS基础',
     icon: '&#xe61e;'
@@ -24,6 +26,7 @@ const nbd = [{
   }]
 }, {
   name: 'C',
+  icon: '&#xe61e',
   types: [{
     name: '前置营销',
     icon: '&#xe61e;'
@@ -36,6 +39,7 @@ const nbd = [{
   }]
 }, {
   name: 'D',
+  icon: '&#xe61e',
   types: [{
     name: '网站建设',
     icon: '&#xe621;'
@@ -48,6 +52,7 @@ const nbd = [{
   }]
 }, {
   name: 'E',
+  icon: '&#xe61e',
   types: [{
     name: '公关摄影',
     icon: '&#xe61e;'
@@ -60,33 +65,55 @@ const nbd = [{
   }]
 }, {
   name: 'F',
+  icon: '&#xe61e',
   types: [{
-    name: '资金',
+    name: '周边定制',
     icon: '&#xe61e;'
   }, {
-    name: '市场',
+    name: '环境导视',
     icon: '&#xe61f;'
   }, {
-    name: '产品',
+    name: '文化创建',
     icon: '&#xe61d;'
   }]
 }, {
   name: 'L',
+  icon: '&#xe61e',
   types: [{
+    name: '商圈考察',
+    icon: '&#xe61e;'
+  }, {
     name: '选址',
-    icon: '&#xe624;'
+    icon: '&#xe61f;'
+  }, {
+    name: '投资收益评估',
+    icon: '&#xe61d;'
   }]
 }, {
   name: 'S',
+  icon: '&#xe61e',
   types: [{
+    name: '测量',
+    icon: '&#xe61e;'
+  }, {
+    name: '空间规划',
+    icon: '&#xe61f;'
+  }, {
     name: '设计',
-    icon: '&#xe620;'
+    icon: '&#xe61d;'
   }]
 }, {
   name: 'R',
+  icon: '&#xe61e',
   types: [{
+    name: '选材',
+    icon: '&#xe61e;'
+  }, {
     name: '施工',
-    icon: '&#xe625;'
+    icon: '&#xe61f;'
+  }, {
+    name: '装饰',
+    icon: '&#xe61d;'
   }]
 }]
 export default nbd
