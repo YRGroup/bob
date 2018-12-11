@@ -7,7 +7,7 @@ class Case {
     this.sticky = data.sticky
     this.tag = this.formatTags(data.tags)
     this.id = data.id
-    // this.imgs = this.getBanner(data.content.rendered)
+    this.imgs = this.getBanner(data.content.rendered)
     this.bannerUrl = data.bannerUrl
   }
   setBanner (url) {

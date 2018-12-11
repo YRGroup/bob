@@ -33,6 +33,9 @@
             <p>Analytics</p>
           </div>
           <ul class="nav-list">
+            <li class="item back" @click="handleClose">
+              <i class="iconfont">&#xe67f;</i>
+            </li>
             <li
               :class="['item',index==currentIndex&&'active']"
               v-for="(item, index) in nbd"
@@ -43,7 +46,18 @@
                <i class="iconfont">&#xe604;</i>
             </li>
           </ul>
-          <bob-article :showTitle="false" v-if="post&&post.content" :caseInfo="post"></bob-article>
+
+          <div class="case-article" v-if="post">
+            <!-- <bob-article :showTitle="false"  :caseInfo="post"></bob-article> -->
+            <p
+              v-for="(item, index) in post.imgs"
+              :key="index"
+              class="animated bounceInDown"
+              data-wow-duration="1s"
+            >
+              <img :src="item" alt="BOB">
+            </p>
+          </div>
         </div>
       </div>
     </transition>
@@ -83,7 +97,8 @@ export default {
   computed: {
     post() {
       if (this.currentIndex != -1) {
-        return new Case(this.posts[this.currentIndex]);
+        let post = this.posts[this.currentIndex];
+        return new Case(post);
       }
     }
   },
@@ -95,7 +110,6 @@ export default {
   },
   methods: {
     showDetail(id, index) {
-      console.log(id);
       // this.$router.push({
       //   path: "/nbddetail/" + id
       // });
@@ -218,11 +232,17 @@ h5 {
             color: #fff;
             background: @color-theme;
           }
+<<<<<<< HEAD
 
         }
         .closenbd{
           color: #fff;
           background: @color-theme;
+=======
+          &.back {
+            transform: rotate(-90deg);
+          }
+>>>>>>> 42e8aad5997517e4f3333c184bd8533f16757959
         }
       }
       .close {
@@ -231,6 +251,16 @@ h5 {
         top: 30px;
         font-size: 30px;
         cursor: pointer;
+      }
+      .case-article {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        img {
+          width: 100%;
+          // max-width: 100%;
+        }
       }
     }
   }

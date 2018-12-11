@@ -5,18 +5,18 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  props:{
+  props: {
 
   },
   computed: {},
-  created() {}
-};
+  created () {}
+}
 </script>
 <style lang="less" scoped>
-.parallax {
-  
-}
+// .parallax {
+
+// }
 </style>

@@ -6,7 +6,7 @@
   </transition>
 </template>
 <script>
-import { initBody, hiddenBody } from "@/assets/utils.js";
+import { initBody, hiddenBody } from '@/assets/utils.js'
 
 export default {
   props: {
@@ -15,28 +15,28 @@ export default {
       type: Boolean
     }
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  created() {
-    this.initBody();
+  created () {
+    this.initBody()
   },
   methods: {
-    initBody() {
-      hiddenBody();
+    initBody () {
+      hiddenBody()
     },
-    closeHandle() {
-      initBody();
+    closeHandle () {
+      initBody()
     }
   },
   watch: {
-    visiable(newVal, oldVal) {
+    visiable (newVal, oldVal) {
       if (!newVal) {
-        this.closeHandle();
+        this.closeHandle()
       }
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 .loading-wrapper {
@@ -80,4 +80,3 @@ export default {
   }
 }
 </style>
-

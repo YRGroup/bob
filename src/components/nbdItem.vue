@@ -6,12 +6,12 @@
     <div class="wrappper" @mouseenter="showIcons=true" @mouseleave="showIcons=false">
       <div class="p1" @click="handle">{{item.name}}</div>
       <transition name="icons">
-        <div class="icons" v-show="showIcons">
+        <div class="icons" >
           <div
             v-for="(type, i) in item.types"
             :key="i"
             :style="{animationDelay:`${x+i*y}s`}"
-            :class="['icon-box',showIcons ? 'icon-in':'icon-out']"
+            :class="['icon-box']"
           >
             <p class="icon">
               <!-- <img :src="type.icon" alt> -->
@@ -36,27 +36,27 @@ export default {
       type: Boolean
     }
   },
-  data() {
+  data () {
     return {
       showIcons: false
-    };
-  },
-  computed: {
-    x() {
-      return this.showIcons ? 0 : 0.3;
-    },
-    y() {
-      return this.showIcons ? 0.1 : -0.1;
     }
   },
-  created() {},
+  computed: {
+    x () {
+      return this.showIcons ? 0 : 0.3
+    },
+    y () {
+      return this.showIcons ? 0.1 : -0.1
+    }
+  },
+  created () {},
   methods: {
-    handle(){
+    handle () {
       this.$emit('handle')
     }
   },
   watch: {}
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -65,7 +65,7 @@ export default {
   flex-direction: row;
   align-items: top;
 }
-.arrow{
+.arrow {
   margin-top: 25px;
   margin-right: 12px;
 }
@@ -76,7 +76,7 @@ export default {
     width: 80px;
     height: 80px;
     // border: 2px solid @color-theme;
-    background: @color-theme;;
+    background: @color-theme;
     line-height: 80px;
     font-size: 36px;
     text-align: center;
@@ -85,8 +85,10 @@ export default {
     cursor: pointer;
   }
   .icons {
-    // position: absolute;
-    // top: 110px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
     text-align: center;
     color: #fff;
     margin-top: 10px;
@@ -114,16 +116,15 @@ export default {
         max-width: 100%;
         max-height: 100%;
       }
-      .iconfont{
-        color: @color-theme;;
+      .iconfont {
+        color: @color-theme;
         font-size: 40px;
       }
     }
     .p2 {
       font-size: 16px;
       margin-bottom: 20px;
-      color: @color-theme;;
-
+      color: @color-theme;
     }
   }
 }
@@ -142,18 +143,18 @@ export default {
   transform: translateY(-100%);
 }
 
-.icons-enter-active,
-.icons-leave-active {
-  // transition: all 0.5s;
-  // transform: translateX(0);
-}
+// .icons-enter-active,
+// .icons-leave-active {
+//   // transition: all 0.5s;
+//   // transform: translateX(0);
+// }
 .icons-leave-active {
   transition-delay: 0.5s;
 }
-.icons-enter,
-.icons-leave-to {
-  // transform: translateX(100%);
-}
+// .icons-enter,
+// .icons-leave-to {
+//   // transform: translateX(100%);
+// }
 
 @keyframes icon-in {
   // 0% {
@@ -178,4 +179,3 @@ export default {
   }
 }
 </style>
-
