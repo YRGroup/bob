@@ -16,7 +16,7 @@ const nbd = [{
   icon: '&#xe601;',
   types: [{
     name: 'VIS基础',
-    icon: '&#xe61e;'
+    icon: '&#xe626;'
   }, {
     name: 'VIS应用',
     icon: '&#xe61f;'
@@ -29,13 +29,13 @@ const nbd = [{
   icon: '&#xe600;',
   types: [{
     name: '前置营销',
-    icon: '&#xe61e;'
+    icon: '&#xe65d;'
   }, {
     name: '开业营销',
-    icon: '&#xe61f;'
+    icon: '&#xe616;'
   }, {
     name: '季度/年度营销',
-    icon: '&#xe61d;'
+    icon: '&#xe60d;'
   }]
 }, {
   name: 'D',
@@ -55,65 +55,65 @@ const nbd = [{
   icon: '&#xe62c;',
   types: [{
     name: '公关摄影',
-    icon: '&#xe61e;'
+    icon: '&#xe62c;'
   }, {
     name: '形象片拍摄',
-    icon: '&#xe61f;'
+    icon: '&#xe686;'
   }, {
     name: '产品摄影',
-    icon: '&#xe61d;'
+    icon: '&#xe623;'
   }]
 }, {
   name: 'F',
   icon: '&#xe6bc;',
   types: [{
     name: '周边定制',
-    icon: '&#xe61e;'
+    icon: '&#xe6bc;'
   }, {
     name: '环境导视',
-    icon: '&#xe61f;'
+    icon: '&#xe861;'
   }, {
     name: '文化创建',
-    icon: '&#xe61d;'
+    icon: '&#xe607;'
   }]
 }, {
   name: 'L',
   icon: '&#xe624;',
   types: [{
     name: '商圈考察',
-    icon: '&#xe61e;'
+    icon: '&#xe79d;'
   }, {
     name: '选址',
-    icon: '&#xe61f;'
+    icon: '&#xe624;'
   }, {
     name: '投资收益评估',
-    icon: '&#xe61d;'
+    icon: '&#xe617;'
   }]
 }, {
   name: 'S',
   icon: '&#xe620;',
   types: [{
     name: '测量',
-    icon: '&#xe61e;'
+    icon: '&#xe684;'
   }, {
     name: '空间规划',
-    icon: '&#xe61f;'
+    icon: '&#xe602;'
   }, {
     name: '设计',
-    icon: '&#xe61d;'
+    icon: '&#xe620;'
   }]
 }, {
   name: 'R',
   icon: '&#xe625;',
   types: [{
     name: '选材',
-    icon: '&#xe61e;'
+    icon: '&#xe61a;'
   }, {
     name: '施工',
-    icon: '&#xe61f;'
+    icon: '&#xe625;'
   }, {
     name: '装饰',
-    icon: '&#xe61d;'
+    icon: '&#xe72a;'
   }]
 }]
 export default nbd
