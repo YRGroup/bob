@@ -57,12 +57,6 @@ const nbd = [{
   }, {
     name: '产品摄影',
     icon: '&#xe61d;'
-  }, {
-    name: '宣传片',
-    icon: '&#xe686;'
-  }, {
-    name: '活动照',
-    icon: '&#xe62c;'
   }]
 }, {
   name: 'F',

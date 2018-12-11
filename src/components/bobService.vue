@@ -168,27 +168,27 @@
 </template>
 
 <script>
-import { WOW } from 'wowjs'
+import { WOW } from "wowjs";
 
 export default {
-  name: 'bobHeader',
+  name: "bobHeader",
   props: {
     msg: String
   },
-  data () {
+  data() {
     return {
       show: false
-    }
+    };
   },
   methods: {
-    toogleSideNav () {
-      this.show = !this.show
+    toogleSideNav() {
+      this.show = !this.show;
     }
   },
-  mounted () {
-    new WOW().init()
+  mounted() {
+    new WOW().init();
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -199,16 +199,11 @@ export default {
 // @import "../css/animate.css";
 #section1 {
   background: #f5f5f5;
-  padding: 0.5rem 0;
-
+  padding-top: 0.5rem;
   .service-wrapper {
-    margin: 0 100px;
+    padding: 0.5rem 100px;
+    overflow: hidden;
   }
-
-  .section-title {
-    margin-bottom: 0.5rem;
-  }
-
   .cards {
     .card {
       cursor: pointer;
