@@ -146,6 +146,7 @@ export default {
       cursor: pointer;
       &.active {
         color: @color-theme;
+        font-weight: 700;
         p {
           border-right: 2px solid @color-theme;
         }
