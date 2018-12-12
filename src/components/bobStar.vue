@@ -134,7 +134,7 @@ export default {
     top: 0;
     bottom: 0;
     right: 0;
-    background: url("11.jpg") no-repeat center center;
+    background: url("../images/11.jpg") no-repeat center center;
     opacity: 0.2;
   }
 }
