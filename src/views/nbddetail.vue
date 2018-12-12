@@ -34,19 +34,19 @@
   </div>
 </template>
 <script>
-import { info } from "@/assets/info";
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import API from "@/api/index";
-import bobHeader from "@/components/bobHeader.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import bobSidebar from "@/components/bobSidebar.vue";
-import Case from "@/class/case";
-import nbd from "@/assets/nbd";
-import { WOW } from "wowjs";
-const NBD_CAT_ID = 44;
+import { info } from '@/assets/info'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import API from '@/api/index'
+import bobHeader from '@/components/bobHeader.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import bobSidebar from '@/components/bobSidebar.vue'
+import Case from '@/class/case'
+import nbd from '@/assets/nbd'
+import { WOW } from 'wowjs'
+const NBD_CAT_ID = 44
 export default {
-  name: "nbddetail",
+  name: 'nbddetail',
   components: {
     bobHeader,
     bobFooter,
@@ -55,54 +55,49 @@ export default {
     bobArticle,
     bobSidebar
   },
-  data() {
+  data () {
     return {
-      id: "",
-      posts: [],
-      post: {},
+      id: '',
       nbd: nbd
-    };
+    }
   },
-  computed: {},
-  created() {
-    this.getPosts();
-    this.id = this.$route.params.id;
+  computed: {
+    posts () {
+      return this.$store.state.nbd
+    },
+    post () {
+      return new Case(
+        this.posts.find(el => {
+          return el.id == this.id
+        })
+      )
+    }
+  },
+  created () {
+    this.id = this.$route.params.id
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
-    this.getPost(this.id);
+    if (!this.$store.state.nbd.length) {
+      this.$store.dispatch('getNbd')
+    }
   },
-  mounted() {},
+  mounted () {
+    new WOW().init()
+  },
   methods: {
-    getPosts() {
-      API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
-        console.log(res);
-        this.posts = res.data;
-      });
-    },
-    getPost(id) {
-      API.getPost(id).then(res => {
-        console.log(res);
-        this.post = new Case(res.data);
-        this.$nextTick(() => {
-          new WOW().init();
-        });
-      });
-    },
-    goback() {
-      this.$router.push("/nbd");
+    goback () {
+      this.$router.push('/nbd')
     }
   },
-  watch: {
-    id(newVal) {
-      this.getPost(newVal);
-    }
-  },
-  beforeRouteUpdate(to, from, next) {
-    this.id = to.params.id;
-    next();
+  beforeRouteUpdate (to, from, next) {
+    this.id = to.params.id
+    this.$nextTick(() => {
+      new WOW().init()
+    })
+    next()
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/mixin.less";

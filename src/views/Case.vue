@@ -23,16 +23,16 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import loading from "@/components/loading.vue";
-import API from "@/api/index";
-import Case from "@/class/case";
-import bobSidebar from "@/components/bobSidebar.vue";
-let lazyImg = require("@/images/nodata.jpg");
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import loading from '@/components/loading.vue'
+import API from '@/api/index'
+import Case from '@/class/case'
+import bobSidebar from '@/components/bobSidebar.vue'
+let lazyImg = require('@/images/nodata.jpg')
 export default {
-  name: "case",
+  name: 'case',
   components: {
     bobHeader,
     bobFooter,
@@ -40,45 +40,45 @@ export default {
     loading,
     bobSidebar
   },
-  data() {
+  data () {
     return {
-      id: "",
+      id: '',
       caseInfo: {},
       loading: true,
       showLoading: true,
       srcset: `${lazyImg} 1236w, ${lazyImg} 813w, ${lazyImg} 768w, ${lazyImg} 1200w `
-    };
+    }
   },
   computed: {},
 
-  created() {
-    this.id = this.$route.params.id;
+  created () {
+    this.id = this.$route.params.id
 
     if (!this.id) {
-      this.$router.push("/");
+      this.$router.push('/')
     }
-    this.getData();
+    this.getData()
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    getData() {
+    getData () {
       API.getPost(this.id)
         .then(res => {
           // console.log(res);
-          this.caseInfo = new Case(res.data);
+          this.caseInfo = new Case(res.data)
           this.$nextTick(() => {
-            this.showLoading = false;
-          });
+            this.showLoading = false
+          })
         })
         .catch(err => {
-          console.log(err);
-        });
+          console.log(err)
+        })
     },
-    goBack() {
-      this.$router.back();
+    goBack () {
+      this.$router.back()
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";

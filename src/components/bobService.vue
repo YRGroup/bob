@@ -168,27 +168,27 @@
 </template>
 
 <script>
-import { WOW } from "wowjs";
+import { WOW } from 'wowjs'
 
 export default {
-  name: "bobHeader",
+  name: 'bobHeader',
   props: {
     msg: String
   },
-  data() {
+  data () {
     return {
       show: false
-    };
-  },
-  methods: {
-    toogleSideNav() {
-      this.show = !this.show;
     }
   },
-  mounted() {
-    new WOW().init();
+  methods: {
+    toogleSideNav () {
+      this.show = !this.show
+    }
+  },
+  mounted () {
+    new WOW().init()
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

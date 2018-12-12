@@ -32,20 +32,20 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import peopleCard from "@/components/peopleCard.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import bobStar from "@/components/bobStar.vue";
-import nbdItem from "@/components/nbdItem.vue";
-import Case from "@/class/case";
-import API from "@/api/index";
-import nbd from "@/assets/nbd";
-import { WOW } from "wowjs";
-import { initBody, hiddenBody } from "@/assets/utils.js";
-const NBD_CAT_ID = 44;
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import peopleCard from '@/components/peopleCard.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import bobStar from '@/components/bobStar.vue'
+import nbdItem from '@/components/nbdItem.vue'
+import Case from '@/class/case'
+import API from '@/api/index'
+import nbd from '@/assets/nbd'
+import { WOW } from 'wowjs'
+import { initBody, hiddenBody } from '@/assets/utils.js'
+const NBD_CAT_ID = 44
 export default {
-  name: "nbd",
+  name: 'nbd',
   components: {
     bobHeader,
     bobFooter,
@@ -54,50 +54,38 @@ export default {
     bobArticle,
     bobStar
   },
-  data() {
+  data () {
     return {
       nbd: nbd,
-      posts: [],
-      showSideDialog: false,
-      currentIndex: -1
-    };
+      showSideDialog: false
+    }
   },
   computed: {
-    post() {
-      if (this.currentIndex != -1) {
-        let post = this.posts[this.currentIndex];
-        return new Case(post);
-      }
+    posts () {
+      return this.$store.state.nbd
     }
   },
-  created() {
-    this.getPosts();
+  created () {
+    this.getPosts()
   },
-  mounted() {
-    new WOW().init();
+  mounted () {
+    new WOW().init()
   },
   methods: {
-    showDetail(id, index) {
-      // this.currentIndex = index;
-      this.$router.push("nbddetail/" + id);
-      this.currentIndex = index;
-      // hiddenBody();
+    showDetail (id, index) {
+      this.$router.push('nbddetail/' + id)
     },
-    handleNavItem(index) {
-      this.currentIndex = index;
+    handleClose () {
+      this.showSideDialog = false
+      initBody()
     },
-    handleClose() {
-      this.showSideDialog = false;
-      initBody();
-    },
-    getPosts() {
-      API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
-        console.log(res);
-        this.posts = res.data;
-      });
+    getPosts () {
+      if (!this.$store.state.nbd.length) {
+        this.$store.dispatch('getNbd')
+      }
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
