@@ -58,48 +58,43 @@ export default {
   data() {
     return {
       id: "",
-      posts: [],
-      post: {},
       nbd: nbd
     };
   },
-  computed: {},
+  computed: {
+    posts() {
+      return this.$store.state.nbd;
+    },
+    post() {
+      return new Case(
+        this.posts.find(el => {
+          return el.id == this.id;
+        })
+      );
+    }
+  },
   created() {
-    this.getPosts();
     this.id = this.$route.params.id;
     if (!this.id) {
       this.$router.push("/");
     }
-    this.getPost(this.id);
+    if (!this.$store.state.nbd.length) {
+      this.$store.dispatch("getNbd");
+    }
   },
-  mounted() {},
+  mounted() {
+    new WOW().init();
+  },
   methods: {
-    getPosts() {
-      API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
-        console.log(res);
-        this.posts = res.data;
-      });
-    },
-    getPost(id) {
-      API.getPost(id).then(res => {
-        console.log(res);
-        this.post = new Case(res.data);
-        this.$nextTick(() => {
-          new WOW().init();
-        });
-      });
-    },
     goback() {
       this.$router.push("/nbd");
     }
   },
-  watch: {
-    id(newVal) {
-      this.getPost(newVal);
-    }
-  },
   beforeRouteUpdate(to, from, next) {
     this.id = to.params.id;
+    this.$nextTick(() => {
+      new WOW().init();
+    });
     next();
   }
 };

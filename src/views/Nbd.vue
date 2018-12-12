@@ -57,17 +57,12 @@ export default {
   data() {
     return {
       nbd: nbd,
-      posts: [],
-      showSideDialog: false,
-      currentIndex: -1
+      showSideDialog: false
     };
   },
   computed: {
-    post() {
-      if (this.currentIndex != -1) {
-        let post = this.posts[this.currentIndex];
-        return new Case(post);
-      }
+    posts() {
+      return this.$store.state.nbd;
     }
   },
   created() {
@@ -78,23 +73,16 @@ export default {
   },
   methods: {
     showDetail(id, index) {
-      // this.currentIndex = index;
       this.$router.push("nbddetail/" + id);
-      this.currentIndex = index;
-      // hiddenBody();
-    },
-    handleNavItem(index) {
-      this.currentIndex = index;
     },
     handleClose() {
       this.showSideDialog = false;
       initBody();
     },
     getPosts() {
-      API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
-        console.log(res);
-        this.posts = res.data;
-      });
+      if (!this.$store.state.nbd.length) {
+        this.$store.dispatch("getNbd");
+      }
     }
   }
 };
