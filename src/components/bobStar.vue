@@ -135,7 +135,7 @@ export default {
     bottom: 0;
     right: 0;
     background: url("11.jpg") no-repeat center center;
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }
 </style>

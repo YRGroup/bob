@@ -105,15 +105,15 @@ export default {
 .nbddetail {
   background: #ffff;
   .nbd-banner {
-    background: url("../images/nbd/banner.png") no-repeat;
-    height: 300px;
+    background: url("../images/nbd/banner.jpg") no-repeat center center;
+    height: 220px;
     background-size: cover;
   }
   .content {
     min-height: 600px;
     max-width: 1000px;
     img {
-      width: 100%;
+      max-width: 100%;
       vertical-align: bottom;
     }
   }
