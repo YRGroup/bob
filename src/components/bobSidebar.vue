@@ -13,30 +13,30 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       scrollY: 0
-    };
+    }
   },
   computed: {
-    showSideBar() {
-      return this.scrollY > 400;
+    showSideBar () {
+      return this.scrollY > 400
     }
   },
-  mounted() {
-    window.addEventListener("scroll", ev => {
-      this.scrollY = window.scrollY;
-    });
+  mounted () {
+    window.addEventListener('scroll', ev => {
+      this.scrollY = window.scrollY
+    })
   },
   methods: {
-    back() {
-      this.$emit('back');
+    back () {
+      this.$emit('back')
     },
-    top() {
-      window.scrollTo(0, 0);
+    top () {
+      window.scrollTo(0, 0)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";

@@ -32,20 +32,20 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import peopleCard from "@/components/peopleCard.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import bobStar from "@/components/bobStar.vue";
-import nbdItem from "@/components/nbdItem.vue";
-import Case from "@/class/case";
-import API from "@/api/index";
-import nbd from "@/assets/nbd";
-import { WOW } from "wowjs";
-import { initBody, hiddenBody } from "@/assets/utils.js";
-const NBD_CAT_ID = 44;
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import peopleCard from '@/components/peopleCard.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import bobStar from '@/components/bobStar.vue'
+import nbdItem from '@/components/nbdItem.vue'
+import Case from '@/class/case'
+import API from '@/api/index'
+import nbd from '@/assets/nbd'
+import { WOW } from 'wowjs'
+import { initBody, hiddenBody } from '@/assets/utils.js'
+const NBD_CAT_ID = 44
 export default {
-  name: "nbd",
+  name: 'nbd',
   components: {
     bobHeader,
     bobFooter,
@@ -54,38 +54,38 @@ export default {
     bobArticle,
     bobStar
   },
-  data() {
+  data () {
     return {
       nbd: nbd,
       showSideDialog: false
-    };
-  },
-  computed: {
-    posts() {
-      return this.$store.state.nbd;
     }
   },
-  created() {
-    this.getPosts();
+  computed: {
+    posts () {
+      return this.$store.state.nbd
+    }
   },
-  mounted() {
-    new WOW().init();
+  created () {
+    this.getPosts()
+  },
+  mounted () {
+    new WOW().init()
   },
   methods: {
-    showDetail(id, index) {
-      this.$router.push("nbddetail/" + id);
+    showDetail (id, index) {
+      this.$router.push('nbddetail/' + id)
     },
-    handleClose() {
-      this.showSideDialog = false;
-      initBody();
+    handleClose () {
+      this.showSideDialog = false
+      initBody()
     },
-    getPosts() {
+    getPosts () {
       if (!this.$store.state.nbd.length) {
-        this.$store.dispatch("getNbd");
+        this.$store.dispatch('getNbd')
       }
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import API from "@/api/index";
+import API from '@/api/index'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -9,15 +9,15 @@ export default new Vuex.Store({
     nbd: {}
   },
   mutations: {
-    setIsMObile(state, val) {
+    setIsMObile (state, val) {
       state.isMobile = val
     },
-    setNbd(state, val) {
+    setNbd (state, val) {
       state.nbd = val
     }
   },
   actions: {
-    getNbd(context) {
+    getNbd (context) {
       API.getCatPosts(44, 1, 9).then(res => {
         context.commit('setNbd', res.data)
       })
