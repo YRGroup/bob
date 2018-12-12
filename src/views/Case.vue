@@ -15,90 +15,70 @@
 
       <!-- -->
     </div>
-    <transition name="fadeBottom">
-      <div class="side-bar" v-show="showSideBar">
-        <div class="tag" @click="back()">
-          <i class="iconfont">&#xe7a4;</i>
-        </div>
-        <div class="tag" @click="top()">
-          <i class="iconfont">&#xe67f;</i>
-        </div>
-      </div>
-    </transition>
     <bob-footer></bob-footer>
+    <bob-sidebar @back="goBack"></bob-sidebar>
     <loading :visiable="showLoading"></loading>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import bobHeader from '@/components/bobHeader.vue'
-import bobFooter from '@/components/bobFooter.vue'
-import bobArticle from '@/components/bobArticle.vue'
-import loading from '@/components/loading.vue'
-import API from '@/api/index'
-import Case from '@/class/case'
-
-let lazyImg = require('@/images/nodata.jpg')
+import bobHeader from "@/components/bobHeader.vue";
+import bobFooter from "@/components/bobFooter.vue";
+import bobArticle from "@/components/bobArticle.vue";
+import loading from "@/components/loading.vue";
+import API from "@/api/index";
+import Case from "@/class/case";
+import bobSidebar from "@/components/bobSidebar.vue";
+let lazyImg = require("@/images/nodata.jpg");
 export default {
-  name: 'case',
+  name: "case",
   components: {
     bobHeader,
     bobFooter,
     bobArticle,
-    loading
+    loading,
+    bobSidebar
   },
-  data () {
+  data() {
     return {
-      id: '',
+      id: "",
       caseInfo: {},
-      scrollY: 0,
       loading: true,
       showLoading: true,
       srcset: `${lazyImg} 1236w, ${lazyImg} 813w, ${lazyImg} 768w, ${lazyImg} 1200w `
-    }
+    };
   },
-  computed: {
-    showSideBar () {
-      return this.scrollY > 400
-    }
-  },
+  computed: {},
 
-  created () {
-    this.id = this.$route.params.id
+  created() {
+    this.id = this.$route.params.id;
 
     if (!this.id) {
-      this.$router.push('/')
+      this.$router.push("/");
     }
-    this.getData()
+    this.getData();
   },
-  mounted () {
-    window.addEventListener('scroll', ev => {
-      this.scrollY = window.scrollY
-    })
-  },
+  mounted() {},
   methods: {
-    getData () {
+    getData() {
       API.getPost(this.id)
         .then(res => {
           // console.log(res);
-          this.caseInfo = new Case(res.data)
+          this.caseInfo = new Case(res.data);
           this.$nextTick(() => {
-            this.showLoading = false
-          })
+            this.showLoading = false;
+          });
         })
         .catch(err => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     },
-    back () {
-      this.$router.back()
-    },
-    top () {
-      window.scrollTo(0, 0)
+    goBack() {
+      this.$router.back();
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
@@ -161,45 +141,8 @@ export default {
       height: 2.5rem;
     }
   }
-  .side-bar {
-    position: fixed;
-    right: 5%;
-    bottom: 10%;
-    z-index: 90;
-    .tag {
-      cursor: pointer;
-      width: 0.35rem;
-      height: 0.35rem;
-      background: #fff;
-      line-height: 0.35rem;
-      text-align: center;
-      margin: 10px 0;
-      border: 1px solid #e4e4e4;
-      cursor: pointer;
-      color: #d0d0d0;
-      transition: all 0.3s;
-      .iconfont {
-        font-size: 0.16rem;
-      }
-      &:hover {
-        color: @color-theme;
-        border: 1px solid @color-theme;
-      }
-    }
-  }
 }
 
-.fadeBottom-enter-active,
-.fadeBottom-leave-active {
-  transition: all 0.5s;
-  // transform: translateX(0);
-}
-
-.fadeBottom-enter,
-.fadeBottom-leave-to {
-  transform: translateY(50%);
-  opacity: 0;
-}
 .caseinfotitle {
   text-align: center;
   font-size: 0.18rem;

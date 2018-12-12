@@ -30,6 +30,7 @@
       </div>
     </div>
     <bob-footer></bob-footer>
+    <bob-sidebar @back="goback"></bob-sidebar>
   </div>
 </template>
 <script>
@@ -39,6 +40,7 @@ import API from "@/api/index";
 import bobHeader from "@/components/bobHeader.vue";
 import bobArticle from "@/components/bobArticle.vue";
 import bobFooter from "@/components/bobFooter.vue";
+import bobSidebar from "@/components/bobSidebar.vue";
 import Case from "@/class/case";
 import nbd from "@/assets/nbd";
 import { WOW } from "wowjs";
@@ -50,7 +52,8 @@ export default {
     bobFooter,
     swiper,
     swiperSlide,
-    bobArticle
+    bobArticle,
+    bobSidebar
   },
   data() {
     return {
@@ -85,6 +88,9 @@ export default {
           new WOW().init();
         });
       });
+    },
+    goback() {
+      this.$router.push("/nbd");
     }
   },
   watch: {
