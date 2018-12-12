@@ -20,7 +20,7 @@ export default {
         ctx = canvas.getContext("2d"),
         w = (canvas.width = window.innerWidth),
         h = (canvas.height = 650),
-        hue = 217,
+        hue = 18,
         stars = [],
         count = 0,
         maxStars = 1300; //星星数量
@@ -134,8 +134,10 @@ export default {
     top: 0;
     bottom: 0;
     right: 0;
-    background: url("11.jpg") no-repeat center center;
-    opacity: 0.15;
+    background: url("../images/nbd/11.jpg") no-repeat center center;
+    // background: #c66b44;
+    opacity: 0.3;
+    background-size: cover;
   }
 }
 </style>
