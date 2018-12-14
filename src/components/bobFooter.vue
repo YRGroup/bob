@@ -117,7 +117,7 @@ export default {
   }
 
   .copyright {
-    font-size: @font-size-s;
+    font-size: 0.1rem;
     background: #2a2a2a;
     color: #888;
     line-height: 35px;
