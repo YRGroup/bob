@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     showSideBar () {
-      return this.scrollY > 400
+      return this.scrollY > 200
     }
   },
   mounted () {
@@ -54,16 +54,23 @@ export default {
     line-height: 0.35rem;
     text-align: center;
     margin: 10px 0;
-    border: 1px solid #e4e4e4;
+    // border: 1px solid #e4e4e4;
+    border: 1px solid @color-theme;
     cursor: pointer;
     color: #d0d0d0;
     transition: all 0.3s;
     .iconfont {
       font-size: 0.16rem;
+      color: @color-theme;
     }
     &:hover {
-      color: @color-theme;
+      color: #fff;
+      background: @color-theme;
+
       border: 1px solid @color-theme;
+      .iconfont {
+        color: #fff;
+      }
     }
   }
 }
