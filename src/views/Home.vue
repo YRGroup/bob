@@ -6,6 +6,14 @@
     <bob-aboutus></bob-aboutus>
     <!-- <bob-team></bob-team> -->
     <bob-data></bob-data>
+    <router-link to="/nbd" tag="div">
+      <div class="nbd">
+        <p class="p1 wow bounceInDown" data-wow-duration="1s">
+          <img src="../images/nbd/nbd1.png" alt>
+        </p>
+        <bob-star></bob-star>
+      </div>
+    </router-link>
     <bob-team></bob-team>
     <bob-footer></bob-footer>
   </div>
@@ -20,6 +28,8 @@ import bobAboutus from '@/components/bobAboutus.vue'
 import bobData from '@/components/bobData.vue'
 import bobFooter from '@/components/bobFooter.vue'
 import bobTeam from '@/components/bobTeam.vue'
+import bobStar from '@/components/bobStar.vue'
+import { WOW } from 'wowjs'
 
 export default {
   name: 'home',
@@ -30,10 +40,14 @@ export default {
     bobAboutus,
     bobData,
     bobTeam,
+    bobStar,
     bobFooter
   },
   created () {},
-  methods: {}
+  methods: {},
+  mounted () {
+    new WOW().init()
+  },
 }
 </script>
 <style lang="less" scoped>
@@ -41,5 +55,18 @@ export default {
 .home {
   position: relative;
   background: #fff;
+}
+.nbd{
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .p1{
+    position: absolute;
+    z-index: 20;
+  }
 }
 </style>
