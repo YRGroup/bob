@@ -3,7 +3,7 @@
     <div class="arrow" v-if="showArrow">
       <img src="../images/arrow.png" alt>
     </div>
-    <div class="wrappper" @mouseenter="showIcons=true" @mouseleave="showIcons=false">
+    <div class="wrappper" >
       <div class="p1" @click="handle">{{item.name}}</div>
       <transition name="icons">
         <div class="icons" >
@@ -11,7 +11,7 @@
             v-for="(type, i) in item.types"
             :key="i"
             :style="{animationDelay:`${x+i*y}s`}"
-            :class="['icon-box']"
+            :class="['icon-box',showIcons?'icon-in':'icon-out']"
           >
             <p class="icon">
               <!-- <img :src="type.icon" alt> -->
@@ -34,11 +34,15 @@ export default {
     showArrow: {
       default: false,
       type: Boolean
+    },
+    showIcons: {
+      default: true,
+      type: Boolean
     }
   },
   data () {
     return {
-      showIcons: false
+      // showIcons: false
     }
   },
   computed: {
@@ -176,6 +180,7 @@ export default {
   100% {
     opacity: 0;
     transform: translateY(-100%);
+    display: none;
   }
 }
 </style>

@@ -18,7 +18,8 @@ export default new Vuex.Store({
   },
   actions: {
     getNbd (context) {
-      API.getCatPosts(44, 1, 9).then(res => {
+      const NBD_CAT_ID = 44
+      API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
         context.commit('setNbd', res.data)
       })
     }

@@ -44,7 +44,7 @@ import bobSidebar from '@/components/bobSidebar.vue'
 import Case from '@/class/case'
 import nbd from '@/assets/nbd'
 import { WOW } from 'wowjs'
-const NBD_CAT_ID = 44
+
 export default {
   name: 'nbddetail',
   components: {
