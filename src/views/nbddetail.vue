@@ -112,7 +112,7 @@ export default {
   }
   .content {
     min-height: 600px;
-    max-width: 1000px;
+    width: 1000px;
     img {
       max-width: 100%;
       vertical-align: bottom;

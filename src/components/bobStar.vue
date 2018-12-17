@@ -20,7 +20,7 @@ export default {
         ctx = canvas.getContext('2d'),
         w = (canvas.width = window.innerWidth),
         h = (canvas.height = 650),
-        hue = 18,
+        hue = 217,
         stars = [],
         count = 0,
         maxStars = 1300 // 星星数量

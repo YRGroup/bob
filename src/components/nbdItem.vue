@@ -128,7 +128,7 @@ export default {
     }
     .p2 {
       font-size: 14px;
-      color: @color-theme;
+      color: #666;
     }
   }
 }
