@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     showSideBar () {
-      return this.scrollY > 200
+      return this.scrollY > 10
     }
   },
   mounted () {

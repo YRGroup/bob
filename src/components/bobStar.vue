@@ -20,7 +20,7 @@ export default {
         ctx = canvas.getContext("2d"),
         w = (canvas.width = window.innerWidth),
         h = (canvas.height = 650),
-        hue = 18,
+        hue = 217,
         stars = [],
         count = 0,
         maxStars = 1300; // 星星数量
@@ -72,7 +72,7 @@ export default {
         this.orbitY = h / 2;
         this.timePassed = random(0, maxStars);
         // 星星移动速度
-        this.speed = random(this.orbitRadius) / 500000;
+        this.speed = random(this.orbitRadius) / 300000
 
         this.alpha = random(2, 10) / 10;
 
@@ -138,7 +138,7 @@ export default {
     right: 0;
     background: url("../images/nbd/11.jpg") no-repeat center center;
     // background: #c66b44;
-    opacity: 0.3;
+    opacity: 0.7;
     background-size: cover;
   }
   canvas {
