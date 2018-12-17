@@ -13,7 +13,7 @@
         开发流程
         <span>/ Development Workflow</span>
       </h5>
-      <div class="content flex">
+      <div :class="['content', $store.state.isPad?'':'flex']">
         <div v-for="(item, index) in nbd" :key="index">
           <transition name="fade" appear>
             <nbd-item
@@ -21,7 +21,7 @@
               :item="item"
               :style="{transitionDelay:`${index*0.1}s`}"
               :showArrow="index?true:false"
-              :showIcons="showIndex == index"
+              :showIcons="showIndex == index||$store.state.isPad"
               @mouseenter.native="handleMouseEnter(index)"
               @mouseleave.native="handleMouseLeave(index)"
             ></nbd-item>
@@ -129,105 +129,23 @@ h5 {
     }
   }
   .section2 {
-    padding: 60px 0;
+    padding: .5rem 0;
     overflow: hidden;
-    height: 450px;
+    // height: 450px;
     .content {
       width: 1200px;
       margin: 0 auto;
       align-items: flex-start;
+      justify-content: space-around;
     }
   }
-  .section3 {
-    padding: 60px 0;
-    background: @color-theme;
-    overflow: hidden;
-    h5 {
-      font-size: 0.3rem;
-      margin-bottom: 60px;
-      color: #fff;
-    }
-    .content {
-      width: 1250px;
-    }
-  }
-  .slideDialog {
-    // background: #333;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.5);
-    .dialogContent {
-      height: 100%;
-      background: #fff;
-      overflow: scroll;
-      position: relative;
-      .dialoHeader {
-        background: url("../images/nbd/headerBg.jpg") no-repeat;
-        height: 160px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        p {
-          display: inline-block;
-          width: 900px;
-          text-align: left;
-          color: #fff;
-          font-size: 0.3rem;
-          opacity: 0.7;
-        }
-      }
-      .nav-list {
-        // margin: 20px auto;
-        position: fixed;
-        right: 160px;
-        top: 160px;
-        .item {
-          // display: inline-block;
-          width: 50px;
-          height: 50px;
-          border: 1px solid @color-theme;
-          color: @color-theme;
-          border-radius: 50%;
-          line-height: 50px;
-          margin: 10px 0;
-          cursor: pointer;
-          transition: all 0.3s;
-          &:hover {
-            color: #fff;
-            background: @color-theme;
-          }
-          &.active {
-            color: #fff;
-            background: @color-theme;
-          }
-        }
-        .closenbd {
-          // &.back {
-          //   transform: rotate(-90deg);
-          // }
-          color: #fff;
-          background: @color-theme;
-        }
-      }
-      .close {
-        position: absolute;
-        right: 30px;
-        top: 30px;
-        font-size: 30px;
-        cursor: pointer;
-      }
-      .case-article {
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-        img {
-          width: 100%;
-          // max-width: 100%;
-        }
+  @media (max-width: 1024px) {
+    .section2 {
+      .content {
+        max-width: 100%;
+        // padding-left: 30px;
+        padding: 0 .3rem;
+        box-sizing: border-box;
       }
     }
   }

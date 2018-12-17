@@ -1,17 +1,17 @@
 <template>
   <div class="nbdCon">
-    <div class="arrow" v-if="showArrow">
+    <div :class="['arrow', $store.state.isPad?'pad':'pc']" v-if="showArrow">
       <img src="../images/arrow.png" alt>
     </div>
-    <div class="wrappper" >
+    <div :class="['item-wrapper', $store.state.isPad?'flex pad':'flex-column pc']">
       <div class="p1" @click="handle">{{item.name}}</div>
       <transition name="icons">
-        <div class="icons" >
+        <div :class="['icons', $store.state.isPad?'flex':'flex-column']">
           <div
             v-for="(type, i) in item.types"
             :key="i"
             :style="{animationDelay:`${x+i*y}s`}"
-            :class="['icon-box',showIcons?'icon-in':'icon-out']"
+            :class="['icon-box',showIcons?'icon-in':'icon-out', $store.state.isPad?'pad':'pc']"
           >
             <p class="icon">
               <!-- <img :src="type.icon" alt> -->
@@ -40,65 +40,89 @@ export default {
       type: Boolean
     }
   },
-  data () {
+  data() {
     return {
       // showIcons: false
-    }
+    };
   },
   computed: {
-    x () {
-      return this.showIcons ? 0 : 0.3
+    x() {
+      return this.showIcons ? 0 : 0.3;
     },
-    y () {
-      return this.showIcons ? 0.1 : -0.1
+    y() {
+      return this.showIcons ? 0.1 : -0.1;
     }
   },
-  created () {},
+  created() {},
   methods: {
-    handle () {
-      this.$emit('handle')
+    handle() {
+      this.$emit("handle");
     }
   },
   watch: {}
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
+
+@box-size: 0.6rem;
 .nbdCon {
-  display: flex;
-  flex-direction: row;
-  align-items: top;
+  // display: flex;
+  // flex-direction: row;
+  // align-items: top;
+  position: relative;
+  @media (max-width: 1024px) {
+    margin: 30px 0;
+  }
 }
 .arrow {
-  margin-top: 25px;
-  margin-right: 12px;
-}
-.wrappper {
-  position: relative;
+  position: absolute;
 
+  &.pad {
+    top: -23px;
+    left: 13px;
+    transform: rotate(90deg);
+  }
+  &.pc {
+    top: 22px;
+    left: -40px;
+  }
+}
+.item-wrapper {
+  position: relative;
+  &.pad {
+    align-items: center;
+    justify-content: flex-start;
+  }
   .p1 {
-    width: 80px;
-    height: 80px;
+    width: @box-size;
+    height: @box-size;
     // border: 2px solid @color-theme;
     background: @color-theme;
-    line-height: 80px;
-    font-size: 36px;
+    line-height: @box-size;
+    font-size: 0.3rem;
     text-align: center;
     color: #fff;
     border-radius: 50%;
     cursor: pointer;
   }
   .icons {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 70px;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 70px;
     text-align: center;
     color: #fff;
     margin-top: 10px;
     overflow: hidden;
     .icon-box {
-      padding-top:20px;
+      &.pc {
+        padding-top: 10px;
+      }
+      &.pad {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
       animation-timing-function: ease-out;
@@ -114,8 +138,8 @@ export default {
     }
     .icon {
       text-align: center;
-      width: 46px;
-      height: 46px;
+      width: @box-size / 2;
+      height: @box-size / 2;
       margin: 0 auto;
       img {
         max-width: 100%;
@@ -123,12 +147,14 @@ export default {
       }
       .iconfont {
         color: @color-theme;
-        font-size: 40px;
+        font-size: @box-size / 2;
       }
     }
     .p2 {
       font-size: 14px;
       color: @color-theme;
+      line-height: 2;
+      white-space: nowrap;
     }
   }
 }
