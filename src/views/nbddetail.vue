@@ -113,6 +113,10 @@ export default {
   .content {
     min-height: 600px;
     width: 1000px;
+    max-width: 100%;
+    .case-article{
+      width: 100%;
+    }
     img {
       max-width: 100%;
       vertical-align: bottom;
@@ -128,10 +132,6 @@ export default {
     padding-bottom: 50px;
   }
   .nav-list {
-    // position: absolute;
-    // left: 150px;
-    // top: 320px;
-
     .item {
       font-size: 16px;
       color: #707070;
@@ -149,6 +149,13 @@ export default {
       .iconfont {
         margin-right: 10px;
         font-size: 19px;
+      }
+    }
+  }
+  @media (max-width:1024px) {
+    .detail-content{
+      .nav-list{
+        display: none;
       }
     }
   }

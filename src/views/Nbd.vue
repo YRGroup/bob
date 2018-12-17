@@ -111,7 +111,7 @@ h5 {
 .nbd-page {
   background: #fff;
   .nbd-banner {
-    height: 620px;
+    height: 4.5rem;
     background: #ddd;
     position: relative;
     overflow: hidden;
@@ -123,6 +123,9 @@ h5 {
     .p1 {
       position: absolute;
       z-index: 20;
+      img {
+        width: 2rem;
+      }
     }
   }
   .section2 {

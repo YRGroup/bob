@@ -21,18 +21,18 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from '@/components/bobHeader.vue'
-import bobBanner from '@/components/bobBanner.vue'
-import bobService from '@/components/bobService.vue'
-import bobAboutus from '@/components/bobAboutus.vue'
-import bobData from '@/components/bobData.vue'
-import bobFooter from '@/components/bobFooter.vue'
-import bobTeam from '@/components/bobTeam.vue'
-import bobStar from '@/components/bobStar.vue'
-import { WOW } from 'wowjs'
+import bobHeader from "@/components/bobHeader.vue";
+import bobBanner from "@/components/bobBanner.vue";
+import bobService from "@/components/bobService.vue";
+import bobAboutus from "@/components/bobAboutus.vue";
+import bobData from "@/components/bobData.vue";
+import bobFooter from "@/components/bobFooter.vue";
+import bobTeam from "@/components/bobTeam.vue";
+import bobStar from "@/components/bobStar.vue";
+import { WOW } from "wowjs";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     bobHeader,
     bobBanner,
@@ -43,30 +43,33 @@ export default {
     bobStar,
     bobFooter
   },
-  created () {},
+  created() {},
   methods: {},
-  mounted () {
-    new WOW().init()
-  },
-}
+  mounted() {
+    new WOW().init();
+  }
+};
 </script>
 <style lang="less" scoped>
-// @import "../less/mixin.less";
+@import "../less/mixin.less";
 .home {
   position: relative;
   background: #fff;
 }
-.nbd{
+.nbd {
   position: relative;
-  height: 500px;
+  height: 3rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  .p1{
+  .p1 {
     position: absolute;
     z-index: 20;
+    img {
+      width: 2rem;
+    }
   }
 }
 </style>
