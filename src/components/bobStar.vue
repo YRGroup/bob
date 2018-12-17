@@ -137,7 +137,7 @@ export default {
     right: 0;
     background: url("../images/nbd/11.jpg") no-repeat center center;
     // background: #c66b44;
-    opacity: 0.3;
+    opacity: 0.7;
     background-size: cover;
   }
   canvas{
