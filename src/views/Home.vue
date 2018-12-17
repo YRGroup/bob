@@ -58,7 +58,7 @@ export default {
 }
 .nbd {
   position: relative;
-  height: 3rem;
+  height: 3.6rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
