@@ -201,7 +201,10 @@ export default {
   background: #f5f5f5;
   padding-top: 0.5rem;
   .service-wrapper {
-    padding: 0.5rem 100px;
+    padding: 0.5rem .2rem;
+    // padding-top: .5rem;
+    // padding-bottom: .5rem;
+    
     overflow: hidden;
   }
   .cards {

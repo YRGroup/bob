@@ -128,6 +128,7 @@ export default {
 <style lang="less" scoped>
 .can-wrapper {
   position: relative;
+  width: 100%;
   .bg {
     position: absolute;
     left: 0;
@@ -138,6 +139,9 @@ export default {
     // background: #c66b44;
     opacity: 0.3;
     background-size: cover;
+  }
+  canvas{
+    width: 100%;
   }
 }
 </style>
