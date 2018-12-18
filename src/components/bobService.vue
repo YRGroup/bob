@@ -204,7 +204,7 @@ export default {
     padding: 0.5rem .2rem;
     // padding-top: .5rem;
     // padding-bottom: .5rem;
-    
+
     overflow: hidden;
   }
   .cards {

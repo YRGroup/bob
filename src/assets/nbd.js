@@ -21,7 +21,7 @@ const nbd = [{
     name: 'VIS',
     icon: '&#xe64d;'
   }, {
-    name: 'VIS应用和开发',
+    name: '应用开发',
     icon: '&#xe614;'
   }]
 }, {
@@ -34,7 +34,7 @@ const nbd = [{
     name: '开业营销',
     icon: '&#xe616;'
   }, {
-    name: '季度/年度营销',
+    name: '年度营销',
     icon: '&#xe60d;'
   }]
 }, {
@@ -86,7 +86,7 @@ const nbd = [{
     name: '选址',
     icon: '&#xe624;'
   }, {
-    name: '投资收益评估',
+    name: '收益评估',
     icon: '&#xe617;'
   }]
 }, {

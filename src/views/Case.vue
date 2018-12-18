@@ -138,7 +138,7 @@ export default {
       }
     }
     @media (max-width: 750px) {
-      height: 2.5rem;
+      height: 2rem;
     }
   }
 }
