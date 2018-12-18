@@ -2,7 +2,7 @@
   <div class="nbddetail">
     <bob-header></bob-header>
     <div class="nbd-banner"></div>
-    <div class="flex detail-content">
+    <div class="navBox">
       <ul class="nav-list">
         <li
           v-for="(item,index) in posts "
@@ -16,6 +16,8 @@
           </p>
         </li>
       </ul>
+    </div>
+    <div class="detail-content">
       <div class="content">
         <div class="case-article" v-if="post">
           <p
@@ -123,27 +125,39 @@ export default {
     }
   }
   .detail-content {
-    align-items: flex-start;
-    justify-content: space-around;
+    // align-items: flex-start;
+    // justify-content: space-around;
     padding: 50px 0;
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
     padding-bottom: 50px;
   }
+  .content{
+    margin: 0 auto;
+  }
+  .navBox{
+    border-bottom: 1px solid #ddd;
+  }
   .nav-list {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
     .item {
       font-size: 16px;
       color: #707070;
-      padding: 16px 20px;
       text-align: left;
-      width: 180px;
+      // width: 180px;
       cursor: pointer;
       &.active {
         color: @color-theme;
         font-weight: 700;
         p {
-          border-right: 2px solid @color-theme;
+          padding: 0 10px;
+          border-bottom: 2px solid @color-theme;
         }
       }
       .iconfont {

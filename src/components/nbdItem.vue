@@ -152,7 +152,7 @@ export default {
     }
     .p2 {
       font-size: 14px;
-      color: @color-theme;
+      color:#666;
       line-height: 2;
       white-space: nowrap;
     }
