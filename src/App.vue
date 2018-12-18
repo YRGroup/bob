@@ -5,25 +5,25 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  created() {
+  created () {
     window.onresize = () => {
-      let w = document.documentElement.clientWidth;
+      let w = document.documentElement.clientWidth
       if (w > 768) {
-        this.$store.commit("setIsMObile", false);
+        this.$store.commit('setIsMObile', false)
       } else {
-        this.$store.commit("setIsMObile", true);
+        this.$store.commit('setIsMObile', true)
       }
       if (w > 1024) {
-        this.$store.commit("setIsPad", false);
+        this.$store.commit('setIsPad', false)
       } else {
-        this.$store.commit("setIsPad", true);
+        this.$store.commit('setIsPad', true)
       }
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="less">

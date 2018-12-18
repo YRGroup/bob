@@ -8,6 +8,7 @@
       <transition name="icons">
         <div :class="['icons', $store.state.isPad?'flex':'flex-column']">
           <div
+            @click="handle"
             v-for="(type, i) in item.types"
             :key="i"
             :style="{animationDelay:`${x+i*y}s`}"
@@ -40,52 +41,54 @@ export default {
       type: Boolean
     }
   },
-  data() {
+  data () {
     return {
       // showIcons: false
-    };
-  },
-  computed: {
-    x() {
-      return this.showIcons ? 0 : 0.3;
-    },
-    y() {
-      return this.showIcons ? 0.1 : -0.1;
     }
   },
-  created() {},
+  computed: {
+    x () {
+      return this.showIcons ? 0 : 0.3
+    },
+    y () {
+      return this.showIcons ? 0.1 : -0.1
+    }
+  },
+  created () {},
   methods: {
-    handle() {
-      this.$emit("handle");
+    handle () {
+      this.$emit('handle')
     }
   },
   watch: {}
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
 
 @box-size: 0.6rem;
+@iconbox-size: 1rem;
 .nbdCon {
   // display: flex;
   // flex-direction: row;
   // align-items: top;
   position: relative;
   @media (max-width: 1024px) {
-    margin: 30px 0;
+    margin: 20px 0;
   }
 }
 .arrow {
   position: absolute;
-
+  font-size: 0;
   &.pad {
-    top: -23px;
-    left: 13px;
+    top: -0.45rem;
+    left: @box-size / 2;
     transform: rotate(90deg);
+    transform-origin: left;
   }
   &.pc {
-    top: 22px;
-    left: -40px;
+    top: @box-size / 2;
+    left: -0.15rem;
   }
 }
 .item-wrapper {
@@ -115,13 +118,17 @@ export default {
     color: #fff;
     margin-top: 10px;
     overflow: hidden;
+
     .icon-box {
+      cursor: pointer;
+      width: @iconbox-size;
+      text-align: center;
       &.pc {
         padding-top: 10px;
       }
       &.pad {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 5px;
+        padding-right: 5px;
       }
       animation-duration: 0.3s;
       animation-fill-mode: forwards;

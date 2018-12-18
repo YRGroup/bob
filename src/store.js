@@ -10,18 +10,18 @@ export default new Vuex.Store({
     nbd: {}
   },
   mutations: {
-    setIsMObile(state, val) {
+    setIsMObile (state, val) {
       state.isMobile = val
     },
-    setIsPad(state, val) {
+    setIsPad (state, val) {
       state.isPad = val
     },
-    setNbd(state, val) {
+    setNbd (state, val) {
       state.nbd = val
     }
   },
   actions: {
-    getNbd(context) {
+    getNbd (context) {
       const NBD_CAT_ID = 44
       API.getCatPosts(NBD_CAT_ID, 1, 9).then(res => {
         context.commit('setNbd', res.data)

@@ -13,7 +13,7 @@
         开发流程
         <span>/ Development Workflow</span>
       </h5>
-      <div :class="['content', $store.state.isPad?'':'flex']">
+      <div :class="['content', $store.state.isPad?'flex-column':'flex']">
         <div v-for="(item, index) in nbd" :key="index">
           <transition name="fade" appear>
             <nbd-item
@@ -35,20 +35,20 @@
 
 <script>
 // @ is an alias to /src
-import bobHeader from "@/components/bobHeader.vue";
-import bobFooter from "@/components/bobFooter.vue";
-import peopleCard from "@/components/peopleCard.vue";
-import bobArticle from "@/components/bobArticle.vue";
-import bobStar from "@/components/bobStar.vue";
-import nbdItem from "@/components/nbdItem.vue";
-import Case from "@/class/case";
-import API from "@/api/index";
-import nbd from "@/assets/nbd";
-import { WOW } from "wowjs";
-import { initBody, hiddenBody } from "@/assets/utils.js";
+import bobHeader from '@/components/bobHeader.vue'
+import bobFooter from '@/components/bobFooter.vue'
+import peopleCard from '@/components/peopleCard.vue'
+import bobArticle from '@/components/bobArticle.vue'
+import bobStar from '@/components/bobStar.vue'
+import nbdItem from '@/components/nbdItem.vue'
+import Case from '@/class/case'
+import API from '@/api/index'
+import nbd from '@/assets/nbd'
+import { WOW } from 'wowjs'
+import { initBody, hiddenBody } from '@/assets/utils.js'
 
 export default {
-  name: "nbd",
+  name: 'nbd',
   components: {
     bobHeader,
     bobFooter,
@@ -57,52 +57,52 @@ export default {
     bobArticle,
     bobStar
   },
-  data() {
+  data () {
     return {
       nbd: nbd,
       showSideDialog: false,
       showIndex: 0
-    };
+    }
   },
   computed: {
-    posts() {
-      return this.$store.state.nbd;
+    posts () {
+      return this.$store.state.nbd
     }
   },
-  created() {
-    this.getPosts();
+  created () {
+    this.getPosts()
   },
-  mounted() {
-    new WOW().init();
+  mounted () {
+    new WOW().init()
   },
   methods: {
-    showDetail(id, index) {
-      this.$router.push("nbddetail/" + id);
+    showDetail (id, index) {
+      this.$router.push('nbddetail/' + id)
     },
-    handleClose() {
-      this.showSideDialog = false;
-      initBody();
+    handleClose () {
+      this.showSideDialog = false
+      initBody()
     },
-    getPosts() {
+    getPosts () {
       if (!this.$store.state.nbd.length) {
-        this.$store.dispatch("getNbd");
+        this.$store.dispatch('getNbd')
       }
     },
-    handleMouseLeave(index) {
+    handleMouseLeave (index) {
       // this.showIndex = -1;
     },
-    handleMouseEnter(index) {
-      this.showIndex = index;
+    handleMouseEnter (index) {
+      this.showIndex = index
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 @import "../less/variable.less";
 @import "../less/mixin.less";
 h5 {
   font-size: 0.25rem;
-  margin-bottom: 60px;
+  margin-bottom: 0.4rem;
   span {
     font-size: 0.2rem;
     opacity: 0.5;
@@ -143,9 +143,8 @@ h5 {
     .section2 {
       .content {
         max-width: 100%;
-        // padding-left: 30px;
-        padding: 0 .3rem;
         box-sizing: border-box;
+        align-items: center;
       }
     }
   }
